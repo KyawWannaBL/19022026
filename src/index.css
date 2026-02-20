@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================= */
+/*  LUXURY DESIGN TOKENS (v3)   */
+/* ============================= */
+
+:root {
+  --color-luxury-gold: #D4AF37;
+  --color-luxury-obsidian: #0B0C10;
+  --color-luxury-cream: #FAF9F6;
+
+  --shadow-luxury: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+  --radius-luxury: 2rem;
+}
+
+/* ============================= */
+/* BASE STYLES */
+/* ============================= */
+
+@layer base {
+  body {
+    background-color: var(--color-luxury-obsidian);
+    color: var(--color-luxury-cream);
+    @apply antialiased;
+  }
+
+  ::selection {
+    background-color: rgba(212, 175, 55, 0.3);
+  }
+}
+
+/* ============================= */
+/* COMPONENTS */
+/* ============================= */
+
+@layer components {
+
+  /* Glass Effect */
+  .luxury-glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-luxury);
+  }
+
+  /* Card */
+  .luxury-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-luxury);
+    transition: all 0.7s ease;
+  }
+
+  .luxury-card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Button */
+  .luxury-button {
+    background-color: var(--color-luxury-gold);
+    color: #000;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    transition: all 0.5s ease;
+  }
+
+  .luxury-button:hover {
+    transform: scale(1.05);
+  }
+
+  .luxury-button:active {
+    transform: scale(0.95);
+  }
+}
