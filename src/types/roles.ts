@@ -1,26 +1,27 @@
 export const APP_ROLES = [
   'APP_OWNER',
-  'CUSTOMER',
-  'CUSTOMER_SERVICE',
-  'DATA_ENTRY',
-  'DRIVER',
-  'FINANCE_STAFF',
-  'FINANCE_USER',
-  'HELPER',
-  'HR_ADMIN',
-  'MARKETING_ADMIN',
-  'MERCHANT',
-  'OPERATIONS_ADMIN',
-  'RIDER',
-  'STAFF',
-  'SUBSTATION_MANAGER',
-  'SUPERVISOR',
   'SUPER_ADMIN',
+
+  'OPERATIONS_ADMIN',
+  'FINANCE_USER',
+  'FINANCE_STAFF',
+  'MARKETING_ADMIN',
+  'HR_ADMIN',
+  'CUSTOMER_SERVICE',
+
+  'SUPERVISOR',
   'WAREHOUSE_MANAGER',
-] as const
+  'SUBSTATION_MANAGER',
 
-export type AppRole = (typeof APP_ROLES)[number]
+  'STAFF',
+  'DATA_ENTRY',
 
-export function isAppRole(value: unknown): value is AppRole {
-  return typeof value === 'string' && (APP_ROLES as readonly string[]).includes(value)
-}
+  'RIDER',
+  'DRIVER',
+  'HELPER',
+
+  'MERCHANT',
+  'CUSTOMER',
+] as const;
+
+export type AppRole = typeof APP_ROLES[number];

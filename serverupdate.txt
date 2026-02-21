@@ -1,0 +1,144 @@
+STEP 1 — SSH Into Server
+
+From your local machine:
+
+ssh ubuntu@150.95.26.174
+
+If using SSH key:
+
+ssh -i ~/.ssh/id_rsa ubuntu@150.95.26.174
+✅ STEP 2 — Initial Server Setup (Run ONCE)
+
+After logging in:
+
+sudo apt update && sudo apt upgrade -y
+
+Install Node 18:
+
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+
+Check:
+
+node -v
+npm -v
+
+Install Nginx:
+
+sudo apt install nginx -y
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+Check browser:
+
+Visit:
+
+http://150.95.26.174
+
+You should see Nginx default page.
+
+✅ STEP 3 — Upload Your Project
+
+From your LOCAL machine (where project folder exists):
+
+scp -r ./britium-enterprise ubuntu@150.95.26.174:/var/www/
+
+If your folder is named differently:
+
+scp -r ./fix_black_screen_error_boundary ubuntu@150.95.26.174:/var/www/britium
+✅ STEP 4 — Build On Server
+
+SSH into server:
+
+cd /var/www/britium-enterprise
+npm install
+npm run build
+
+After build, confirm:
+
+ls dist
+✅ STEP 5 — Configure Nginx for React (SPA Mode)
+
+Create config:
+
+sudo nano /etc/nginx/sites-available/britium
+
+Paste:
+
+server {
+    listen 80;
+    server_name 150.95.26.174;
+
+    root /var/www/britium-enterprise/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+
+Save.
+
+Enable it:
+
+sudo ln -s /etc/nginx/sites-available/britium /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+✅ STEP 6 — Remove Default Nginx Page
+sudo rm /etc/nginx/sites-enabled/default
+sudo systemctl restart nginx
+
+Now open:
+
+http://150.95.26.174
+
+Your app should load.
+
+✅ STEP 7 — Add HTTPS (Highly Recommended)
+
+If you have a domain pointing to 150.95.26.174:
+
+sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+
+If no domain yet, wait until domain is configured.
+
+✅ STEP 8 — Production Hardening (Important for Enterprise)
+
+Run:
+
+sudo ufw allow 'Nginx Full'
+sudo ufw enable
+
+Optional: disable root SSH login for security.
+
+🚀 OPTIONAL: Auto Deploy From GitHub (Professional Setup)
+
+Instead of scp every time:
+
+On server:
+
+cd /var/www
+git clone https://github.com/your-repo.git britium-enterprise
+
+Then deploy with:
+
+git pull origin main
+npm install
+npm run build
+sudo systemctl restart nginx
+⚠️ IMPORTANT FOR YOUR LOGISTICS SYSTEM
+
+Since you are using Supabase:
+
+Make sure your .env.production contains:
+
+VITE_SUPABASE_URL=your_url
+VITE_SUPABASE_ANON_KEY=your_key
+
+Then rebuild:
+
+npm run build
+sudo systemctl restart nginx
+🎯 Your System Is Now Live On
+http://150.95.26.174
