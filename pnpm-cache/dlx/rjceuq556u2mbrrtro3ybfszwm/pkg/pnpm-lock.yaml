@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      scp:
+        specifier: ^0.0.3
+        version: 0.0.3
+
+packages:
+
+  scp@0.0.3:
+    resolution: {integrity: sha512-hNO6qcciLt7QONBWpVaeNZkCv7z+39ocbSVeyyQnLLR3+afS6JffXP44S4rKzI5kpNZzvyfHOBHPYCtE+Lo+lA==}
+
+snapshots:
+
+  scp@0.0.3: {}
