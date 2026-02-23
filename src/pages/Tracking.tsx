@@ -18,7 +18,6 @@ export default function Tracking() {
 <<<<<<< HEAD
 =======
   const { data: shipments = [], isLoading: shipmentsLoading } = useEnterpriseShipments();
-  const { data: shipments = [], isLoading: shipmentsLoading } = useEnterpriseShipments();
 >>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
   const [trackingNumber, setTrackingNumber] = useState('');
   const [searchResult, setSearchResult] = useState<Shipment | null>(null);
