@@ -10,6 +10,30 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations = {
   en: {
+<<<<<<< HEAD
+=======
+// Brand/Login (enterprise login)
+'brand.name': 'Britium Express',
+'brand.tagline': 'Enterprise Logistics Platform',
+'brand.copyright': '© 2026 Britium Express Logistics',
+'auth.signInToDashboard': 'Sign in to dashboard',
+'auth.login': 'Login',
+'auth.createDemoAccount': 'Create account',
+'auth.dontHaveAccount': "Don't have an account?",
+'auth.signUpHere': 'Sign up here',
+'auth.corporateEmail': 'Corporate Email',
+'auth.password': 'Password',
+'gettingStarted.title': 'Getting Started',
+'gettingStarted.quickStart': 'Quick Start',
+'gettingStarted.step1': '1) Sign in with your corporate account',
+'gettingStarted.step2': '2) Select your role-based dashboard',
+'gettingStarted.step3': '3) Create or assign shipments',
+'gettingStarted.step4': '4) Track delivery progress in real time',
+'gettingStarted.step5': '5) Complete POD & signature capture',
+'gettingStarted.step6': '6) Review reports and settlements',
+'gettingStarted.noVerification': 'No email verification required for demo accounts',
+'common.loading': 'Loading...',
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
     // Navigation
     dashboard: 'Dashboard',
     operations: 'Operations',
@@ -175,6 +199,30 @@ const translations = {
     sessionExpired: 'Session expired'
   },
   my: {
+<<<<<<< HEAD
+=======
+// Brand/Login (enterprise login)
+'brand.name': 'Britium Express',
+'brand.tagline': 'စီးပွားရေး လိုဂျစ်စတစ် ပလက်ဖောင်း',
+'brand.copyright': '© 2026 Britium Express Logistics',
+'auth.signInToDashboard': 'ဒက်ရှ်ဘုတ်သို့ ဝင်ရောက်ပါ',
+'auth.login': 'ဝင်ရောက်ရန်',
+'auth.createDemoAccount': 'အကောင့်ဖန်တီးရန်',
+'auth.dontHaveAccount': 'အကောင့်မရှိသေးလား?',
+'auth.signUpHere': 'ဒီမှာ စာရင်းသွင်းပါ',
+'auth.corporateEmail': 'အီးမေးလ်',
+'auth.password': 'စကားဝှက်',
+'gettingStarted.title': 'စတင်အသုံးပြုရန်',
+'gettingStarted.quickStart': 'အမြန်စတင်ရန်',
+'gettingStarted.step1': '၁) အကောင့်ဖြင့် ဝင်ပါ',
+'gettingStarted.step2': '၂) သင့်အခန်းကဏ္ဍ ဒက်ရှ်ဘုတ်ကို ရွေးပါ',
+'gettingStarted.step3': '၃) ပို့ဆောင်မှုများ ဖန်တီး/ခွဲဝေပေးပါ',
+'gettingStarted.step4': '၄) တကယ့်အချိန်အတွင်း တိုးတက်မှုကို ကြည့်ပါ',
+'gettingStarted.step5': '၅) POD နှင့် လက်မှတ် စုဆောင်းပါ',
+'gettingStarted.step6': '၆) အစီရင်ခံစာများ/စာရင်းချုပ်များ ကြည့်ပါ',
+'gettingStarted.noVerification': 'Demo အကောင့်များအတွက် အတည်ပြုရန် မလိုပါ',
+'common.loading': 'တင်နေသည်...',
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
     // Navigation
     dashboard: 'ဒက်ရှ်ဘုတ်',
     operations: 'လုပ်ငန်းများ',

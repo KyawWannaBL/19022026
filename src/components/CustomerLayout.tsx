@@ -23,7 +23,11 @@ import {
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu';
 import { ROUTE_PATHS } from '@/lib/index';
+<<<<<<< HEAD
 import { useAuth } from '@/hooks/useFirebaseAuth';
+=======
+import { useAuth } from '@/hooks/useAuth';
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets/images';
 

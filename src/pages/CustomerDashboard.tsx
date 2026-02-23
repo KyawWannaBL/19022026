@@ -13,7 +13,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ROUTE_PATHS } from '@/lib/index';
+<<<<<<< HEAD
 import { useAuth } from '@/hooks/useFirebaseAuth';
+=======
+import { useAuth } from '@/hooks/useAuth';
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 
 export default function CustomerDashboard() {
   const { user } = useAuth();

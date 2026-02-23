@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { Search, Package, MapPin, AlertCircle, ArrowRight, Truck, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IMAGES } from '@/assets/images';
+<<<<<<< HEAD
 import { mockShipments } from '@/data/index';
+=======
+import { useEnterpriseShipments, fetchShipmentByTracking, fetchShipmentTracking } from '@/hooks/useEnterpriseShipments';
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 import { Shipment } from '@/lib/index';
 import { TrackingTimeline, TrackingCard, StatusBadge } from '@/components/TrackingComponents';
 import { Button } from '@/components/ui/button';
@@ -10,11 +14,17 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 export default function Tracking() {
+<<<<<<< HEAD
+=======
+  const { data: shipments = [], isLoading: shipmentsLoading } = useEnterpriseShipments();
+  const { data: shipments = [], isLoading: shipmentsLoading } = useEnterpriseShipments();
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
   const [trackingNumber, setTrackingNumber] = useState('');
   const [searchResult, setSearchResult] = useState<Shipment | null>(null);
   const [isSearched, setIsSearched] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+<<<<<<< HEAD
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (!trackingNumber.trim()) return;
@@ -32,6 +42,35 @@ export default function Tracking() {
       setIsLoading(false);
     }, 600);
   };
+=======
+  const handleSearch = async (e: React.FormEvent) => {
+  e.preventDefault();
+  const tn = trackingNumber.trim();
+  if (!tn) return;
+
+  setIsLoading(true);
+  setIsSearched(false);
+  setSearchResult(null);
+
+  try {
+    const row = await fetchShipmentByTracking(tn.toUpperCase());
+    if (!row) {
+      setSearchResult(null);
+    } else {
+      const trackingRows = await fetchShipmentTracking(String(row.id));
+      const { mapShipmentRowToShipment } = await import('@/lib/db/mappers');
+      setSearchResult(mapShipmentRowToShipment(row, trackingRows));
+    }
+  } catch (err) {
+    console.error(err);
+    setSearchResult(null);
+  } finally {
+    setIsSearched(true);
+    setIsLoading(false);
+  }
+};
+
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 
   return (
     <div className="min-h-screen bg-background">

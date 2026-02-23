@@ -16,7 +16,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { ROUTE_PATHS } from '@/lib/index';
+<<<<<<< HEAD
 import { useAuth } from '@/hooks/useFirebaseAuth';
+=======
+import { useAuth } from '@/hooks/useAuth';
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 
 export default function CustomerBooking() {
   const { user } = useAuth();

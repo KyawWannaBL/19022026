@@ -25,7 +25,11 @@ import {
   MessageSquare
 } from 'lucide-react';
 import { ROUTE_PATHS, USER_ROLES, UserRole } from '@/lib/index';
+<<<<<<< HEAD
 import { useAuth } from '@/hooks/useFirebaseAuth';
+=======
+import { useAuth } from '@/hooks/useAuth';
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { IMAGES } from '@/assets/images';
 import { Button } from '@/components/ui/button';

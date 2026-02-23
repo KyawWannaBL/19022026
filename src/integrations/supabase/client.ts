@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = 'https://lppxrrrbkkzcdjovpbsp.supabase.co'
@@ -10,3 +11,12 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 // import { supabase } from "@/integrations/supabase/client";
 // For React Native:
 // import { supabase } from "@/src/integrations/supabase/client";
+=======
+/**
+ * Supabase client (env-safe).
+ * Uses Vercel/Vite env vars:
+ * - VITE_SUPABASE_PROJECT_URL (preferred) or VITE_SUPABASE_URL
+ * - VITE_SUPABASE_ANON_KEY
+ */
+export { supabase } from "@/lib/supabase";
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))

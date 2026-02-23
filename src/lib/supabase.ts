@@ -1,7 +1,11 @@
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
+<<<<<<< HEAD
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined
+=======
+const supabaseUrl = (import.meta.env.VITE_SUPABASE_PROJECT_URL as string | undefined) || (import.meta.env.VITE_SUPABASE_URL as string | undefined)
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 
 const supabaseKey =
   (import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string | undefined) ||

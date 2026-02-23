@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect, useCallback } from 'react';
 import { User, UserRole, USER_ROLES } from '@/lib/index';
 
@@ -105,3 +106,9 @@ export const useAuth = () => {
     isAccountant: user?.role === USER_ROLES.ACCOUNTANT,
   };
 };
+=======
+// IMPORTANT: This file exists to ensure the import path "@/hooks/useAuth"
+// resolves to the Supabase implementation (defined in useAuth.tsx).
+export * from "./useAuth.tsx";
+export { default } from "./useAuth.tsx";
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))

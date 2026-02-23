@@ -40,7 +40,11 @@ import {
   Shipment, 
   generateTrackingNumber 
 } from '@/lib/index';
+<<<<<<< HEAD
 import { useAuth } from '@/hooks/useDemoAuth';
+=======
+import { useAuth } from '@/hooks/useAuth';
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 import { PhotoCapture } from '@/components/PhotoCapture';
 import { SignaturePad } from '@/components/SignaturePad';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -54,7 +58,11 @@ const loginSchema = z.object({
 });
 
 export function LoginForm() {
+<<<<<<< HEAD
   const { login, isLoading } = useAuth();
+=======
+  const { login, loading } = useAuth();
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
   const { t } = useLanguage();
   const [error, setError] = React.useState<string>('');
   const form = useForm<z.infer<typeof loginSchema>>({
@@ -104,8 +112,13 @@ export function LoginForm() {
             </FormItem>
           )}
         />
+<<<<<<< HEAD
         <Button type="submit" className="w-full h-11 font-semibold" disabled={isLoading}>
           {isLoading ? (
+=======
+        <Button type="submit" className="w-full h-11 font-semibold" disabled={loading}>
+          {loading ? (
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> {t('common.loading')}</>
           ) : (
             t('auth.signInToDashboard')
@@ -302,7 +315,11 @@ export function ShipmentForm({ initialData, onSubmit, isLoading }: ShipmentFormP
 
         <div className="flex justify-end gap-4">
           <Button type="button" variant="outline" className="px-8">Cancel</Button>
+<<<<<<< HEAD
           <Button type="submit" className="px-12" disabled={isLoading}>
+=======
+          <Button type="submit" className="px-12" disabled={loading}>
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
             {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
             {initialData ? 'Update Shipment' : 'Create Shipment'}
           </Button>
@@ -410,7 +427,11 @@ export function ExceptionForm({ shipmentId, onSubmit, isLoading }: ExceptionForm
           )}
         />
 
+<<<<<<< HEAD
         <Button type="submit" variant="destructive" className="w-full" disabled={isLoading}>
+=======
+        <Button type="submit" variant="destructive" className="w-full" disabled={loading}>
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
           {isLoading ? <Loader2 className="animate-spin mr-2 h-4 w-4" /> : <AlertTriangle className="mr-2 h-4 w-4" />}
           Submit Exception Report
         </Button>
@@ -507,7 +528,11 @@ export function ProofOfDeliveryForm({ shipmentId, onSubmit, isLoading }: ProofOf
           </CardContent>
         </Card>
 
+<<<<<<< HEAD
         <Button type="submit" className="w-full h-12 text-lg font-bold" disabled={isLoading}>
+=======
+        <Button type="submit" className="w-full h-12 text-lg font-bold" disabled={loading}>
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
           {isLoading ? <Loader2 className="animate-spin mr-2 h-5 w-5" /> : <ShieldCheck className="mr-2 h-5 w-5" />}
           Confirm Delivery
         </Button>

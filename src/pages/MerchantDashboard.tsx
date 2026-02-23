@@ -36,7 +36,11 @@ interface Shipment {
   createdAt: string;
 }
 
+<<<<<<< HEAD
 const mockShipments: Shipment[] = [
+=======
+const shipments: Shipment[] = [
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
   {
     id: '1',
     trackingNumber: 'BE-2024-001',
@@ -82,7 +86,11 @@ export default function MerchantDashboardPage() {
     return <Badge variant={config.variant}>{config.label}</Badge>;
   };
 
+<<<<<<< HEAD
   const filteredShipments = mockShipments.filter(shipment =>
+=======
+  const filteredShipments = shipments.filter(shipment =>
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
     shipment.trackingNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
     shipment.recipient.toLowerCase().includes(searchTerm.toLowerCase()) ||
     shipment.destination.toLowerCase().includes(searchTerm.toLowerCase())

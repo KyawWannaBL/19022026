@@ -15,7 +15,11 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { Shipment, SHIPMENT_STATUSES } from '@/lib/index';
+<<<<<<< HEAD
 import { mockBranches } from '@/data/index';
+=======
+import { useEnterpriseBranches } from '@/hooks/useEnterpriseBranches';
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 import {
   Form,
   FormControl,
@@ -78,6 +82,11 @@ export function CreateShipmentForm({ onSubmit }: CreateShipmentFormProps) {
     },
   });
 
+<<<<<<< HEAD
+=======
+  const { data: branches = [], isLoading: branchesLoading } = useEnterpriseBranches();
+
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -298,7 +307,11 @@ export function CreateShipmentForm({ onSubmit }: CreateShipmentFormProps) {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
+<<<<<<< HEAD
                         {mockBranches.map((branch) => (
+=======
+                        {branches.map((branch) => (
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
                           <SelectItem key={branch.id} value={branch.id}>
                             {branch.name} ({branch.code})
                           </SelectItem>

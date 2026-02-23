@@ -24,7 +24,11 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ROUTE_PATHS, USER_ROLES } from '@/lib/index';
+<<<<<<< HEAD
 import { useAuth } from '@/hooks/useFirebaseAuth';
+=======
+import { useAuth } from '@/hooks/useAuth';
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 import { useLanguageContext, LanguageToggle, CompactLanguageToggle } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets/images';

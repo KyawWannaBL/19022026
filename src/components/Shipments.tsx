@@ -6,7 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Package, Truck, CheckCircle, Clock, AlertCircle } from 'lucide-react';
 
 export default function Shipments() {
+<<<<<<< HEAD
   const mockShipments = [
+=======
+  const shipments = [
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
     {
       id: '1',
       awb: 'EDS20241201001',
@@ -41,7 +45,11 @@ export default function Shipments() {
       </div>
 
       <div className="grid gap-4">
+<<<<<<< HEAD
         {mockShipments.map((shipment) => (
+=======
+        {shipments.map((shipment) => (
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
           <Card key={shipment.id} className="card-modern">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">

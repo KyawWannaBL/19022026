@@ -4,7 +4,13 @@ import { motion } from 'framer-motion';
 import { PackagePlus, ChevronLeft, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+<<<<<<< HEAD
 import { ROUTE_PATHS } from '@/lib/index.ts';
+=======
+import { ROUTE_PATHS, generateTrackingNumber, SHIPMENT_STATUSES } from '@/lib/index.ts';
+import { supabase } from '@/lib/supabase';
+import { TABLES } from '@/lib/db/tables';
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 import { CreateShipmentForm } from '@/components/ShipmentForms.tsx';
 import { toast } from 'sonner';
 import { springPresets, fadeInUp } from '@/lib/motion';
@@ -18,6 +24,7 @@ import { springPresets, fadeInUp } from '@/lib/motion';
 export default function CreateShipment() {
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   const handleSubmit = (data: any) => {
     // In a real application, this would be an API call to Supabase or a backend
     console.log('Shipment Data Submitted:', data);
@@ -35,6 +42,70 @@ export default function CreateShipment() {
     });
   };
 
+=======
+  const handleSubmit = async (data: any) => {
+  if (!supabase) {
+    toast.error('Supabase is not configured. Please set VITE_SUPABASE_PROJECT_URL and VITE_SUPABASE_ANON_KEY.');
+    return;
+  }
+
+  const awb = generateTrackingNumber();
+
+  const payload: any = {
+    awb_number: awb,
+    sender_name: data.senderName,
+    sender_phone: data.senderPhone,
+    sender_address: data.senderAddress,
+    sender_city: data.senderCity,
+    sender_state: data.senderState ?? null,
+    receiver_name: data.receiverName,
+    receiver_phone: data.receiverPhone,
+    receiver_address: data.receiverAddress,
+    receiver_city: data.receiverCity,
+    receiver_state: data.receiverState ?? null,
+    weight: data.weight,
+    cod_amount: data.codAmount ?? 0,
+    total_cost: data.price ?? 0,
+    status: SHIPMENT_STATUSES.PENDING,
+    origin_branch_id: data.branchId,
+    special_instructions: data.notes ?? null,
+    service_type: data.serviceType ?? 'standard',
+    payment_method: data.paymentMethod ?? 'cash',
+  };
+
+  const action = async () => {
+    const { data: inserted, error } = await supabase
+      .from(TABLES.SHIPMENTS)
+      .insert(payload)
+      .select('*')
+      .single();
+
+    if (error) throw error;
+
+    // Insert initial tracking record (best-effort)
+    await supabase.from(TABLES.SHIPMENT_TRACKING).insert({
+      shipment_id: inserted.id,
+      status: SHIPMENT_STATUSES.PENDING,
+      location: inserted.sender_city ?? 'Origin',
+      notes: 'Shipment created',
+      timestamp: new Date().toISOString(),
+    });
+
+    return inserted;
+  };
+
+  toast.promise(action(), {
+    loading: 'Registering shipment...',
+    success: () => {
+      navigate(ROUTE_PATHS.SHIPMENTS);
+      return `Shipment created successfully! Tracking: ${awb}`;
+    },
+    error: (e: any) => e?.message || 'Failed to create shipment. Please try again.',
+  });
+};
+
+
+>>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
   return (
     <motion.div 
       className="flex flex-col gap-6 p-4 md:p-8 max-w-5xl mx-auto"
