@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-<<<<<<< HEAD
+ HEAD
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
-=======
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+ ec63336 (Initial enterprise logistics platform (Supabase))
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-<<<<<<< HEAD
+ HEAD
 import { LanguageProvider } from "@/lib/LanguageContext";
-<<<<<<< HEAD
+ HEAD
 import LoginPage from "@/pages/LoginPage";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,7 +26,7 @@ import { CustomerLayout } from "@/components/CustomerLayout";
 /* I am not repeating them to reduce noise */
 /* Your massive route system remains intact */
 
-const queryClient = new QueryClient({
+const queryClient  new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 1000 * 60 * 5,
@@ -34,15 +34,15 @@ const queryClient = new QueryClient({
     },
   },
 });
-=======
+
 import { LanguageProvider as CtxLanguageProvider } from '@/contexts/LanguageContext';
 import { AuthProvider } from '@/hooks/useAuth';
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-=======
+
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/hooks/useAuth";
->>>>>>> bc2f204 (login errors solved)
+ bc2f204 (login errors solved)
 
 // Layouts & Pages
 import PublicLayout from "@/components/PublicLayout";
@@ -62,23 +62,23 @@ import ResetPassword from "@/pages/ResetPassword";
 import ForcePasswordReset from "@/pages/ForcePasswordReset";
 
 HEAD
-const queryClient = new QueryClient();
+const queryClient  new QueryClient();
 ec63336 (Initial enterprise logistics platform (Supabase))
 
-const AppContent = () => {
-  const [user, setUser] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+const AppContent  ()  {
+  const [user, setUser]  useStateany(null);
+  const [loading, setLoading]  useState(true);
 HEAD
-  const [showLogin, setShowLogin] = useState(false);
+  const [showLogin, setShowLogin]  useState(false);
 
-  useEffect(() => {
-    const initializeAuth = async () => {
+  useEffect(()  {
+    const initializeAuth  async ()  {
 
 
-  useEffect(() => {
-    const init = async () => {
+  useEffect(()  {
+    const init  async ()  {
 ec63336 (Initial enterprise logistics platform (Supabase))
-      const { data } = await supabase.auth.getSession();
+      const { data }  await supabase.auth.getSession();
       setUser(data.session?.user ?? null);
       setLoading(false);
     };
@@ -89,23 +89,23 @@ HEAD
     init();
 ec63336 (Initial enterprise logistics platform (Supabase))
 
-    const { data: listener } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
+    const { data: listener }  supabase.auth.onAuthStateChange(
+      (_event, session)  {
         setUser(session?.user ?? null);
       }
     );
 
 HEAD
-    return () => {
+    return ()  {
       listener.subscription.unsubscribe();
     };
   }, []);
 
-  useEffect(() => {
-    const currentPath =
+  useEffect(()  {
+    const currentPath 
       window.location.hash.replace("#", "") || "/";
 
-    const publicPaths = [
+    const publicPaths  [
       ROUTE_PATHS.HOME,
       ROUTE_PATHS.SERVICES,
       ROUTE_PATHS.GET_QUOTE,
@@ -117,7 +117,7 @@ HEAD
       ROUTE_PATHS.SUPPORT,
     ];
 
-    const isPublic = publicPaths.includes(currentPath as any);
+    const isPublic  publicPaths.includes(currentPath as any);
 
     if (!user && !isPublic) {
       setShowLogin(true);
@@ -128,70 +128,70 @@ HEAD
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-10 h-10 animate-spin text-blue-600" />
-      </div>
+      div className"min-h-screen flex items-center justify-center"
+        Loader2 className"w-10 h-10 animate-spin text-blue-600" /
+      /div
     );
   }
 
   return (
-    <AnimatePresence mode="wait">
+    AnimatePresence mode"wait"
       {showLogin ? (
-        <motion.div
-          key="login"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <LoginPage />
-        </motion.div>
+        motion.div
+          key"login"
+          initial{{ opacity: 0 }}
+          animate{{ opacity: 1 }}
+          exit{{ opacity: 0 }}
+        
+          LoginPage /
+        /motion.div
       ) : (
-        <motion.div
-          key="app"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          <HashRouter>
-            <Routes>
-              <Route
-                path={ROUTE_PATHS.HOME}
-                element={
-                  <PublicLayout>
-                    <div>Home Page</div>
-                  </PublicLayout>
+        motion.div
+          key"app"
+          initial{{ opacity: 0 }}
+          animate{{ opacity: 1 }}
+        
+          HashRouter
+            Routes
+              Route
+                path{ROUTE_PATHS.HOME}
+                element{
+                  PublicLayout
+                    divHome Page/div
+                  /PublicLayout
                 }
-              />
+              /
 
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </HashRouter>
-        </motion.div>
+              Route path"*" element{Navigate to"/" replace /} /
+            /Routes
+          /HashRouter
+        /motion.div
       )}
-    </AnimatePresence>
-    return () => listener.subscription.unsubscribe();
+    /AnimatePresence
+    return ()  listener.subscription.unsubscribe();
   }, []);
 
-  if (loading) return <div className="p-10">Loading...</div>;
+  if (loading) return div className"p-10"Loading.../div;
 
   return (
-    <Routes>
+    Routes
       {/* Public Pages */}
-      <Route path="/" element={<PublicLayout><HomePage /></PublicLayout>} />
-      <Route path="/services" element={<PublicLayout><Services /></PublicLayout>} />
-      <Route path="/tracking" element={<PublicLayout><Tracking /></PublicLayout>} />
-      <Route path="/quote" element={<PublicLayout><Quote /></PublicLayout>} />
-      <Route path="/domestic" element={<PublicLayout><Domestic /></PublicLayout>} />
-      <Route path="/ecommerce" element={<PublicLayout><Ecommerce /></PublicLayout>} />
-      <Route path="/register-seller" element={<PublicLayout><RegisterSeller /></PublicLayout>} />
-      <Route path="/login" element={<LoginPage />} />
+      Route path"/" element{PublicLayoutHomePage //PublicLayout} /
+      Route path"/services" element{PublicLayoutServices //PublicLayout} /
+      Route path"/tracking" element{PublicLayoutTracking //PublicLayout} /
+      Route path"/quote" element{PublicLayoutQuote //PublicLayout} /
+      Route path"/domestic" element{PublicLayoutDomestic //PublicLayout} /
+      Route path"/ecommerce" element{PublicLayoutEcommerce //PublicLayout} /
+      Route path"/register-seller" element{PublicLayoutRegisterSeller //PublicLayout} /
+      Route path"/login" element{LoginPage /} /
 
       {/* Admin Protected */}
       {user && (
-        <Route path="/admin/settings" element={<Layout><Setting /></Layout>} />
+        Route path"/admin/settings" element{LayoutSetting //Layout} /
       )}
 
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+      Route path"*" element{Navigate to"/" replace /} /
+    /Routes
 ec63336 (Initial enterprise logistics platform (Supabase))
 import Unauthorized from "@/pages/Unauthorized";
 import EnterpriseRoutes from "@/routes/EnterpriseRoutes";
@@ -199,8 +199,8 @@ import EnterpriseRoutes from "@/routes/EnterpriseRoutes";
 export default function App() {
   // Creating the queryClient inside useMemo/useState prevents it from being
   // mangled by the production bundler's global scope optimization.
-  const [queryClient] = useState(
-    () =>
+  const [queryClient]  useState(
+    () 
       new QueryClient({
         defaultOptions: {
           queries: {
@@ -213,57 +213,57 @@ bc2f204 (login errors solved)
   );
 
   return (
-    <QueryClientProvider client={queryClient}>
+    QueryClientProvider client{queryClient}
 HEAD
-      <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <AppContent />
-        </TooltipProvider>
-      </LanguageProvider>
-      <AuthProvider>
-        <LanguageProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Sonner position="top-right" richColors />
-            <BrowserRouter>
-              <Routes>
+      LanguageProvider
+        TooltipProvider
+          Toaster /
+          Sonner /
+          AppContent /
+        /TooltipProvider
+      /LanguageProvider
+      AuthProvider
+        LanguageProvider
+          TooltipProvider
+            Toaster /
+            Sonner position"top-right" richColors /
+            BrowserRouter
+              Routes
                 {/* PUBLIC ROUTES */}
-                <Route element={<PublicLayout />}>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/tracking" element={<Tracking />} />
-                  <Route path="/quote" element={<Quote />} />
-                  <Route path="/domestic" element={<Domestic />} />
-                  <Route path="/ecommerce" element={<Ecommerce />} />
-                </Route>
+                Route element{PublicLayout /}
+                  Route path"/" element{HomePage /} /
+                  Route path"/services" element{Services /} /
+                  Route path"/tracking" element{Tracking /} /
+                  Route path"/quote" element{Quote /} /
+                  Route path"/domestic" element{Domestic /} /
+                  Route path"/ecommerce" element{Ecommerce /} /
+                /Route
 
                 {/* AUTH ROUTES */}
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<SignUp />} />
-                <Route path="/register/customer" element={<SignUpCustomer />} />
-                <Route path="/register/merchant" element={<SignUpMerchant />} />
-                <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route path="/reset-password" element={<ResetPassword />} />
-                <Route path="/force-password-reset" element={<ForcePasswordReset />} />
+                Route path"/login" element{LoginPage /} /
+                Route path"/register" element{SignUp /} /
+                Route path"/register/customer" element{SignUpCustomer /} /
+                Route path"/register/merchant" element{SignUpMerchant /} /
+                Route path"/forgot-password" element{ForgotPassword /} /
+                Route path"/reset-password" element{ResetPassword /} /
+                Route path"/force-password-reset" element{ForcePasswordReset /} /
 
                 {/* SYSTEM */}
-                <Route path="/unauthorized" element={<Unauthorized />} />
+                Route path"/unauthorized" element{Unauthorized /} /
 
                 {/* DASHBOARD ROUTES */}
                 {/* Ensure navigation to panel uses absolute paths like /panel/dashboard */}
-                <Route path="/panel/*" element={<EnterpriseRoutes />} />
+                Route path"/panel/*" element{EnterpriseRoutes /} /
 
                 {/* CATCH-ALL REDIRECT */}
-                <Route path="*" element={<Navigate to="/" replace />} />
-              </Routes>
-            </BrowserRouter>
-          </TooltipProvider>
-        </LanguageProvider>
-      </AuthProvider>
+                Route path"*" element{Navigate to"/" replace /} /
+              /Routes
+            /BrowserRouter
+          /TooltipProvider
+        /LanguageProvider
+      /AuthProvider
 ec63336 (Initial enterprise logistics platform (Supabase))
-    </QueryClientProvider>
+    /QueryClientProvider
   );
 HEAD
 };
