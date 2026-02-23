@@ -102,3 +102,11 @@ uploaded_files/
 
 .vercel
 .env*.local
+# secrets / temp data
+.env*
+demoaccounts.txt
+*.zip
+
+# local pnpm caches (should never be committed)
+pnpm-cache/
+pnpm-state/
