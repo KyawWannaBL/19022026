@@ -4,18 +4,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { 
   Loader2, 
-  Package, 
-  User, 
-  MapPin, 
-  Phone, 
-  Scale, 
   AlertTriangle, 
-  Camera, 
-  PenTool, 
-  ShieldCheck,
-  Send
+  ShieldCheck, 
+  Send,
+  Lock,
+  Mail
 } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { 
   Form, 
   FormControl, 
@@ -26,6 +20,7 @@ import {
 } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+<<<<<<< HEAD
 import { Textarea } from '@/components/ui/textarea';
 import { 
   Select, 
@@ -46,17 +41,24 @@ import { useAuth } from '@/hooks/useDemoAuth';
 import { useAuth } from '@/hooks/useAuth';
 >>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
 import { PhotoCapture } from '@/components/PhotoCapture';
+=======
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+// Important: Named imports to match the rewritten components below
+>>>>>>> bc2f204 (login errors solved)
 import { SignaturePad } from '@/components/SignaturePad';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { PhotoCapture } from '@/components/PhotoCapture';
 
 /**
- * Login Form
+ * LOGIN FORM (Fixes your current build error)
  */
 const loginSchema = z.object({
-  email: z.string().email({ message: "Invalid email address" }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters" }),
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
+<<<<<<< HEAD
 export function LoginForm() {
 <<<<<<< HEAD
   const { login, isLoading } = useAuth();
@@ -66,21 +68,18 @@ export function LoginForm() {
   const { t } = useLanguage();
   const [error, setError] = React.useState<string>('');
   const form = useForm<z.infer<typeof loginSchema>>({
+=======
+export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => void; isLoading: boolean }) {
+  const form = useForm({
+>>>>>>> bc2f204 (login errors solved)
     resolver: zodResolver(loginSchema),
     defaultValues: { email: '', password: '' },
   });
 
-  const onSubmit = async (values: z.infer<typeof loginSchema>) => {
-    setError('');
-    try {
-      await login(values.email, values.password);
-    } catch (error: any) {
-      setError(error.message || 'Login failed. Please try again.');
-    }
-  };
-
-  return (    <Form {...form}>
+  return (
+    <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+<<<<<<< HEAD
         {error && (
           <div className="p-3 text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md">
             {error}
@@ -123,6 +122,25 @@ export function LoginForm() {
           ) : (
             t('auth.signInToDashboard')
           )}
+=======
+        <FormField control={form.control} name="email" render={({ field }) => (
+          <FormItem>
+            <FormLabel>Email</FormLabel>
+            <FormControl><Input placeholder="admin@britium.com" {...field} /></FormControl>
+            <FormMessage />
+          </FormItem>
+        )} />
+        <FormField control={form.control} name="password" render={({ field }) => (
+          <FormItem>
+            <FormLabel>Password</FormLabel>
+            <FormControl><Input type="password" {...field} /></FormControl>
+            <FormMessage />
+          </FormItem>
+        )} />
+        <Button type="submit" className="w-full" disabled={isLoading}>
+          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          Login to Dashboard
+>>>>>>> bc2f204 (login errors solved)
         </Button>
       </form>
     </Form>
@@ -130,44 +148,16 @@ export function LoginForm() {
 }
 
 /**
- * Shipment Creation/Edit Form
+ * EXCEPTION FORM
  */
-const shipmentSchema = z.object({
-  senderName: z.string().min(2, "Required"),
-  senderAddress: z.string().min(5, "Required"),
-  senderPhone: z.string().min(8, "Required"),
-  receiverName: z.string().min(2, "Required"),
-  receiverAddress: z.string().min(5, "Required"),
-  receiverPhone: z.string().min(8, "Required"),
-  weight: z.coerce.number().min(0.1, "Min 0.1kg"),
-  dimensions: z.string().optional(),
-  isPriority: z.boolean().default(false),
-});
-
-interface ShipmentFormProps {
-  initialData?: Partial<Shipment>;
-  onSubmit: (data: any) => void;
-  isLoading?: boolean;
-}
-
-export function ShipmentForm({ initialData, onSubmit, isLoading }: ShipmentFormProps) {
-  const form = useForm<z.infer<typeof shipmentSchema>>({
-    resolver: zodResolver(shipmentSchema),
-    defaultValues: {
-      senderName: initialData?.senderName || '',
-      senderAddress: initialData?.senderAddress || '',
-      senderPhone: initialData?.senderPhone || '',
-      receiverName: initialData?.receiverName || '',
-      receiverAddress: initialData?.receiverAddress || '',
-      receiverPhone: initialData?.receiverPhone || '',
-      weight: initialData?.weight || 1,
-      dimensions: initialData?.dimensions || '',
-      isPriority: initialData?.isPriority || false,
-    },
+export function ExceptionForm({ onSubmit, isLoading }: { onSubmit: (data: any) => void; isLoading: boolean }) {
+  const form = useForm({
+    defaultValues: { reason: '', description: '' }
   });
 
   return (
     <Form {...form}>
+<<<<<<< HEAD
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Sender Details */}
@@ -432,8 +422,24 @@ export function ExceptionForm({ shipmentId, onSubmit, isLoading }: ExceptionForm
 =======
         <Button type="submit" variant="destructive" className="w-full" disabled={loading}>
 >>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+=======
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <FormField control={form.control} name="reason" render={({ field }) => (
+          <FormItem>
+            <FormLabel>Issue Type</FormLabel>
+            <Select onValueChange={field.onChange}>
+              <FormControl><SelectTrigger><SelectValue placeholder="Select reason" /></SelectTrigger></FormControl>
+              <SelectContent>
+                <SelectItem value="damaged">Damaged</SelectItem>
+                <SelectItem value="refused">Refused</SelectItem>
+              </SelectContent>
+            </Select>
+          </FormItem>
+        )} />
+        <Button type="submit" variant="destructive" className="w-full" disabled={isLoading}>
+>>>>>>> bc2f204 (login errors solved)
           {isLoading ? <Loader2 className="animate-spin mr-2 h-4 w-4" /> : <AlertTriangle className="mr-2 h-4 w-4" />}
-          Submit Exception Report
+          Submit Exception
         </Button>
       </form>
     </Form>
@@ -441,100 +447,42 @@ export function ExceptionForm({ shipmentId, onSubmit, isLoading }: ExceptionForm
 }
 
 /**
- * Proof of Delivery Form
+ * PROOF OF DELIVERY FORM
  */
-const podSchema = z.object({
-  receiverName: z.string().min(2, "Receiver name required"),
-  signature: z.string().min(1, "Signature required"),
-  photo: z.string().optional(),
-});
-
-interface ProofOfDeliveryFormProps {
-  shipmentId: string;
-  onSubmit: (data: any) => void;
-  isLoading?: boolean;
-}
-
-export function ProofOfDeliveryForm({ shipmentId, onSubmit, isLoading }: ProofOfDeliveryFormProps) {
-  const form = useForm<z.infer<typeof podSchema>>({
-    resolver: zodResolver(podSchema),
-    defaultValues: {
-      receiverName: '',
-      signature: '',
-      photo: '',
-    },
+export function ProofOfDeliveryForm({ onSubmit, isLoading }: { onSubmit: (data: any) => void; isLoading: boolean }) {
+  const form = useForm({
+    defaultValues: { recipientName: '', signature: '', photo: '' }
   });
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <Card className="bg-primary/5 border-primary/20">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 text-primary mb-4">
-              <ShieldCheck className="w-6 h-6" />
-              <h3 className="font-bold text-lg">Delivery Confirmation</h3>
-            </div>
-            <p className="text-sm text-muted-foreground mb-6">
-              Capturing proof of delivery for shipment <span className="font-mono font-bold">{shipmentId}</span>
-            </p>
-
-            <FormField
-              control={form.control}
-              name="receiverName"
-              render={({ field }) => (
-                <FormItem className="mb-6">
-                  <FormLabel>Receiver Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Person who accepted the package" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="signature"
-              render={({ field }) => (
-                <FormItem className="mb-6">
-                  <FormLabel className="flex items-center gap-2">
-                    <PenTool className="w-4 h-4" /> Digital Signature
-                  </FormLabel>
-                  <FormControl>
-                    <SignaturePad onSave={(val: string) => field.onChange(val)} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="photo"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <Camera className="w-4 h-4" /> Photo Proof (Optional)
-                  </FormLabel>
-                  <FormControl>
-                    <PhotoCapture 
-                      onCapture={(val: string) => field.onChange(val)} 
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+        <Card>
+          <CardHeader><CardTitle>Recipient Confirmation</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+            <FormField control={form.control} name="recipientName" render={({ field }) => (
+              <FormItem><FormLabel>Full Name</FormLabel><FormControl><Input {...field} /></FormControl></FormItem>
+            )} />
+            <FormField control={form.control} name="signature" render={({ field }) => (
+              <FormItem><FormControl><SignaturePad onSave={field.onChange} /></FormControl></FormItem>
+            )} />
+            <FormField control={form.control} name="photo" render={({ field }) => (
+              <FormItem><FormControl><PhotoCapture onCapture={field.onChange} /></FormControl></FormItem>
+            )} />
           </CardContent>
         </Card>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
         <Button type="submit" className="w-full h-12 text-lg font-bold" disabled={isLoading}>
 =======
         <Button type="submit" className="w-full h-12 text-lg font-bold" disabled={loading}>
 >>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+=======
+        <Button type="submit" className="w-full h-12" disabled={isLoading}>
+>>>>>>> bc2f204 (login errors solved)
           {isLoading ? <Loader2 className="animate-spin mr-2 h-5 w-5" /> : <ShieldCheck className="mr-2 h-5 w-5" />}
-          Confirm Delivery
+          Complete Delivery
         </Button>
       </form>
     </Form>

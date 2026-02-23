@@ -1,28 +1,38 @@
 import { createClient } from "@supabase/supabase-js";
 import fs from "node:fs";
 
-const url = process.env.SUPABASE_URL;
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+// If you use a .env file, uncomment the next line and install dotenv:
+// import "dotenv/config";
+
+const url = (process.env.SUPABASE_URL || "").trim().replace(/[<>]/g, "");
+const serviceKey = (process.env.SUPABASE_SERVICE_ROLE_KEY || "").trim().replace(/[<>]/g, "");
 
 if (!url || !serviceKey) {
-  console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY env vars");
+  console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
   process.exit(1);
 }
 
 const supabase = createClient(url, serviceKey, {
+  global: {
+    headers: {
+      apikey: serviceKey,
+      Authorization: `Bearer ${serviceKey}`,
+    },
+  },
   auth: { autoRefreshToken: false, persistSession: false },
 });
 
 // demoaccounts.txt format: email,password (one per line)
-const lines = fs.readFileSync("demoaccounts.txt", "utf8")
+const lines = fs
+  .readFileSync("demoaccounts.txt", "utf8")
   .split(/\r?\n/)
-  .map(l => l.trim())
+  .map((l) => l.trim())
   .filter(Boolean);
 
 const users = lines.map((line) => {
-  const [email, password] = line.split(",").map(s => s.trim());
-  if (!email || !password) throw new Error(`Bad line: ${line}`);
-  return { email, password };
+  const m = line.match(/^([^,\s]+@[^,\s]+)\s*,\s*(.+)$/);
+  if (!m) throw new Error(`Bad line: ${line}`);
+  return { email: m[1].trim(), password: m[2].trim() };
 });
 
 for (const u of users) {

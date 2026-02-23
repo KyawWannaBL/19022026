@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 <<<<<<< HEAD
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -7,6 +8,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+<<<<<<< HEAD
 import { LanguageProvider } from "@/lib/LanguageContext";
 <<<<<<< HEAD
 import LoginPage from "@/pages/LoginPage";
@@ -37,46 +39,55 @@ import { LanguageProvider as CtxLanguageProvider } from '@/contexts/LanguageCont
 import { AuthProvider } from '@/hooks/useAuth';
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+=======
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { AuthProvider } from "@/hooks/useAuth";
+>>>>>>> bc2f204 (login errors solved)
 
+// Layouts & Pages
 import PublicLayout from "@/components/PublicLayout";
-import Layout from "@/components/Layout";
-
 import HomePage from "@/pages/HomePage";
 import Services from "@/pages/Services";
 import Tracking from "@/pages/Tracking";
 import Quote from "@/pages/Quote";
 import Domestic from "@/pages/Domestic";
-import Ecommerce from "@/pages/Ecommerce";
-import RegisterSeller from "@/pages/RegisterSeller";
-import LoginPage from "@/pages/LoginPage";
-import Setting from "@/pages/admin/Setting";
+import Ecommerce from "@/pages/Register_Seller";
 
+import LoginPage from "@/pages/LoginPage";
+import SignUp from "@/pages/SignUp";
+import SignUpCustomer from "@/pages/SignUpCustomer";
+import SignUpMerchant from "@/pages/SignUpMerchant";
+import ForgotPassword from "@/pages/ForgotPassword";
+import ResetPassword from "@/pages/ResetPassword";
+import ForcePasswordReset from "@/pages/ForcePasswordReset";
+
+HEAD
 const queryClient = new QueryClient();
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+ec63336 (Initial enterprise logistics platform (Supabase))
 
 const AppContent = () => {
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-<<<<<<< HEAD
+HEAD
   const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
     const initializeAuth = async () => {
-=======
+
 
   useEffect(() => {
     const init = async () => {
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+ec63336 (Initial enterprise logistics platform (Supabase))
       const { data } = await supabase.auth.getSession();
       setUser(data.session?.user ?? null);
       setLoading(false);
     };
 
-<<<<<<< HEAD
+HEAD
     initializeAuth();
-=======
+
     init();
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+ec63336 (Initial enterprise logistics platform (Supabase))
 
     const { data: listener } = supabase.auth.onAuthStateChange(
       (_event, session) => {
@@ -84,7 +95,7 @@ const AppContent = () => {
       }
     );
 
-<<<<<<< HEAD
+HEAD
     return () => {
       listener.subscription.unsubscribe();
     };
@@ -157,7 +168,6 @@ const AppContent = () => {
         </motion.div>
       )}
     </AnimatePresence>
-=======
     return () => listener.subscription.unsubscribe();
   }, []);
 
@@ -182,14 +192,29 @@ const AppContent = () => {
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
-  );
-};
+ec63336 (Initial enterprise logistics platform (Supabase))
+import Unauthorized from "@/pages/Unauthorized";
+import EnterpriseRoutes from "@/routes/EnterpriseRoutes";
 
-const App = () => {
+export default function App() {
+  // Creating the queryClient inside useMemo/useState prevents it from being
+  // mangled by the production bundler's global scope optimization.
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            retry: 1,
+            refetchOnWindowFocus: false,
+          },
+        },
+      })
+bc2f204 (login errors solved)
+  );
+
   return (
     <QueryClientProvider client={queryClient}>
-<<<<<<< HEAD
+HEAD
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
@@ -197,27 +222,55 @@ const App = () => {
           <AppContent />
         </TooltipProvider>
       </LanguageProvider>
-=======
       <AuthProvider>
         <LanguageProvider>
-          <CtxLanguageProvider>
-            <TooltipProvider>
-              <Toaster />
-              <Sonner />
-              <BrowserRouter>
-                <AppContent />
-              </BrowserRouter>
-            </TooltipProvider>
-          </CtxLanguageProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner position="top-right" richColors />
+            <BrowserRouter>
+              <Routes>
+                {/* PUBLIC ROUTES */}
+                <Route element={<PublicLayout />}>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/tracking" element={<Tracking />} />
+                  <Route path="/quote" element={<Quote />} />
+                  <Route path="/domestic" element={<Domestic />} />
+                  <Route path="/ecommerce" element={<Ecommerce />} />
+                </Route>
+
+                {/* AUTH ROUTES */}
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<SignUp />} />
+                <Route path="/register/customer" element={<SignUpCustomer />} />
+                <Route path="/register/merchant" element={<SignUpMerchant />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="/force-password-reset" element={<ForcePasswordReset />} />
+
+                {/* SYSTEM */}
+                <Route path="/unauthorized" element={<Unauthorized />} />
+
+                {/* DASHBOARD ROUTES */}
+                {/* Ensure navigation to panel uses absolute paths like /panel/dashboard */}
+                <Route path="/panel/*" element={<EnterpriseRoutes />} />
+
+                {/* CATCH-ALL REDIRECT */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </BrowserRouter>
+          </TooltipProvider>
         </LanguageProvider>
       </AuthProvider>
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+ec63336 (Initial enterprise logistics platform (Supabase))
     </QueryClientProvider>
   );
+HEAD
 };
 
-<<<<<<< HEAD
+HEAD
 export default App;
-=======
 export default App;
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+ec63336 (Initial enterprise logistics platform (Supabase))
+}
+bc2f204 (login errors solved)

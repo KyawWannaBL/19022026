@@ -1,15 +1,12 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { strongPassword } from "@/lib/password";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import LanguageToggle from "@/components/LanguageToggle";
 
 export default function SignUpMerchant() {
-  const { t } = useTranslation();
   const nav = useNavigate();
 
   const [name, setName] = useState("");
@@ -23,8 +20,8 @@ export default function SignUpMerchant() {
   async function submit() {
     setError(null);
 
-    if (pw !== pw2) return setError(t("auth.passwordMismatch"));
-    if (!strongPassword.test(pw)) return setError(t("auth.weakPassword"));
+    if (pw !== pw2) return setError("Passwords do not match.");
+    if (!strongPassword.test(pw)) return setError("Password is too weak.");
 
     setLoading(true);
 
@@ -32,7 +29,7 @@ export default function SignUpMerchant() {
       email,
       password: pw,
       options: {
-        data: { name, phone, role: "MERCHANT" },
+        data: { full_name: name, phone, role: "MERCHANT" },
       },
     });
 
@@ -43,38 +40,43 @@ export default function SignUpMerchant() {
 
     const userId = data.user?.id;
     if (userId) {
-      await supabase.from("profiles").upsert({
-        id: userId,
-        role: "MERCHANT",
-        must_change_password: false,
-      });
+      try {
+        await supabase.from("profiles").upsert({
+          id: userId,
+          email,
+          full_name: name || null,
+          role: "MERCHANT",
+          must_change_password: false,
+        });
+      } catch {}
     }
 
     setLoading(false);
-    nav("/merchant");
+    nav("/login");
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 bg-slate-950 text-white">
-      <Card className="w-full max-w-md bg-white/5 border-white/10">
+    <div className="min-h-screen flex items-center justify-center px-6 bg-background text-foreground">
+      <Card className="w-full max-w-md border-border">
         <CardContent className="p-6 space-y-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold">{t("auth.signupMerchant")}</h1>
-            <LanguageToggle />
-          </div>
+          <h1 className="text-xl font-semibold">Merchant Sign Up</h1>
 
-          <Input value={name} onChange={(e) => setName(e.target.value)} placeholder={t("auth.name")} className="bg-black/40 border-white/15" />
-          <Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t("auth.phone")} className="bg-black/40 border-white/15" />
-          <Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t("auth.email")} className="bg-black/40 border-white/15" />
+          <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Business / Contact Name" />
+          <Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone" />
+          <Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
 
-          <Input type="password" value={pw} onChange={(e) => setPw(e.target.value)} placeholder={t("auth.password")} className="bg-black/40 border-white/15" />
-          <Input type="password" value={pw2} onChange={(e) => setPw2(e.target.value)} placeholder={t("auth.confirmPassword")} className="bg-black/40 border-white/15" />
+          <Input type="password" value={pw} onChange={(e) => setPw(e.target.value)} placeholder="Password" />
+          <Input type="password" value={pw2} onChange={(e) => setPw2(e.target.value)} placeholder="Confirm Password" />
 
-          {error && <p className="text-sm text-red-400">{error}</p>}
+          {error && <p className="text-sm text-destructive">{error}</p>}
 
-          <Button disabled={loading} onClick={submit} className="w-full bg-blue-600 hover:bg-blue-700">
-            {t("auth.createAccount")}
+          <Button disabled={loading} onClick={submit} className="w-full">
+            {loading ? "Creating..." : "Create Account"}
           </Button>
+
+          <div className="text-sm text-muted-foreground">
+            Already have an account? <Link className="text-primary underline" to="/login">Login</Link>
+          </div>
         </CardContent>
       </Card>
     </div>

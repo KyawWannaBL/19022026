@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useState, useEffect, useCallback } from 'react';
 import { User, UserRole, USER_ROLES } from '@/lib/index';
 
@@ -109,6 +110,10 @@ export const useAuth = () => {
 =======
 // IMPORTANT: This file exists to ensure the import path "@/hooks/useAuth"
 // resolves to the Supabase implementation (defined in useAuth.tsx).
+=======
+// Fixed: keep this file as a thin re-export so "@/hooks/useAuth" resolves correctly.
+// Do NOT duplicate AuthProvider logic here.
+>>>>>>> bc2f204 (login errors solved)
 export * from "./useAuth.tsx";
 export { default } from "./useAuth.tsx";
 >>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))

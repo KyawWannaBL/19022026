@@ -516,9 +516,9 @@ import { toast } from "sonner";
 
 /**
  * Settings (Enterprise)
- * Supabase-only, shows current session info and basic preferences.
+ * Rewritten with Named Export to fix Vite/Rollup build errors.
  */
-export default function Settings() {
+export function Settings() {
   const { user, role, branch_id } = useAuth();
   const { language } = useLanguage();
   const [saving, setSaving] = useState(false);
@@ -537,7 +537,11 @@ export default function Settings() {
   };
 
   return (
-    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="p-6 space-y-6">
+    <motion.div 
+      initial={{ opacity: 0, y: 12 }} 
+      animate={{ opacity: 1, y: 0 }} 
+      className="p-6 space-y-6"
+    >
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">{t("Settings", "ဆက်တင်များ")}</h1>
@@ -547,18 +551,21 @@ export default function Settings() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* Account Section */}
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2"><UserIcon className="w-4 h-4" /> {t("Account", "အကောင့်")}</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <UserIcon className="w-4 h-4" /> {t("Account", "အကောင့်")}
+            </CardTitle>
             <CardDescription>{t("Current signed-in user", "လက်ရှိ ဝင်ထားသော အသုံးပြုသူ")}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="space-y-1">
               <Label>Email</Label>
-              <Input value={user?.email ?? ""} readOnly />
+              <Input value={user?.email ?? ""} readOnly className="bg-muted/50" />
             </div>
             <div className="text-sm text-muted-foreground">
-              {t("Role", "အခန်းကဏ္ဍ")}: <span className="font-semibold text-foreground">{String(role ?? "-")}</span>
+              {t("Role", "အခန်းကဏ္ဍ")}: <span className="font-semibold text-foreground uppercase">{String(role ?? "-")}</span>
             </div>
             <div className="text-sm text-muted-foreground">
               {t("Branch", "ဘရားခ်")}: <span className="font-semibold text-foreground">{String(branch_id ?? "-")}</span>
@@ -566,9 +573,12 @@ export default function Settings() {
           </CardContent>
         </Card>
 
+        {/* Notifications Section */}
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2"><Bell className="w-4 h-4" /> {t("Notifications", "အကြောင်းကြားချက်")}</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <Bell className="w-4 h-4" /> {t("Notifications", "အကြောင်းကြားချက်")}
+            </CardTitle>
             <CardDescription>{t("Basic preferences", "အခြေခံ preference များ")}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -589,5 +599,9 @@ export default function Settings() {
       </div>
     </motion.div>
   );
+<<<<<<< HEAD
 }
 >>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+=======
+}
+>>>>>>> bc2f204 (login errors solved)

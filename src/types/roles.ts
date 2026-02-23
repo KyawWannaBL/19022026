@@ -23,5 +23,14 @@ export const APP_ROLES = [
   'MERCHANT',
   'CUSTOMER',
 ] as const;
+import { isAppRole, type AppRole } from "@/types/roles";
+// src/types/roles.ts
 
-export type AppRole = typeof APP_ROLES[number];
+// 1. Define the valid roles in your system
+export type AppRole = 'admin' | 'staff' | 'driver' | 'seller' | 'customer';
+
+// 2. Create the missing helper function
+export const isAppRole = (role: any): role is AppRole => {
+  const validRoles: AppRole[] = ['admin', 'staff', 'driver', 'seller', 'customer'];
+  return validRoles.includes(role);
+};
