@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "headers": [
     {
@@ -10,8 +9,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
-=======
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
->>>>>>> add-supabase-user-script
