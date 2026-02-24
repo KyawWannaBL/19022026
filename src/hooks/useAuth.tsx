@@ -91,7 +91,7 @@ function permissionsFromJson(permissions: any): PermissionCode[] {
       .map(([k]) => k)
       .filter(Boolean);
   }
-
+  
   return [];
 }
 

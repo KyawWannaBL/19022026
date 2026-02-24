@@ -1,4 +1,5 @@
 {
+  "$schema": "https://supabase.com/dashboard/project/dltavabvjwocknkyvwgz/database/schemas",
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
