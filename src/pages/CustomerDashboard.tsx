@@ -1,176 +1,114 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { 
   Package, 
-  TrendingUp, 
-  Clock, 
-  CheckCircle,
-  PlusCircle,
-  Eye,
-  MapPin
+  Plus, 
+  Search, 
+  History, 
+  User, 
+  ArrowRight,
+  Clock,
+  CheckCircle2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { ROUTE_PATHS } from '@/lib/index';
-import { useAuth } from '@/hooks/useAuth';
+import { DashboardStat } from '@/components/ui/SharedComponents';
+import { Link } from 'react-router-dom';
 
-export default function CustomerDashboard() {
-  const { user } = useAuth();
+interface CustomerShipment {
+  id: string;
+  trackingNumber: string;
+  status: 'pending' | 'in_transit' | 'delivered';
+  to: string;
+  date: string;
+}
 
-  const stats = [
-    {
-      title: 'Active Shipments',
-      value: '3',
-      icon: Package,
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
-    },
-    {
-      title: 'Delivered (This Month)',
-      value: '12',
-      icon: CheckCircle,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
-    },
-    {
-      title: 'Pending COD',
-      value: '45,000 MMK',
-      icon: Clock,
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50',
-    },
-  ];
+// Clean data declaration to avoid build errors
+const customerShipments: CustomerShipment[] = [
+  { id: '1', trackingNumber: 'BE-5001', status: 'in_transit', to: 'Mandalay', date: '2026-02-23' },
+  { id: '2', trackingNumber: 'BE-5002', status: 'delivered', to: 'Yangon', date: '2026-02-20' },
+  { id: '3', trackingNumber: 'BE-5003', status: 'pending', to: 'Nay Pyi Taw', date: '2026-02-24' },
+];
 
-  const recentShipments = [
-    {
-      id: 'BE-89744',
-      destination: 'Mandalay',
-      date: 'Oct 24, 2026',
-      status: 'In Transit',
-      statusColor: 'bg-blue-100 text-blue-800',
-    },
-    {
-      id: 'BE-11223',
-      destination: 'Nay Pyi Taw',
-      date: 'Oct 20, 2026',
-      status: 'Delivered',
-      statusColor: 'bg-green-100 text-green-800',
-    },
-    {
-      id: 'BE-88901',
-      destination: 'Yangon (North Dagon)',
-      date: 'Oct 18, 2026',
-      status: 'Delivered',
-      statusColor: 'bg-green-100 text-green-800',
-    },
-  ];
+export default function CustomerDashboardPage() {
+  const { t } = useLanguageContext();
+  const [search, setSearch] = useState('');
+
+  const filtered = customerShipments.filter(s => 
+    s.trackingNumber.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
-    <div className="space-y-8">
-      {/* Welcome Section */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <div className="p-6 bg-slate-50 min-h-screen">
+      <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">
-            Welcome back, {user?.full_name?.split(' ')[0] || 'Customer'}!
-          </h1>
-          <p className="text-gray-600 mt-1">Here's what's happening with your shipments today.</p>
+          <h1 className="text-2xl font-black text-[#0d2c54] uppercase tracking-tighter italic">My Shipments</h1>
+          <p className="text-xs text-slate-500 font-bold uppercase tracking-widest">Manage your personal deliveries</p>
         </div>
-        <Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-navy-900">
-          <Link to={ROUTE_PATHS.CUSTOMER_BOOKING}>
-            <PlusCircle className="w-5 h-5 mr-2" />
-            Book Pickup
-          </Link>
+        <Button asChild className="bg-[#ff6b00] hover:bg-[#e66000] text-white font-black px-6 rounded-xl">
+          <Link to="/customer/booking"><Plus className="mr-2 h-4 w-4" /> New Delivery</Link>
         </Button>
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {stats.map((stat, index) => (
-          <Card key={index} className="hover:shadow-lg transition-shadow">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-600">{stat.title}</p>
-                  <p className="text-2xl font-bold text-gray-900 mt-2">{stat.value}</p>
-                </div>
-                <div className={`p-3 rounded-full ${stat.bgColor}`}>
-                  <stat.icon className={`w-6 h-6 ${stat.color}`} />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <DashboardStat icon={Clock} label="Active" value="2" color="blue" />
+        <DashboardStat icon={CheckCircle2} label="Delivered" value="15" color="green" />
+        <DashboardStat icon={History} label="Total Orders" value="17" color="orange" />
       </div>
 
-      {/* Recent Shipments */}
-      <Card>
-        <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-xl font-bold">Recent Shipments</CardTitle>
-          <Button asChild variant="outline" size="sm">
-            <Link to={ROUTE_PATHS.CUSTOMER_SHIPMENTS}>
-              View All
-            </Link>
-          </Button>
+      <Card className="border-none shadow-xl rounded-3xl overflow-hidden">
+        <CardHeader className="bg-white border-b pb-4">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <CardTitle className="text-lg font-black text-[#0d2c54] uppercase">Track Existing</CardTitle>
+            <div className="relative w-full md:w-72">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 h-4 w-4" />
+              <Input 
+                placeholder="Search tracking ID..." 
+                className="pl-10 h-10 border-2 rounded-xl"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+          </div>
         </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {recentShipments.map((shipment) => (
-              <div key={shipment.id} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Package className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">{shipment.id}</p>
-                    <p className="text-sm text-gray-600">{shipment.destination}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="text-right">
-                    <Badge className={shipment.statusColor}>
-                      {shipment.status}
-                    </Badge>
-                    <p className="text-xs text-gray-500 mt-1">{shipment.date}</p>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    <Eye className="w-4 h-4 mr-1" />
-                    Track
-                  </Button>
-                </div>
-              </div>
-            ))}
+        <CardContent className="p-0">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead className="bg-slate-50">
+                <tr className="border-b text-[10px] font-black uppercase text-slate-400">
+                  <th className="text-left p-4 tracking-widest">Tracking Number</th>
+                  <th className="text-left p-4 tracking-widest">Destination</th>
+                  <th className="text-left p-4 tracking-widest">Status</th>
+                  <th className="text-left p-4 tracking-widest text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y">
+                {filtered.map((s) => (
+                  <tr key={s.id} className="hover:bg-slate-50/50 transition-colors">
+                    <td className="p-4 font-bold text-blue-700">{s.trackingNumber}</td>
+                    <td className="p-4 font-medium text-slate-600">{s.to}</td>
+                    <td className="p-4">
+                      <Badge variant={s.status === 'delivered' ? 'outline' : 'default'} className="uppercase text-[9px] font-black">
+                        {s.status.replace('_', ' ')}
+                      </Badge>
+                    </td>
+                    <td className="p-4 text-right">
+                      <Button variant="ghost" size="sm" asChild className="text-[#0d2c54] font-black text-[10px] uppercase">
+                        <Link to={`${ROUTE_PATHS.PUBLIC_TRACKING}?id=${s.trackingNumber}`}>
+                          Details <ArrowRight size={12} className="ml-1" />
+                        </Link>
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </CardContent>
       </Card>
-
-      {/* Quick Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-          <Link to={ROUTE_PATHS.CUSTOMER_BOOKING}>
-            <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <PlusCircle className="w-8 h-8 text-gold" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Create New Shipment</h3>
-              <p className="text-gray-600 text-sm">Book a new pickup and delivery service</p>
-            </CardContent>
-          </Link>
-        </Card>
-
-        <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-          <Link to={ROUTE_PATHS.PUBLIC_TRACKING}>
-            <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Track Shipment</h3>
-              <p className="text-gray-600 text-sm">Track your packages in real-time</p>
-            </CardContent>
-          </Link>
-        </Card>
-      </div>
     </div>
   );
 }

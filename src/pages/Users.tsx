@@ -21,8 +21,12 @@ import {
   USER_ROLES, 
   UserRole 
 } from '@/lib/index';
+
+import { mockUsers, mockBranches } from '@/data/index';
+
 import { useEnterpriseUsers } from '@/hooks/useEnterpriseUsers';
 import { useEnterpriseBranches } from '@/hooks/useEnterpriseBranches';
+
 import { DataTable } from '@/components/DataTable';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -40,8 +44,11 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 export default function Users() {
+
+
   const { data: users = [], isLoading: usersLoading } = useEnterpriseUsers();
   const { data: branches = [] } = useEnterpriseBranches();
+
   const [searchQuery, setSearchQuery] = useState('');
   const [roleFilter, setRoleFilter] = useState<string>('all');
 
@@ -63,7 +70,11 @@ export default function Users() {
 
   const getBranchName = (branchId?: string) => {
     if (!branchId) return 'N/A';
+
+    return mockBranches.find(b => b.id === branchId)?.name || 'Unknown Branch';
+
     return branches.find(b => b.id === branchId)?.name || 'Unknown Branch';
+
   };
 
   const columns = [
@@ -170,7 +181,11 @@ export default function Users() {
     },
   ];
 
+
+  const filteredUsers = mockUsers.filter(user => {
+
   const filteredUsers = users.filter(user => {
+
     const matchesSearch = user.fullName.toLowerCase().includes(searchQuery.toLowerCase()) || 
                          user.email.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesRole = roleFilter === 'all' || user.role === roleFilter;
@@ -180,28 +195,44 @@ export default function Users() {
   const stats = [
     {
       title: 'Total Users',
+
+      value: mockUsers.length,
+
       value: users.length,
+
       icon: <UsersIcon className="h-5 w-5" />,
       color: 'text-primary',
       bg: 'bg-primary/10',
     },
     {
       title: 'Active Accounts',
+
+      value: mockUsers.filter(u => u.status === 'active').length,
+
       value: users.filter(u => u.status === 'active').length,
+
       icon: <UserCheck className="h-5 w-5" />,
       color: 'text-emerald-600',
       bg: 'bg-emerald-500/10',
     },
     {
       title: 'Active Riders',
+
+      value: mockUsers.filter(u => u.role === USER_ROLES.RIDER).length,
+
       value: users.filter(u => u.role === USER_ROLES.RIDER).length,
+
       icon: <Truck className="h-5 w-5" />,
       color: 'text-orange-600',
       bg: 'bg-orange-500/10',
     },
     {
       title: 'Administrators',
+
+      value: mockUsers.filter(u => u.role === USER_ROLES.SUPER_ADMIN || u.role === USER_ROLES.ADMIN).length,
+
       value: users.filter(u => u.role === USER_ROLES.SUPER_ADMIN || u.role === USER_ROLES.ADMIN).length,
+
       icon: <ShieldCheck className="h-5 w-5" />,
       color: 'text-blue-600',
       bg: 'bg-blue-500/10',

@@ -15,7 +15,15 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { Shipment, SHIPMENT_STATUSES } from '@/lib/index';
+<<<<<<< HEAD
 import { useEnterpriseBranches } from '@/hooks/useEnterpriseBranches';
+=======
+
+import { mockBranches } from '@/data/index';
+
+import { useEnterpriseBranches } from '@/hooks/useEnterpriseBranches';
+
+>>>>>>> add-supabase-user-script
 import {
   Form,
   FormControl,
@@ -78,8 +86,16 @@ export function CreateShipmentForm({ onSubmit }: CreateShipmentFormProps) {
     },
   });
 
+<<<<<<< HEAD
   const { data: branches = [], isLoading: branchesLoading } = useEnterpriseBranches();
 
+=======
+
+
+  const { data: branches = [], isLoading: branchesLoading } = useEnterpriseBranches();
+
+
+>>>>>>> add-supabase-user-script
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -300,7 +316,15 @@ export function CreateShipmentForm({ onSubmit }: CreateShipmentFormProps) {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
+<<<<<<< HEAD
                         {branches.map((branch) => (
+=======
+
+                        {mockBranches.map((branch) => (
+
+                        {branches.map((branch) => (
+
+>>>>>>> add-supabase-user-script
                           <SelectItem key={branch.id} value={branch.id}>
                             {branch.name} ({branch.code})
                           </SelectItem>

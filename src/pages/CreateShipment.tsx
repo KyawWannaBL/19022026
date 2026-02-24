@@ -4,9 +4,13 @@ import { motion } from 'framer-motion';
 import { PackagePlus, ChevronLeft, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+
+import { ROUTE_PATHS } from '@/lib/index.ts';
+
 import { ROUTE_PATHS, generateTrackingNumber, SHIPMENT_STATUSES } from '@/lib/index.ts';
 import { supabase } from '@/lib/supabase';
 import { TABLES } from '@/lib/db/tables';
+
 import { CreateShipmentForm } from '@/components/ShipmentForms.tsx';
 import { toast } from 'sonner';
 import { springPresets, fadeInUp } from '@/lib/motion';
@@ -19,6 +23,25 @@ import { springPresets, fadeInUp } from '@/lib/motion';
  */
 export default function CreateShipment() {
   const navigate = useNavigate();
+
+
+  const handleSubmit = (data: any) => {
+    // In a real application, this would be an API call to Supabase or a backend
+    console.log('Shipment Data Submitted:', data);
+    
+    // Simulate API delay
+    const promise = new Promise((resolve) => setTimeout(resolve, 1500));
+
+    toast.promise(promise, {
+      loading: 'Registering shipment...',
+      success: () => {
+        navigate(ROUTE_PATHS.SHIPMENTS);
+        return 'Shipment created successfully! Tracking ID generated.';
+      },
+      error: 'Failed to create shipment. Please try again.',
+    });
+  };
+
 
   const handleSubmit = async (data: any) => {
   if (!supabase) {
@@ -80,6 +103,7 @@ export default function CreateShipment() {
     error: (e: any) => e?.message || 'Failed to create shipment. Please try again.',
   });
 };
+
 
 
   return (

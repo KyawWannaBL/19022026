@@ -36,7 +36,11 @@ const LabelActivation: React.FC = () => {
 
   // Mock data fetching
   useEffect(() => {
+
+    const mockShipments: Shipment[] = [
+
     const shipments: Shipment[] = [
+
       {
         id: 'SHP-1001',
         awb: 'AWB-2026-X881',
@@ -68,7 +72,11 @@ const LabelActivation: React.FC = () => {
         labelPrintedCount: 1,
       }
     ];
+
+    setShipments(mockShipments);
+
     setShipments(shipments);
+
   }, [user]);
 
   const filteredShipments = shipments.filter(s => 

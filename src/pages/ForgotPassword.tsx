@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import LanguageSelect from "@/components/LanguageSelect";
 
 export default function ForgotPassword() {
   const { requestPasswordReset } = useAuth();
@@ -28,41 +27,38 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-luxury-obsidian p-6">
-      <div className="w-full max-w-md p-10 luxury-glass rounded-[2.5rem] border border-white/5 shadow-2xl">
-        <div className="flex items-center justify-between mb-10">
-          <h2 className="text-2xl font-bold text-luxury-cream text-center flex-1">Forgot Password</h2>
-          <LanguageSelect />
-        </div>
+    <div className="min-h-screen flex items-center justify-center bg-background p-6">
+      <div className="w-full max-w-md p-8 rounded-2xl border border-border bg-card shadow-xl">
+        <h2 className="text-2xl font-bold text-center mb-6">Forgot Password</h2>
 
-        {error && <div className="mb-6 p-4 rounded-xl bg-red-500/10 text-red-400 text-sm text-center">{error}</div>}
+        {error && (
+          <div className="mb-4 p-3 rounded-lg bg-destructive/10 text-destructive text-sm text-center">
+            {error}
+          </div>
+        )}
         {sent && (
-          <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 text-emerald-300 text-sm text-center">
+          <div className="mb-4 p-3 rounded-lg bg-emerald-500/10 text-emerald-300 text-sm text-center">
             Reset link sent. Please check your email.
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="email"
             placeholder="Email"
-            className="w-full p-4 rounded-2xl bg-white/5 text-white border border-white/10 outline-none focus:border-luxury-gold/50"
+            className="w-full p-3 rounded-xl bg-background text-foreground border border-border outline-none"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
 
-          <Button
-            type="submit"
-            disabled={loading}
-            className="w-full h-14 bg-luxury-gold hover:bg-amber-500 text-luxury-obsidian font-bold rounded-2xl"
-          >
+          <Button type="submit" disabled={loading} className="w-full h-12">
             {loading ? "Sending..." : "Send reset link"}
           </Button>
         </form>
 
-        <div className="mt-6 text-xs text-white/70 text-center">
-          <Link to="/login" className="hover:text-white">
+        <div className="mt-6 text-sm text-center text-muted-foreground">
+          <Link to="/login" className="text-primary underline">
             Back to login
           </Link>
         </div>

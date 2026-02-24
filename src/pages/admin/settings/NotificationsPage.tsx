@@ -295,7 +295,11 @@ const NotificationsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="glass-card border-none shadow-lg">
               <CardHeader>
+
+                <CardTitle className="text-primary">Firebase Cloud Messaging (FCM)</CardTitle>
+
                 <CardTitle className="text-primary">Push Notifications Provider (FCM/APNs)</CardTitle>
+
                 <CardDescription>Required for Android and iOS app push notifications.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">

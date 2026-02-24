@@ -1,69 +1,39 @@
-import React, { useState } from "react";
+import React from 'react';
 
 const Services: React.FC = () => {
-  const [rate, setRate] = useState<number>(0);
-  const [weight, setWeight] = useState<number>(0);
-  const [l, setL] = useState<number>(0);
-  const [w, setW] = useState<number>(0);
-  const [h, setH] = useState<number>(0);
-  const [result, setResult] = useState<number | null>(null);
-
-  const calculate = () => {
-    if (!rate || !weight || !l || !w || !h) {
-      alert("Fill all fields");
-      return;
-    }
-
-    const volumetric = (l * w * h) / 5000;
-    const chargeable = Math.max(weight, volumetric);
-    setResult(chargeable * rate);
-  };
+  const steps = [
+    { title: "Book Pickup", desc: "Via App or Website" },
+    { title: "We Deliver", desc: "Direct to customer" },
+    { title: "Collect Cash", desc: "Item value + shipping" },
+    { title: "Remittance", desc: "Funds to your bank" }
+  ];
 
   return (
-    <div className="container py-5">
-      <h2 className="fw-bold mb-4">International Air Cargo Calculator</h2>
+    <div>
+      <section className="py-5 text-white text-center" style={{ 
+        background: 'linear-gradient(rgba(13, 44, 84, 0.9), rgba(13, 44, 84, 0.9)), url(https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=1950&q=80)',
+        backgroundSize: 'cover', padding: '100px 0'
+      }}>
+        <h1 className="display-4 fw-bold">E-Commerce & COD Solutions</h1>
+        <p className="lead">Secure Cash on Delivery handling for online sellers.</p>
+      </section>
 
-      <select
-        className="form-select mb-3"
-        onChange={(e) => setRate(Number(e.target.value))}
-      >
-        <option value="">Select Destination</option>
-        <option value="18.5">USA - $18.5/kg</option>
-        <option value="4.5">Singapore - $4.5/kg</option>
-        <option value="3">Thailand - $3/kg</option>
-      </select>
-
-      <input
-        className="form-control mb-2"
-        type="number"
-        placeholder="Actual Weight"
-        onChange={(e) => setWeight(Number(e.target.value))}
-      />
-
-      <div className="row mb-3">
-        <div className="col">
-          <input type="number" className="form-control" placeholder="L"
-            onChange={(e)=>setL(Number(e.target.value))}/>
+      <section className="py-5 bg-light">
+        <div className="container">
+          <h3 className="fw-bold text-center mb-5">How It Works</h3>
+          <div className="row g-4">
+            {steps.map((step, i) => (
+              <div key={i} className="col-md-3">
+                <div className="p-4 border bg-white rounded-3 h-100 text-center">
+                  <span className="d-inline-block bg-primary text-white rounded-circle mb-3" style={{ width: 40, height: 40, lineHeight: '40px' }}>{i + 1}</span>
+                  <h5 className="fw-bold">{step.title}</h5>
+                  <p className="small text-muted">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="col">
-          <input type="number" className="form-control" placeholder="W"
-            onChange={(e)=>setW(Number(e.target.value))}/>
-        </div>
-        <div className="col">
-          <input type="number" className="form-control" placeholder="H"
-            onChange={(e)=>setH(Number(e.target.value))}/>
-        </div>
-      </div>
-
-      <button className="btn btn-warning" onClick={calculate}>
-        Calculate
-      </button>
-
-      {result && (
-        <div className="mt-4 alert alert-info">
-          Estimated Cost: <strong>${result.toFixed(2)}</strong>
-        </div>
-      )}
+      </section>
     </div>
   );
 };

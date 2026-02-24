@@ -1,0 +1,25 @@
+{
+  "documents": [],
+  "tables_parsed": [],
+  "tables_source_info": [],
+  "images": [
+    {
+      "original_name": "ChatGPT Image Feb 7, 2026, 01_22_25 AM",
+      "file_name": "ChatGPT Image Feb 7, 2026, 01_22_25 AM.png",
+      "file_path": "/workspace/britium_express/public/images/ChatGPT Image Feb 7, 2026, 01_22_25 AM.png",
+      "rel_path": "images/ChatGPT Image Feb 7, 2026, 01_22_25 AM.png",
+      "file_type": "png",
+      "category": "images"
+    }
+  ],
+  "summary": {
+    "total_files": 1,
+    "by_category": {
+      "documents": 0,
+      "tables_parsed": 0,
+      "tables_source_info": 0,
+      "images": 1
+    },
+    "processing_time": null
+  }
+}

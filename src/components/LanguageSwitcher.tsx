@@ -1,5 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Globe, Check } from 'lucide-react';
+=======
+>>>>>>> add-supabase-user-script
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -7,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+<<<<<<< HEAD
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LanguageSwitcherProps {
@@ -26,10 +30,18 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
+=======
+import { useLanguageContext } from '@/lib/LanguageContext'; // FIXED
+import { Globe } from 'lucide-react';
+
+export function LanguageSwitcher() {
+  const { language, setLanguage } = useLanguageContext(); // FIXED
+>>>>>>> add-supabase-user-script
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
+<<<<<<< HEAD
         <Button 
           variant="ghost" 
           size="sm" 
@@ -73,3 +85,17 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
     </DropdownMenu>
   );
 }
+=======
+        <Button variant="ghost" size="sm" className="gap-2">
+          <Globe className="h-4 w-4" />
+          <span className="uppercase">{language}</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => setLanguage('en')}>English</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setLanguage('my')}>မြန်မာ</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+>>>>>>> add-supabase-user-script

@@ -1,10 +1,18 @@
+
+import { mockShipments } from '@/data/mockData';
+
 import { shipments } from '@/data/mockData';
+
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Navigation, Package, Route, ShieldCheck } from 'lucide-react';
 
 // FIX: Pointing to specific files to avoid Vite "Could not load src/data/index" error
+
+import { mockShipments } from '@/data/mockData'; 
+
 import { shipments } from '@/data/mockData'; 
+
 import { useAuth } from '@/hooks/useAuth';
 
 import { Button } from '@/components/ui/button';
@@ -106,7 +114,11 @@ function RiderDashboard() {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   const stats = useMemo(() => {
+
+    const all = (mockShipments as any[]) || [];
+
     const all = (shipments as any[]) || [];
+
     let delivered = 0, failed = 0, remaining = 0;
 
     all.forEach((sh) => {
@@ -167,7 +179,11 @@ function RiderDashboard() {
             <Button variant="ghost" size="sm" onClick={() => navigate('/shipments/new')}>+ New</Button>
           </div>
           <div className="space-y-3">
+
+            {(mockShipments as any[]).map((s) => {
+
             {(shipments as any[]).map((s) => {
+
               const id = String(s.id ?? s.trackingNumber);
               return (
                 <Card key={id} className="border-slate-100">

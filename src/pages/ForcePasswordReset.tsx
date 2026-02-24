@@ -1,17 +1,14 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "@/lib/supabase";
-import { strongPassword } from "@/lib/password";
-import { getMyProfile } from "@/lib/profile";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import LanguageToggle from "@/components/LanguageToggle";
+import { strongPassword } from "@/lib/password";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function ForcePasswordReset() {
-  const { t } = useTranslation();
   const nav = useNavigate();
+  const { changePassword } = useAuth();
 
   const [pw, setPw] = useState("");
   const [pw2, setPw2] = useState("");
@@ -23,46 +20,38 @@ export default function ForcePasswordReset() {
     setError(null);
     setOk(null);
 
-    if (pw !== pw2) return setError(t("auth.passwordMismatch"));
-    if (!strongPassword.test(pw)) return setError(t("auth.weakPassword"));
+    if (pw !== pw2) return setError("Passwords do not match.");
+    if (!strongPassword.test(pw)) return setError("Password is too weak.");
 
     setLoading(true);
-
-    const { error } = await supabase.auth.updateUser({ password: pw });
-    if (error) {
+    try {
+      await changePassword(pw);
+      setOk("Password updated.");
+      nav("/panel"); // will redirect to role default
+    } catch (e: any) {
+      setError(e?.message ?? "Failed to update password");
+    } finally {
       setLoading(false);
-      return setError(error.message);
     }
-
-    const { userId } = await getMyProfile();
-    if (userId) {
-      await supabase.from("profiles").update({ must_change_password: false }).eq("id", userId);
-    }
-
-    setLoading(false);
-    setOk(t("password.updated"));
-    nav("/"); // or nav to role default route
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 bg-slate-950 text-white">
-      <Card className="w-full max-w-md bg-white/5 border-white/10">
+    <div className="min-h-screen flex items-center justify-center px-6 bg-background text-foreground">
+      <Card className="w-full max-w-md border-border">
         <CardContent className="p-6 space-y-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold">{t("password.forceTitle")}</h1>
-            <LanguageToggle />
-          </div>
+          <h1 className="text-xl font-semibold">Set New Password</h1>
+          <p className="text-sm text-muted-foreground">
+            Your admin has required you to change your password before continuing.
+          </p>
 
-          <p className="text-sm text-white/70">{t("password.forceDesc")}</p>
+          <Input type="password" value={pw} onChange={(e) => setPw(e.target.value)} placeholder="New password" />
+          <Input type="password" value={pw2} onChange={(e) => setPw2(e.target.value)} placeholder="Confirm new password" />
 
-          <Input type="password" value={pw} onChange={(e) => setPw(e.target.value)} placeholder={t("password.newPassword")} className="bg-black/40 border-white/15" />
-          <Input type="password" value={pw2} onChange={(e) => setPw2(e.target.value)} placeholder={t("password.confirmNewPassword")} className="bg-black/40 border-white/15" />
+          {error && <p className="text-sm text-destructive">{error}</p>}
+          {ok && <p className="text-sm text-emerald-600">{ok}</p>}
 
-          {error && <p className="text-sm text-red-400">{error}</p>}
-          {ok && <p className="text-sm text-green-400">{ok}</p>}
-
-          <Button disabled={loading} onClick={update} className="w-full bg-blue-600 hover:bg-blue-700">
-            {t("password.update")}
+          <Button disabled={loading} onClick={update} className="w-full">
+            {loading ? "Updating..." : "Update password"}
           </Button>
         </CardContent>
       </Card>

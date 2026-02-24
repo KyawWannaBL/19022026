@@ -47,6 +47,10 @@
     "@supabase/supabase-js": "^2.55.0",
     "@tanstack/react-query": "^5.56.2",
     "axios": "^1.13.2",
+<<<<<<< HEAD
+=======
+    "bootstrap": "^5.3.8",
+>>>>>>> add-supabase-user-script
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",

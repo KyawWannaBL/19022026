@@ -38,7 +38,11 @@ const ReceivingBay: React.FC = () => {
   });
 
   // Mock data for demo purposes
+
+  const mockShipments: Record<string, Shipment> = {
+
   const shipments: Record<string, Shipment> = {
+
     'AWB123456': {
       id: 'shp_1',
       awb: 'AWB123456',
@@ -71,7 +75,11 @@ const ReceivingBay: React.FC = () => {
   };
 
   const handleParcelScan = (code: string) => {
+
+    const shipment = mockShipments[code] || Object.values(mockShipments).find(s => s.tamperTagId === code);
+
     const shipment = shipments[code] || Object.values(shipments).find(s => s.tamperTagId === code);
+
     
     if (!shipment) {
       toast.error('Shipment not found in system');

@@ -6,7 +6,15 @@ import { Button } from '@/components/ui/button';
 import { Package, Truck, CheckCircle, Clock, AlertCircle } from 'lucide-react';
 
 export default function Shipments() {
+<<<<<<< HEAD
   const shipments = [
+=======
+
+  const mockShipments = [
+
+  const shipments = [
+
+>>>>>>> add-supabase-user-script
     {
       id: '1',
       awb: 'EDS20241201001',
@@ -41,7 +49,15 @@ export default function Shipments() {
       </div>
 
       <div className="grid gap-4">
+<<<<<<< HEAD
         {shipments.map((shipment) => (
+=======
+
+        {mockShipments.map((shipment) => (
+
+        {shipments.map((shipment) => (
+
+>>>>>>> add-supabase-user-script
           <Card key={shipment.id} className="card-modern">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">

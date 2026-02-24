@@ -14,9 +14,13 @@ import {
 } from 'lucide-react';
 import { IMAGES } from '@/assets/images';
 import { ROUTE_PATHS, SHIPMENT_STATUSES, Shipment } from '@/lib/index';
+
+import { mockShipments, mockBranches } from '@/data/index';
+
 import {  } from '@/data/index';
 import { useEnterpriseBranches } from '@/hooks/useEnterpriseBranches';
 import { useEnterpriseShipments, fetchShipmentByTracking, fetchShipmentTracking } from '@/hooks/useEnterpriseShipments';
+
 import { DataTable } from '@/components/DataTable';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -25,6 +29,12 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function Warehouse() {
+
+  const [scanValue, setScanValue] = useState('');
+  const [lastScanned, setLastScanned] = useState<Shipment | null>(null);
+
+  const warehouseShipments = mockShipments.filter(s => 
+
   const { data: branches = [] } = useEnterpriseBranches();
   const { data: shipments = [], isLoading: shipmentsLoading } = useEnterpriseShipments();
   const { data: shipments = [], isLoading: shipmentsLoading } = useEnterpriseShipments();
@@ -32,6 +42,7 @@ export default function Warehouse() {
   const [lastScanned, setLastScanned] = useState<Shipment | null>(null);
 
   const warehouseShipments = shipments.filter(s => 
+
     s.status === SHIPMENT_STATUSES.ARRIVED_AT_WAREHOUSE || 
     s.status === SHIPMENT_STATUSES.PICKED_UP
   );
@@ -79,7 +90,11 @@ export default function Warehouse() {
 
   const handleScan = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const found = mockShipments.find(s => s.trackingNumber === scanValue);
+
     const found = shipments.find(s => s.trackingNumber === scanValue);
+
     if (found) {
       setLastScanned(found);
     }
@@ -314,7 +329,11 @@ export default function Warehouse() {
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Destination Hub</label>
                       <select className="w-full p-2 border rounded-md">
+
+                        {mockBranches.map(b => (
+
                         {branches.map(b => (
+
                           <option key={b.id}>{b.name}</option>
                         ))}
                       </select>
