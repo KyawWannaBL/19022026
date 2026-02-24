@@ -1,253 +1,61 @@
 import React from 'react';
-
-import { Card as ShadcnCard, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button as ShadcnButton } from '@/components/ui/button';
-import { Badge as ShadcnBadge } from '@/components/ui/badge';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
-import { LucideIcon } from 'lucide-react';
+import { Loader2, AlertCircle } from 'lucide-react';
 
-// Re-export shadcn components with consistent naming
-export const Card = ShadcnCard;
-export const CardBody = CardContent;
-export const Button = ShadcnButton;
-export const Badge = ShadcnBadge;
+/**
+ * Page Loader Component
+ * Used during Suspense and data fetching
+ */
+export const PageLoader = () => (
+  <div className="flex flex-col items-center justify-center min-h-[400px] w-full gap-4">
+    <Loader2 className="h-10 w-10 animate-spin text-[#0d2c54]" />
+    <p className="text-xs font-bold uppercase tracking-widest text-slate-400 animate-pulse">
+      Britium Express Loading...
+    </p>
+  </div>
+);
 
-// Enhanced Card Header component
-interface EnhancedCardHeaderProps {
-  title: string;
-  subtitle?: string;
-  action?: React.ReactNode;
-  className?: string;
-}
-
-export function EnhancedCardHeader({ title, subtitle, action, className }: EnhancedCardHeaderProps) {
+/**
+ * Error State Component
+ * Bi-lingual support for Myanmar/English
+ */
+export const ErrorState = ({ message }: { message?: string }) => {
+  const { t } = useLanguageContext();
   return (
-    <CardHeader className={cn('flex flex-row items-center justify-between space-y-0 pb-2', className)}>
-      <div className="space-y-1">
-        <CardTitle className="text-lg font-semibold">{title}</CardTitle>
-        {subtitle && <p className="text-sm text-muted-foreground">{subtitle}</p>}
-      </div>
-      {action && <div className="flex items-center space-x-2">{action}</div>}
-    </CardHeader>
-  );
-}
-
-// Stat Card component for dashboards
-interface StatCardProps {
-  title: string;
-  value: string | number;
-  hint?: string;
-  tone?: 'blue' | 'green' | 'orange' | 'red' | 'purple';
-  icon?: LucideIcon;
-  className?: string;
-}
-
-export function StatCard({ title, value, hint, tone = 'blue', icon: Icon, className }: StatCardProps) {
-  const toneClasses = {
-    blue: 'border-blue-200 bg-blue-50 text-blue-900',
-    green: 'border-green-200 bg-green-50 text-green-900',
-    orange: 'border-orange-200 bg-orange-50 text-orange-900',
-    red: 'border-red-200 bg-red-50 text-red-900',
-    purple: 'border-purple-200 bg-purple-50 text-purple-900',
-  };
-
-  const iconClasses = {
-    blue: 'text-blue-600',
-    green: 'text-green-600',
-    orange: 'text-orange-600',
-    red: 'text-red-600',
-    purple: 'text-purple-600',
-  };
-
-  return (
-    <Card className={cn('border-l-4', toneClasses[tone], className)}>
-      <CardContent className="p-6">
-        <div className="flex items-center justify-between">
-          <div className="space-y-1">
-            <p className="text-sm font-medium text-muted-foreground">{title}</p>
-            <p className="text-2xl font-bold">{value}</p>
-            {hint && <p className="text-xs text-muted-foreground">{hint}</p>}
-          </div>
-          {Icon && <Icon className={cn('h-8 w-8', iconClasses[tone])} />}
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-// Dashboard Stat component (alternative design)
-interface DashboardStatProps {
-  icon: LucideIcon;
-  label: string;
-  value: string;
-  color: 'blue' | 'orange' | 'green' | 'red';
-  className?: string;
-}
-
-export function DashboardStat({ icon: Icon, label, value, color, className }: DashboardStatProps) {
-  const colorClasses = {
-    blue: 'bg-blue-500',
-    orange: 'bg-orange-500',
-    green: 'bg-green-500',
-    red: 'bg-red-500',
-  };
-
-  return (
-    <Card className={cn('overflow-hidden', className)}>
-      <CardContent className="p-0">
-        <div className="flex items-center">
-          <div className={cn('p-4', colorClasses[color])}>
-            <Icon className="h-6 w-6 text-white" />
-          </div>
-          <div className="p-4 flex-1">
-            <p className="text-sm font-medium text-muted-foreground">{label}</p>
-            <p className="text-xl font-bold">{value}</p>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-// Data Table component
-interface Column<T> {
-  key: keyof T;
-  header: string;
-  render?: (value: any, row: T) => React.ReactNode;
-  className?: string;
-}
-
-interface DataTableProps<T> {
-  data: T[];
-  columns: Column<T>[];
-  className?: string;
-}
-
-export function DataTable<T extends Record<string, any>>({ data, columns, className }: DataTableProps<T>) {
-  return (
-    <div className={cn('overflow-x-auto', className)}>
-      <table className="w-full border-collapse">
-        <thead>
-          <tr className="border-b border-border">
-            {columns.map((column) => (
-              <th
-                key={String(column.key)}
-                className={cn('text-left p-3 font-medium text-muted-foreground', column.className)}
-              >
-                {column.header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, index) => (
-            <tr key={index} className="border-b border-border hover:bg-muted/50">
-              {columns.map((column) => (
-                <td key={String(column.key)} className={cn('p-3', column.className)}>
-                  {column.render ? column.render(row[column.key], row) : String(row[column.key] || '')}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="flex flex-col items-center justify-center p-12 border-2 border-dashed border-red-100 rounded-2xl bg-red-50/30 text-center">
+      <AlertCircle className="h-12 w-12 text-red-500 mb-4" />
+      <h3 className="text-lg font-bold text-red-900">
+        {t('common.errorOccurred', 'မှားယွင်းမှုတစ်ခုရှိနေပါသည်')}
+      </h3>
+      <p className="text-sm text-red-600 mt-2 max-w-xs">
+        {message || t('common.tryAgain', 'ကျေးဇူးပြု၍ ထပ်မံကြိုးစားကြည့်ပါ။')}
+      </p>
     </div>
   );
-}
-
-// Empty State component
-interface EmptyStateProps {
-  title?: string;
-  description?: string;
-  action?: React.ReactNode;
-  className?: string;
-}
-
-export function EmptyState({ 
-  title = 'No data available', 
-  description = 'This feature is under development.',
-  action,
-  className 
-}: EmptyStateProps) {
-  return (
-    <div className={cn('flex flex-col items-center justify-center py-12 text-center', className)}>
-      <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mb-4">
-        <div className="w-8 h-8 bg-muted-foreground/20 rounded-full" />
-      </div>
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-muted-foreground mb-4 max-w-sm">{description}</p>
-      {action && action}
-    </div>
-  );
-}
-
-// Page Header component
-interface PageHeaderProps {
-  titleKey?: string;
-  title?: string;
-  subtitle?: string;
-  action?: React.ReactNode;
-  className?: string;
-}
-
-export function PageHeader({ titleKey, title, subtitle, action, className }: PageHeaderProps) {
-  const displayTitle = title || titleKey || 'Page Title';
-  
-  return (
-    <div className={cn('flex items-center justify-between mb-6', className)}>
-      <div className="space-y-1">
-        <h1 className="text-2xl font-bold tracking-tight">{displayTitle}</h1>
-        {subtitle && <p className="text-muted-foreground">{subtitle}</p>}
-      </div>
-      {action && <div className="flex items-center space-x-2">{action}</div>}
-    </div>
-  );
-}
-
-export default {
-  Card,
-  CardBody,
-  CardHeader: EnhancedCardHeader,
-  Button,
-  Badge,
-  StatCard,
-  DashboardStat,
-  DataTable,
-  EmptyState,
-  PageHeader,
-
-import { LucideIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
-
-interface DashboardStatProps {
-  icon: LucideIcon;
-  label: string;
-  value: string | number;
-  color: 'blue' | 'orange' | 'green' | 'red' | 'navy';
-  className?: string;
-}
-
-export const DashboardStat = ({ icon: Icon, label, value, color, className }: DashboardStatProps) => {
-  const colorMap = {
-    blue: "bg-blue-50 text-blue-600 border-blue-100",
-    orange: "bg-orange-50 text-[#ff6b00] border-orange-100", // Brand Orange
-    green: "bg-green-50 text-green-600 border-green-100",
-    red: "bg-red-50 text-red-600 border-red-100",
-    navy: "bg-[#0d2c54]/5 text-[#0d2c54] border-[#0d2c54]/10", // Brand Blue
-  };
-
-  return (
-    <div className={cn("p-6 rounded-3xl border bg-white shadow-sm transition-all hover:shadow-md", className)}>
-      <div className="flex items-center gap-4">
-        <div className={cn("p-3 rounded-2xl border", colorMap[color])}>
-          <Icon size={24} />
-        </div>
-        <div>
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">{label}</p>
-          <h3 className="text-xl font-black text-slate-900 tracking-tighter">{value}</h3>
-        </div>
-      </div>
-    </div>
-  );
-
 };
+
+/**
+ * Section Heading
+ * Consistent styling for dashboard titles
+ */
+export const SectionHeading = ({ 
+  title, 
+  subtitle, 
+  className 
+}: { 
+  title: string; 
+  subtitle?: string; 
+  className?: string;
+}) => (
+  <div className={cn("mb-8", className)}>
+    <h2 className="text-2xl font-black text-[#0d2c54] uppercase tracking-tight italic">
+      {title}
+    </h2>
+    {subtitle && (
+      <p className="text-sm text-slate-500 font-medium mt-1">
+        {subtitle}
+      </p>
+    )}
+  </div>
+);
