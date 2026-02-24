@@ -1,111 +1,86 @@
-import React, { useMemo, useState } from "react";
-import { useEnterpriseShipments } from "@/hooks/useEnterpriseShipments";
-import { Loader2 } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+// file: src/pages/Tracking.test.tsx
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import Tracking from "./Tracking";
 
-type ShipmentsData = NonNullable<ReturnType<typeof useEnterpriseShipments>["data"]>;
-type EnterpriseShipment = ShipmentsData extends ReadonlyArray<infer T> ? T : never;
+type MockShipment = {
+  tracking_number?: string | null;
+};
 
-type SearchResult<T> =
-  | { kind: "idle" }
-  | { kind: "found"; shipment: T }
-  | { kind: "not_found"; query: string }
-  | { kind: "invalid"; message: string };
+type UseEnterpriseShipmentsReturn = {
+  data: MockShipment[];
+  isLoading: boolean;
+};
 
-function normalizeTracking(value: string): string {
-  return value.trim().toLowerCase();
+const mockUseEnterpriseShipments = vi.fn<[], UseEnterpriseShipmentsReturn>();
+
+vi.mock("@/hooks/useEnterpriseShipments", () => ({
+  useEnterpriseShipments: () => mockUseEnterpriseShipments(),
+}));
+
+function setHookState(
+  state: Partial<UseEnterpriseShipmentsReturn> = {},
+): void {
+  mockUseEnterpriseShipments.mockReturnValue({
+    data: [],
+    isLoading: false,
+    ...state,
+  });
 }
 
-function getTrackingNumber(shipment: EnterpriseShipment): string | null {
-  const s = shipment as unknown as { tracking_number?: string | null };
-  return s.tracking_number ?? null;
-}
+beforeEach(() => {
+  mockUseEnterpriseShipments.mockReset();
+});
 
-export default function Tracking() {
-  const { data, isLoading: shipmentsLoading } = useEnterpriseShipments();
-  const shipments = (data ?? []) as EnterpriseShipment[];
+afterEach(() => {
+  vi.clearAllMocks();
+});
 
-  const [trackingNumber, setTrackingNumber] = useState<string>("");
-  const [result, setResult] = useState<SearchResult<EnterpriseShipment>>({ kind: "idle" });
+describe("Tracking page", () => {
+  it("shows validation error on empty submit", async () => {
+    setHookState({ data: [], isLoading: false });
 
-  const shipmentsByTracking = useMemo(() => {
-    const map = new Map<string, EnterpriseShipment>();
-    for (const s of shipments) {
-      const tn = getTrackingNumber(s);
-      const key = tn ? normalizeTracking(tn) : "";
-      if (key) map.set(key, s);
-    }
-    return map;
-  }, [shipments]);
+    const user = userEvent.setup();
+    render(<Tracking />);
 
-  const handleTrack: React.FormEventHandler<HTMLFormElement> = (e) => {
-    e.preventDefault();
+    await user.click(screen.getByRole("button", { name: /track/i }));
+    expect(screen.getByText(/enter a tracking id/i)).toBeInTheDocument();
+  });
 
-    const query = normalizeTracking(trackingNumber);
-    if (!query) {
-      setResult({ kind: "invalid", message: "Enter a tracking ID." });
-      return;
-    }
+  it("finds shipment case-insensitively and trims input", async () => {
+    setHookState({ data: [{ tracking_number: "AbC123" }], isLoading: false });
 
-    const found = shipmentsByTracking.get(query);
-    if (found) {
-      setResult({ kind: "found", shipment: found });
-      return;
-    }
+    const user = userEvent.setup();
+    render(<Tracking />);
 
-    setResult({ kind: "not_found", query });
-  };
+    await user.type(screen.getByPlaceholderText(/tracking id/i), "  abc123  ");
+    await user.click(screen.getByRole("button", { name: /track/i }));
 
-  return (
-    <div className="bg-slate-50 min-h-screen">
-      <div className="bg-[#0d2c54] py-10 text-center text-white">
-        <h1 className="text-2xl font-bold">Track Your Shipment</h1>
-      </div>
+    expect(screen.getByText(/shipment found/i)).toBeInTheDocument();
+    expect(screen.getByText(/tracking:\s*AbC123/i)).toBeInTheDocument();
+  });
 
-      <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow-md border">
-        <form onSubmit={handleTrack} className="flex gap-2">
-          <Input
-            placeholder="Tracking ID"
-            value={trackingNumber}
-            onChange={(e) => {
-              setTrackingNumber(e.target.value);
-              if (result.kind !== "idle") setResult({ kind: "idle" });
-            }}
-            autoComplete="off"
-          />
-          <Button
-            type="submit"
-            className="bg-[#ff6b00] hover:bg-[#e66000] text-white"
-            disabled={shipmentsLoading}
-          >
-            {shipmentsLoading ? <Loader2 className="animate-spin h-4 w-4" /> : "Track"}
-          </Button>
-        </form>
+  it("shows not found when shipment does not exist", async () => {
+    setHookState({ data: [{ tracking_number: "ZX9" }], isLoading: false });
 
-        <div className="mt-4">
-          {shipmentsLoading && <p className="text-sm text-slate-600">Loading shipments…</p>}
+    const user = userEvent.setup();
+    render(<Tracking />);
 
-          {result.kind === "invalid" && (
-            <p className="text-sm text-red-600">{result.message}</p>
-          )}
+    await user.type(screen.getByPlaceholderText(/tracking id/i), "nope");
+    await user.click(screen.getByRole("button", { name: /track/i }));
 
-          {result.kind === "not_found" && (
-            <p className="text-sm text-red-600">
-              No shipment found for <span className="font-semibold">{result.query}</span>.
-            </p>
-          )}
+    expect(screen.getByText(/no shipment found/i)).toBeInTheDocument();
+    expect(screen.getByText(/nope/i)).toBeInTheDocument();
+  });
 
-          {result.kind === "found" && (
-            <div className="rounded-lg border p-4 bg-slate-50">
-              <p className="text-sm font-semibold">Shipment Found</p>
-              <p className="text-xs text-slate-700 mt-1">
-                Tracking: {getTrackingNumber(result.shipment) ?? "—"}
-              </p>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
+  it("disables the button while loading", () => {
+    setHookState({ data: [], isLoading: true });
+
+    const { container } = render(<Tracking />);
+
+    const button = screen.getByRole("button");
+    expect(button).toBeDisabled();
+    expect(container.querySelector(".animate-spin")).not.toBeNull();
+  });
+});
