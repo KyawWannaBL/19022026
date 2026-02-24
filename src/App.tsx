@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { AuthProvider } from '@/hooks/useAuth';
 import { Toaster } from 'sonner';
@@ -19,6 +19,7 @@ export default function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/warehouse" element={<Warehouse />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <Toaster position="top-center" richColors />
         </BrowserRouter>
