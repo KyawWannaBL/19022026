@@ -1,5 +1,5 @@
 import SignatureCanvas from "react-signature-canvas";
-<<<<<<< HEAD
+
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage, db } from "../firebase";
 import { doc, updateDoc, serverTimestamp } from "firebase/firestore";
@@ -37,7 +37,7 @@ export default function SignaturePad({ deliveryId }: { deliveryId: string }) {
       />
       <button onClick={() => sigRef.current?.clear()}>Clear</button>
       <button onClick={saveSignature}>Save</button>
-=======
+
 import { useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { TABLES } from "@/lib/db/tables";
@@ -110,7 +110,7 @@ export default function SignaturePad({ deliveryId }: { deliveryId: string }) {
           View saved signature
         </a>
       )}
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
     </div>
   );
 }

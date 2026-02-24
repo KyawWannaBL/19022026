@@ -19,11 +19,11 @@ import {
   ShipmentStatus,
   SHIPMENT_STATUSES
 } from '@/lib/index';
-<<<<<<< HEAD
+
 import { mockShipments } from '@/data/index';
-=======
+
 import { useEnterpriseShipments } from '@/hooks/useEnterpriseShipments';
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
 import { DataTable } from '@/components/DataTable';
 import { StatusBadge, TrackingTimeline } from '@/components/TrackingComponents';
 import { Button } from '@/components/ui/button';
@@ -49,21 +49,21 @@ import { Separator } from '@/components/ui/separator';
 
 export default function Shipments() {
   const navigate = useNavigate();
-<<<<<<< HEAD
-=======
+
+
   const { data: shipments = [], isLoading: shipmentsLoading } = useEnterpriseShipments();
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<ShipmentStatus | 'all'>('all');
   const [selectedShipment, setSelectedShipment] = useState<Shipment | null>(null);
   const [isDetailOpen, setIsDetailOpen] = useState(false);
 
   const filteredShipments = useMemo(() => {
-<<<<<<< HEAD
+
     return mockShipments.filter((shipment) => {
-=======
+
     return shipments.filter((shipment) => {
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
       const matchesSearch = 
         shipment.trackingNumber.toLowerCase().includes(searchQuery.toLowerCase()) ||
         shipment.senderName.toLowerCase().includes(searchQuery.toLowerCase()) ||

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import SignatureCanvas from "react-signature-canvas";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage, db } from "../firebase";
@@ -40,6 +40,6 @@ export default function SignaturePad({ deliveryId }: { deliveryId: string }) {
     </div>
   );
 }
-=======
+
 // Deprecated: moved to src/pages/react-signature-canvas.tsx
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+

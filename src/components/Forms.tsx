@@ -20,7 +20,7 @@ import {
 } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-<<<<<<< HEAD
+
 import { Textarea } from '@/components/ui/textarea';
 import { 
   Select, 
@@ -35,18 +35,18 @@ import {
   Shipment, 
   generateTrackingNumber 
 } from '@/lib/index';
-<<<<<<< HEAD
+
 import { useAuth } from '@/hooks/useDemoAuth';
-=======
+
 import { useAuth } from '@/hooks/useAuth';
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
 import { PhotoCapture } from '@/components/PhotoCapture';
-=======
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 // Important: Named imports to match the rewritten components below
->>>>>>> bc2f204 (login errors solved)
+
 import { SignaturePad } from '@/components/SignaturePad';
 import { PhotoCapture } from '@/components/PhotoCapture';
 
@@ -58,20 +58,20 @@ const loginSchema = z.object({
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
-<<<<<<< HEAD
+
 export function LoginForm() {
-<<<<<<< HEAD
+
   const { login, isLoading } = useAuth();
-=======
+
   const { login, loading } = useAuth();
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
   const { t } = useLanguage();
   const [error, setError] = React.useState<string>('');
   const form = useForm<z.infer<typeof loginSchema>>({
-=======
+
 export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => void; isLoading: boolean }) {
   const form = useForm({
->>>>>>> bc2f204 (login errors solved)
+
     resolver: zodResolver(loginSchema),
     defaultValues: { email: '', password: '' },
   });
@@ -79,7 +79,7 @@ export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => vo
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-<<<<<<< HEAD
+
         {error && (
           <div className="p-3 text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md">
             {error}
@@ -111,18 +111,18 @@ export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => vo
             </FormItem>
           )}
         />
-<<<<<<< HEAD
+
         <Button type="submit" className="w-full h-11 font-semibold" disabled={isLoading}>
           {isLoading ? (
-=======
+
         <Button type="submit" className="w-full h-11 font-semibold" disabled={loading}>
           {loading ? (
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> {t('common.loading')}</>
           ) : (
             t('auth.signInToDashboard')
           )}
-=======
+
         <FormField control={form.control} name="email" render={({ field }) => (
           <FormItem>
             <FormLabel>Email</FormLabel>
@@ -140,7 +140,7 @@ export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => vo
         <Button type="submit" className="w-full" disabled={isLoading}>
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Login to Dashboard
->>>>>>> bc2f204 (login errors solved)
+
         </Button>
       </form>
     </Form>
@@ -157,7 +157,7 @@ export function ExceptionForm({ onSubmit, isLoading }: { onSubmit: (data: any) =
 
   return (
     <Form {...form}>
-<<<<<<< HEAD
+
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Sender Details */}
@@ -305,11 +305,11 @@ export function ExceptionForm({ onSubmit, isLoading }: { onSubmit: (data: any) =
 
         <div className="flex justify-end gap-4">
           <Button type="button" variant="outline" className="px-8">Cancel</Button>
-<<<<<<< HEAD
+
           <Button type="submit" className="px-12" disabled={isLoading}>
-=======
+
           <Button type="submit" className="px-12" disabled={loading}>
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
             {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
             {initialData ? 'Update Shipment' : 'Create Shipment'}
           </Button>
@@ -417,12 +417,12 @@ export function ExceptionForm({ shipmentId, onSubmit, isLoading }: ExceptionForm
           )}
         />
 
-<<<<<<< HEAD
+
         <Button type="submit" variant="destructive" className="w-full" disabled={isLoading}>
-=======
+
         <Button type="submit" variant="destructive" className="w-full" disabled={loading}>
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
-=======
+
+
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField control={form.control} name="reason" render={({ field }) => (
           <FormItem>
@@ -437,7 +437,7 @@ export function ExceptionForm({ shipmentId, onSubmit, isLoading }: ExceptionForm
           </FormItem>
         )} />
         <Button type="submit" variant="destructive" className="w-full" disabled={isLoading}>
->>>>>>> bc2f204 (login errors solved)
+
           {isLoading ? <Loader2 className="animate-spin mr-2 h-4 w-4" /> : <AlertTriangle className="mr-2 h-4 w-4" />}
           Submit Exception
         </Button>
@@ -471,16 +471,16 @@ export function ProofOfDeliveryForm({ onSubmit, isLoading }: { onSubmit: (data: 
             )} />
           </CardContent>
         </Card>
-<<<<<<< HEAD
 
-<<<<<<< HEAD
+
+
         <Button type="submit" className="w-full h-12 text-lg font-bold" disabled={isLoading}>
-=======
+
         <Button type="submit" className="w-full h-12 text-lg font-bold" disabled={loading}>
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
-=======
+
+
         <Button type="submit" className="w-full h-12" disabled={isLoading}>
->>>>>>> bc2f204 (login errors solved)
+
           {isLoading ? <Loader2 className="animate-spin mr-2 h-5 w-5" /> : <ShieldCheck className="mr-2 h-5 w-5" />}
           Complete Delivery
         </Button>

@@ -16,11 +16,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ROUTE_PATHS } from '@/lib/index';
-<<<<<<< HEAD
+
 import { useAuth } from '@/hooks/useFirebaseAuth';
-=======
+
 import { useAuth } from '@/hooks/useAuth';
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
 
 export default function CustomerProfile() {
   const { user } = useAuth();

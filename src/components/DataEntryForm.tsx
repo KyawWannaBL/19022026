@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
-<<<<<<< HEAD
+
 // 1. Removed Firebase imports
-=======
+
 // 1. Removed legacy backend imports
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -33,11 +33,11 @@ export default function DataEntryForm() {
     setBusy(true);
 
     try {
-<<<<<<< HEAD
+
       // 2. Replaced Firebase 'addDoc' with local logic or API call
-=======
+
       // 2. Replaced legacy write call with local logic or API call
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
       console.log('Order Data:', {
         customerName: customerName.trim(),
         address: address.trim(),

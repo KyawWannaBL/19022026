@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 import { PackagePlus, ChevronLeft, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-<<<<<<< HEAD
+
 import { ROUTE_PATHS } from '@/lib/index.ts';
-=======
+
 import { ROUTE_PATHS, generateTrackingNumber, SHIPMENT_STATUSES } from '@/lib/index.ts';
 import { supabase } from '@/lib/supabase';
 import { TABLES } from '@/lib/db/tables';
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
 import { CreateShipmentForm } from '@/components/ShipmentForms.tsx';
 import { toast } from 'sonner';
 import { springPresets, fadeInUp } from '@/lib/motion';
@@ -24,7 +24,7 @@ import { springPresets, fadeInUp } from '@/lib/motion';
 export default function CreateShipment() {
   const navigate = useNavigate();
 
-<<<<<<< HEAD
+
   const handleSubmit = (data: any) => {
     // In a real application, this would be an API call to Supabase or a backend
     console.log('Shipment Data Submitted:', data);
@@ -42,7 +42,7 @@ export default function CreateShipment() {
     });
   };
 
-=======
+
   const handleSubmit = async (data: any) => {
   if (!supabase) {
     toast.error('Supabase is not configured. Please set VITE_SUPABASE_PROJECT_URL and VITE_SUPABASE_ANON_KEY.');
@@ -105,7 +105,7 @@ export default function CreateShipment() {
 };
 
 
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
   return (
     <motion.div 
       className="flex flex-col gap-6 p-4 md:p-8 max-w-5xl mx-auto"

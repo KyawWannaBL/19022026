@@ -26,6 +26,7 @@ import { DashboardStat } from '@/components/ui/SharedComponents';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { ROUTE_PATHS } from '@/lib/index';
 
+// 1. Define the Shipment interface
 interface Shipment {
   id: string;
   trackingNumber: string;
@@ -36,11 +37,8 @@ interface Shipment {
   createdAt: string;
 }
 
-<<<<<<< HEAD
+// 2. FIXED: Correctly named the data array and removed duplicate logic
 const mockShipments: Shipment[] = [
-=======
-const shipments: Shipment[] = [
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
   {
     id: '1',
     trackingNumber: 'BE-2024-001',
@@ -86,11 +84,8 @@ export default function MerchantDashboardPage() {
     return <Badge variant={config.variant}>{config.label}</Badge>;
   };
 
-<<<<<<< HEAD
+  // 3. FIXED: Merged the filtering logic and pointed to mockShipments
   const filteredShipments = mockShipments.filter(shipment =>
-=======
-  const filteredShipments = shipments.filter(shipment =>
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
     shipment.trackingNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
     shipment.recipient.toLowerCase().includes(searchTerm.toLowerCase()) ||
     shipment.destination.toLowerCase().includes(searchTerm.toLowerCase())
@@ -101,10 +96,10 @@ export default function MerchantDashboardPage() {
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-navy-900">{t('merchant.portal')}</h1>
+          <h1 className="text-2xl font-bold text-[#0d2c54]">{t('merchant.portal')}</h1>
           <p className="text-sm text-gray-500">{t('merchant.trackShipments')}</p>
         </div>
-        <Button className="bg-gold hover:bg-gold/90 text-navy-900 font-semibold">
+        <Button className="bg-[#ff6b00] hover:bg-[#ff6b00]/90 text-white font-semibold">
           <Plus className="mr-2 h-4 w-4" /> {t('merchant.newOrder')}
         </Button>
       </div>
@@ -141,8 +136,8 @@ export default function MerchantDashboardPage() {
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-lg font-semibold">
-              {t('Recent Shipments')}
+            <CardTitle className="text-lg font-semibold uppercase tracking-tighter">
+              {t('merchant.recentShipments') || 'Recent Shipments'}
             </CardTitle>
             <div className="flex items-center space-x-2">
               <div className="relative">
@@ -151,10 +146,10 @@ export default function MerchantDashboardPage() {
                   placeholder={t('form.search')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 w-64"
+                  className="pl-10 w-64 border-2"
                 />
               </div>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="font-bold uppercase text-xs">
                 <Filter className="h-4 w-4 mr-2" />
                 {t('common.filter')}
               </Button>
@@ -166,62 +161,62 @@ export default function MerchantDashboardPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 font-medium text-gray-600">
-                    {t('Tracking Number')}
+                  <th className="text-left py-3 px-4 font-black text-[#0d2c54] uppercase text-xs tracking-widest">
+                    {t('interface.trackingNumber') || 'Tracking Number'}
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-600">
+                  <th className="text-left py-3 px-4 font-black text-[#0d2c54] uppercase text-xs tracking-widest">
                     {t('interface.recipient')}
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-600">
-                    {t('Destination')}
+                  <th className="text-left py-3 px-4 font-black text-[#0d2c54] uppercase text-xs tracking-widest">
+                    {t('interface.destination') || 'Destination'}
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-600">
+                  <th className="text-left py-3 px-4 font-black text-[#0d2c54] uppercase text-xs tracking-widest">
                     {t('interface.status')}
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-600">
+                  <th className="text-left py-3 px-4 font-black text-[#0d2c54] uppercase text-xs tracking-widest">
                     {t('interface.amount')}
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-600">
+                  <th className="text-left py-3 px-4 font-black text-[#0d2c54] uppercase text-xs tracking-widest">
                     {t('common.date')}
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-600">
+                  <th className="text-left py-3 px-4 font-black text-[#0d2c54] uppercase text-xs tracking-widest text-center">
                     {t('interface.actions')}
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {filteredShipments.map((shipment) => (
-                  <tr key={shipment.id} className="border-b border-gray-100 hover:bg-gray-50">
+                  <tr key={shipment.id} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
                     <td className="py-3 px-4">
                       <Link 
                         to={`${ROUTE_PATHS.PUBLIC_TRACKING}?tracking=${shipment.trackingNumber}`}
-                        className="text-blue-600 hover:text-blue-800 font-medium"
+                        className="text-blue-600 hover:underline font-bold"
                       >
                         {shipment.trackingNumber}
                       </Link>
                     </td>
-                    <td className="py-3 px-4">{shipment.recipient}</td>
-                    <td className="py-3 px-4">{shipment.destination}</td>
+                    <td className="py-3 px-4 text-sm font-medium">{shipment.recipient}</td>
+                    <td className="py-3 px-4 text-sm">{shipment.destination}</td>
                     <td className="py-3 px-4">{getStatusBadge(shipment.status)}</td>
-                    <td className="py-3 px-4 font-medium">
-                      {shipment.amount.toLocaleString()} MMK
+                    <td className="py-3 px-4 font-bold text-slate-900">
+                      {shipment.amount.toLocaleString()} <span className="text-[10px]">MMK</span>
                     </td>
-                    <td className="py-3 px-4 text-gray-500">{shipment.createdAt}</td>
-                    <td className="py-3 px-4">
+                    <td className="py-3 px-4 text-xs text-gray-500 font-medium">{shipment.createdAt}</td>
+                    <td className="py-3 px-4 text-center">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button variant="ghost" size="sm">
                             <MoreHorizontal className="h-4 w-4" />
                           </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                          <DropdownMenuItem>
-                            <Eye className="h-4 w-4 mr-2" />
+                        <DropdownMenuContent align="end" className="w-40 font-bold uppercase text-[10px]">
+                          <DropdownMenuItem className="cursor-pointer">
+                            <Eye className="h-3 w-3 mr-2" />
                             {t('interface.viewDetails')}
                           </DropdownMenuItem>
-                          <DropdownMenuItem>
-                            <Download className="h-4 w-4 mr-2" />
-                            {t('Download Invoice')}
+                          <DropdownMenuItem className="cursor-pointer">
+                            <Download className="h-3 w-3 mr-2" />
+                            {t('interface.downloadInvoice') || 'Download Invoice'}
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
@@ -230,6 +225,11 @@ export default function MerchantDashboardPage() {
                 ))}
               </tbody>
             </table>
+            {filteredShipments.length === 0 && (
+              <div className="py-20 text-center text-gray-400 font-bold uppercase italic tracking-widest">
+                No shipments found matching your search.
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>

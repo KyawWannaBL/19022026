@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState } from 'react';
 import {
   User as UserIcon,
@@ -500,7 +500,7 @@ const Settings: React.FC = () => {
 };
 
 export default Settings;
-=======
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Save, Shield, User as UserIcon, Bell } from "lucide-react";
@@ -599,9 +599,9 @@ export function Settings() {
       </div>
     </motion.div>
   );
-<<<<<<< HEAD
+
 }
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
-=======
+
+
 }
->>>>>>> bc2f204 (login errors solved)
+

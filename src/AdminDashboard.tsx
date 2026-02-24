@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState } from 'react';
 import {
   Users,
@@ -413,7 +413,7 @@ const AdminDashboard: React.FC = () => {
 };
 
 export default AdminDashboard;
-=======
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, Package, Activity, ShieldCheck } from "lucide-react";
@@ -488,4 +488,4 @@ export default function AdminDashboard() {
     </motion.div>
   );
 }
->>>>>>> ec63336 (Initial enterprise logistics platform (Supabase))
+
