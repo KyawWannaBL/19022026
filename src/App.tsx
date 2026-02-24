@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
@@ -207,4 +206,4 @@ export default function App() {
     </Router>
   );
 }
->>>>>>> add-supabase-user-script
+add-supabase-user-script
