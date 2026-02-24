@@ -15,8 +15,8 @@ import {
   TrendingUp,
   ShieldAlert
 } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI } from '@/services/logistics-api';
 import { 
   Card, 
@@ -53,7 +53,7 @@ import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/mo
 
 const SupervisorAudit: React.FC = () => {
   const { user } = useAuth();
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [auditLogs, setAuditLogs] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');

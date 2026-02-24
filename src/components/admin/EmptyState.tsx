@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
 
 interface EmptyStateProps {
@@ -15,7 +15,7 @@ export default function EmptyState({
   action,
   className 
 }: EmptyStateProps) {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   
   const displayTitle = title || t('common.loading');
   const displayDescription = description || t('This feature is under development.');

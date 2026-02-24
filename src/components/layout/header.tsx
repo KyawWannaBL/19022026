@@ -2,11 +2,11 @@ import React from 'react';
 import { Bell, LogOut, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 
 export const Header = () => {
   const { user, logout } = useAuth();
-  const { t, language, setLanguage } = useLanguageContext();
+  const { t, language, setLanguage } = useLanguageContextContext();
 
   return (
     <header className="h-16 border-b bg-white flex items-center justify-between px-6 sticky top-0 z-30">

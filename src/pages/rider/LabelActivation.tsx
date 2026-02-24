@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { SHIPMENT_STATUS } from '@/lib/index'; // Critical import
 
 const LabelActivation = () => {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   // Ensure your scan logic uses SHIPMENT_STATUS.LABEL_APPLIED_VERIFIED
   return (
     <div className="p-4">

@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Printer, Download } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { IMAGES } from '@/assets/images';
 
 interface QRCodeLabelProps {
@@ -24,7 +24,7 @@ interface QRCodeLabelProps {
 }
 
 export function QRCodeLabel({ shipmentData, onPrint, className }: QRCodeLabelProps) {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const labelRef = useRef<HTMLDivElement>(null);
 

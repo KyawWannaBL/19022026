@@ -14,8 +14,8 @@ import {
   Loader2,
   ClipboardCheck
 } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI, Shipment } from '@/services/logistics-api';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -41,7 +41,7 @@ import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/mo
 
 const WarehouseReceiving: React.FC = () => {
   const { user } = useAuth();
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [awbInput, setAwbInput] = useState('');
   const [isScanning, setIsScanning] = useState(false);
   const [recentShipments, setRecentShipments] = useState<Shipment[]>([]);

@@ -29,12 +29,12 @@ import { ROUTE_PATHS, USER_ROLES, UserRole } from '@/lib/index';
 import { useAuth } from '@/hooks/useAuth';
 
 
-import { useAuth } from '@/hooks/useFirebaseAuth';
+import { useAuth } from '@/hooks/useAuth';
 
 import { useAuth } from '@/hooks/useAuth';
 
 
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { IMAGES } from '@/assets/images';
 import { Button } from '@/components/ui/button';
 import { 
@@ -202,7 +202,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const { t, language, toggleLanguage } = useLanguageContext();
+  const { t, language, toggleLanguage } = useLanguageContextContext();
 
   const filteredNavItems = NAV_ITEMS.filter((item) => 
     !item.roles || isAuthorized(item.roles)

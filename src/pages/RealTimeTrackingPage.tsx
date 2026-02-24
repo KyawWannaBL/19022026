@@ -30,7 +30,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 import { IMAGES } from '@/assets/images';
@@ -116,7 +116,7 @@ const TRACKING_DATA = {
 };
 
 const RealTimeTrackingPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   const [trackingData, setTrackingData] = useState(TRACKING_DATA);
   const [isLive, setIsLive] = useState(true);

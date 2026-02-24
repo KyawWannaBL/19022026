@@ -26,7 +26,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ROUTE_PATHS, USER_ROLES } from '@/lib/index';
 import { useAuth } from '@/hooks/useAuth';
-import { useLanguageContext, LanguageToggle, CompactLanguageToggle } from '@/lib/LanguageContext';
+import { useLanguageContextContext, LanguageToggle, CompactLanguageToggle } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets/images';
 
@@ -42,7 +42,7 @@ export function PublicLayout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   
   const NAV_ITEMS: NavItem[] = [
     { label: t('public.track'), path: ROUTE_PATHS.PUBLIC_TRACKING },

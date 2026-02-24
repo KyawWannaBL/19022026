@@ -19,7 +19,7 @@ import {
   Shipment, 
   FleetVehicle, 
 } from '@/lib/index';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { AuditFeed } from '@/components/AuditFeed';
 import { FleetStatus } from '@/components/FleetStatus'; // Changed to named import
 import { StatusBadge } from '@/components/StatusBadge'; // Changed to named import
@@ -78,7 +78,7 @@ const MOCK_VEHICLES: FleetVehicle[] = [
 ];
 
 export default function SupervisorDashboard() {
-  const { language } = useLanguage(); // Assuming useLanguage returns language string or object
+  const { language } = useLanguageContext(); // Assuming useLanguageContext returns language string or object
   const [searchQuery, setSearchQuery] = useState('');
 
   // 1. Fixed Search Logic

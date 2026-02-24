@@ -12,8 +12,8 @@ import {
   Eye,
   ArrowRight
 } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI, Shipment, Customer, Merchant } from '@/services/logistics-api';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -41,7 +41,7 @@ import { motion } from 'framer-motion';
 
 const RegistrationQueue: React.FC = () => {
   const { user } = useAuth();
-  const { language } = useLanguage();
+  const { language } = useLanguageContext();
   const { toast } = useToast();
   
   const [activeTab, setActiveTab] = useState('shipments');

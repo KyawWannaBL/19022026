@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { ROUTE_PATHS } from '@/lib/index';
 import { DashboardStat } from '@/components/ui/SharedComponents';
 import { Link } from 'react-router-dom';
@@ -34,7 +34,7 @@ const customerShipments: CustomerShipment[] = [
 ];
 
 export default function CustomerDashboardPage() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [search, setSearch] = useState('');
 
   const filtered = customerShipments.filter(s => 

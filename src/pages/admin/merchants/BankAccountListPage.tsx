@@ -18,7 +18,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { ROUTE_PATHS } from '@/lib/index';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -131,7 +131,7 @@ const MOCK_ACCOUNTS: BankAccount[] = [
 ];
 
 const BankAccountListPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');

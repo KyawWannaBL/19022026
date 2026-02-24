@@ -12,7 +12,7 @@ import {
   Layers,
   ChevronRight
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -29,7 +29,7 @@ interface RouteOptimizerProps {
 }
 
 export function RouteOptimizer({ deliveries, onRouteOptimized, className }: RouteOptimizerProps) {
-  const { language } = useLanguage();
+  const { language } = useLanguageContext();
   const [isOptimizing, setIsOptimizing] = useState(false);
   const [progress, setProgress] = useState(0);
   const [optimizedRoute, setOptimizedRoute] = useState<any[] | null>(null);

@@ -14,7 +14,7 @@ import {
   Tag,
   Scan
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { QRCodeScanner } from '@/components/QRCodeScanner';
 import { QRCodeLabel } from '@/components/QRCodeLabel';
 import { logisticsAPI } from '@/services/logistics-api';
@@ -40,7 +40,7 @@ interface Label {
 }
 
 export default function RiderLabel() {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const [labelBatches, setLabelBatches] = useState<LabelBatch[]>([]);
   const [selectedBatch, setSelectedBatch] = useState<LabelBatch | null>(null);
   const [selectedLabel, setSelectedLabel] = useState<Label | null>(null);

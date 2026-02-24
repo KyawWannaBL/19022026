@@ -18,7 +18,7 @@ import {
   History
 } from 'lucide-react';
 import { SHIPMENT_STATUSES, ROUTE_PATHS } from '@/lib/index';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -121,7 +121,7 @@ const MOCK_FAILED_WAYS = [
 ];
 
 const FailedWaysPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   const [searchQuery, setSearchQuery] = useState('');
   const [reasonFilter, setReasonFilter] = useState('all');

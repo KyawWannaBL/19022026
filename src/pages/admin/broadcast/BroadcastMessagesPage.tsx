@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ROUTE_PATHS } from '@/lib/index';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -39,7 +39,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 const BroadcastMessagesPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
 
   // Mock data for recent broadcasts

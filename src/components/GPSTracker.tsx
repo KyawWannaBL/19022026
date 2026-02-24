@@ -26,7 +26,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI } from '@/services/logistics-api';
 import { cn } from '@/lib/utils';
 
@@ -54,7 +54,7 @@ export function GPSTracker({
   onLocationUpdate, 
   className 
 }: GPSTrackerProps) {
-  const { language } = useLanguage();
+  const { language } = useLanguageContext();
   const { toast } = useToast();
   
   const [location, setLocation] = useState<LocationData | null>(null);

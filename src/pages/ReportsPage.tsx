@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
@@ -80,7 +80,7 @@ const mockOverdueData: ReportData[] = [
 ];
 
 export default function ReportsPage() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [activeTab, setActiveTab] = useState('ways_count');
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
   const [selectedPeriod, setSelectedPeriod] = useState('this_month');

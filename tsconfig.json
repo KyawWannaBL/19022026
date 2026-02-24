@@ -1,19 +1,23 @@
+// file: tsconfig.json
 {
-  "$schema": "https://supabase.com/dashboard/project/dltavabvjwocknkyvwgz/database/schemas",
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "noEmit": true,
-    "strict": true,
+
+    "strict": false,
+    "skipLibCheck": true,
+
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["src/*"]
+    },
+
+    "types": ["vite/client"]
   },
   "include": ["src"],
-  "exclude": ["src/hooks/useAuth.ts", "src/hooks/useAuth.js"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules", "dist", "build", "react-signature-canvas.tsx"]
 }

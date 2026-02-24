@@ -14,7 +14,7 @@ import {
   Server,
   Cpu
 } from 'lucide-react';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -32,7 +32,7 @@ import {
 import { toast } from 'sonner';
 
 const SystemConfigPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   const [isSaving, setIsSaving] = useState(false);
 

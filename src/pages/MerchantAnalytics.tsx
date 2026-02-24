@@ -28,8 +28,8 @@ import {
   Cell,
   Legend
 } from 'recharts';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI, DashboardMetrics } from '@/services/logistics-api';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -56,7 +56,7 @@ const STATUS_DATA = [
 
 const MerchantAnalytics: React.FC = () => {
   const { user } = useAuth();
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [metrics, setMetrics] = useState<DashboardMetrics | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [timeRange, setTimeRange] = useState('7d');

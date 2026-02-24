@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useLanguageContext } from "@/lib/LanguageContext";
+import { useLanguageContextContext } from "@/lib/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   BarChart3, 
@@ -17,7 +17,7 @@ import {
 import { ROUTE_PATHS } from "@/lib/index";
 
 export default function ReportsHome() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const navigate = useNavigate();
 
   const reportCategories = [

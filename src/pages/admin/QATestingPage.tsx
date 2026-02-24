@@ -24,7 +24,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 interface TestSuite {
@@ -55,7 +55,7 @@ interface BugReport {
 }
 
 const QATestingPage: React.FC = () => {
-  const { language, t } = useLanguageContext();
+  const { language, t } = useLanguageContextContext();
   const { toast } = useToast();
   
   const [isRunningTests, setIsRunningTests] = useState(false);

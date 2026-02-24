@@ -53,7 +53,7 @@ import {
   generateTrackingNumber,
   Shipment
 } from '@/lib/index';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { QRScanner } from '@/components/QRScanner';
 import { QRCodeGenerator } from '@/components/QRCodeGenerator';
 import { StatusBadge } from '@/components/StatusBadge';
@@ -101,7 +101,7 @@ const MOCK_WAREHOUSE_ITEMS: Shipment[] = [
 ];
 
 export default function WarehouseOperations() {
-  const { language } = useLanguage();
+  const { language } = useLanguageContext();
   const [activeTab, setActiveTab] = useState('inventory');
   const [searchQuery, setSearchQuery] = useState('');
   const [scannedId, setScannedId] = useState<string | null>(null);

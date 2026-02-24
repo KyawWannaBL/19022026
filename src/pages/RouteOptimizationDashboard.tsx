@@ -27,7 +27,7 @@ import {
   TrendingUp,
   X
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { RouteOptimizer } from '@/components/RouteOptimizer';
 import { logisticsAPI } from '@/services/logistics-api';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
@@ -99,7 +99,7 @@ interface VehicleProfile {
 }
 
 export default function RouteOptimizationDashboard() {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const [activeTab, setActiveTab] = useState<'ROUTES' | 'OPTIMIZE' | 'ANALYTICS' | 'SETTINGS'>('ROUTES');
   const [routes, setRoutes] = useState<OptimizedRoute[]>([]);
   const [vehicleProfiles, setVehicleProfiles] = useState<VehicleProfile[]>([]);

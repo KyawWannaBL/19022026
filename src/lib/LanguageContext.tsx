@@ -1,16 +1,9 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'my';
 
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
-}
-
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-const translations = {
+// Define the shape of your translation dictionary
+const translations: Record<Language, Record<string, string>> = {
   en: {
     "nav.login": "Login",
     "public.track": "Track & Trace",
@@ -53,16 +46,26 @@ const translations = {
   }
 };
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  // This supports both key-based lookups AND inline translations used in your forms
+  t: (keyOrEn: string, fallbackMy?: string) => string;
+}
 
-  const t = (key: string) => {
-    const keys = key.split('.');
-    let value: any = translations[language];
-    for (const k of keys) {
-      value = value?.[k];
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [language, setLanguage] = useState<Language>('my'); // Default to Myanmar
+
+  const t = (keyOrEn: string, fallbackMy?: string): string => {
+    // 1. If two arguments are provided, use the inline translation logic
+    if (fallbackMy) {
+      return language === 'en' ? keyOrEn : fallbackMy;
     }
-    return value || key;
+
+    // 2. If one argument is provided, look it up in the dictionary
+    return translations[language][keyOrEn] || keyOrEn;
   };
 
   return (
@@ -72,8 +75,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   );
 };
 
-export const useLanguageContext = () => {
+export const useLanguageContextContext = () => {
   const context = useContext(LanguageContext);
-  if (!context) throw new Error('useLanguageContext must be used within LanguageProvider');
+  if (!context) throw new Error('useLanguageContextContext must be used within LanguageProvider');
   return context;
 };

@@ -18,7 +18,7 @@ import {
   DollarSign,
   FileText
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { GPSTracker } from '@/components/GPSTracker';
 import { ElectronicSignature } from '@/components/ElectronicSignature';
 import { logisticsAPI } from '@/services/logistics-api';
@@ -46,7 +46,7 @@ interface DeliveryItem {
 }
 
 export default function RiderDelivery() {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const [currentStep, setCurrentStep] = useState<DeliveryStep>('LIST');
   const [deliveryItems, setDeliveryItems] = useState<DeliveryItem[]>([]);
   const [selectedItem, setSelectedItem] = useState<DeliveryItem | null>(null);

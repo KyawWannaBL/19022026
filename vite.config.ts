@@ -169,4 +169,12 @@ export default defineConfig(({ mode }) => ({
         : process.env.VITE_ENABLE_ROUTE_MESSAGING !== 'false'
     ),
   },
+// file: vite.config.ts
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+
+export default defineConfig({
+  plugins: [react(), tsconfigPaths()],
+});
 }));

@@ -18,8 +18,8 @@ import {
   Zap,
   MapPin
 } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI, Vehicle, Shipment } from '@/services/logistics-api';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -39,7 +39,7 @@ import { springPresets } from '@/lib/motion';
 
 const TrackingMap: React.FC = () => {
   const { user } = useAuth();
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);

@@ -18,7 +18,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { ROUTE_PATHS } from '@/lib/index';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -109,7 +109,7 @@ const MOCK_HISTORY = [
 ];
 
 const MessageHistoryPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   const [searchQuery, setSearchQuery] = useState('');
 

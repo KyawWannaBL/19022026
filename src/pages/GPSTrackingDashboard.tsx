@@ -22,7 +22,7 @@ import {
   Search,
   Map
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { GPSTracker } from '@/components/GPSTracker';
 import { logisticsAPI } from '@/services/logistics-api';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
@@ -106,7 +106,7 @@ interface RouteData {
 }
 
 export default function GPSTrackingDashboard() {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const [activeTab, setActiveTab] = useState<'LIVE' | 'DEVICES' | 'GEOFENCES' | 'ROUTES' | 'ALERTS'>('LIVE');
   const [devices, setDevices] = useState<GPSDevice[]>([]);
   const [geofences, setGeofences] = useState<GeofenceZone[]>([]);

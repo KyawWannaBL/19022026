@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLanguageContext } from "@/lib/LanguageContext";
+import { useLanguageContextContext } from "@/lib/LanguageContext";
 import {
   BarChart3,
   Download,
@@ -34,7 +34,7 @@ import {
 } from "@/lib/reports-api";
 
 export default function ReportsCenter() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [activeTab, setActiveTab] = useState('overview');
   const [loading, setLoading] = useState(false);
   const [filters, setFilters] = useState<ReportFilter>({

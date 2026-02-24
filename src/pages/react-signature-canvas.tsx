@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import { Button } from '@/components/ui/button';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { Trash2, CheckCircle2 } from 'lucide-react';
 
 /**
@@ -15,7 +15,7 @@ interface SignaturePadProps {
 
 export const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, onClear }) => {
   const sigCanvas = useRef<SignatureCanvas>(null);
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
 
   const clear = () => {
     sigCanvas.current?.clear();

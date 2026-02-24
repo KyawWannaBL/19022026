@@ -37,7 +37,7 @@ import {
   Shipment, 
   SHIPMENT_STATUS 
 } from '@/lib/index';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { DataEntryForm } from '@/components/DataEntryForm';
 import { ShippingCalculator } from '@/components/ShippingCalculator';
 import { StatusBadge } from '@/components/StatusBadge';
@@ -105,7 +105,7 @@ const MOCK_INVOICES = [
 ];
 
 export default function MerchantPortal() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [activeTab, setActiveTab] = useState('dashboard');
 
   const handleShipmentSubmit = (data: any) => {

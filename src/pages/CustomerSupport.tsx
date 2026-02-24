@@ -15,8 +15,8 @@ import {
   CheckCircle2,
   AlertCircle
 } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI } from '@/services/logistics-api';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -48,7 +48,7 @@ import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/mo
 
 const CustomerSupport: React.FC = () => {
   const { user } = useAuth();
-  const { language, t } = useLanguage();
+  const { language, t } = useLanguageContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeTab, setActiveTab] = useState('faq');

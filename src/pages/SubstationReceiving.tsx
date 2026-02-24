@@ -14,8 +14,8 @@ import {
   Hash,
   Box
 } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI, Shipment } from '@/services/logistics-api';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
@@ -38,7 +38,7 @@ import {
 
 const SubstationReceiving: React.FC = () => {
   const { user } = useAuth();
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const queryClient = useQueryClient();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState<'incoming' | 'processing' | 'completed'>('incoming');

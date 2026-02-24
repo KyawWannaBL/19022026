@@ -19,7 +19,7 @@ import {
   Scan,
   FileText
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { QRCodeScanner } from '@/components/QRCodeScanner';
 import { GPSTracker } from '@/components/GPSTracker';
 import { ElectronicSignature } from '@/components/ElectronicSignature';
@@ -57,7 +57,7 @@ interface WarehousePackage {
 }
 
 export default function RiderWarehouse() {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const [currentStep, setCurrentStep] = useState<WarehouseDropStep>('LIST');
   const [warehouseBatches, setWarehouseBatches] = useState<WarehouseDropBatch[]>([]);
   const [selectedBatch, setSelectedBatch] = useState<WarehouseDropBatch | null>(null);

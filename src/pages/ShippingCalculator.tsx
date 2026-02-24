@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useLanguageContext } from "@/lib/LanguageContext";
+import { useLanguageContextContext } from "@/lib/LanguageContext";
 import { Calculator, MapPin, Package, Clock, Truck, Phone, Mail } from 'lucide-react';
 import { IMAGES } from '@/assets/images';
 
 export default function ShippingCalculator() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [formData, setFormData] = useState({
     origin: 'Yangon',
     destinationRegion: '',

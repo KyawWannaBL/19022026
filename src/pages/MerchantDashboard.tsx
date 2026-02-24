@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { DashboardStat } from '@/components/ui/SharedComponents';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { ROUTE_PATHS } from '@/lib/index';
 import { Link } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ const mockShipments: Shipment[] = [
 ];
 
 export default function MerchantDashboardPage() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredShipments = mockShipments.filter(shipment =>

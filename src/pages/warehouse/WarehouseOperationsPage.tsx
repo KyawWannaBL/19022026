@@ -32,7 +32,7 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 interface PackageItem {
@@ -62,7 +62,7 @@ interface StorageSection {
 }
 
 const WarehouseOperationsPage: React.FC = () => {
-  const { language, t } = useLanguageContext();
+  const { language, t } = useLanguageContextContext();
   const { toast } = useToast();
   
   const [packagesToday, setPackagesToday] = useState(1247);

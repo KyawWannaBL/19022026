@@ -3,10 +3,10 @@ import { Calculator, MapPin, Package, Clock, Truck, Phone, Mail } from 'lucide-r
 import { IMAGES } from '@/assets/images';
 
 // Language context - using simple state for now
-const useLanguageContext = () => ({ language: 'en' as 'en' | 'my' });
+const useLanguageContextContext = () => ({ language: 'en' as 'en' | 'my' });
 
 export default function ShippingCalculator() {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
 
   const [formData, setFormData] = useState({
     pickupCity: 'Yangon',

@@ -18,7 +18,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ROUTE_PATHS } from '@/lib/index';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { IMAGES } from '@/assets/images';
 import { supabase } from '@/integrations/supabase/client';
 import { Link } from 'react-router-dom';
@@ -35,7 +35,7 @@ interface PricingData {
 }
 
 export default function GetQuotePage() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [serviceType, setServiceType] = useState<'domestic' | 'international'>('domestic');
   const [region, setRegion] = useState('');
   const [destination, setDestination] = useState('');

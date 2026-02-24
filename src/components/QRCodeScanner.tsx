@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Camera, QrCode, X, Zap, RefreshCw, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -17,7 +17,7 @@ interface QRCodeScannerProps {
  * Uses native browser APIs for camera access and stream visualization
  */
 export function QRCodeScanner({ onScan, onError, className }: QRCodeScannerProps) {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isCameraActive, setIsCameraActive] = useState(false);
   const [error, setError] = useState<string | null>(null);

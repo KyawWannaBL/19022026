@@ -20,7 +20,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
 import { ROUTE_PATHS } from '@/lib/index';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -77,7 +77,7 @@ const formSchema = z.object({
 
 const AddNewDeliverymanPage: React.FC = () => {
   const navigate = useNavigate();
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
 
   const form = useForm<z.infer<typeof formSchema>>({

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLanguageContext } from "@/lib/LanguageContext";
+import { useLanguageContextContext } from "@/lib/LanguageContext";
 import {
   TrendingUp,
   Users,
@@ -14,7 +14,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { MarketerPerformanceAPI, MarketerPerformance } from "@/lib/admin-api";
 
 export default function MarketerDashboard() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [performance, setPerformance] = useState<MarketerPerformance[]>([]);
   const [stats, setStats] = useState<any>({});
   const [loading, setLoading] = useState(true);

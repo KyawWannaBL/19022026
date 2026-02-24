@@ -14,7 +14,7 @@ import {
   Printer
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { 
   Button 
@@ -99,7 +99,7 @@ const RECEIPT_DATA = [
 ];
 
 const MerchantReceiptsPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   const [searchQuery, setSearchQuery] = useState("");
 

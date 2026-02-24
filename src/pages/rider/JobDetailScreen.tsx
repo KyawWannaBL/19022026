@@ -24,14 +24,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { RiderAPI, type RiderTask } from '@/lib/rider-api';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 const JobDetailScreen: React.FC = () => {
   const { jobId } = useParams<{ jobId: string }>();
   const navigate = useNavigate();
-  const { language, t } = useLanguageContext();
+  const { language, t } = useLanguageContextContext();
   const { toast } = useToast();
   
   const [task, setTask] = useState<RiderTask | null>(null);

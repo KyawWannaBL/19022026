@@ -20,7 +20,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { SystemConfigAPI, SystemConfig, FormUtils } from '@/lib/forms-api';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
@@ -36,7 +36,7 @@ interface ConfigFormData {
 }
 
 const SystemConfigurationPage: React.FC = () => {
-  const { language, t } = useLanguageContext();
+  const { language, t } = useLanguageContextContext();
   const { toast } = useToast();
   
   const [formData, setFormData] = useState<ConfigFormData>({

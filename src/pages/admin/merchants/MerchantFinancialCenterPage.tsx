@@ -41,7 +41,7 @@ import {
   TableRow
 } from '@/components/ui/table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { ROUTE_PATHS } from '@/lib/index';
 
@@ -73,7 +73,7 @@ const RECENT_TRANSACTIONS = [
 ];
 
 const MerchantFinancialCenterPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   const [searchQuery, setSearchQuery] = useState('');
 

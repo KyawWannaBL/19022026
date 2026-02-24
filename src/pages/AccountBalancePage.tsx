@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useLanguageContext } from "@/lib/LanguageContext";
+import { useLanguageContextContext } from "@/lib/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Search, TrendingUp, TrendingDown, DollarSign } from "lucide-react";
 
 export default function AccountBalancePage() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [searchTerm, setSearchTerm] = useState("");
 
   // Mock account data

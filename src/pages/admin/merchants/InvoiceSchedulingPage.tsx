@@ -15,7 +15,7 @@ import {
   ArrowRightLeft,
   Save
 } from 'lucide-react';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
 import { ROUTE_PATHS } from '@/lib/index';
 import { Button } from '@/components/ui/button';
@@ -51,7 +51,7 @@ import {
 import { Label } from '@/components/ui/label';
 
 const InvoiceSchedulingPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const t = (key: string) => translations[language][key as keyof (typeof translations)['en']] || key;
 
   const [searchQuery, setSearchQuery] = useState('');

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguageContext } from "@/lib/LanguageContext";
+import { useLanguageContextContext } from "@/lib/LanguageContext";
 import { 
   Building2, 
   User, 
@@ -17,7 +17,7 @@ import {
 import { IMAGES } from '@/assets/images';
 
 export default function MerchantRegistration() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     // Business Information

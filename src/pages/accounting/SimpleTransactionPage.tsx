@@ -2,10 +2,10 @@ import React from 'react';
 import { Card } from '@/components/ui/SharedComponents';
 import PageHeader from '@/components/admin/PageHeader';
 import EmptyState from '@/components/admin/EmptyState';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 
 export default function SimpleTransactionPage() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
 
   return (
     <div className="space-y-6">

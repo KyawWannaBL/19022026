@@ -26,11 +26,11 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ROUTE_PATHS } from '@/lib/index';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { IMAGES } from '@/assets/images';
 
 export default function AboutPage() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   
   return (
     <div className="min-h-screen bg-background">

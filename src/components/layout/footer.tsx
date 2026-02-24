@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Globe } from 'lucide-react';
 import { ROUTE_PATHS } from '@/lib/index';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 
 export const Footer = () => {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const currentYear = new Date().getFullYear();
 
   return (

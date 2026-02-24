@@ -26,7 +26,7 @@ import {
   Shipment, 
   SHIPMENT_STATUS 
 } from '@/lib/index';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { QRScanner } from '@/components/QRScanner';
 import { StatusBadge } from '@/components/StatusBadge';
 import { 
@@ -103,7 +103,7 @@ const MOCK_TICKETS = [
 ];
 
 export default function CustomerPortal() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [trackingId, setTrackingId] = useState('');
   const [isScannerOpen, setIsScannerOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');

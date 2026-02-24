@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import { IMAGES } from '@/assets/images';
 import { FleetVehicle, ROUTE_PATHS, getStatusVariant } from '@/lib/index';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { FleetStatus } from '@/components/FleetStatus';
 import { StatusBadge } from '@/components/StatusBadge';
 import { Button } from '@/components/ui/button';
@@ -170,7 +170,7 @@ const MapMock = () => (
 );
 
 export default function Fleet() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState('map');
 

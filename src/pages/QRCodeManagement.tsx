@@ -23,7 +23,7 @@ import {
   RefreshCw,
   X
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { QRCodeScanner } from '@/components/QRCodeScanner';
 import { QRCodeLabel } from '@/components/QRCodeLabel';
 import { logisticsAPI } from '@/services/logistics-api';
@@ -57,7 +57,7 @@ interface ScanHistory {
 }
 
 export default function QRCodeManagement() {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const [activeTab, setActiveTab] = useState<'GENERATE' | 'SCAN' | 'MANAGE' | 'HISTORY'>('GENERATE');
   const [qrCodes, setQrCodes] = useState<QRCodeData[]>([]);
   const [scanHistory, setScanHistory] = useState<ScanHistory[]>([]);

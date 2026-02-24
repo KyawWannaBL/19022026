@@ -37,7 +37,7 @@ import {
 } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { SHIPMENT_STATUSES, ROUTE_PATHS } from '@/lib/index';
 import { useNavigate } from 'react-router-dom';
@@ -63,7 +63,7 @@ interface Manifest {
 }
 
 const ParcelOutPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   const navigate = useNavigate();
   const [scanInput, setScanInput] = useState('');

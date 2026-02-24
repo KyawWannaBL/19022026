@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLanguageContext } from "@/lib/LanguageContext";
+import { useLanguageContextContext } from "@/lib/LanguageContext";
 import { Globe, Save, Plus, Trash2, Edit } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { TariffRatesAPI, TariffRate } from "@/lib/admin-api";
 
 export default function TariffSetting() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [rates, setRates] = useState<TariffRate[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAddForm, setShowAddForm] = useState(false);

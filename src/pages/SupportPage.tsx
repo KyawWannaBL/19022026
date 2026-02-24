@@ -17,7 +17,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { IMAGES } from '@/assets/images';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
 
 interface FAQ {
@@ -45,7 +45,7 @@ interface ContentPage {
 }
 
 export default function SupportPage() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [prohibitedItems, setProhibitedItems] = useState<ProhibitedItem[]>([]);
   const [contentPages, setContentPages] = useState<ContentPage[]>([]);

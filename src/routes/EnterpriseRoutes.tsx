@@ -7,13 +7,13 @@ import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/hooks/useAuth";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguageContext } from "@/lib/LanguageContext";
 import { toast } from "sonner";
 
 // Changed to 'default' export to satisfy App.tsx import
 export default function EnterpriseRoutes() {
   const { user, role } = useAuth();
-  const { language } = useLanguage();
+  const { language } = useLanguageContext();
   const [saving, setSaving] = useState(false);
   const [emailNotifications, setEmailNotifications] = useState(true);
 

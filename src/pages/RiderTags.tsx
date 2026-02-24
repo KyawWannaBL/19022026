@@ -14,7 +14,7 @@ import {
   Clock,
   AlertCircle
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { QRCodeScanner } from '@/components/QRCodeScanner';
 import { logisticsAPI } from '@/services/logistics-api';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
@@ -38,7 +38,7 @@ interface Tag {
 }
 
 export default function RiderTags() {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const [tagBatches, setTagBatches] = useState<TagBatch[]>([]);
   const [selectedBatch, setSelectedBatch] = useState<TagBatch | null>(null);
   const [loading, setLoading] = useState(true);

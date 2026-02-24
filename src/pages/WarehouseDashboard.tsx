@@ -18,7 +18,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { StatCard } from '@/components/ui/SharedComponents';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 
 interface WarehouseStats {
   inbound: number;
@@ -71,7 +71,7 @@ const mockRecentScans: ScanLog[] = [
 ];
 
 export default function WarehouseDashboard() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [activeStage, setActiveStage] = useState('Scanning');
   const [barcode, setBarcode] = useState('');
   const [location, setLocation] = useState('');

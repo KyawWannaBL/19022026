@@ -25,7 +25,7 @@ import {
   getStatusVariant,
   ROUTE_PATHS
 } from '@/lib/index';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { SignaturePad } from '@/components/SignaturePad';
 import { PhotoCapture } from '@/components/PhotoCapture';
 import { StatusBadge } from '@/components/StatusBadge';
@@ -95,7 +95,7 @@ const MOCK_DELIVERIES: Shipment[] = [
 ];
 
 export default function Delivery() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [activeShipment, setActiveShipment] = useState<Shipment | null>(null);
   const [isPodOpen, setIsPodOpen] = useState(false);
   const [isExceptionOpen, setIsExceptionOpen] = useState(false);

@@ -17,8 +17,8 @@ import {
   Plus,
   ArrowRightLeft
 } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI, Shipment, Vehicle } from '@/services/logistics-api';
 import {
   Card,
@@ -52,7 +52,7 @@ import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/mo
 
 export default function WarehouseDispatch() {
   const { user } = useAuth();
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [loading, setLoading] = useState(true);
   const [shipments, setShipments] = useState<Shipment[]>([]);
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);

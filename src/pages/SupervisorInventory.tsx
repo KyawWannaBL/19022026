@@ -15,8 +15,8 @@ import {
   Download,
   ArrowRightLeft
 } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI } from '@/services/logistics-api';
 import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 import { Button } from '@/components/ui/button';
@@ -52,7 +52,7 @@ import { toast } from 'sonner';
 
 const SupervisorInventory: React.FC = () => {
   const { user } = useAuth() as any;
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   const [inventory, setInventory] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');

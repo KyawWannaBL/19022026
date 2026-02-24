@@ -31,7 +31,7 @@ import {
 } from 'recharts';
 import { motion } from 'framer-motion';
 import { formatCurrency } from '@/lib/index';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { IMAGES } from '@/assets/images';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -111,7 +111,7 @@ function MetricsCard({ title, value, icon: Icon, trend, description }: MetricsCa
 }
 
 export default function Analytics() {
-  const { language } = useLanguage();
+  const { language } = useLanguageContext();
   const [timeRange, setTimeRange] = useState('12M');
 
   const t = useMemo(() => ({

@@ -21,7 +21,7 @@ import {
   AlertCircle,
   X
 } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { ElectronicSignature } from '@/components/ElectronicSignature';
 import { logisticsAPI } from '@/services/logistics-api';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
@@ -68,7 +68,7 @@ interface SignatureTemplate {
 }
 
 export default function ElectronicSignatureManagement() {
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
   const [activeTab, setActiveTab] = useState<'CAPTURE' | 'MANAGE' | 'VERIFY' | 'TEMPLATES'>('CAPTURE');
   const [signatures, setSignatures] = useState<SignatureRecord[]>([]);
   const [templates, setTemplates] = useState<SignatureTemplate[]>([]);

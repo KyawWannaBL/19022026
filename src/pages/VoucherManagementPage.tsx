@@ -48,7 +48,7 @@ import {
   TableRow 
 } from "@/components/ui/table";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { VouchersAPI, Voucher, FormUtils } from '@/lib/forms-api';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
@@ -61,7 +61,7 @@ interface VoucherFormData {
 }
 
 const VoucherManagementPage: React.FC = () => {
-  const { language, t } = useLanguageContext();
+  const { language, t } = useLanguageContextContext();
   const { toast } = useToast();
   
   const [vouchers, setVouchers] = useState<Voucher[]>([]);

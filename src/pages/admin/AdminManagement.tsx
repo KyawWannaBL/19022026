@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLanguageContext } from "@/lib/LanguageContext";
+import { useLanguageContextContext } from "@/lib/LanguageContext";
 import {
   Users,
   UserPlus,
@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { AdminUsersAPI, AdminUser } from "@/lib/admin-api";
 
 export default function AdminManagement() {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   const [searchTerm, setSearchTerm] = useState("");
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [loading, setLoading] = useState(true);

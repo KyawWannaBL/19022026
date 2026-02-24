@@ -1,10 +1,10 @@
 // src/pages/rider/Dashboard.tsx
 import React from 'react';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { SHIPMENT_STATUS } from '@/lib/index';
 
 export const RiderDashboard = () => {
-  const { t } = useLanguageContext();
+  const { t } = useLanguageContextContext();
   return (
     <div className="p-4">
       <h2 className="font-black text-[#ff6b00]">

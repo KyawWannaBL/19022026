@@ -12,8 +12,8 @@ import {
   Maximize2,
   DollarSign
 } from 'lucide-react';
-import { useAuth } from '@/contexts/AuthContext';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useAuth } from '@/hooks/useAuth';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { logisticsAPI, MyanmarLocation, RateCalculation } from '@/services/logistics-api';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -34,7 +34,7 @@ import { springPresets, fadeInUp } from '@/lib/motion';
 
 const RiderCalculator: React.FC = () => {
   const { user } = useAuth();
-  const { t, language } = useLanguage();
+  const { t, language } = useLanguageContext();
 
   // State for calculator inputs
   const [calcType, setCalcType] = useState<'domestic' | 'international'>('domestic');

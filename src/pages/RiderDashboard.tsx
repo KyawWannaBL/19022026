@@ -1,7 +1,7 @@
 // ... (imports remain the same)
 
 export default function RiderDashboard() {
-  const { language } = useLanguage();
+  const { language } = useLanguageContext();
   const [activeTask, setActiveTask] = useState<DeliveryTask | null>(MOCK_DELIVERIES[0]);
   const [deliveries, setDeliveries] = useState<DeliveryTask[]>(MOCK_DELIVERIES);
   const [isOnline, setIsOnline] = useState(true);

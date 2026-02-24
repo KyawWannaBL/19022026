@@ -16,7 +16,7 @@ import {
   User
 } from 'lucide-react';
 import { useTranslation } from '@/lib/translations';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -30,7 +30,7 @@ const SORT_BINS = ['A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C1', 'C2', 'C3', 'D1', '
 const ROUTE_CODES = ['R001', 'R002', 'R003', 'R004', 'R005', 'R006', 'R007', 'R008'];
 
 export default function WarehouseSorting() {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   
   const [user, setUser] = useState<WarehouseUser | null>(null);

@@ -12,7 +12,7 @@ import {
   Smartphone,
   History
 } from 'lucide-react';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import {
   Card,
@@ -37,7 +37,7 @@ import {
 import { useToast } from '@/components/ui/use-toast';
 
 const NotificationsPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const { t } = useTranslation(language);
   const { toast } = useToast();
   const [isSaving, setIsSaving] = useState(false);

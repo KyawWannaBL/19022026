@@ -18,7 +18,7 @@ import {
   Target,
   AlertCircle
 } from 'lucide-react';
-import { useLanguageContext } from '@/lib/LanguageContext';
+import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
 import { SHIPMENT_STATUSES } from '@/lib/index';
 import { Button } from '@/components/ui/button';
@@ -49,7 +49,7 @@ interface RiderLocation {
 }
 
 const TrackingMapPage: React.FC = () => {
-  const { language } = useLanguageContext();
+  const { language } = useLanguageContextContext();
   const t = (key: string) => translations[language][key as keyof typeof translations['en']] || key;
 
   const [searchQuery, setSearchQuery] = useState('');
