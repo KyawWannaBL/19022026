@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useEnterpriseShipments } from '@/hooks/useEnterpriseShipments'; //
+import { useEnterpriseShipments } from '@/hooks/useEnterpriseShipments';
 import { Search, Loader2, Package, MapPin, Clock } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 export default function Tracking() {
-  // FIXED: Declared once to resolve the "has already been declared" error
+  // FIXED: Hook is now called exactly once
   const { data: shipments = [], isLoading: shipmentsLoading } = useEnterpriseShipments();
   
   const [trackingNumber, setTrackingNumber] = useState('');
