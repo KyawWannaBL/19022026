@@ -1,5 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
+
 import { Card as ShadcnCard, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button as ShadcnButton } from '@/components/ui/button';
 import { Badge as ShadcnBadge } from '@/components/ui/badge';
@@ -215,7 +215,7 @@ export default {
   DataTable,
   EmptyState,
   PageHeader,
-=======
+
 import { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -249,5 +249,5 @@ export const DashboardStat = ({ icon: Icon, label, value, color, className }: Da
       </div>
     </div>
   );
->>>>>>> add-supabase-user-script
+
 };

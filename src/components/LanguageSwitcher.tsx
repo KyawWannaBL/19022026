@@ -1,8 +1,8 @@
 import React from 'react';
-<<<<<<< HEAD
+
 import { Globe, Check } from 'lucide-react';
-=======
->>>>>>> add-supabase-user-script
+
+
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-<<<<<<< HEAD
+
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LanguageSwitcherProps {
@@ -30,18 +30,18 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
-=======
+
 import { useLanguageContext } from '@/lib/LanguageContext'; // FIXED
 import { Globe } from 'lucide-react';
 
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguageContext(); // FIXED
->>>>>>> add-supabase-user-script
+
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-<<<<<<< HEAD
+
         <Button 
           variant="ghost" 
           size="sm" 
@@ -85,7 +85,7 @@ export function LanguageSwitcher() {
     </DropdownMenu>
   );
 }
-=======
+
         <Button variant="ghost" size="sm" className="gap-2">
           <Globe className="h-4 w-4" />
           <span className="uppercase">{language}</span>
@@ -98,4 +98,4 @@ export function LanguageSwitcher() {
     </DropdownMenu>
   );
 }
->>>>>>> add-supabase-user-script
+

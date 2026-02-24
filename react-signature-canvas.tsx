@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 // Deprecated: moved to src/pages/react-signature-canvas.tsx
-=======
+
 
 import SignatureCanvas from "react-signature-canvas";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -46,4 +46,4 @@ export default function SignaturePad({ deliveryId }: { deliveryId: string }) {
 
 // Deprecated: moved to src/pages/react-signature-canvas.tsx
 
->>>>>>> add-supabase-user-script
+

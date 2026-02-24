@@ -71,6 +71,8 @@ const TABLES = {
   rolePermissions: "role_permissions",
 } as const;
 
+// Non-null supabase alias for TS (lib may export SupabaseClient | null)
+const sb = supabase!;
 function normalizeRole(value: unknown): AppRole | string {
   if (isAppRole(value)) return value;
   if (typeof value === "string" && value.trim()) return value.trim();
@@ -95,7 +97,7 @@ function permissionsFromJson(permissions: any): PermissionCode[] {
 
 /** Fetch legacy profile row (public.profiles) by auth uid. */
 async function fetchLegacyProfile(userId: string): Promise<any | null> {
-  const { data, error } = await supabase
+  const { data, error } = await sb
     .from(TABLES.legacyProfiles)
     .select("*")
     .eq("id", userId)
@@ -110,7 +112,7 @@ async function fetchLegacyProfile(userId: string): Promise<any | null> {
 
 /** Fetch enterprise profile row (public.profiles_2026_02_19_13_00) by user_id = auth uid. */
 async function fetchEnterpriseProfile(userId: string): Promise<any | null> {
-  const { data, error } = await supabase
+  const { data, error } = await sb
     .from(TABLES.enterpriseProfiles)
     .select("*")
     .eq("user_id", userId)
@@ -148,7 +150,7 @@ async function ensureLegacyProfileExists(sessionUser: SupabaseUser): Promise<any
   };
 
   // Try upsert; if column mismatch exists in some older variant, remove optional fields.
-  let { data, error } = await supabase
+  let { data, error } = await sb
     .from(TABLES.legacyProfiles)
     .upsert(payload, { onConflict: "id" })
     .select("*")
@@ -162,7 +164,7 @@ async function ensureLegacyProfileExists(sessionUser: SupabaseUser): Promise<any
       role,
       must_change_password: true,
     };
-    const res2 = await supabase
+    const res2 = await sb
       .from(TABLES.legacyProfiles)
       .upsert(payload2, { onConflict: "id" })
       .select("*")
@@ -202,7 +204,7 @@ async function ensureEnterpriseProfileExists(sessionUser: SupabaseUser): Promise
     permissions: {},
   };
 
-  const { data, error } = await supabase
+  const { data, error } = await sb
     .from(TABLES.enterpriseProfiles)
     .insert(payload)
     .select("*")
@@ -257,7 +259,7 @@ async function fetchMergedProfile(authUser: SupabaseUser): Promise<ProfileRow | 
 async function fetchPermissionCodes(role: string, mergedProfile?: ProfileRow | null): Promise<PermissionCode[]> {
   // APP_OWNER = all permissions (if table exists)
   if (role === "APP_OWNER") {
-    const { data, error } = await supabase.from(TABLES.permissions).select("code").order("code");
+    const { data, error } = await sb.from(TABLES.permissions).select("code").order("code");
     if (!error && data) return (data ?? []).map((p: any) => p?.code).filter(Boolean);
     // fallback
     return permissionsFromJson(mergedProfile?.permissions);
@@ -265,7 +267,7 @@ async function fetchPermissionCodes(role: string, mergedProfile?: ProfileRow | n
 
   // Try RBAC tables
   try {
-    const relational = await supabase
+    const relational = await sb
       .from(TABLES.rolePermissions)
       .select("permission_id, permissions ( code )")
       .eq("role", role);
@@ -275,7 +277,7 @@ async function fetchPermissionCodes(role: string, mergedProfile?: ProfileRow | n
       return Array.from(new Set(codes));
     }
 
-    const { data: rpData } = await supabase
+    const { data: rpData } = await sb
       .from(TABLES.rolePermissions)
       .select("permission_id")
       .eq("role", role);
@@ -283,7 +285,7 @@ async function fetchPermissionCodes(role: string, mergedProfile?: ProfileRow | n
     const ids = (rpData ?? []).map((r: any) => r?.permission_id).filter(Boolean);
     if (!ids.length) return permissionsFromJson(mergedProfile?.permissions);
 
-    const { data: permData } = await supabase.from(TABLES.permissions).select("code").in("id", ids);
+    const { data: permData } = await sb.from(TABLES.permissions).select("code").in("id", ids);
     const codes = (permData ?? []).map((p: any) => p?.code).filter(Boolean);
     return Array.from(new Set(codes));
   } catch {
@@ -300,7 +302,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [mustChangePassword, setMustChangePassword] = useState(false);
 
   const hydrateFromSession = useCallback(async () => {
-    const { data, error } = await supabase.auth.getSession();
+    const { data, error } = await sb.auth.getSession();
     if (error) console.warn("[auth] getSession error", error);
 
     const authUser = data.session?.user;
@@ -337,7 +339,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     refresh();
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async () => {
+    } = sb.auth.onAuthStateChange(async () => {
       await refresh();
     });
     return () => subscription.unsubscribe();
@@ -354,7 +356,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = useCallback(
     async (email: string, password: string): Promise<LoginResult> => {
-      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      const { data, error } = await sb.auth.signInWithPassword({ email, password });
       if (error) throw error;
 
       // Ensure profiles exist
@@ -374,7 +376,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signUp = useCallback(
     async (email: string, password: string, fullName?: string) => {
-      const { data, error } = await supabase.auth.signUp({
+      const { data, error } = await sb.auth.signUp({
         email,
         password,
         options: {
@@ -398,7 +400,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   const requestPasswordReset = useCallback(async (email: string, redirectTo?: string) => {
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    const { error } = await sb.auth.resetPasswordForEmail(email, {
       redirectTo: redirectTo ?? `${window.location.origin}/reset-password`,
     });
     if (error) throw error;
@@ -407,17 +409,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const clearMustChangePasswordFlag = useCallback(async () => {
     // your migration defines clear_must_change_password() for public.profiles
     try {
-      const { error } = await supabase.rpc("clear_must_change_password");
+      const { error } = await sb.rpc("clear_must_change_password");
       if (!error) return;
     } catch {
       // ignore and try direct update
     }
 
-    const { data } = await supabase.auth.getSession();
+    const { data } = await sb.auth.getSession();
     const uid = data.session?.user?.id;
     if (!uid) return;
 
-    await supabase
+    await sb
       .from(TABLES.legacyProfiles)
       .update({ must_change_password: false })
       .eq("id", uid);
@@ -425,7 +427,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const resetPassword = useCallback(
     async (newPassword: string) => {
-      const { error } = await supabase.auth.updateUser({ password: newPassword });
+      const { error } = await sb.auth.updateUser({ password: newPassword });
       if (error) throw error;
 
       await clearMustChangePasswordFlag();
@@ -436,7 +438,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const changePassword = useCallback(
     async (newPassword: string) => {
-      const { error } = await supabase.auth.updateUser({ password: newPassword });
+      const { error } = await sb.auth.updateUser({ password: newPassword });
       if (error) throw error;
 
       await clearMustChangePasswordFlag();
@@ -446,7 +448,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   const logout = useCallback(async () => {
-    await supabase.auth.signOut();
+    await sb.auth.signOut();
     setUser(null);
     setRole(null);
     setBranchId(null);

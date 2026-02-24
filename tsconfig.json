@@ -5,6 +5,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "jsx": "react-jsx",
+    "noEmit": true,
     "strict": true,
     "baseUrl": ".",
     "paths": {
@@ -12,5 +13,6 @@
     }
   },
   "include": ["src"],
+  "exclude": ["src/hooks/useAuth.ts", "src/hooks/useAuth.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -13,7 +13,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { toast } from "sonner";
 /**
  * Settings (Enterprise)
-<<<<<<< HEAD
+
  * Supabase-only, shows current session info and basic preferences.
  */
 export default function Settings() {

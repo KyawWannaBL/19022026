@@ -25,15 +25,15 @@ import {
   MessageSquare
 } from 'lucide-react';
 import { ROUTE_PATHS, USER_ROLES, UserRole } from '@/lib/index';
-<<<<<<< HEAD
+
 import { useAuth } from '@/hooks/useAuth';
-=======
+
 
 import { useAuth } from '@/hooks/useFirebaseAuth';
 
 import { useAuth } from '@/hooks/useAuth';
 
->>>>>>> add-supabase-user-script
+
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { IMAGES } from '@/assets/images';
 import { Button } from '@/components/ui/button';

@@ -23,10 +23,10 @@ export const APP_ROLES = [
   'MERCHANT',
   'CUSTOMER',
 ] as const;
-<<<<<<< HEAD
+
 
 export type AppRole = typeof APP_ROLES[number];
-=======
+
 import { isAppRole, type AppRole } from "@/types/roles";
 // src/types/roles.ts
 
@@ -38,4 +38,4 @@ export const isAppRole = (role: any): role is AppRole => {
   const validRoles: AppRole[] = ['admin', 'staff', 'driver', 'seller', 'customer'];
   return validRoles.includes(role);
 };
->>>>>>> add-supabase-user-script
+

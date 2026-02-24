@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { 
   Loader2, 
-<<<<<<< HEAD
+
   Package, 
   User, 
   MapPin, 
@@ -17,14 +17,14 @@ import {
   Send
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-=======
+
   AlertTriangle, 
   ShieldCheck, 
   Send,
   Lock,
   Mail
 } from 'lucide-react';
->>>>>>> add-supabase-user-script
+
 import { 
   Form, 
   FormControl, 
@@ -35,10 +35,10 @@ import {
 } from '@/components/ui/form';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-<<<<<<< HEAD
-=======
 
->>>>>>> add-supabase-user-script
+
+
+
 import { Textarea } from '@/components/ui/textarea';
 import { 
   Select, 
@@ -53,7 +53,7 @@ import {
   Shipment, 
   generateTrackingNumber 
 } from '@/lib/index';
-<<<<<<< HEAD
+
 import { useAuth } from '@/hooks/useAuth';
 import { PhotoCapture } from '@/components/PhotoCapture';
 import { SignaturePad } from '@/components/SignaturePad';
@@ -72,7 +72,7 @@ export function LoginForm() {
   const { t } = useLanguage();
   const [error, setError] = React.useState<string>('');
   const form = useForm<z.infer<typeof loginSchema>>({
-=======
+
 
 import { useAuth } from '@/hooks/useDemoAuth';
 
@@ -110,12 +110,12 @@ export function LoginForm() {
 export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => void; isLoading: boolean }) {
   const form = useForm({
 
->>>>>>> add-supabase-user-script
+
     resolver: zodResolver(loginSchema),
     defaultValues: { email: '', password: '' },
   });
 
-<<<<<<< HEAD
+
   const onSubmit = async (values: z.infer<typeof loginSchema>) => {
     setError('');
     try {
@@ -127,12 +127,12 @@ export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => vo
 
   return (    <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-=======
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
 
->>>>>>> add-supabase-user-script
+
         {error && (
           <div className="p-3 text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md">
             {error}
@@ -164,10 +164,10 @@ export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => vo
             </FormItem>
           )}
         />
-<<<<<<< HEAD
+
         <Button type="submit" className="w-full h-11 font-semibold" disabled={loading}>
           {loading ? (
-=======
+
 
         <Button type="submit" className="w-full h-11 font-semibold" disabled={isLoading}>
           {isLoading ? (
@@ -175,13 +175,13 @@ export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => vo
         <Button type="submit" className="w-full h-11 font-semibold" disabled={loading}>
           {loading ? (
 
->>>>>>> add-supabase-user-script
+
             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> {t('common.loading')}</>
           ) : (
             t('auth.signInToDashboard')
           )}
-<<<<<<< HEAD
-=======
+
+
 
         <FormField control={form.control} name="email" render={({ field }) => (
           <FormItem>
@@ -201,7 +201,7 @@ export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => vo
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Login to Dashboard
 
->>>>>>> add-supabase-user-script
+
         </Button>
       </form>
     </Form>
@@ -209,7 +209,7 @@ export function LoginForm({ onSubmit, isLoading }: { onSubmit: (data: any) => vo
 }
 
 /**
-<<<<<<< HEAD
+
  * Shipment Creation/Edit Form
  */
 const shipmentSchema = z.object({
@@ -244,21 +244,21 @@ export function ShipmentForm({ initialData, onSubmit, isLoading }: ShipmentFormP
       dimensions: initialData?.dimensions || '',
       isPriority: initialData?.isPriority || false,
     },
-=======
+
  * EXCEPTION FORM
  */
 export function ExceptionForm({ onSubmit, isLoading }: { onSubmit: (data: any) => void; isLoading: boolean }) {
   const form = useForm({
     defaultValues: { reason: '', description: '' }
->>>>>>> add-supabase-user-script
+
   });
 
   return (
     <Form {...form}>
-<<<<<<< HEAD
-=======
 
->>>>>>> add-supabase-user-script
+
+
+
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Sender Details */}
@@ -406,15 +406,15 @@ export function ExceptionForm({ onSubmit, isLoading }: { onSubmit: (data: any) =
 
         <div className="flex justify-end gap-4">
           <Button type="button" variant="outline" className="px-8">Cancel</Button>
-<<<<<<< HEAD
+
           <Button type="submit" className="px-12" disabled={loading}>
-=======
+
 
           <Button type="submit" className="px-12" disabled={isLoading}>
 
           <Button type="submit" className="px-12" disabled={loading}>
 
->>>>>>> add-supabase-user-script
+
             {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
             {initialData ? 'Update Shipment' : 'Create Shipment'}
           </Button>
@@ -522,11 +522,11 @@ export function ExceptionForm({ shipmentId, onSubmit, isLoading }: ExceptionForm
           )}
         />
 
-<<<<<<< HEAD
+
         <Button type="submit" variant="destructive" className="w-full" disabled={loading}>
           {isLoading ? <Loader2 className="animate-spin mr-2 h-4 w-4" /> : <AlertTriangle className="mr-2 h-4 w-4" />}
           Submit Exception Report
-=======
+
 
         <Button type="submit" variant="destructive" className="w-full" disabled={isLoading}>
 
@@ -550,7 +550,7 @@ export function ExceptionForm({ shipmentId, onSubmit, isLoading }: ExceptionForm
 
           {isLoading ? <Loader2 className="animate-spin mr-2 h-4 w-4" /> : <AlertTriangle className="mr-2 h-4 w-4" />}
           Submit Exception
->>>>>>> add-supabase-user-script
+
         </Button>
       </form>
     </Form>
@@ -558,7 +558,7 @@ export function ExceptionForm({ shipmentId, onSubmit, isLoading }: ExceptionForm
 }
 
 /**
-<<<<<<< HEAD
+
  * Proof of Delivery Form
  */
 const podSchema = z.object({
@@ -581,19 +581,19 @@ export function ProofOfDeliveryForm({ shipmentId, onSubmit, isLoading }: ProofOf
       signature: '',
       photo: '',
     },
-=======
+
  * PROOF OF DELIVERY FORM
  */
 export function ProofOfDeliveryForm({ onSubmit, isLoading }: { onSubmit: (data: any) => void; isLoading: boolean }) {
   const form = useForm({
     defaultValues: { recipientName: '', signature: '', photo: '' }
->>>>>>> add-supabase-user-script
+
   });
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-<<<<<<< HEAD
+
         <Card className="bg-primary/5 border-primary/20">
           <CardContent className="pt-6">
             <div className="flex items-center gap-3 text-primary mb-4">
@@ -657,7 +657,7 @@ export function ProofOfDeliveryForm({ onSubmit, isLoading }: { onSubmit: (data: 
         <Button type="submit" className="w-full h-12 text-lg font-bold" disabled={loading}>
           {isLoading ? <Loader2 className="animate-spin mr-2 h-5 w-5" /> : <ShieldCheck className="mr-2 h-5 w-5" />}
           Confirm Delivery
-=======
+
         <Card>
           <CardHeader><CardTitle>Recipient Confirmation</CardTitle></CardHeader>
           <CardContent className="space-y-4">
@@ -684,13 +684,13 @@ export function ProofOfDeliveryForm({ onSubmit, isLoading }: { onSubmit: (data: 
 
           {isLoading ? <Loader2 className="animate-spin mr-2 h-5 w-5" /> : <ShieldCheck className="mr-2 h-5 w-5" />}
           Complete Delivery
->>>>>>> add-supabase-user-script
+
         </Button>
       </form>
     </Form>
   );
-<<<<<<< HEAD
+
 }
-=======
+
 }
->>>>>>> add-supabase-user-script
+

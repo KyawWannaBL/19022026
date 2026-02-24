@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 export default function Footer() {
   return (
     <footer className="bg-navy-900 border-t border-gold-500/20 py-6">
@@ -8,7 +8,7 @@ export default function Footer() {
     </footer>
   );
 }
-=======
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTE_PATHS } from '@/lib/index';
@@ -45,4 +45,4 @@ export const Footer = () => {
     </footer>
   );
 };
->>>>>>> add-supabase-user-script
+

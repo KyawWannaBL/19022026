@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { Package, Phone, Mail } from 'lucide-react';
 import NotificationBell from '@/components/NotificationBell';
 
@@ -24,7 +24,7 @@ export default function Header() {
             <Mail size={14} /> info@britiumexpress.com
           </span>
           <NotificationBell />
-=======
+
 import React from 'react';
 import { Bell, User, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -61,13 +61,13 @@ export const Header = () => {
           <Button variant="ghost" size="icon" onClick={logout} className="hover:text-red-600">
             <LogOut size={20} />
           </Button>
->>>>>>> add-supabase-user-script
+
         </div>
       </div>
     </header>
   );
-<<<<<<< HEAD
+
 }
-=======
+
 };
->>>>>>> add-supabase-user-script
+

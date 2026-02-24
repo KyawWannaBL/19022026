@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-=======
+
+
 
 import React, { useState } from 'react';
 import {
@@ -416,7 +416,7 @@ const AdminDashboard: React.FC = () => {
 
 export default AdminDashboard;
 
->>>>>>> add-supabase-user-script
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, Package, Activity, ShieldCheck } from "lucide-react";
@@ -491,7 +491,7 @@ export default function AdminDashboard() {
     </motion.div>
   );
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> add-supabase-user-script
+
+
+

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
@@ -400,7 +400,7 @@ export function PublicLayout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-=======
+
 // src/components/PublicLayout.tsx
 import React from 'react';
 import { Outlet } from 'react-router-dom';
@@ -418,4 +418,4 @@ export const PublicLayout = () => {
     </div>
   );
 };
->>>>>>> add-supabase-user-script
+

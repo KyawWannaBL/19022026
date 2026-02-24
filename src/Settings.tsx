@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-=======
+
+
 
 import React, { useState } from 'react';
 import {
@@ -503,7 +503,7 @@ const Settings: React.FC = () => {
 
 export default Settings;
 
->>>>>>> add-supabase-user-script
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Save, Shield, User as UserIcon, Bell } from "lucide-react";
@@ -519,15 +519,15 @@ import { toast } from "sonner";
 
 /**
  * Settings (Enterprise)
-<<<<<<< HEAD
+
  * Supabase-only, shows current session info and basic preferences.
  */
 export default function Settings() {
-=======
+
  * Rewritten with Named Export to fix Vite/Rollup build errors.
  */
 export function Settings() {
->>>>>>> add-supabase-user-script
+
   const { user, role, branch_id } = useAuth();
   const { language } = useLanguage();
   const [saving, setSaving] = useState(false);
@@ -546,15 +546,15 @@ export function Settings() {
   };
 
   return (
-<<<<<<< HEAD
+
     <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="p-6 space-y-6">
-=======
+
     <motion.div 
       initial={{ opacity: 0, y: 12 }} 
       animate={{ opacity: 1, y: 0 }} 
       className="p-6 space-y-6"
     >
->>>>>>> add-supabase-user-script
+
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">{t("Settings", "ဆက်တင်များ")}</h1>
@@ -564,34 +564,34 @@ export function Settings() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-<<<<<<< HEAD
+
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2"><UserIcon className="w-4 h-4" /> {t("Account", "အကောင့်")}</CardTitle>
-=======
+
         {/* Account Section */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <UserIcon className="w-4 h-4" /> {t("Account", "အကောင့်")}
             </CardTitle>
->>>>>>> add-supabase-user-script
+
             <CardDescription>{t("Current signed-in user", "လက်ရှိ ဝင်ထားသော အသုံးပြုသူ")}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="space-y-1">
               <Label>Email</Label>
-<<<<<<< HEAD
+
               <Input value={user?.email ?? ""} readOnly />
             </div>
             <div className="text-sm text-muted-foreground">
               {t("Role", "အခန်းကဏ္ဍ")}: <span className="font-semibold text-foreground">{String(role ?? "-")}</span>
-=======
+
               <Input value={user?.email ?? ""} readOnly className="bg-muted/50" />
             </div>
             <div className="text-sm text-muted-foreground">
               {t("Role", "အခန်းကဏ္ဍ")}: <span className="font-semibold text-foreground uppercase">{String(role ?? "-")}</span>
->>>>>>> add-supabase-user-script
+
             </div>
             <div className="text-sm text-muted-foreground">
               {t("Branch", "ဘရားခ်")}: <span className="font-semibold text-foreground">{String(branch_id ?? "-")}</span>
@@ -599,18 +599,18 @@ export function Settings() {
           </CardContent>
         </Card>
 
-<<<<<<< HEAD
+
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2"><Bell className="w-4 h-4" /> {t("Notifications", "အကြောင်းကြားချက်")}</CardTitle>
-=======
+
         {/* Notifications Section */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Bell className="w-4 h-4" /> {t("Notifications", "အကြောင်းကြားချက်")}
             </CardTitle>
->>>>>>> add-supabase-user-script
+
             <CardDescription>{t("Basic preferences", "အခြေခံ preference များ")}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -631,13 +631,13 @@ export function Settings() {
       </div>
     </motion.div>
   );
-<<<<<<< HEAD
-}
-=======
 
 }
 
 
 }
 
->>>>>>> add-supabase-user-script
+
+}
+
+

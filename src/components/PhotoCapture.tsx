@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useRef, useState, useCallback } from 'react';
 import { Camera, RefreshCw, Check, AlertCircle, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -175,7 +175,7 @@ export default function PhotoCapture({ onCapture, watermarkData, required = fals
     </div>
   );
 }
-=======
+
 import React, { useRef, useState } from 'react';
 import { Camera, Check, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -229,4 +229,4 @@ export function PhotoCapture({ onCapture }: PhotoCaptureProps) {
     </div>
   );
 }
->>>>>>> add-supabase-user-script
+
