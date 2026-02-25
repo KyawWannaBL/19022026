@@ -1,8 +1,8 @@
-
 import React, { useRef, useState, useCallback } from 'react';
 import { Camera, RefreshCw, Check, AlertCircle, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { useLanguageContext } from '@/lib/LanguageContext';
 
 interface PhotoCaptureProps {
   onCapture: (photo: string) => void;
@@ -16,6 +16,7 @@ interface PhotoCaptureProps {
 }
 
 export default function PhotoCapture({ onCapture, watermarkData, required = false }: PhotoCaptureProps) {
+  const { t } = useLanguageContext();
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isCameraOpen, setIsCameraOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function PhotoCapture({ onCapture, watermarkData, required = fals
         setError(null);
       }
     } catch (err) {
-      setError('Could not access camera. Please ensure permissions are granted.');
+      setError(t('Could not access camera. Please ensure permissions are granted.', 'ကင်မရာအား အသုံးပြု၍မရပါ။ Permission ပေးထားခြင်းရှိမရှိ စစ်ဆေးပါ။'));
       console.error('Camera error:', err);
     }
   };
@@ -51,7 +52,7 @@ export default function PhotoCapture({ onCapture, watermarkData, required = fals
   const applyWatermark = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
     const padding = 20;
     const fontSize = Math.max(14, width / 40);
-    ctx.font = `${fontSize}px JetBrains Mono, monospace`;
+    ctx.font = `${fontSize}px monospace`;
     
     const lines = [
       `TT ID: ${watermarkData.ttId}`,
@@ -70,11 +71,7 @@ export default function PhotoCapture({ onCapture, watermarkData, required = fals
     ctx.textAlign = 'left';
     
     lines.forEach((line, index) => {
-      ctx.fillText(
-        line,
-        width - boxWidth - padding + 10,
-        height - boxHeight - padding + padding + index * (fontSize + 8)
-      );
+      ctx.fillText(line, width - boxWidth - padding + 10, height - boxHeight - padding + padding + index * (fontSize + 8));
     });
   };
 
@@ -88,9 +85,7 @@ export default function PhotoCapture({ onCapture, watermarkData, required = fals
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        
         applyWatermark(context, canvas.width, canvas.height);
-
         const imageData = canvas.toDataURL('image/jpeg', 0.8);
         setCapturedImage(imageData);
         stopCamera();
@@ -104,129 +99,70 @@ export default function PhotoCapture({ onCapture, watermarkData, required = fals
     }
   };
 
-  const handleRetake = () => {
-    setCapturedImage(null);
-    startCamera();
-  };
-
   return (
-    <div className="w-full space-y-4">
-      {!isCameraOpen && !capturedImage ? (
-        <Button
-          variant="outline"
-          className="w-full h-32 border-dashed flex flex-col gap-2"
-          onClick={startCamera}
-        >
-          <Camera className="w-8 h-8 text-muted-foreground" />
-          <span>Take Photo {required && <span className="text-destructive">*</span>}</span>
-        </Button>
-      ) : null}
-
-      {error && (
-        <div className="flex items-center gap-2 p-3 text-sm text-destructive bg-destructive/10 rounded-lg">
-          <AlertCircle className="w-4 h-4" />
-          <span>{error}</span>
-        </div>
-      )}
-
-      {isCameraOpen && (
-        <Card className="relative overflow-hidden aspect-video bg-black flex items-center justify-center">
-          <video
-            ref={videoRef}
-            autoPlay
-            playsInline
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-4">
-            <Button size="icon" className="rounded-full w-12 h-12" onClick={capturePhoto}>
-              <Camera className="w-6 h-6" />
-            </Button>
-            <Button size="icon" variant="secondary" className="rounded-full w-12 h-12" onClick={stopCamera}>
-              <X className="w-6 h-6" />
-            </Button>
+    <Card className="p-4 border-slate-200 overflow-hidden">
+      <div className="space-y-4">
+        {/* Error State */}
+        {error && (
+          <div className="p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-600 text-sm italic">
+            <AlertCircle size={16} /> {error}
           </div>
-        </Card>
-      )}
+        )}
 
-      {capturedImage && (
-        <div className="space-y-4">
-          <Card className="relative overflow-hidden aspect-video bg-muted">
-            <img src={capturedImage} alt="Captured" className="w-full h-full object-cover" />
-            <div className="absolute top-2 right-2">
-              <div className="bg-primary/90 text-primary-foreground px-2 py-1 rounded text-[10px] font-mono">
-                WATERMARKED
-              </div>
+        {/* Viewport */}
+        <div className="relative aspect-video bg-slate-900 rounded-xl overflow-hidden border-2 border-slate-100 shadow-inner">
+          {!isCameraOpen && !capturedImage && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-500 gap-2">
+              <Camera size={48} className="opacity-20" />
+              <p className="text-xs uppercase font-black tracking-widest">{t('Camera Ready', 'ကင်မရာအသင့်ရှိသည်')}</p>
             </div>
-          </Card>
-          <div className="flex gap-2">
-            <Button variant="outline" className="flex-1 gap-2" onClick={handleRetake}>
-              <RefreshCw className="w-4 h-4" />
-              Retake
-            </Button>
-            <Button className="flex-1 gap-2" onClick={handleConfirm}>
-              <Check className="w-4 h-4" />
-              Use Photo
-            </Button>
-          </div>
-        </div>
-      )}
+          )}
 
-      <canvas ref={canvasRef} className="hidden" />
-    </div>
+          {isCameraOpen && (
+            <video ref={videoRef} autoPlay playsInline className="w-full h-full object-cover" />
+          )}
+
+          {capturedImage && (
+            <img src={capturedImage} alt="Captured" className="w-full h-full object-cover animate-in fade-in duration-300" />
+          )}
+
+          {/* Canvas for watermark processing */}
+          <canvas ref={canvasRef} className="hidden" />
+        </div>
+
+        {/* Controls */}
+        <div className="flex gap-2">
+          {!isCameraOpen && !capturedImage ? (
+            <Button onClick={startCamera} className="w-full bg-[#0d2c54] hover:bg-[#1a3d6d] font-bold">
+              <Camera className="mr-2 h-4 w-4" /> {t('Open Camera', 'ကင်မရာဖွင့်မည်')}
+            </Button>
+          ) : isCameraOpen ? (
+            <div className="flex w-full gap-2">
+              <Button onClick={capturePhoto} className="flex-1 bg-[#ff6b00] hover:bg-[#e65a00] font-bold">
+                {t('Capture Photo', 'ဓာတ်ပုံရိုက်မည်')}
+              </Button>
+              <Button variant="ghost" onClick={stopCamera} className="text-slate-500">
+                <X size={20} />
+              </Button>
+            </div>
+          ) : (
+            <div className="flex w-full gap-2">
+              <Button onClick={handleConfirm} className="flex-1 bg-emerald-600 hover:bg-emerald-700 font-bold">
+                <Check className="mr-2 h-4 w-4" /> {t('Confirm', 'အတည်ပြုမည်')}
+              </Button>
+              <Button onClick={() => { setCapturedImage(null); startCamera(); }} variant="outline" className="flex-1 border-[#0d2c54] text-[#0d2c54] font-bold">
+                <RefreshCw className="mr-2 h-4 w-4" /> {t('Retake', 'ပြန်ရိုက်မည်')}
+              </Button>
+            </div>
+          )}
+        </div>
+
+        {required && !capturedImage && (
+          <p className="text-[10px] text-orange-600 font-black uppercase text-center italic">
+            * {t('Photo Evidence Required', 'ဓာတ်ပုံသက်သေလိုအပ်ပါသည်')}
+          </p>
+        )}
+      </div>
+    </Card>
   );
 }
-
-import React, { useRef, useState } from 'react';
-import { Camera, Check, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-
-interface PhotoCaptureProps {
-  onCapture: (photo: string) => void;
-}
-
-export function PhotoCapture({ onCapture }: PhotoCaptureProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [stream, setStream] = useState<MediaStream | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
-
-  const startCamera = async () => {
-    const s = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
-    setStream(s);
-    if (videoRef.current) videoRef.current.srcObject = s;
-  };
-
-  const capture = () => {
-    const canvas = document.createElement('canvas');
-    if (videoRef.current) {
-      canvas.width = videoRef.current.videoWidth;
-      canvas.height = videoRef.current.videoHeight;
-      canvas.getContext('2d')?.drawImage(videoRef.current, 0, 0);
-      const data = canvas.toDataURL('image/jpeg');
-      setPreview(data);
-      onCapture(data);
-      stream?.getTracks().forEach(t => t.stop());
-      setStream(null);
-    }
-  };
-
-  return (
-    <div className="space-y-4">
-      {!stream && !preview && (
-        <Button onClick={startCamera} className="w-full h-24 border-dashed" variant="outline">
-          <Camera className="mr-2" /> Take Photo
-        </Button>
-      )}
-      {stream && (
-        <div className="relative rounded-lg overflow-hidden bg-black">
-          <video ref={videoRef} autoPlay playsInline className="w-full" />
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-            <Button onClick={capture} size="icon" className="rounded-full"><Check /></Button>
-            <Button onClick={() => { stream.getTracks().forEach(t => t.stop()); setStream(null); }} variant="destructive" size="icon" className="rounded-full"><X /></Button>
-          </div>
-        </div>
-      )}
-      {preview && <img src={preview} className="rounded-lg border w-full" alt="captured" />}
-    </div>
-  );
-}
-
