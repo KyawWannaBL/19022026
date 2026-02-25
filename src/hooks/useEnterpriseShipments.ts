@@ -1,4 +1,3 @@
-import { supabase } from '@/lib/supabase'; // Ensure this path is correct
 import { TABLES } from '@/lib/constants'; // Ensure this path is correct
 
 export const useEnterpriseShipments = () => {

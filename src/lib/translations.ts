@@ -1,4 +1,3 @@
-export type Language = 'en' | 'my';
 
 export const translations = {
   // English translations

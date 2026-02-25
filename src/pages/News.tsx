@@ -1,4 +1,3 @@
-import { Calendar, User, ArrowRight } from 'lucide-react';
 
 export default function NewsPage() {
   const posts = [

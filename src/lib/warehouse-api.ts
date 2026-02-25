@@ -1,4 +1,3 @@
-import { supabase } from '@/integrations/supabase/client';
 
 // Types for Warehouse System
 export interface WarehouseStation {

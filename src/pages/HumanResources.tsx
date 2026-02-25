@@ -1,4 +1,3 @@
-import { Users, UserPlus, Star, MapPin, Phone, Mail, MoreVertical } from 'lucide-react';
 
 export default function HumanResources() {
   const { t } = useLanguageContext();

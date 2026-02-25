@@ -1,4 +1,3 @@
-import type {
   ToastActionElement,
   ToastProps,
 } from "@/components/ui/toast"

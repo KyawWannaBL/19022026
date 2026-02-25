@@ -1,4 +1,3 @@
-type Props = {
   /** Optional: show current host origin to help debugging env injection. */
   origin?: string;
 };
@@ -26,7 +25,7 @@ export default function MissingSupabaseConfig({ origin }: Props) {
         </p>
 
         <p className="mt-2 text-white/70 text-sm">
-          Deployment: add the same variables in your hosting provider’s environment settings and redeploy.
+          Deployment: add the same variables in your hosting provider's environment settings and redeploy.
         </p>
 
         {where ? (

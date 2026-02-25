@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Download, Printer, Copy, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";

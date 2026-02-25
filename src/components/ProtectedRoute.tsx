@@ -1,4 +1,3 @@
-import { Navigate } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
 import { getMyProfile } from "@/lib/profile";
 

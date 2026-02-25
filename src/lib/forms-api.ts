@@ -1,4 +1,3 @@
- * Handles all form operations with real-time data synchronization
  */
 
 import { supabase } from '@/integrations/supabase/client';

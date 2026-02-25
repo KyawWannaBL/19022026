@@ -1,4 +1,3 @@
-import { IMAGES } from '@/assets/images';
 
 export default function ServicesPage() {
   const { t } = useLanguageContext();

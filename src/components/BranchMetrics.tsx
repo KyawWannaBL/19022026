@@ -1,4 +1,3 @@
-
 export default function BranchMetrics() {
   const [metrics, setMetrics] = useState<any[]>([]);
 

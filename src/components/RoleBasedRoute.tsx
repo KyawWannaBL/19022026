@@ -1,4 +1,3 @@
-import { useAuth } from "@/hooks/useAuth";
 
 type Props = {
   allowedRoles?: string[];

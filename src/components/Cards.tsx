@@ -1,4 +1,3 @@
-import { User, MapPin, Weight, Calendar } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { Shipment, formatDate, formatCurrency } from '@/lib/index';

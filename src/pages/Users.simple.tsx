@@ -1,4 +1,3 @@
-import { Users as UsersIcon, UserPlus, Shield, Activity } from 'lucide-react';
 
 export default function Users() {
   return (

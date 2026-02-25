@@ -1,4 +1,3 @@
-import { 
   Search, CheckCircle2, XCircle, Package 
 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';

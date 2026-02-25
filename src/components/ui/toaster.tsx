@@ -1,4 +1,3 @@
-  ToastClose,
   ToastDescription,
   ToastProvider,
   ToastTitle,

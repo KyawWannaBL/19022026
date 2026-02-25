@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { useLanguageContext } from '@/lib/LanguageContext';
 
 interface SignaturePadProps {

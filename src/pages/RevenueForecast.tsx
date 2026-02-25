@@ -1,4 +1,3 @@
-  Area,
   XAxis,
   YAxis,
   Tooltip,

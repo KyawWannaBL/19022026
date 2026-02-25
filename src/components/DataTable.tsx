@@ -1,4 +1,3 @@
-  ChevronLeft,
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,

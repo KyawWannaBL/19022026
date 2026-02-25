@@ -1,4 +1,3 @@
-import { useLanguageContext } from "@/lib/LanguageContext";
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   Activity,

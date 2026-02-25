@@ -1,4 +1,3 @@
-import { BarChart3, TrendingUp, DollarSign, Package } from 'lucide-react';
 
 export default function Analytics() {
   return (

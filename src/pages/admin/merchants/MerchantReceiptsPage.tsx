@@ -1,4 +1,3 @@
-  FileText, 
   Download, 
   Eye, 
   Search, 

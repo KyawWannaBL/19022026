@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -112,7 +111,7 @@ export default function LandingPage() {
               <div>
                 <div className="font-semibold">Rider Navigation Mode</div>
                 <div className="text-sm text-white/70">
-                  70/30 map split with “Next Task” dock and KPI strip.
+                  70/30 map split with "Next Task" dock and KPI strip.
                 </div>
               </div>
             </CardContent>

@@ -1,4 +1,3 @@
-import type { Shipment, ShipmentStatus, TrackingEvent } from "@/lib/index";
 import { SHIPMENT_STATUSES } from "@/lib/index";
 
 function normalizeStatus(status: any): ShipmentStatus {

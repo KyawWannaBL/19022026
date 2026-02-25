@@ -1,4 +1,3 @@
-import { Activity, Package, Truck, CheckCircle, AlertCircle } from 'lucide-react';
 import { format } from 'date-fns';
 
 interface AuditEntry {

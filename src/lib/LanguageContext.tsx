@@ -1,4 +1,3 @@
-type Language = 'en' | 'my';
 
 interface LanguageContextType {
   language: Language;

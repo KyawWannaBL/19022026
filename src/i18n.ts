@@ -1,4 +1,3 @@
-import LanguageDetector from "i18next-browser-languagedetector";
 
 import en from "./locales/en.json";
 import mm from "./locales/mm.json";

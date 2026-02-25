@@ -1,4 +1,3 @@
-import { Package, MapPin, Clock, Truck } from 'lucide-react';
 
 export default function Shipments() {
   return (

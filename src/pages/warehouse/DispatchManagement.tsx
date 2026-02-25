@@ -1,4 +1,3 @@
-import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Truck, Scan, Package, MapPin, ArrowRight, ShieldAlert } from 'lucide-react';
 import { ROUTE_PATHS, SHIPMENT_STATUS, MOCK_TOWNSHIPS, Shipment } from '@/lib/index';

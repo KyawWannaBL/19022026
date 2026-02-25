@@ -1,4 +1,3 @@
-  Marker,
   NavigationControl,
   Popup,
   Source,

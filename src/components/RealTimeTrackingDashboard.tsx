@@ -1,4 +1,3 @@
-import { Truck, MapPin, RefreshCw, Navigation, Shield, Search } from 'lucide-react';
 import { Shipment, getBilingualStatus, formatDate } from '@/lib/index';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { StatusBadge } from '@/components/StatusBadge';

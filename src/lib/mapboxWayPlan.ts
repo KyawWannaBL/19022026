@@ -1,4 +1,3 @@
-export type GeocodeResult =
   | { ok: true; found: true; lng: number; lat: number; place_name: string }
   | { ok: true; found: false }
   | { ok: false; error: string };

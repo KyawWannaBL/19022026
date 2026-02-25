@@ -1,4 +1,3 @@
-  TrendingUp,
   Activity,
   Clock,
   Truck,

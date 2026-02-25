@@ -1,4 +1,3 @@
-// Demo authentication hook for testing without Supabase constraints
 import React, { useState, useEffect, useCallback, createContext, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTE_PATHS, UserRole } from '@/lib/index';

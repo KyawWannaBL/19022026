@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useLanguageContext } from "@/lib/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 

@@ -1,4 +1,3 @@
-
 export default function LanguageSelect({ className = "" }: { className?: string }) {
   const { lang, setLang } = useI18n();
 

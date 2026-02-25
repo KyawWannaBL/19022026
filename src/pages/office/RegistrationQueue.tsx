@@ -1,4 +1,3 @@
-import React, { useMemo } from 'react';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { useShipments } from '@/hooks/useShipments';
 // ... other imports (Card, Badge, etc)

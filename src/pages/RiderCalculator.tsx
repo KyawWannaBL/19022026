@@ -1,4 +1,3 @@
-import {
   Calculator,
   Package,
   Truck,

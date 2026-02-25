@@ -1,4 +1,3 @@
-// Runtime import of the real library under a different name (see vite.config alias)
 // @ts-expect-error - This is resolved at runtime by Vite alias
 import * as RRD from "react-router-dom-original";
 

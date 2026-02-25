@@ -1,4 +1,3 @@
-import { Shipment, getBilingualStatus } from "@/lib/index";
 import { supabase } from '@/integrations/supabase/client';
 
 // Types for the enterprise logistics platform

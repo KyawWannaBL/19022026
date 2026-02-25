@@ -1,4 +1,3 @@
-export interface Location {
   id: string;
   nameEn: string;
   nameMm: string;

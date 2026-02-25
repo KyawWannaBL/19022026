@@ -1,4 +1,3 @@
-// file: src/components/PhotoCapture.tsx
 // ===============================
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import { Camera, RefreshCw, Check, AlertCircle, X } from "lucide-react";

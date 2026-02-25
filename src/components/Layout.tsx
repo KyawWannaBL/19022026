@@ -1,4 +1,3 @@
-import { useAuth } from '@/hooks/useAuth';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { ROUTE_PATHS } from '@/lib/index';
 import { Link, useNavigate } from 'react-router-dom';

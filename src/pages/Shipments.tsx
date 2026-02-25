@@ -1,4 +1,3 @@
-import { ShipmentsList } from '@/components/Shipments';
 import { useLanguageContext } from '@/lib/LanguageContext';
 
 const ShipmentsPage = () => {

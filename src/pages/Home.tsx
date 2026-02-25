@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Truck, ShieldCheck, Globe, ArrowRight, PackageSearch } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ROUTE_PATHS } from '@/lib/index';

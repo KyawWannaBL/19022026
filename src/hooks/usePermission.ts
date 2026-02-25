@@ -1,4 +1,3 @@
-export const usePermission = () => {
   const { permissions } = useAuth()
 
   const can = (permission: string) => {

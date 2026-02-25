@@ -1,4 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { UserIcon, ShieldCheck } from 'lucide-react';
 
 const UsersPage = () => {

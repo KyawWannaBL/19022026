@@ -1,4 +1,3 @@
-import { IMAGES } from '@/assets/images';
 
 // Language context - using simple state for now
 const useLanguageContext = () => ({ language: 'en' as 'en' | 'my' });

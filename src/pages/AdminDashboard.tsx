@@ -1,4 +1,3 @@
-import { ShieldAlert, Users, Settings, Database, Activity, Terminal, Lock } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 import { useAuth } from '../hooks/useAuth';
 import AuditFeed from '@/components/AuditFeed';

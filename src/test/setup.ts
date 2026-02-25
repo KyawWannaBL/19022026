@@ -1,4 +1,3 @@
-class NoopResizeObserver {
   observe() {}
   unobserve() {}
   disconnect() {}

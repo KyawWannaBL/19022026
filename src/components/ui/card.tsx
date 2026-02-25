@@ -1,4 +1,3 @@
-import { useLanguageContext } from "@/lib/LanguageContext"
 
 /**
  * Standard Luxury Card Component

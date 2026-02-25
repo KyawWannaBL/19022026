@@ -1,4 +1,3 @@
-import { SHIPMENT_STATUS } from '@/lib/index'; // Critical import
 
 const LabelActivation = () => {
   const { t } = useLanguageContext();

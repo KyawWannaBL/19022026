@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { useLanguageContext } from "@/lib/LanguageContext";
 import {
   MessageSquare,

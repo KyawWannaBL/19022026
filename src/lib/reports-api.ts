@@ -1,4 +1,3 @@
-// Report Types
 export interface ReportFilter {
   startDate?: string;
   endDate?: string;

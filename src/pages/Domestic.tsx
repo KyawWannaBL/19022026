@@ -1,4 +1,3 @@
-import { FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
 
 export default function Domestic() {
   return (

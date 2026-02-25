@@ -1,3 +1,10 @@
+/**
+ * Britium Express - RBAC Configuration
+ * © 2026 Britium Express Logistics System
+ */
+
+export const APP_ROLES = {
+  SUPER_ADMIN: "SUPER_ADMIN",
   OPERATIONS: "OPERATIONS",
   FINANCE: "FINANCE",
   WAREHOUSE: "WAREHOUSE",
@@ -10,6 +17,7 @@
 
 export type AppRole = (typeof APP_ROLES)[keyof typeof APP_ROLES];
 
+// Fixed: Aligned with ROUTE_PATHS to resolve App.tsx routing errors
 export const PANELS = {
   SUPER_ADMIN: "super-admin",
   OPERATIONS: "operations",
@@ -23,6 +31,7 @@ export type PanelSlug = (typeof PANELS)[PanelKey];
 
 export type Permission = `panel:${PanelSlug}` | `screen:${PanelSlug}/${string}`;
 
+// Production Mapping: Defines which roles can access which UI panels
 export const ROLE_PERMISSIONS: Record<AppRole, Permission[]> = {
   SUPER_ADMIN: [
     "panel:super-admin",
@@ -41,36 +50,31 @@ export const ROLE_PERMISSIONS: Record<AppRole, Permission[]> = {
   STAFF: ["panel:operations", "panel:merchant-customer"],
 };
 
+/**
+ * Normalizes database role strings into valid AppRole constants.
+ * Fixes "Invalid Role" errors during the login flow.
+ */
 export function normalizeRole(input: unknown): AppRole | null {
   const raw = String(input ?? "").trim();
   if (!raw) return null;
 
-  // direct match
+  // Exact match check
   if ((Object.values(APP_ROLES) as string[]).includes(raw)) return raw as AppRole;
 
-  // tolerant aliases (adjust if your DB uses different strings)
-  const key = raw.toLowerCase();
+  // Tolerant aliases for database compatibility
+  const key = raw.toLowerCase().replace(/_/g, '-');
   const map: Record<string, AppRole> = {
-    "super_admin": APP_ROLES.SUPER_ADMIN,
     "super-admin": APP_ROLES.SUPER_ADMIN,
     "admin": APP_ROLES.SUPER_ADMIN,
-
     "operations": APP_ROLES.OPERATIONS,
-    "operation": APP_ROLES.OPERATIONS,
-
     "finance": APP_ROLES.FINANCE,
     "accountant": APP_ROLES.FINANCE,
-
     "warehouse": APP_ROLES.WAREHOUSE,
-
     "rider": APP_ROLES.RIDER,
-
     "merchant": APP_ROLES.MERCHANT,
     "customer": APP_ROLES.CUSTOMER,
-
     "supervisor": APP_ROLES.SUPERVISOR,
     "manager": APP_ROLES.SUPERVISOR,
-
     "staff": APP_ROLES.STAFF,
   };
 
@@ -85,3 +89,5 @@ export function hasPermission(role: AppRole | null | undefined, perm: Permission
 export function canAccessPanel(role: AppRole | null | undefined, panel: PanelSlug): boolean {
   return hasPermission(role, `panel:${panel}`);
 }
+
+export {}; // Ensure file is treated as a module to fix TS2451

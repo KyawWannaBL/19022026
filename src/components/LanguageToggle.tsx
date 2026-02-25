@@ -1,4 +1,3 @@
-export default function LanguageToggle() {
   const { i18n, t } = useTranslation();
 
   return (

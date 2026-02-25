@@ -1,4 +1,3 @@
-import { observeAutoTranslate } from "@/i18n/autoTranslate";
 
 export default function AutoTranslateShell({ children }: { children: React.ReactNode }) {
   const { lang } = useI18n();

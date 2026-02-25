@@ -1,4 +1,3 @@
-import React from 'react';
 import { Users, Package, TrendingUp, AlertCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguageContext } from '@/lib/LanguageContext'; // Import context hook

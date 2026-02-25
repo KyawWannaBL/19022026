@@ -1,4 +1,3 @@
-import {
   Navigation,
   MapPin,
   RotateCcw,

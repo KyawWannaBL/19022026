@@ -1,4 +1,3 @@
-export type Lang = "en" | "my";
 
 export const MYANMAR_DICTIONARY: Record<string, string> = {
   // Core

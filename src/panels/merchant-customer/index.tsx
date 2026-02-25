@@ -1,4 +1,3 @@
-import MerchantPortal from "@/pages/MerchantPortal";
 
 export const merchantCustomerRoutes = [
   { path: "customer", element: <CustomerPortal /> },

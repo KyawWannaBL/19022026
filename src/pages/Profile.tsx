@@ -1,4 +1,3 @@
-import { User, Mail, Shield, MapPin, Calendar, Camera, Key } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';

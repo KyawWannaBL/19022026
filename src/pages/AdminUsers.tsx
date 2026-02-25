@@ -1,4 +1,3 @@
-import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import PermissionGate from "@/components/PermissionGate";

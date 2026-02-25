@@ -1,4 +1,3 @@
-import { useLanguageContext } from "@/lib/LanguageContext";
 import React, { useState, useEffect } from 'react';
 
 const Quote: React.FC = () => {

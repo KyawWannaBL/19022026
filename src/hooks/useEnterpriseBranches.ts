@@ -1,4 +1,3 @@
-import { TABLES } from "@/lib/db/tables";
 
 export type EnterpriseBranch = {
   id: string;

@@ -1,4 +1,3 @@
-import { useState, useCallback } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
 // Minimal interface for tracking data to remain self-contained

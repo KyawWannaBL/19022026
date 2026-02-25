@@ -1,4 +1,3 @@
-
 interface PermissionGateProps {
   permission: string;
   children: ReactNode;

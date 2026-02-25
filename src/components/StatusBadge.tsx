@@ -1,4 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { getBilingualStatus, getStatusVariant } from '@/lib/index';
 
 interface StatusBadgeProps {

@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/lib/supabase";
 import { TABLES } from "@/lib/db/tables";
 import type { User } from "@/lib/index";

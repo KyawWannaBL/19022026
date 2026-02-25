@@ -1,4 +1,3 @@
-import {
   MapPin,
   Truck,
   Users,

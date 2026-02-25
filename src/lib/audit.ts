@@ -1,4 +1,3 @@
-import { supabase } from './supabase';
 
 export type AuditAction = 'ROUTE_OPTIMIZE' | 'PRICE_UPDATE' | 'STATUS_CHANGE' | 'LOGIN_FAILURE';
 

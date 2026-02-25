@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Navigation, QrCode, Phone, ChevronRight, Package } from 'lucide-react';
 

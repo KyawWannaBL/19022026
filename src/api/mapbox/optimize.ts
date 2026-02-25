@@ -1,4 +1,3 @@
-type Coord = { id: string; lng: number; lat: number; label?: string };
 
 type OptimizeRequest = {
   profile?: "mapbox/driving" | "mapbox/driving-traffic" | "mapbox/cycling" | "mapbox/walking";

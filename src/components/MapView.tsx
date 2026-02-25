@@ -1,4 +1,3 @@
-import "mapbox-gl/dist/mapbox-gl.css";
 
 type MapViewProps = {
   center?: [number, number];

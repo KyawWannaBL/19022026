@@ -1,4 +1,3 @@
-import { ShieldCheck, Target, Users, Award } from 'lucide-react';
 import { IMAGES } from '@/assets/images';
 
 export default function AboutPage() {

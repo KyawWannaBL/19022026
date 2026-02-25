@@ -1,4 +1,3 @@
- * Update here if you migrate to a new schema version.
  */
 export const TABLES = {
   PROFILES: "profiles_2026_02_19_13_00",

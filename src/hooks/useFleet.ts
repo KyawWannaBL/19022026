@@ -1,4 +1,3 @@
-import { FleetVehicle } from '@/lib/index';
 
 export function useFleet() {
   const [vehicles, setVehicles] = useState<FleetVehicle[]>([]);

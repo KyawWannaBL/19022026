@@ -1,4 +1,3 @@
-  Truck, 
   Shield, 
   Clock, 
   MapPin, 

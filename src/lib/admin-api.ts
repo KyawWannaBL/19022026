@@ -1,4 +1,3 @@
-import { supabase } from '@/integrations/supabase/client';
 
 // TypeScript interfaces for admin system
 export interface AdminUser {

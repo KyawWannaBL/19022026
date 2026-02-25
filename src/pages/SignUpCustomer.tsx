@@ -1,4 +1,3 @@
-import { supabase } from "@/lib/supabase";
 import { strongPassword } from "@/lib/password";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

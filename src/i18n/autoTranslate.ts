@@ -1,4 +1,3 @@
-
 const nodeOriginalText = new WeakMap<Node, string>();
 const elemOriginalAttrs = new WeakMap<Element, Map<string, string>>();
 

@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion';
 import {
   Truck, Fuel, Wrench, Navigation2, Search, Filter, Activity, Users,
   Map as MapIcon, List, Calendar, AlertTriangle, Zap, ChevronRight, Plus

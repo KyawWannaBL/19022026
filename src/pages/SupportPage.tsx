@@ -1,4 +1,3 @@
-  HelpCircle, 
   Package, 
   Ban, 
   FileText, 

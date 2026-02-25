@@ -1,4 +1,3 @@
-interface Props {
   permission: string;
   children: React.ReactNode;
 }

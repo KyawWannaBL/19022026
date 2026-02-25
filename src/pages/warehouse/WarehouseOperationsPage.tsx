@@ -1,4 +1,3 @@
-import React from 'react';
 import { Package, Warehouse, ArrowRightLeft, ClipboardList } from 'lucide-react';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { Shipment, getStatusLabel, getStatusVariant } from '@/lib/index';

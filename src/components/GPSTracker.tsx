@@ -1,4 +1,3 @@
-export type GPSPoint = {
   lat: number;
   lng: number;
   speedKmh?: number | null;

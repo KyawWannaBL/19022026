@@ -1,4 +1,3 @@
-import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 
 export default function ApprovalQueue() {

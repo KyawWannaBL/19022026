@@ -1,4 +1,3 @@
-import { useLanguageContext } from "@/lib/LanguageContext";
 
 type Props = { children: React.ReactNode };
 

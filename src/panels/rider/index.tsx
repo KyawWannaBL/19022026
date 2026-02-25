@@ -1,2 +1,1 @@
-
 export const riderRoutes = [{ path: "", element: <RiderDashboard /> }] as const;

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ClipboardEdit, Package, Truck, Upload } from "lucide-react";
 
 export default function DataEntry() {

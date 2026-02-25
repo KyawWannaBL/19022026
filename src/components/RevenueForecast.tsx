@@ -1,4 +1,3 @@
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, 
   Tooltip, ResponsiveContainer, LineChart, Line 
 } from 'recharts';
 import { TrendingUp, DollarSign } from 'lucide-react';
