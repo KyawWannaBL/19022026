@@ -114,7 +114,7 @@ export function ShipmentQRModal({ shipment, isOpen, onClose }: ShipmentQRModalPr
               </div>
               <div class="info-row">
                 <span class="label-tag">Date Issued</span>
-                <strong>${shipment.created_at ? formatDate(shipment.created_at) : "2026-02-18"}</strong>
+                <strong>${shipment.createdAt ? formatDate(shipment.createdAt) : "2026-02-18"}</strong>
               </div>
               <div class="info-row">
                 <span class="label-tag">Status</span>
@@ -192,7 +192,7 @@ export function ShipmentQRModal({ shipment, isOpen, onClose }: ShipmentQRModalPr
                     <div>
                       <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Timestamp</p>
                       <p className="text-sm font-medium">
-                        {shipment.created_at ? formatDate(shipment.created_at) : "2026-02-18"}
+                        {shipment.createdAt ? formatDate(shipment.createdAt) : "2026-02-18"}
                       </p>
                     </div>
                   </div>
