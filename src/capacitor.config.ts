@@ -1,11 +1,11 @@
-// capacitor.config.ts
-import { CapacitorConfig } from '@capacitor/cli';
+// src/capacitor.config.ts
+import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: 'com.britiumexpress.app', // <--- This is your unique App ID
-  appName: 'BEDA',
-  webDir: 'dist',
-  bundledWebRuntime: false
+  appId: "com.example.app",
+  appName: "Britium",
+  webDir: "dist",
+  // bundledWebRuntime: false, // remove (type mismatch)
 };
 
 export default config;

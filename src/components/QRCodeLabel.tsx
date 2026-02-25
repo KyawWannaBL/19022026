@@ -182,7 +182,7 @@ export function QRCodeLabel({ shipmentData, onPrint, className }: QRCodeLabelPro
         {/* Header */}
         <div className="header text-center border-b-2 border-black pb-3 mb-3">
           <img 
-            src={IMAGES.BRITIUM_LOGO_65} 
+            src={IMAGES.BRITIUM_LOGO_55} 
             alt="Britium Express" 
             className="logo w-20 h-auto mx-auto mb-2"
           />

@@ -38,8 +38,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { Shipment } from '@/lib/index';
 import { useAuth } from '@/hooks/useAuth';
-import { PhotoCapture } from '@/components/PhotoCapture';
-import { SignaturePad } from '@/components/SignaturePad';
+import PhotoCapture from '@/components/PhotoCapture';
+import SignaturePad from '@/components/SignaturePad';
 import { useLanguageContext } from '@/lib/LanguageContext';
 
 /**

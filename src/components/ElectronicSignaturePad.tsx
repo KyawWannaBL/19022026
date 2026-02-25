@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Eraser, CheckCircle2, Camera, User, Package, Calendar } from 'lucide-react';
-import { PhotoCapture } from '@/components/PhotoCapture';
+import PhotoCapture from '@/components/PhotoCapture';
 import { formatDate } from '@/lib/index';
 import { motion, AnimatePresence } from 'framer-motion';
 import { springPresets } from '@/lib/motion';

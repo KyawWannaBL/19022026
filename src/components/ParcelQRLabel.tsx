@@ -100,7 +100,7 @@ export function ParcelQRLabel({ parcel, onPrint, onDownload }: ParcelQRLabelProp
           <div className="flex justify-between items-start border-b-2 border-black pb-4">
             <div className="flex flex-col gap-1">
               <img 
-                src={IMAGES.BRITIUM_LOGO_65} 
+                src={IMAGES.BRITIUM_LOGO_55} 
                 alt="Britium Express" 
                 className="h-12 w-auto object-contain"
               />
