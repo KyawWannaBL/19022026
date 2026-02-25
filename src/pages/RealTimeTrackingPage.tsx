@@ -1,15 +1,15 @@
-// src/components/RealTimeTrackingDashboard.tsx
-import {
-  SHIPMENT_STATUS,
-  formatDate,
-  getStatusVariant, // Ensure this helper exists in lib/index.ts
+// 1. Change the import to refer to the value, not the type
+import { 
+  SHIPMENT_STATUS, 
+  formatDate, 
+  getBilingualStatus // Use the bilingual helper we created
 } from '@/lib/index';
 
-// Fix TS2724: Use 'string' for status to avoid complex type union errors
+// 2. Change the interface to use a string for status to avoid strict union errors
 interface RouteStop {
   id: string;
   address: string;
-  status: string; 
+  status: string; // Changed from ShipmentStatus to string
   eta: string;
   customerName: string;
   orderId: string;

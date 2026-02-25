@@ -296,7 +296,7 @@ export function RealTimeTrackingDashboard({
                         )}>
                           {stop.customerName}
                         </h4>
-                        <Badge variant={getStatusVariant(stop.status) as any} className="text-[9px] uppercase font-bold">
+                        <Badge variant={getBilingualStatus(stop.status, t) as any} className="text-[9px] uppercase font-bold">
                           {stop.status.replace(/_/g, ' ')}
                         </Badge>
                       </div>
