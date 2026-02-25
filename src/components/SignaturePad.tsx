@@ -1,256 +1,104 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
+import { Pencil, RotateCcw, Check, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent } from '@/components/ui/card';
-
-import { PenTool, RotateCcw, Check, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
-
-interface SignaturePadProps {
-  onSignature: (signature: string) => void;
-  required?: boolean;
-}
-
-export default function SignaturePad({ onSignature, required = true }: SignaturePadProps) {
-  const [isDrawing, setIsDrawing] = useState(false);
-  const [hasSignature, setHasSignature] = useState(false);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Initialize canvas size based on container
-  useEffect(() => {
-    const updateCanvasSize = () => {
-      const canvas = canvasRef.current;
-      const container = containerRef.current;
-      if (canvas && container) {
-        const rect = container.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = 200; // Fixed height for consistency
-        
-        const ctx = canvas.getContext('2d');
-        if (ctx) {
-          ctx.strokeStyle = '#000000';
-          ctx.lineWidth = 3;
-          ctx.lineCap = 'round';
-          ctx.lineJoin = 'round';
-        }
-      }
-    };
-
-    updateCanvasSize();
-    window.addEventListener('resize', updateCanvasSize);
-    return () => window.removeEventListener('resize', updateCanvasSize);
-  }, []);
-
-  const getCoordinates = (e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return { x: 0, y: 0 };
-
-    const rect = canvas.getBoundingClientRect();
-    let clientX, clientY;
-
-    if ('touches' in e) {
-      clientX = e.touches[0].clientX;
-      clientY = e.touches[0].clientY;
-    } else {
-      clientX = (e as MouseEvent).clientX;
-      clientY = (e as MouseEvent).clientY;
-    }
-
-    return {
-      x: clientX - rect.left,
-      y: clientY - rect.top,
-    };
-  };
-
-  const startDrawing = (e: React.MouseEvent | React.TouchEvent) => {
-    const canvas = canvasRef.current;
-    const ctx = canvas?.getContext('2d');
-    if (!canvas || !ctx) return;
-
-    const { x, y } = getCoordinates(e);
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    setIsDrawing(true);
-
-import { PenTool, RotateCcw } from 'lucide-react';
+import { useLanguageContext } from '@/lib/LanguageContext';
 
 interface SignaturePadProps {
   onSave: (signature: string) => void;
-  required?: boolean;
+  onCancel?: () => void;
 }
 
-export function SignaturePad({ onSave, required = true }: SignaturePadProps) {
+export default function SignaturePad({ onSave, onCancel }: SignaturePadProps) {
+  const { t } = useLanguageContext();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [hasSignature, setHasSignature] = useState(false);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (canvas) {
-      canvas.width = canvas.parentElement?.clientWidth || 400;
-      canvas.height = 200;
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        ctx.strokeStyle = "#000";
-        ctx.lineWidth = 2;
-        ctx.lineCap = "round";
-      }
-    }
-  }, []);
 
   const startDrawing = (e: React.MouseEvent | React.TouchEvent) => {
     setIsDrawing(true);
-    const ctx = canvasRef.current?.getContext('2d');
-    if (ctx) ctx.beginPath();
+    draw(e);
+  };
 
+  const stopDrawing = () => {
+    setIsDrawing(false);
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      ctx?.beginPath();
+    }
   };
 
   const draw = (e: React.MouseEvent | React.TouchEvent) => {
     if (!isDrawing) return;
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
-    if (!canvas || !ctx) return;
-
-
-    // Prevent scrolling when signing on mobile
-    if (e.cancelable) e.preventDefault();
-
-    const { x, y } = getCoordinates(e);
+    if (!ctx || !canvas) return;
 
     const rect = canvas.getBoundingClientRect();
-    const x = ('touches' in e ? e.touches[0].clientX : e.clientX) - rect.left;
-    const y = ('touches' in e ? e.touches[0].clientY : e.clientY) - rect.top;
+    const x = ('touches' in e) ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
+    const y = ('touches' in e) ? e.touches[0].clientY - rect.top : e.clientY - rect.top;
+
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#0d2c54';
 
     ctx.lineTo(x, y);
     ctx.stroke();
-    setHasSignature(true);
-  };
-
-  const stopDrawing = () => {
-
-    if (isDrawing) {
-      setIsDrawing(false);
-      saveSignature();
-    }
-  };
-
-  const clearSignature = () => {
-    const canvas = canvasRef.current;
-    const ctx = canvas?.getContext('2d');
-    if (canvas && ctx) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      setHasSignature(false);
-      onSignature('');
-    }
-  };
-
-  const saveSignature = () => {
-    const canvas = canvasRef.current;
-    if (canvas && hasSignature) {
-      const dataUrl = canvas.toDataURL('image/png');
-      onSignature(dataUrl);
-    }
-  };
-
-  return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between">
-        <Label className="text-sm font-medium flex items-center gap-2">
-          <PenTool className="w-4 h-4 text-primary" />
-          Recipient Signature {required && <span className="text-destructive">*</span>}
-        </Label>
-        {hasSignature && (
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            onClick={clearSignature}
-            className="h-8 text-xs text-muted-foreground hover:text-destructive"
-          >
-            <RotateCcw className="w-3 h-3 mr-1" />
-            Clear
-          </Button>
-        )}
-      </div>
-
-      <Card className={cn(
-        "overflow-hidden border-2 transition-all duration-200",
-        hasSignature ? "border-primary/20" : "border-dashed border-muted-foreground/30",
-        isDrawing && "ring-2 ring-primary/20 border-primary"
-      )}>
-        <CardContent className="p-0 relative">
-          <div 
-            ref={containerRef}
-            className="w-full bg-white touch-none cursor-crosshair"
-            style={{ height: '200px' }}
-          >
-            <canvas
-              ref={canvasRef}
-              onMouseDown={startDrawing}
-              onMouseMove={draw}
-              onMouseUp={stopDrawing}
-              onMouseLeave={stopDrawing}
-              onTouchStart={startDrawing}
-              onTouchMove={draw}
-              onTouchEnd={stopDrawing}
-              className="block w-full h-full"
-            />
-          </div>
-
-          {!hasSignature && !isDrawing && (
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
-              <div className="text-center">
-                <PenTool className="w-8 h-8 mx-auto mb-2" />
-                <p className="text-sm">Sign here</p>
-              </div>
-            </div>
-          )}
-
-          {hasSignature && !isDrawing && (
-            <div className="absolute bottom-2 right-2">
-              <div className="bg-primary/10 text-primary rounded-full p-1">
-                <Check className="w-4 h-4" />
-              </div>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-
-      <p className="text-[10px] text-muted-foreground italic">
-        By signing, the recipient confirms the physical condition of the parcel matches the recorded status.
-      </p>
-    </div>
-  );
-}
-
-    setIsDrawing(false);
-    if (hasSignature) onSave(canvasRef.current?.toDataURL() || "");
+    ctx.beginPath();
+    ctx.moveTo(x, y);
   };
 
   const clear = () => {
     const canvas = canvasRef.current;
-    canvas?.getContext('2d')?.clearRect(0, 0, canvas.width, canvas.height);
-    setHasSignature(false);
-    onSave("");
+    const ctx = canvas?.getContext('2d');
+    if (ctx && canvas) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  };
+
+  const handleSave = () => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      onSave(canvas.toDataURL('image/png'));
+    }
   };
 
   return (
-    <div className="space-y-2">
-      <div className="flex justify-between items-center">
-        <Label className="flex items-center gap-2"><PenTool size={16}/> Signature {required && '*'}</Label>
-        <Button variant="ghost" size="sm" onClick={clear}><RotateCcw size={14} className="mr-1"/>Clear</Button>
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <label className="text-sm font-black text-[#0d2c54] uppercase italic flex items-center gap-2">
+          <Pencil size={14} /> {t('Customer Signature', 'ဖောက်သည် လက်မှတ်')}
+        </label>
+        <Button variant="ghost" size="sm" onClick={clear} className="text-slate-400 hover:text-red-500">
+          <RotateCcw size={14} className="mr-1" /> {t('Clear', 'ဖျက်မည်')}
+        </Button>
       </div>
-      <Card className="border-2 border-dashed bg-white overflow-hidden">
-        <CardContent className="p-0 h-[200px]">
-          <canvas 
-            ref={canvasRef} 
-            onMouseDown={startDrawing} onMouseMove={draw} onMouseUp={stopDrawing} 
-            onTouchStart={startDrawing} onTouchMove={draw} onTouchEnd={stopDrawing}
-            className="w-full h-full touch-none cursor-crosshair"
-          />
-        </CardContent>
-      </Card>
+
+      <div className="border-2 border-dashed border-slate-200 rounded-xl bg-slate-50 overflow-hidden">
+        <canvas
+          ref={canvasRef}
+          width={600}
+          height={200}
+          className="w-full h-[200px] touch-none cursor-crosshair"
+          onMouseDown={startDrawing}
+          onMouseMove={draw}
+          onMouseUp={stopDrawing}
+          onMouseOut={stopDrawing}
+          onTouchStart={startDrawing}
+          onTouchMove={draw}
+          onTouchEnd={stopDrawing}
+        />
+      </div>
+
+      <div className="flex gap-2">
+        <Button onClick={handleSave} className="flex-1 bg-emerald-600 hover:bg-emerald-700 font-bold">
+          <Check className="mr-2 h-4 w-4" /> {t('Save Signature', 'လက်မှတ်သိမ်းမည်')}
+        </Button>
+        {onCancel && (
+          <Button variant="outline" onClick={onCancel} className="text-slate-500">
+            <X className="mr-2 h-4 w-4" /> {t('Cancel', 'မလုပ်တော့ပါ')}
+          </Button>
+        )}
+      </div>
     </div>
   );
 }
-
