@@ -31,3 +31,9 @@ export const formatCurrency = (amount: number) => {
 export const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('en-GB');
 };
+export const formatWeight = (w: number) => `${w} kg`;
+export const formatCurrency = (n: number) => `${n.toLocaleString()} MMK`;
+export const formatDate = (d: string) => new Date(d).toLocaleDateString();
+export const getStatusVariant = (s: string) => "default";
+export const MOCK_TOWNSHIPS = ["Yangon", "Mandalay"];
+export const NDR_REASONS = ["Unreachable", "Refused"];
