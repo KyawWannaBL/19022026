@@ -75,7 +75,7 @@ interface OptimizedRoute {
     carbon_footprint: number; // kg CO2
     efficiency_score: number; // 0-100
   };
-  created_at: string;
+  createdAt: string;
   updated_at: string;
   started_at?: string;
   completed_at?: string;
@@ -99,6 +99,9 @@ interface VehicleProfile {
 }
 
 export default function RouteOptimizationDashboard() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t, language } = useLanguageContext();
   const [activeTab, setActiveTab] = useState<'ROUTES' | 'OPTIMIZE' | 'ANALYTICS' | 'SETTINGS'>('ROUTES');
   const [routes, setRoutes] = useState<OptimizedRoute[]>([]);

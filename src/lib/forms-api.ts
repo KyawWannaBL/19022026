@@ -14,7 +14,7 @@ export interface SystemConfig {
   description?: string;
   min_value?: number;
   max_value?: number;
-  created_at?: string;
+  createdAt?: string;
   updated_at?: string;
 }
 
@@ -28,7 +28,7 @@ export interface Voucher {
   branch_id?: string;
   status: 'pending' | 'approved' | 'rejected';
   transaction_date: string;
-  created_at?: string;
+  createdAt?: string;
   updated_at?: string;
 }
 
@@ -43,7 +43,7 @@ export interface CashAdvance {
   advance_date: string;
   due_date?: string;
   repaid_amount?: number;
-  created_at?: string;
+  createdAt?: string;
   updated_at?: string;
 }
 
@@ -137,7 +137,7 @@ export class VouchersAPI {
     const { count } = await supabase
       .from('vouchers')
       .select('*', { count: 'exact', head: true })
-      .gte('created_at', new Date().toISOString().slice(0, 10));
+      .gte('createdAt', new Date().toISOString().slice(0, 10));
     
     const voucher_number = `VCH-${date}-${String((count || 0) + 1).padStart(3, '0')}`;
 
@@ -146,7 +146,7 @@ export class VouchersAPI {
       .insert({
         ...voucher,
         voucher_number,
-        created_at: new Date().toISOString(),
+        createdAt: new Date().toISOString(),
         updated_at: new Date().toISOString()
       })
       .select()
@@ -164,7 +164,7 @@ export class VouchersAPI {
     let query = supabase
       .from('vouchers')
       .select('*')
-      .order('created_at', { ascending: false });
+      .order('createdAt', { ascending: false });
 
     if (filters?.type) {
       query = query.eq('voucher_type', filters.type);
@@ -297,7 +297,7 @@ export class CashAdvancesAPI {
     const { count } = await supabase
       .from('cash_advances')
       .select('*', { count: 'exact', head: true })
-      .gte('created_at', new Date().toISOString().slice(0, 10));
+      .gte('createdAt', new Date().toISOString().slice(0, 10));
     
     const advance_number = `ADV-${date}-${String((count || 0) + 1).padStart(3, '0')}`;
 
@@ -307,7 +307,7 @@ export class CashAdvancesAPI {
         ...advance,
         advance_number,
         repaid_amount: 0,
-        created_at: new Date().toISOString(),
+        createdAt: new Date().toISOString(),
         updated_at: new Date().toISOString()
       })
       .select()
@@ -325,7 +325,7 @@ export class CashAdvancesAPI {
     let query = supabase
       .from('cash_advances')
       .select('*')
-      .order('created_at', { ascending: false });
+      .order('createdAt', { ascending: false });
 
     if (filters?.deliveryman_id) {
       query = query.eq('deliveryman_id', filters.deliveryman_id);

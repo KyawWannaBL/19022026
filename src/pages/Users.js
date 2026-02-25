@@ -15,6 +15,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { staggerContainer, staggerItem } from '@/lib/motion';
 export default function Users() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { data: users = [], isLoading: usersLoading } = useEnterpriseUsers();
     const { data: branches = [] } = useEnterpriseBranches();
     const [searchQuery, setSearchQuery] = useState('');

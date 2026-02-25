@@ -18,6 +18,9 @@ import { CustomerServiceAPI, CustomerServiceInteraction } from "@/lib/admin-api"
 
 export default function CustomerServiceDashboard() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [interactions, setInteractions] = useState<CustomerServiceInteraction[]>([]);
   const [stats, setStats] = useState<any>({});
   const [loading, setLoading] = useState(true);
@@ -266,7 +269,7 @@ export default function CustomerServiceDashboard() {
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-1 text-sm text-gray-600">
                         <Calendar className="w-3 h-3" />
-                        {new Date(interaction.created_at).toLocaleDateString()}
+                        {new Date(interaction.createdAt).toLocaleDateString()}
                       </div>
                     </td>
                     <td className="py-3 px-4">

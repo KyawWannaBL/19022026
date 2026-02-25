@@ -21,25 +21,28 @@ import { supabase } from '@/integrations/supabase/client';
 
 interface TrackingResult {
   id: string;
-  tracking_number: string;
+  awb: string;
   status: string;
   from_city: string;
   to_city: string;
   sender_name: string;
   receiver_name: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
   estimated_delivery?: string;
 }
 
 export default function PublicTrackingPage() {
-  const [trackingNumber, setTrackingNumber] = useState('');
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const [awb, setTrackingNumber] = useState('');
   const [trackingResult, setTrackingResult] = useState<TrackingResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
   const handleTrack = async () => {
-    if (!trackingNumber.trim()) {
+    if (!awb.trim()) {
       setError('Please enter a tracking number');
       return;
     }
@@ -53,21 +56,21 @@ export default function PublicTrackingPage() {
       const { data, error: supabaseError } = await supabase
         .from('shipments_2026_02_03_19_20')
         .select('*')
-        .eq('tracking_number', trackingNumber.trim())
+        .eq('awb', awb.trim())
         .single();
 
       if (supabaseError) {
         // If not found in database, show demo data for common tracking numbers
-        if (trackingNumber.toUpperCase().startsWith('BE-')) {
+        if (awb.toUpperCase().startsWith('BE-')) {
           setTrackingResult({
             id: 'demo',
-            tracking_number: trackingNumber.toUpperCase(),
-            status: getDemoStatus(trackingNumber),
+            awb: awb.toUpperCase(),
+            status: getDemoStatus(awb),
             from_city: 'Yangon',
-            to_city: getDemoDestination(trackingNumber),
+            to_city: getDemoDestination(awb),
             sender_name: 'Demo Sender',
             receiver_name: 'Demo Receiver',
-            created_at: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+            createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
             updated_at: new Date().toISOString(),
             estimated_delivery: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
           });
@@ -85,14 +88,14 @@ export default function PublicTrackingPage() {
     }
   };
 
-  const getDemoStatus = (trackingNumber: string) => {
-    const num = parseInt(trackingNumber.replace(/\D/g, '')) || 0;
+  const getDemoStatus = (awb: string) => {
+    const num = parseInt(awb.replace(/\D/g, '')) || 0;
     const statuses = ['Pending', 'In Transit', 'Out for Delivery', 'Delivered'];
     return statuses[num % statuses.length];
   };
 
-  const getDemoDestination = (trackingNumber: string) => {
-    const num = parseInt(trackingNumber.replace(/\D/g, '')) || 0;
+  const getDemoDestination = (awb: string) => {
+    const num = parseInt(awb.replace(/\D/g, '')) || 0;
     const cities = ['Mandalay', 'Nay Pyi Taw', 'Bagan', 'Taunggyi'];
     return cities[num % cities.length];
   };
@@ -177,7 +180,7 @@ export default function PublicTrackingPage() {
                   <Input
                     type="text"
                     placeholder="Enter tracking number (e.g., BE-12345)"
-                    value={trackingNumber}
+                    value={awb}
                     onChange={(e) => setTrackingNumber(e.target.value)}
                     onKeyPress={handleKeyPress}
                     className="text-lg py-6 border-2 border-gray-300 focus:border-gold focus:ring-gold"
@@ -229,7 +232,7 @@ export default function PublicTrackingPage() {
                   </Badge>
                 </div>
                 <p className="text-navy-200">
-                  Tracking ID: <span className="font-bold text-gold">{trackingResult.tracking_number}</span>
+                  Tracking ID: <span className="font-bold text-gold">{trackingResult.awb}</span>
                 </p>
               </CardHeader>
               
@@ -281,7 +284,7 @@ export default function PublicTrackingPage() {
                         <div>
                           <p className="font-medium text-gray-900">Created</p>
                           <p className="text-gray-600">
-                            {new Date(trackingResult.created_at).toLocaleDateString('en-US', {
+                            {new Date(trackingResult.createdAt).toLocaleDateString('en-US', {
                               year: 'numeric',
                               month: 'long',
                               day: 'numeric',
@@ -336,7 +339,7 @@ export default function PublicTrackingPage() {
                   <p className="text-gray-600">
                     {trackingResult.status === 'Delivered' && 'Your package has been successfully delivered.'}
                     {trackingResult.status === 'Out for Delivery' && 'Your package is out for delivery and will arrive soon.'}
-                    {trackingResult.status === 'In Transit' && 'Your package is on its way to the destination.'}
+                    {trackingResult.status === 'In Transit' && 'Your package is on its way to the destinationTownship.'}
                     {trackingResult.status === 'Pending' && 'Your package is being processed at our facility.'}
                     {trackingResult.status === 'Cancelled' && 'This shipment has been cancelled.'}
                   </p>

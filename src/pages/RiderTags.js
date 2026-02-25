@@ -9,6 +9,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { QRCodeScanner } from '@/components/QRCodeScanner';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
 export default function RiderTags() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t, language } = useLanguage();
     const [tagBatches, setTagBatches] = useState([]);
     const [selectedBatch, setSelectedBatch] = useState(null);

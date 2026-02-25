@@ -10,6 +10,9 @@ import { Package, Truck, Users, DollarSign, TrendingUp, AlertTriangle, CheckCirc
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 export default function EnhancedDashboard() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { user } = useAuth();
     const { t, language } = useLanguageContext();
     const [stats, setStats] = useState({
@@ -33,7 +36,7 @@ export default function EnhancedDashboard() {
             // Load shipment statistics
             const { data: shipments, error: shipmentsError } = await supabase
                 .from('shipments')
-                .select('status, total_amount, created_at');
+                .select('status, total_amount, createdAt');
             if (shipmentsError)
                 throw shipmentsError;
             // Load user statistics

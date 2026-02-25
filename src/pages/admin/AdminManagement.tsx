@@ -20,6 +20,9 @@ import { AdminUsersAPI, AdminUser } from "@/lib/admin-api";
 
 export default function AdminManagement() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [searchTerm, setSearchTerm] = useState("");
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [loading, setLoading] = useState(true);

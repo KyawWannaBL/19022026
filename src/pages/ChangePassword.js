@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 export default function ChangePassword() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { changePassword } = useAuth();
     const nav = useNavigate();
     const [password, setPassword] = useState("");

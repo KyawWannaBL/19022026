@@ -21,7 +21,7 @@ const translations = {
     "merchant.newOrder": "New Order",
     "merchant.codBalance": "COD Balance",
     "merchant.recentShipments": "Recent Shipments",
-    "form.search": "Search tracking ID or recipient...",
+    "form.search": "Search tracking ID or receiverName...",
   },
   my: {
     "nav.login": "အကောင့်ဝင်ရန်",

@@ -12,6 +12,9 @@ import { ElectronicSignature } from '@/components/ElectronicSignature';
 import { logisticsAPI } from '@/services/logistics-api';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
 export default function RiderPickup() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t, language } = useLanguage();
     const [currentStep, setCurrentStep] = useState('LIST');
     const [pickupItems, setPickupItems] = useState([]);

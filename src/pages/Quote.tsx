@@ -3,6 +3,9 @@ import { Calculator, Package, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Quote() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [form, setForm] = useState({ townshipRate: 0, weight: 1 });
 
   const calculateTotal = () => {

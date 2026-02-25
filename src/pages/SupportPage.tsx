@@ -46,6 +46,9 @@ interface ContentPage {
 
 export default function SupportPage() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [faqs, setFaqs] = useState<FAQ[]>([]);
   const [prohibitedItems, setProhibitedItems] = useState<ProhibitedItem[]>([]);
   const [contentPages, setContentPages] = useState<ContentPage[]>([]);
@@ -340,7 +343,7 @@ export default function SupportPage() {
                     <div className="border-l-4 border-purple-500 pl-6">
                       <h3 className="text-2xl font-bold text-purple-900 mb-3">CIF (Cost, Insurance & Freight)</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Seller pays for the cost, freight, and insurance to the destination port. However, risk transfers to the buyer once goods are on board the vessel. 
+                        Seller pays for the cost, freight, and insurance to the destinationTownship port. However, risk transfers to the buyer once goods are on board the vessel. 
                         The seller arranges and pays for main carriage and minimum insurance coverage.
                       </p>
                     </div>
@@ -349,7 +352,7 @@ export default function SupportPage() {
                       <h3 className="text-2xl font-bold text-orange-900 mb-3">DDP (Delivered Duty Paid)</h3>
                       <p className="text-gray-600 leading-relaxed">
                         Seller has maximum responsibility. The seller delivers goods to the buyer's premises, cleared for import and all duties paid. 
-                        This is the most comprehensive service level where the seller handles everything including customs clearance at destination.
+                        This is the most comprehensive service level where the seller handles everything including customs clearance at destinationTownship.
                       </p>
                     </div>
                   </div>

@@ -5,7 +5,7 @@ import { createClient } from '@supabase/supabase-js';
 interface TrackingData {
   id: string;
   awb_number?: string;
-  trackingNumber?: string;
+  awb?: string;
   [key: string]: unknown;
 }
 
@@ -33,7 +33,7 @@ export function useQRCode() {
       v: '1.0',
       type: 'SHIPMENT',
       id: shipment.id,
-      awb: shipment.awb_number || shipment.trackingNumber,
+      awb: shipment.awb || shipment.awb,
       ts: new Date().toISOString(),
       sys: 'FLEET_OS_2026'
     });
@@ -57,7 +57,7 @@ export function useQRCode() {
           shipment_id: shipmentId,
           action,
           metadata: metadata || {},
-          created_at: new Date().toISOString(),
+          createdAt: new Date().toISOString(),
           client_info: {
             userAgent: navigator.userAgent,
             platform: navigator.platform

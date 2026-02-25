@@ -3,6 +3,9 @@ import { Truck, CircleDollarSign, Plane, Calculator, ShieldCheck, Headphones } f
 import { IMAGES } from '@/assets/images';
 
 export default function ServicesPage() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [calcData, setCalcData] = useState({ dest: 0, weight: 0, l: 0, w: 0, h: 0, divisor: 5000 });
   const [result, setResult] = useState<number | null>(null);
 

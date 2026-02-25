@@ -19,16 +19,18 @@ import { ROUTE_PATHS } from '@/lib/index';
 
 import { useAuth } from '@/hooks/useAuth';
 
-import { useAuth } from '@/hooks/useAuth';
 
 
 export default function CustomerBooking() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { user } = useAuth();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     receiverName: '',
     receiverPhone: '',
-    destinationCity: '',
+    destinationTownshipCity: '',
     destinationTownship: '',
     fullAddress: '',
     weight: 1,
@@ -44,7 +46,7 @@ export default function CustomerBooking() {
     let basePrice = 0;
     
     // Base price logic
-    if (formData.destinationCity === 'yangon') {
+    if (formData.destinationTownshipCity === 'yangon') {
       switch (formData.destinationTownship) {
         case 'zone1':
           basePrice = 2000;
@@ -58,7 +60,7 @@ export default function CustomerBooking() {
         default:
           basePrice = 3000;
       }
-    } else if (formData.destinationCity === 'mandalay') {
+    } else if (formData.destinationTownshipCity === 'mandalay') {
       basePrice = 3000;
     } else {
       basePrice = 3500;
@@ -186,8 +188,8 @@ export default function CustomerBooking() {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="destinationCity">Destination City</Label>
-                    <Select value={formData.destinationCity} onValueChange={(value) => handleInputChange('destinationCity', value)}>
+                    <Label htmlFor="destinationTownshipCity">Destination City</Label>
+                    <Select value={formData.destinationTownshipCity} onValueChange={(value) => handleInputChange('destinationTownshipCity', value)}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select City" />
                       </SelectTrigger>
@@ -318,7 +320,7 @@ export default function CustomerBooking() {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span>Base Rate</span>
-                    <span>{formData.destinationCity ? `${estimatedCost - (formData.weight > 1 ? (formData.weight - 1) * 500 : 0) - (formData.serviceType === 'express' ? 1000 : 0)} MMK` : '--'}</span>
+                    <span>{formData.destinationTownshipCity ? `${estimatedCost - (formData.weight > 1 ? (formData.weight - 1) * 500 : 0) - (formData.serviceType === 'express' ? 1000 : 0)} MMK` : '--'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Weight Charge</span>

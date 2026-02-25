@@ -89,6 +89,9 @@ const mockWayData: WayItem[] = [
 ];
 
 export default function WayManagement() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t, language } = useLanguageContext();
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('pickup');

@@ -36,7 +36,7 @@ export const createLegacyUser = (user, userData) => {
         role: (userData?.role || 'CUSTOMER'),
         permissions: userData?.permissions || [],
         isActive: userData?.is_active ?? true,
-        createdAt: userData?.created_at ? new Date(userData.created_at) : new Date(),
+        createdAt: userData?.createdAt ? new Date(userData.createdAt) : new Date(),
         lastLogin: new Date(),
         batchId: userData?.batch_id || undefined,
     };

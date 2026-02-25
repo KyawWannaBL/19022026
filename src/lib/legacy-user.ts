@@ -63,7 +63,7 @@ export const createLegacyUser = (user: SupabaseUser | null, userData: any): Lega
     role: (userData?.role || 'CUSTOMER') as string,
     permissions: userData?.permissions || [],
     isActive: userData?.is_active ?? true,
-    createdAt: userData?.created_at ? new Date(userData.created_at) : new Date(),
+    createdAt: userData?.createdAt ? new Date(userData.createdAt) : new Date(),
     lastLogin: new Date(),
     batchId: userData?.batch_id || undefined,
   };

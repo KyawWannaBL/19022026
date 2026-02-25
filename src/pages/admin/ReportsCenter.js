@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ReportsAPI } from "@/lib/reports-api";
 export default function ReportsCenter() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useLanguageContext();
     const [activeTab, setActiveTab] = useState('overview');
     const [loading, setLoading] = useState(false);

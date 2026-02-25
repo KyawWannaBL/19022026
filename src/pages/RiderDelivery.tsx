@@ -37,7 +37,7 @@ interface DeliveryItem {
   weight: number;
   cod_amount?: number;
   status: string;
-  created_at: string;
+  createdAt: string;
   delivery_location: {
     lat: number;
     lng: number;
@@ -46,6 +46,9 @@ interface DeliveryItem {
 }
 
 export default function RiderDelivery() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t, language } = useLanguageContext();
   const [currentStep, setCurrentStep] = useState<DeliveryStep>('LIST');
   const [deliveryItems, setDeliveryItems] = useState<DeliveryItem[]>([]);

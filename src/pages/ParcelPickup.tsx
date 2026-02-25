@@ -24,6 +24,9 @@ import { IMAGES } from '@/assets/images';
  * Integrates with automated wayplan management systems.
  */
 export default function ParcelPickup() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [userType, setUserType] = useState<'merchant' | 'customer'>('merchant');
   const [createdParcel, setCreatedParcel] = useState<any>(null);
 
@@ -65,7 +68,7 @@ export default function ParcelPickup() {
                 Shipment <span className="text-primary">Registration</span>
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl">
-                Initialize your pickup order. Our system automatically optimizes the wayplan and assigns dedicated riders based on your destination.
+                Initialize your pickup order. Our system automatically optimizes the wayplan and assigns dedicated riders based on your destinationTownship.
               </p>
             </div>
             {createdParcel && (
@@ -154,7 +157,7 @@ export default function ParcelPickup() {
                       </div>
                       <h2 className="text-4xl font-bold mb-3 tracking-tight">System Registered</h2>
                       <p className="text-muted-foreground text-lg">
-                        Wayplan generated. AWB ID: <span className="text-primary font-mono font-bold">{createdParcel.awb_number || createdParcel.trackingNumber}</span>
+                        Wayplan generated. AWB ID: <span className="text-primary font-mono font-bold">{createdParcel.awb_number || createdParcel.awb}</span>
                       </p>
                     </div>
 

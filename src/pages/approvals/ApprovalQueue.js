@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 export default function ApprovalQueue() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const [items, setItems] = useState([]);
     const load = async () => {
         const { data } = await supabase
@@ -11,7 +14,7 @@ export default function ApprovalQueue() {
         id,
         entity_id,
         status,
-        shipments ( tracking_number, status )
+        shipments ( awb, status )
       `)
             .eq("status", "PENDING");
         setItems(data || []);
@@ -42,5 +45,5 @@ export default function ApprovalQueue() {
             .eq("id", shipmentId);
         load();
     };
-    return (_jsxs("div", { className: "space-y-4", children: [_jsx("h1", { className: "text-xl font-bold", children: "Pending Approvals" }), items.map(item => (_jsxs("div", { className: "luxury-card p-4 flex justify-between", children: [_jsxs("div", { children: ["Shipment: ", item.shipments?.tracking_number] }), _jsxs("div", { className: "space-x-2", children: [_jsx(Button, { onClick: () => approve(item.id, item.entity_id), children: "Approve" }), _jsx(Button, { variant: "destructive", onClick: () => reject(item.id, item.entity_id), children: "Reject" })] })] }, item.id)))] }));
+    return (_jsxs("div", { className: "space-y-4", children: [_jsx("h1", { className: "text-xl font-bold", children: "Pending Approvals" }), items.map(item => (_jsxs("div", { className: "luxury-card p-4 flex justify-between", children: [_jsxs("div", { children: ["Shipment: ", item.shipments?.awb] }), _jsxs("div", { className: "space-x-2", children: [_jsx(Button, { onClick: () => approve(item.id, item.entity_id), children: "Approve" }), _jsx(Button, { variant: "destructive", onClick: () => reject(item.id, item.entity_id), children: "Reject" })] })] }, item.id)))] }));
 }

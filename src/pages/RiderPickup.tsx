@@ -40,7 +40,7 @@ interface PickupItem {
   weight: number;
   cod_amount?: number;
   status: string;
-  created_at: string;
+  createdAt: string;
   pickup_location: {
     lat: number;
     lng: number;
@@ -49,6 +49,9 @@ interface PickupItem {
 }
 
 export default function RiderPickup() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t, language } = useLanguageContext();
   const [currentStep, setCurrentStep] = useState<PickupStep>('LIST');
   const [pickupItems, setPickupItems] = useState<PickupItem[]>([]);

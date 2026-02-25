@@ -234,7 +234,7 @@ export interface QRCodeData {
   scanned_by?: string;
   scanned_at?: string;
   scan_count: number;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface GPSLocation {
@@ -268,7 +268,7 @@ export interface ElectronicSignature {
   verification_status: 'PENDING' | 'VERIFIED' | 'REJECTED';
   verified_by?: string;
   verified_at?: string;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface RouteOptimization {
@@ -286,7 +286,7 @@ export interface RouteOptimization {
   status: 'PLANNED' | 'IN_PROGRESS' | 'COMPLETED' | 'CANCELLED';
   started_at?: string;
   completed_at?: string;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface RealtimeEvent {
@@ -300,7 +300,7 @@ export interface RealtimeEvent {
   event_data: any;
   severity: 'LOW' | 'INFO' | 'WARNING' | 'HIGH' | 'CRITICAL';
   is_processed: boolean;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface Geofence {
@@ -314,5 +314,5 @@ export interface Geofence {
   is_active: boolean;
   alert_on_enter: boolean;
   alert_on_exit: boolean;
-  created_at: string;
+  createdAt: string;
 }

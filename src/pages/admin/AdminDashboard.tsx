@@ -4,6 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguageContext } from '@/lib/LanguageContext'; // Import context hook
 
 export default function AdminDashboard() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t } = useLanguageContext(); // Initialize translation function
 
   const stats = [

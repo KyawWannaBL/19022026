@@ -109,7 +109,7 @@ export class WarehouseAPI {
                 .from('warehouse_parcels_2026_02_04_15_54')
                 .select('*')
                 .eq('current_station_id', stationId)
-                .order('created_at', { ascending: false });
+                .order('createdAt', { ascending: false });
             if (status) {
                 query = query.eq('status', status);
             }
@@ -183,7 +183,7 @@ export class WarehouseAPI {
                 .from('warehouse_operations_2026_02_04_15_54')
                 .select('*')
                 .eq('station_id', stationId)
-                .order('created_at', { ascending: false })
+                .order('createdAt', { ascending: false })
                 .limit(limit);
             if (error)
                 throw error;
@@ -226,7 +226,7 @@ export class WarehouseAPI {
                     qr_data: {
                         manifest_number: manifestNumber,
                         type: 'manifest',
-                        created_at: data.created_at
+                        createdAt: data.createdAt
                     }
                 }]);
             return data.id;
@@ -243,7 +243,7 @@ export class WarehouseAPI {
                 .from('warehouse_manifests_2026_02_04_15_54')
                 .select('*')
                 .eq('origin_station_id', stationId)
-                .order('created_at', { ascending: false });
+                .order('createdAt', { ascending: false });
             if (error)
                 throw error;
             return data || [];
@@ -317,8 +317,8 @@ export class WarehouseAPI {
                 .from('warehouse_operations_2026_02_04_15_54')
                 .select('id')
                 .eq('station_id', stationId)
-                .gte('created_at', today + 'T00:00:00.000Z')
-                .lt('created_at', today + 'T23:59:59.999Z');
+                .gte('createdAt', today + 'T00:00:00.000Z')
+                .lt('createdAt', today + 'T23:59:59.999Z');
             const stats = {
                 totalParcels: parcels?.length || 0,
                 inbound: parcels?.filter(p => p.status === 'inbound_received').length || 0,

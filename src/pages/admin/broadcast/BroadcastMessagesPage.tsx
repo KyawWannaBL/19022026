@@ -48,7 +48,7 @@ const BroadcastMessagesPage: React.FC = () => {
       id: 'BC-001',
       title: 'New Service Zone: Mandalay',
       content: 'We are excited to announce our expansion into Mandalay...',
-      recipients: t('broadcast.allUsers'),
+      receiverNames: t('broadcast.allUsers'),
       status: 'Sent',
       date: '2026-02-03 14:30',
       reach: '1,240',
@@ -57,7 +57,7 @@ const BroadcastMessagesPage: React.FC = () => {
       id: 'BC-002',
       title: 'Merchant System Maintenance',
       content: 'Scheduled maintenance for the merchant portal tonight...',
-      recipients: t('broadcast.merchants'),
+      receiverNames: t('broadcast.merchants'),
       status: 'Scheduled',
       date: '2026-02-05 22:00',
       reach: '450',
@@ -66,7 +66,7 @@ const BroadcastMessagesPage: React.FC = () => {
       id: 'BC-003',
       title: 'Rider Incentive Program Update',
       content: 'New commission rates for express deliveries starting...',
-      recipients: t('broadcast.deliverymen'),
+      receiverNames: t('broadcast.deliverymen'),
       status: 'Sent',
       date: '2026-02-01 09:15',
       reach: '890',
@@ -75,7 +75,7 @@ const BroadcastMessagesPage: React.FC = () => {
       id: 'BC-004',
       title: 'Chinese New Year Holiday Notice',
       content: 'Operational hours during the upcoming holiday period...',
-      recipients: t('broadcast.customers'),
+      receiverNames: t('broadcast.customers'),
       status: 'Draft',
       date: '2026-02-04 05:15',
       reach: '0',
@@ -192,7 +192,7 @@ const BroadcastMessagesPage: React.FC = () => {
                 <TableHead className="w-[100px]">ID</TableHead>
                 <TableHead>{t('common.date')}</TableHead>
                 <TableHead>{t('broadcast.messageContent')}</TableHead>
-                <TableHead>{t('broadcast.recipients')}</TableHead>
+                <TableHead>{t('broadcast.receiverNames')}</TableHead>
                 <TableHead>{t('tracking.status')}</TableHead>
                 <TableHead className="text-right">Reach</TableHead>
                 <TableHead className="w-[50px]"></TableHead>
@@ -216,7 +216,7 @@ const BroadcastMessagesPage: React.FC = () => {
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className="bg-navy-50 text-navy-700 border-navy-200">
-                      {bc.recipients}
+                      {bc.receiverNames}
                     </Badge>
                   </TableCell>
                   <TableCell>

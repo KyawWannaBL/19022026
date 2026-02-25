@@ -4,6 +4,9 @@ import { Calculator, Package, Clock } from 'lucide-react';
 // Language context - using simple state for now
 const useLanguageContext = () => ({ language: 'en' });
 export default function ShippingCalculator() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { language } = useLanguageContext();
     const [formData, setFormData] = useState({
         pickupCity: 'Yangon',

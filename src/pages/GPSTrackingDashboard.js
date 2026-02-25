@@ -9,6 +9,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { GPSTracker } from '@/components/GPSTracker';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
 export default function GPSTrackingDashboard() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t, language } = useLanguage();
     const [activeTab, setActiveTab] = useState('LIVE');
     const [devices, setDevices] = useState([]);

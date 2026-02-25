@@ -5,7 +5,7 @@ export class AdminUsersAPI {
         const { data, error } = await supabase
             .from('admin_users_2026_02_04_16_00')
             .select('*')
-            .order('created_at', { ascending: false });
+            .order('createdAt', { ascending: false });
         if (error)
             throw error;
         return data || [];
@@ -317,7 +317,7 @@ export class CustomerServiceAPI {
           email
         )
       `)
-            .order('created_at', { ascending: false });
+            .order('createdAt', { ascending: false });
         if (error)
             throw error;
         return data || [];
@@ -327,7 +327,7 @@ export class CustomerServiceAPI {
             .from('customer_service_interactions_2026_02_04_16_00')
             .select('*')
             .eq('agent_id', agentId)
-            .order('created_at', { ascending: false });
+            .order('createdAt', { ascending: false });
         if (error)
             throw error;
         return data || [];

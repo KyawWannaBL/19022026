@@ -28,6 +28,9 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export default function OrderManagement() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [searchTerm, setSearchTerm] = useState('');
 
   // Mock data for build verification

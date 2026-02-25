@@ -8,6 +8,9 @@ import { TariffRatesAPI, TariffRate } from "@/lib/admin-api";
 
 export default function TariffSetting() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [rates, setRates] = useState<TariffRate[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAddForm, setShowAddForm] = useState(false);

@@ -11,7 +11,7 @@ vi.mock("@/hooks/useEnterpriseShipments", () => ({
 }));
 
 type MockShipment = {
-  tracking_number?: string | null;
+  awb?: string | null;
 };
 
 beforeEach(() => {
@@ -30,7 +30,7 @@ describe("Tracking page", () => {
   });
 
   it("finds shipment case-insensitively and trims input", async () => {
-    const shipments: MockShipment[] = [{ tracking_number: "AbC123" }];
+    const shipments: MockShipment[] = [{ awb: "AbC123" }];
     mockUseEnterpriseShipments.mockReturnValue({ data: shipments, isLoading: false });
 
     const user = userEvent.setup();
@@ -44,7 +44,7 @@ describe("Tracking page", () => {
   });
 
   it("shows not found when shipment does not exist", async () => {
-    const shipments: MockShipment[] = [{ tracking_number: "ZX9" }];
+    const shipments: MockShipment[] = [{ awb: "ZX9" }];
     mockUseEnterpriseShipments.mockReturnValue({ data: shipments, isLoading: false });
 
     const user = userEvent.setup();

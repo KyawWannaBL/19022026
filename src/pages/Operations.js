@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { FileText, Upload, ShieldCheck, Truck, Download, AlertCircle } from 'lucide-react';
 export default function Operations() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { user, role } = useAuth();
     const [activeTab, setActiveTab] = useState('single');
     const [idFile, setIdFile] = useState(null);

@@ -22,6 +22,9 @@ type Order = {
 };
 
 export default function RealTimeMapView() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [orders, setOrders] = useState<Order[]>([]);
 
   useEffect(() => {

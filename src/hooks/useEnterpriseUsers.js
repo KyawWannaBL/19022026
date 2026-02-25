@@ -13,7 +13,7 @@ async function fetchUsers() {
     const { data, error } = await supabase
         .from(TABLES.PROFILES)
         .select("*")
-        .order("created_at", { ascending: false })
+        .order("createdAt", { ascending: false })
         .limit(500);
     if (error)
         throw error;
@@ -27,7 +27,7 @@ async function fetchUsers() {
         avatarUrl: row.avatar_url ?? row.profile_image_url ?? null,
         merchantId: row.merchant_id ?? null,
         status: (String(row.status ?? "active").toLowerCase() === "inactive" ? "inactive" : "active"),
-        createdAt: String(row.created_at ?? new Date().toISOString()),
+        createdAt: String(row.createdAt ?? new Date().toISOString()),
     }));
 }
 export function useEnterpriseUsers() {

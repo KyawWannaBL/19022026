@@ -88,7 +88,7 @@ export const mockUsers = [
 export const mockShipments = [
     {
         id: 's-101',
-        trackingNumber: 'BRX-2026-0001',
+        awb: 'BRX-2026-0001',
         senderName: 'Sarah Jenkins',
         senderPhone: '+44 7700 900555',
         senderAddress: '15 High Street',
@@ -136,7 +136,7 @@ export const mockShipments = [
     },
     {
         id: 's-102',
-        trackingNumber: 'BRX-2026-0002',
+        awb: 'BRX-2026-0002',
         senderName: 'Tech Solutions Ltd',
         senderPhone: '+44 20 8888 9999',
         senderAddress: '88 Innovation Park',
@@ -174,7 +174,7 @@ export const mockShipments = [
     },
     {
         id: 's-103',
-        trackingNumber: 'BRX-2026-0003',
+        awb: 'BRX-2026-0003',
         senderName: 'Fashion Forward',
         senderPhone: '+44 20 4444 5555',
         senderAddress: '10 Oxford Circus',

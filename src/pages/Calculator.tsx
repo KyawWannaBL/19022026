@@ -8,8 +8,11 @@ type Result = {
 };
 
 export default function Calculator() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [weight, setWeight] = useState(1);
-  const [destination, setDestination] = useState('yangon');
+  const [destinationTownship, setDestination] = useState('yangon');
   const [result, setResult] = useState<Result | null>(null);
 
   const calculate = () => {
@@ -17,11 +20,11 @@ export default function Calculator() {
     let time = '';
     let note = '';
 
-    if (destination === 'yangon') {
+    if (destinationTownship === 'yangon') {
       baseRate = 2500;
       time = 'Same Day';
       note = 'Yangon City Express';
-    } else if (destination === 'mandalay') {
+    } else if (destinationTownship === 'mandalay') {
       baseRate = 4500;
       time = 'Next Day';
       note = 'Intercity Express';
@@ -54,7 +57,7 @@ export default function Calculator() {
               Destination
             </label>
             <select
-              value={destination}
+              value={destinationTownship}
               onChange={(e) => setDestination(e.target.value)}
               className="w-full bg-navy-700 border border-gold-500/20 rounded-lg px-4 py-2"
             >

@@ -61,7 +61,7 @@ export default function ParcelPickup() {
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">Recipient Name</label>
-            <input type="text" className="w-full p-2 border border-border rounded-lg" placeholder="Enter recipient name" />
+            <input type="text" className="w-full p-2 border border-border rounded-lg" placeholder="Enter receiverName name" />
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">Pickup Address</label>

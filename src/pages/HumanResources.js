@@ -2,6 +2,9 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState } from 'react';
 import { UserPlus, Star, MoreVertical } from 'lucide-react';
 export default function HumanResources() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const [searchTerm, setSearchTerm] = useState('');
     const staff = [
         { name: 'Aung Kyaw', role: 'Senior Rider', branch: 'Yangon Central', rating: 4.8, status: 'Active' },

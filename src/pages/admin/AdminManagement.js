@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AdminUsersAPI } from "@/lib/admin-api";
 export default function AdminManagement() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useLanguageContext();
     const [searchTerm, setSearchTerm] = useState("");
     const [users, setUsers] = useState([]);

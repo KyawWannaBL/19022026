@@ -65,6 +65,9 @@ const defaultSettings: SystemSettings = {
 
 export default function SystemSettings() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [settings, setSettings] = useState<SystemSettings>(defaultSettings);
   const [activeTab, setActiveTab] = useState('general');
 
@@ -328,7 +331,7 @@ export default function SystemSettings() {
                   <div className="space-y-0.5">
                     <Label className="text-base">{t('settings.autoCreateCustomer')}</Label>
                     <p className="text-sm text-muted-foreground">
-                      Automatically create customer accounts for new recipients
+                      Automatically create customer accounts for new receiverNames
                     </p>
                   </div>
                   <Switch
@@ -343,7 +346,7 @@ export default function SystemSettings() {
                   <div className="space-y-0.5">
                     <Label className="text-base">{t('settings.autoAddRecipient')}</Label>
                     <p className="text-sm text-muted-foreground">
-                      Automatically add recipient information to address book
+                      Automatically add receiverName information to address book
                     </p>
                   </div>
                   <Switch

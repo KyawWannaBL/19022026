@@ -285,7 +285,7 @@ const ReturnWaysPage: React.FC = () => {
             <Table>
               <TableHeader className="bg-navy-50">
                 <TableRow>
-                  <TableHead className="font-bold">{t('tracking.trackingNumber')}</TableHead>
+                  <TableHead className="font-bold">{t('tracking.awb')}</TableHead>
                   <TableHead className="font-bold">{t('merchant.name')}</TableHead>
                   <TableHead className="font-bold">{language === 'en' ? 'Reason' : 'အကြောင်းပြချက်'}</TableHead>
                   <TableHead className="font-bold">{language === 'en' ? 'Return Date' : 'ပြန်ပို့သည့်ရက်'}</TableHead>
@@ -375,7 +375,7 @@ const ReturnWaysPage: React.FC = () => {
               <Input id="merchant" value="Elite Electronics" className="col-span-3" disabled />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="tracking" className="text-right">{t('tracking.trackingNumber')}</Label>
+              <Label htmlFor="tracking" className="text-right">{t('tracking.awb')}</Label>
               <Input id="tracking" value="BE88492011" className="col-span-3" disabled />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">

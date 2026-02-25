@@ -37,7 +37,7 @@ interface QRCodeData {
   reference_type: string;
   status: 'ACTIVE' | 'SCANNED' | 'EXPIRED';
   data: any;
-  created_at: string;
+  createdAt: string;
   expires_at?: string;
   scan_count: number;
   last_scanned_at?: string;
@@ -57,6 +57,9 @@ interface ScanHistory {
 }
 
 export default function QRCodeManagement() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t, language } = useLanguageContext();
   const [activeTab, setActiveTab] = useState<'GENERATE' | 'SCAN' | 'MANAGE' | 'HISTORY'>('GENERATE');
   const [qrCodes, setQrCodes] = useState<QRCodeData[]>([]);
@@ -516,7 +519,7 @@ export default function QRCodeManagement() {
                         <span className="font-medium">
                           {language === 'my' ? 'ဖန်တီးရက်:' : 'Created:'}
                         </span>
-                        <span className="ml-1">{new Date(qr.created_at).toLocaleDateString()}</span>
+                        <span className="ml-1">{new Date(qr.createdAt).toLocaleDateString()}</span>
                       </div>
                       {qr.expires_at && (
                         <div>

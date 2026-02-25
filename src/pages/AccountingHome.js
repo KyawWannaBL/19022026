@@ -5,6 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator, FileText, DollarSign, TrendingUp, Building, CreditCard, BookOpen, BarChart3 } from "lucide-react";
 import { ROUTE_PATHS } from "@/lib/index";
 export default function AccountingHome() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useLanguageContext();
     const navigate = useNavigate();
     const accountingModules = [

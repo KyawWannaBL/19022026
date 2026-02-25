@@ -158,7 +158,7 @@ export function OperationalManual() {
                 <li>Select appropriate scan mode (Inbound/Outbound)</li>
                 <li>Scan packages in batches</li>
                 <li>System validates routing information</li>
-                <li>Sort packages according to destination</li>
+                <li>Sort packages according to destinationTownship</li>
                 <li>Generate bag/manifest reports</li>
                 <li>Seal bags and update system</li>
               </ol>
@@ -205,7 +205,7 @@ export function OperationalManual() {
                 Signature POD
               </h4>
               <p className="text-sm text-muted-foreground">
-                Customer signs on mobile device screen. Capture clear signature with recipient name.
+                Customer signs on mobile device screen. Capture clear signature with receiverName name.
               </p>
             </div>
             <div className="space-y-2">
@@ -231,7 +231,7 @@ export function OperationalManual() {
           <div className="bg-blue-50 p-4 rounded-lg">
             <h4 className="font-semibold mb-2">POD Best Practices:</h4>
             <ul className="text-sm space-y-1">
-              <li>• Always verify recipient identity</li>
+              <li>• Always verify receiverName identity</li>
               <li>• Ensure GPS location is captured</li>
               <li>• Take clear, well-lit photos</li>
               <li>• Get complete signature (not just initials)</li>

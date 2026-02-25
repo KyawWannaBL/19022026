@@ -11,6 +11,9 @@ L.Icon.Default.mergeOptions({
     shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 export default function RealTimeMapView() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         const load = async () => {

@@ -279,7 +279,7 @@ const FailedWaysPage: React.FC = () => {
           <Table>
             <TableHeader className="bg-muted/50">
               <TableRow>
-                <TableHead className="w-[150px]">{t('tracking.trackingNumber')}</TableHead>
+                <TableHead className="w-[150px]">{t('tracking.awb')}</TableHead>
                 <TableHead>{t('order.merchant')}</TableHead>
                 <TableHead>{t('order.customer')}</TableHead>
                 <TableHead>{language === 'en' ? 'Failure Reason' : 'မအောင်မြင်ရသည့်အကြောင်းအရင်း'}</TableHead>

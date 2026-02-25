@@ -8,7 +8,7 @@ interface AuditEntry {
   action: string;
   table_name: string;
   changes: any;
-  created_at: string;
+  createdAt: string;
   user_email?: string;
 }
 
@@ -21,7 +21,7 @@ const AuditFeed = () => {
       const { data, error } = await supabase
         .from('audit_log')
         .select('*')
-        .order('created_at', { ascending: false })
+        .order('createdAt', { ascending: false })
         .limit(10);
       
       if (!error && data) setLogs(data);
@@ -78,7 +78,7 @@ const AuditFeed = () => {
                     {log.table_name.charAt(0).toUpperCase() + log.table_name.slice(1)} {log.action.toLowerCase()}d
                   </p>
                   <p className="text-xs text-gray-500 mt-0.5">
-                    {log.user_email || 'System Process'} • {format(new Date(log.created_at), 'HH:mm:ss')}
+                    {log.user_email || 'System Process'} • {format(new Date(log.createdAt), 'HH:mm:ss')}
                   </p>
                 </div>
               </div>

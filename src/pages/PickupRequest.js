@@ -8,6 +8,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import InternationalPolicyCheckbox from "@/components/InternationalPolicyCheckbox";
 import LanguageToggle from "@/components/LanguageToggle";
 export default function PickupRequest() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useTranslation();
     const [userId, setUserId] = useState(null);
     const [accepted, setAccepted] = useState(false);
@@ -39,7 +42,7 @@ export default function PickupRequest() {
             type,
             condition,
             cod_amount: codAmount ? Number(codAmount) : null,
-            created_at: new Date().toISOString(),
+            createdAt: new Date().toISOString(),
         };
         // Example: store into a table pickup_requests if you create it.
         // const { error } = await supabase.from("pickup_requests").insert(payload);

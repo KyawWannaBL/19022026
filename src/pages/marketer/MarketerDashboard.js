@@ -5,6 +5,9 @@ import { TrendingUp, Users, DollarSign, Target, BarChart3, Award, Activity } fro
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { MarketerPerformanceAPI } from "@/lib/admin-api";
 export default function MarketerDashboard() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useLanguageContext();
     const [performance, setPerformance] = useState([]);
     const [stats, setStats] = useState({});

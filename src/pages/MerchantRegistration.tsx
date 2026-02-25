@@ -18,6 +18,9 @@ import { IMAGES } from '@/assets/images';
 
 export default function MerchantRegistration() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     // Business Information

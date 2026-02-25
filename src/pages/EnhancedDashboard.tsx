@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 
 import { useAuth } from '@/hooks/useAuth';
 
-import { useAuth } from '@/hooks/useAuth';
 
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -51,6 +50,9 @@ interface RecentActivity {
 }
 
 export default function EnhancedDashboard() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { user } = useAuth();
   const { t, language } = useLanguageContext();
   const [stats, setStats] = useState<DashboardStats>({
@@ -77,7 +79,7 @@ export default function EnhancedDashboard() {
       // Load shipment statistics
       const { data: shipments, error: shipmentsError } = await supabase
         .from('shipments')
-        .select('status, total_amount, created_at');
+        .select('status, total_amount, createdAt');
 
       if (shipmentsError) throw shipmentsError;
 

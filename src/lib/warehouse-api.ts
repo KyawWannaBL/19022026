@@ -12,7 +12,7 @@ export interface WarehouseStation {
   capacity: number;
   zone?: string;
   is_active: boolean;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -28,13 +28,13 @@ export interface WarehouseUser {
   station_id: string;
   shift?: 'morning' | 'afternoon' | 'night';
   is_active: boolean;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
 export interface WarehouseParcel {
   id: string;
-  tracking_number: string;
+  awb: string;
   qr_code: string;
   barcode?: string;
   
@@ -69,7 +69,7 @@ export interface WarehouseParcel {
   requires_signature: boolean;
   
   // Timestamps
-  created_at: string;
+  createdAt: string;
   updated_at: string;
   expected_delivery_date?: string;
   
@@ -105,7 +105,7 @@ export interface WarehouseOperation {
   signature_url?: string;
   
   // Timestamps
-  created_at: string;
+  createdAt: string;
   
   // Mobile App Integration
   device_info?: any;
@@ -119,7 +119,7 @@ export interface WarehouseManifest {
   
   // Station Information
   origin_station_id: string;
-  destination_station_id?: string;
+  destinationTownship_station_id?: string;
   route_code?: string;
   
   // Vehicle and Driver
@@ -138,7 +138,7 @@ export interface WarehouseManifest {
   manifest_qr_code?: string;
   
   // Timestamps
-  created_at: string;
+  createdAt: string;
   finalized_at?: string;
   dispatched_at?: string;
   arrived_at?: string;
@@ -161,7 +161,7 @@ export interface QRCode {
   last_scanned_by?: string;
   is_active: boolean;
   expires_at?: string;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface CustomerAcknowledgment {
@@ -181,7 +181,7 @@ export interface CustomerAcknowledgment {
   gps_location?: any;
   app_version?: string;
   acknowledged_at: string;
-  created_at: string;
+  createdAt: string;
 }
 
 // Warehouse API Class
@@ -302,7 +302,7 @@ export class WarehouseAPI {
         .from('warehouse_parcels_2026_02_04_15_54')
         .select('*')
         .eq('current_station_id', stationId)
-        .order('created_at', { ascending: false });
+        .order('createdAt', { ascending: false });
 
       if (status) {
         query = query.eq('status', status);
@@ -393,7 +393,7 @@ export class WarehouseAPI {
         .from('warehouse_operations_2026_02_04_15_54')
         .select('*')
         .eq('station_id', stationId)
-        .order('created_at', { ascending: false })
+        .order('createdAt', { ascending: false })
         .limit(limit);
 
       if (error) throw error;
@@ -405,7 +405,7 @@ export class WarehouseAPI {
   }
 
   // Create manifest
-  static async createManifest(manifestData: Omit<WarehouseManifest, 'id' | 'created_at' | 'manifest_number'>): Promise<string | null> {
+  static async createManifest(manifestData: Omit<WarehouseManifest, 'id' | 'createdAt' | 'manifest_number'>): Promise<string | null> {
     try {
       const user = await this.getWarehouseUser();
       if (!user) throw new Error('User not found');
@@ -438,7 +438,7 @@ export class WarehouseAPI {
           qr_data: {
             manifest_number: manifestNumber,
             type: 'manifest',
-            created_at: data.created_at
+            createdAt: data.createdAt
           }
         }]);
 
@@ -456,7 +456,7 @@ export class WarehouseAPI {
         .from('warehouse_manifests_2026_02_04_15_54')
         .select('*')
         .eq('origin_station_id', stationId)
-        .order('created_at', { ascending: false });
+        .order('createdAt', { ascending: false });
 
       if (error) throw error;
       return data || [];
@@ -504,7 +504,7 @@ export class WarehouseAPI {
   }
 
   // Create customer acknowledgment
-  static async createCustomerAcknowledgment(acknowledgmentData: Omit<CustomerAcknowledgment, 'id' | 'created_at' | 'acknowledged_at'>): Promise<boolean> {
+  static async createCustomerAcknowledgment(acknowledgmentData: Omit<CustomerAcknowledgment, 'id' | 'createdAt' | 'acknowledged_at'>): Promise<boolean> {
     try {
       const { error } = await supabase
         .from('customer_acknowledgments_2026_02_04_15_54')
@@ -541,8 +541,8 @@ export class WarehouseAPI {
         .from('warehouse_operations_2026_02_04_15_54')
         .select('id')
         .eq('station_id', stationId)
-        .gte('created_at', today + 'T00:00:00.000Z')
-        .lt('created_at', today + 'T23:59:59.999Z');
+        .gte('createdAt', today + 'T00:00:00.000Z')
+        .lt('createdAt', today + 'T23:59:59.999Z');
 
       const stats = {
         totalParcels: parcels?.length || 0,

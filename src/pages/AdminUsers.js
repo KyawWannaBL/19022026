@@ -5,6 +5,9 @@ import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import PermissionGate from "@/components/PermissionGate";
 export default function AdminUsers() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { user, role, branch_id } = useAuth();
     const [profiles, setProfiles] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -12,7 +15,7 @@ export default function AdminUsers() {
     const loadProfiles = async () => {
         setLoading(true);
         try {
-            let query = supabase.from("profiles").select("id,email,role,is_active,is_demo,branch_id").order("created_at", { ascending: false });
+            let query = supabase.from("profiles").select("id,email,role,is_active,is_demo,branch_id").order("createdAt", { ascending: false });
             // Branch isolation (SUPER_ADMIN limited to own branch)
             if (role !== "APP_OWNER" && branch_id) {
                 query = query.eq("branch_id", branch_id);

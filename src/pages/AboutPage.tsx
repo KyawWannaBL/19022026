@@ -31,6 +31,9 @@ import { IMAGES } from '@/assets/images';
 
 export default function AboutPage() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   
   return (
     <div className="min-h-screen bg-background">

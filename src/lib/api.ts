@@ -16,7 +16,7 @@ export interface ApiResponse<T = any> {
 
 export interface DeliveryWay {
   id: string;
-  tracking_number: string;
+  awb: string;
   status: 'pending' | 'in_transit' | 'delivered' | 'failed' | 'returned';
   pickup_address: string;
   delivery_address: string;
@@ -29,7 +29,7 @@ export interface DeliveryWay {
   delivery_fee: number;
   weight?: number;
   special_instructions?: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -52,7 +52,7 @@ export interface Merchant {
   registration_date: string;
   last_order_date?: string;
   notes?: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -79,7 +79,7 @@ export interface Deliveryman {
   current_cash_advance: number;
   performance_rating: number;
   last_active?: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -93,10 +93,10 @@ export interface BroadcastMessage {
   scheduled_send_time?: string;
   sent_time?: string;
   status: 'draft' | 'scheduled' | 'sending' | 'sent' | 'failed' | 'cancelled';
-  total_recipients: number;
+  total_receiverNames: number;
   successful_deliveries: number;
   failed_deliveries: number;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -108,13 +108,13 @@ export interface SystemSetting {
   setting_type: 'string' | 'number' | 'boolean' | 'json';
   description?: string;
   is_public: boolean;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
 export interface FailedDelivery {
   id: string;
-  tracking_number: string;
+  awb: string;
   failure_reason: string;
   failure_date: string;
   retry_count: number;
@@ -122,19 +122,19 @@ export interface FailedDelivery {
   notes?: string;
   resolved: boolean;
   resolved_date?: string;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface ReturnShipment {
   id: string;
-  original_tracking_number: string;
+  original_awb: string;
   return_reason: string;
   return_date: string;
   return_status: 'initiated' | 'in_transit' | 'completed' | 'cancelled';
   refund_amount?: number;
   refund_status: 'pending' | 'processed' | 'cancelled';
   notes?: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -149,7 +149,7 @@ export interface CashAdvance {
   remaining_balance?: number;
   interest_rate: number;
   notes?: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -298,7 +298,7 @@ export class BroadcastMessagesAPI extends BaseAPI {
   async send(id: string, totalRecipients?: number): Promise<ApiResponse> {
     return this.callEdgeFunction('be_notifications_2026_02_04_05_03', 'send-broadcast', {
       method: 'POST',
-      body: { messageId: id, total_recipients: totalRecipients }
+      body: { messageId: id, total_receiverNames: totalRecipients }
     });
   }
 
@@ -426,7 +426,7 @@ export class NotificationsAPI extends BaseAPI {
     });
   }
 
-  async sendNotification(notificationData: { recipients: any[]; subject: string; content: string; type?: string }): Promise<ApiResponse> {
+  async sendNotification(notificationData: { receiverNames: any[]; subject: string; content: string; type?: string }): Promise<ApiResponse> {
     return this.callEdgeFunction('be_notifications_2026_02_04_05_03', 'send-notification', {
       method: 'POST',
       body: notificationData

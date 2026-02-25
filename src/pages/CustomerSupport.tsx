@@ -88,7 +88,7 @@ const CustomerSupport: React.FC = () => {
     },
     {
       q: language === 'en' ? "How do I calculate shipping rates?" : "ပို့ဆောင်ခကို ဘယ်လိုတွက်ရမလဲ။",
-      a: language === 'en' ? "Use our Shipping Calculator tool in the side menu. Enter origin, destination, and weight for an instant quote." : "ဘေးထွက်မီနူးရှိ Shipping Calculator ကို အသုံးပြုပါ။ ဈေးနှုန်းချက်ချင်းသိရန် မူရင်း၊ ပန်းတိုင်နှင့် အလေးချိန်ကို ထည့်သွင်းပါ။",
+      a: language === 'en' ? "Use our Shipping Calculator tool in the side menu. Enter origin, destinationTownship, and weight for an instant quote." : "ဘေးထွက်မီနူးရှိ Shipping Calculator ကို အသုံးပြုပါ။ ဈေးနှုန်းချက်ချင်းသိရန် မူရင်း၊ ပန်းတိုင်နှင့် အလေးချိန်ကို ထည့်သွင်းပါ။",
       category: 'Billing'
     }
   ];

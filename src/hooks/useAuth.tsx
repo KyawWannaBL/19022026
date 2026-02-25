@@ -481,7 +481,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       role: userData.role ?? "",
       permissions: Object.keys(userData.permissions),
       isActive: Boolean(user?.is_active ?? true),
-      createdAt: user?.created_at ? new Date(user.created_at) : new Date(),
+      createdAt: user?.createdAt ? new Date(user.createdAt) : new Date(),
       lastLogin: new Date(),
     };
   }, [user, userData]);

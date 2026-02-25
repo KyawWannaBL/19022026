@@ -12,6 +12,9 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ROUTE_PATHS } from '@/lib/index';
 import { useAuth } from '@/hooks/useFirebaseAuth';
 export default function CustomerProfile() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { user } = useAuth();
     const navigate = useNavigate();
     const [isEditing, setIsEditing] = useState(false);

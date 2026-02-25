@@ -31,8 +31,8 @@ export class ReportsAPI {
             const { data, error } = await supabase
                 .from('delivery_ways_2026_02_04_05_03')
                 .select('*')
-                .gte('created_at', filters.startDate || '2026-01-01')
-                .lte('created_at', filters.endDate || '2026-12-31');
+                .gte('createdAt', filters.startDate || '2026-01-01')
+                .lte('createdAt', filters.endDate || '2026-12-31');
             if (error)
                 throw error;
             // Process data into report format

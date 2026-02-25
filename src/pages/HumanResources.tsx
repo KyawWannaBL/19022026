@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Users, UserPlus, Star, MapPin, Phone, Mail, MoreVertical } from 'lucide-react';
 
 export default function HumanResources() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [searchTerm, setSearchTerm] = useState('');
 
   const staff = [

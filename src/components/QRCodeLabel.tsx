@@ -17,7 +17,7 @@ interface QRCodeLabelProps {
     service_type: string;
     weight: number;
     cod_amount?: number;
-    created_at: string;
+    createdAt: string;
   };
   onPrint?: () => void;
   className?: string;
@@ -43,7 +43,7 @@ export function QRCodeLabel({ shipmentData, onPrint, className }: QRCodeLabelPro
       service: shipmentData.service_type,
       weight: shipmentData.weight,
       cod: shipmentData.cod_amount || 0,
-      date: shipmentData.created_at
+      date: shipmentData.createdAt
     };
 
     try {
@@ -229,7 +229,7 @@ export function QRCodeLabel({ shipmentData, onPrint, className }: QRCodeLabelPro
           {shipmentData.cod_amount && shipmentData.cod_amount > 0 && (
             <div><strong>COD:</strong> {shipmentData.cod_amount.toLocaleString()} MMK</div>
           )}
-          <div><strong>{language === 'my' ? 'ရက်စွဲ:' : 'Date:'}</strong> {new Date(shipmentData.created_at).toLocaleDateString()}</div>
+          <div><strong>{language === 'my' ? 'ရက်စွဲ:' : 'Date:'}</strong> {new Date(shipmentData.createdAt).toLocaleDateString()}</div>
         </div>
 
         {/* QR Code */}

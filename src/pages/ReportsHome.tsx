@@ -18,6 +18,9 @@ import { ROUTE_PATHS } from "@/lib/index";
 
 export default function ReportsHome() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const navigate = useNavigate();
 
   const reportCategories = [

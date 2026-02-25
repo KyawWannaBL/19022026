@@ -61,8 +61,8 @@ const SubstationReceiving: React.FC = () => {
       const matchesSearch = s.awb_number.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           s.receiver_name.toLowerCase().includes(searchQuery.toLowerCase());
       
-      // Logic: Show shipments whose destination is this branch or currently assigned to arrive here
-      const isRelevant = s.destination_branch_id === (user as any)?.branch_id || s.current_location === (user as any)?.branch_id;
+      // Logic: Show shipments whose destinationTownship is this branch or currently assigned to arrive here
+      const isRelevant = s.destinationTownship_branch_id === (user as any)?.branch_id || s.current_location === (user as any)?.branch_id;
       
       return matchesSearch && isRelevant;
     });
@@ -99,7 +99,7 @@ const SubstationReceiving: React.FC = () => {
 
   const renderShipmentRow = (shipment: Shipment) => (
     <TableRow key={shipment.id} className="hover:bg-muted/50 transition-colors border-b border-border/40">
-      <TableCell className="font-mono font-bold text-primary">{shipment.awb_number}</TableCell>
+      <TableCell className="font-mono font-bold text-primary">{shipment.awb}</TableCell>
       <TableCell>
         <div className="flex flex-col">
           <span className="font-medium">{shipment.receiver_name}</span>

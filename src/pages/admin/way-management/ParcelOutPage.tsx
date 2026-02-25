@@ -44,9 +44,9 @@ import { useNavigate } from 'react-router-dom';
 
 interface ParcelItem {
   id: string;
-  trackingNumber: string;
+  awb: string;
   receiver: string;
-  destination: string;
+  destinationTownship: string;
   weight: string;
   scannedAt: string;
 }
@@ -118,9 +118,9 @@ const ParcelOutPage: React.FC = () => {
     // Simulate adding a scanned parcel
     const newParcel: ParcelItem = {
       id: Math.random().toString(36).substr(2, 9),
-      trackingNumber: scanInput.toUpperCase(),
+      awb: scanInput.toUpperCase(),
       receiver: 'Daw Khin Khin',
-      destination: 'Mandalay Main Station',
+      destinationTownship: 'Mandalay Main Station',
       weight: '2.5 kg',
       scannedAt: new Date().toLocaleTimeString()
     };
@@ -222,7 +222,7 @@ const ParcelOutPage: React.FC = () => {
 
                   <div className="pt-4 border-t border-white/10">
                     <form onSubmit={handleScan} className="space-y-2">
-                      <label className="text-sm font-medium text-navy-100">{t('tracking.trackingNumber')}</label>
+                      <label className="text-sm font-medium text-navy-100">{t('tracking.awb')}</label>
                       <div className="relative">
                         <Input
                           ref={inputRef}
@@ -292,7 +292,7 @@ const ParcelOutPage: React.FC = () => {
                   <Table>
                     <TableHeader className="bg-navy-50">
                       <TableRow>
-                        <TableHead className="w-[150px]">{t('tracking.trackingNumber')}</TableHead>
+                        <TableHead className="w-[150px]">{t('tracking.awb')}</TableHead>
                         <TableHead>{t('order.customer')}</TableHead>
                         <TableHead>{t('tracking.location')}</TableHead>
                         <TableHead className="text-right">{t('common.time')}</TableHead>
@@ -321,7 +321,7 @@ const ParcelOutPage: React.FC = () => {
                               className="group hover:bg-navy-50/50 transition-colors"
                             >
                               <TableCell className="font-mono font-medium text-navy-800">
-                                {parcel.trackingNumber}
+                                {parcel.awb}
                               </TableCell>
                               <TableCell className="text-sm">
                                 {parcel.receiver}
@@ -329,7 +329,7 @@ const ParcelOutPage: React.FC = () => {
                               <TableCell className="text-sm">
                                 <div className="flex items-center gap-1">
                                   <MapPin className="w-3 h-3 text-gold-600" />
-                                  {parcel.destination}
+                                  {parcel.destinationTownship}
                                 </div>
                               </TableCell>
                               <TableCell className="text-right text-xs text-muted-foreground">

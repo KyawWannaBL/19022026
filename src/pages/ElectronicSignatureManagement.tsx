@@ -51,7 +51,7 @@ interface SignatureRecord {
   verified_by?: string;
   verified_at?: string;
   notes?: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
   expires_at?: string;
 }
@@ -64,10 +64,13 @@ interface SignatureTemplate {
   approval_workflow: boolean;
   auto_verification: boolean;
   expiry_hours: number;
-  created_at: string;
+  createdAt: string;
 }
 
 export default function ElectronicSignatureManagement() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t, language } = useLanguageContext();
   const [activeTab, setActiveTab] = useState<'CAPTURE' | 'MANAGE' | 'VERIFY' | 'TEMPLATES'>('CAPTURE');
   const [signatures, setSignatures] = useState<SignatureRecord[]>([]);
@@ -211,7 +214,7 @@ export default function ElectronicSignatureManagement() {
           ctx.fillStyle = '#000000';
           ctx.font = '12px Arial';
           ctx.fillText(`Signed by: ${signature.signer_name}`, 10, canvas.height - 40);
-          ctx.fillText(`Date: ${new Date(signature.created_at).toLocaleString()}`, 10, canvas.height - 25);
+          ctx.fillText(`Date: ${new Date(signature.createdAt).toLocaleString()}`, 10, canvas.height - 25);
           ctx.fillText(`Type: ${signature.signature_type}`, 10, canvas.height - 10);
           
           // Download
@@ -501,7 +504,7 @@ export default function ElectronicSignatureManagement() {
                         <span className="font-medium">
                           {language === 'my' ? 'ရက်စွဲ:' : 'Date:'}
                         </span>
-                        <span className="ml-1">{new Date(signature.created_at).toLocaleDateString()}</span>
+                        <span className="ml-1">{new Date(signature.createdAt).toLocaleDateString()}</span>
                       </div>
                       {signature.verification_code && (
                         <div>
@@ -629,7 +632,7 @@ export default function ElectronicSignatureManagement() {
                       <div className="text-sm text-gray-600">
                         <span>{language === 'my' ? 'ရည်ညွှန်း:' : 'Reference:'} {signature.reference_id}</span>
                         <span className="ml-4">
-                          {language === 'my' ? 'ရက်စွဲ:' : 'Date:'} {new Date(signature.created_at).toLocaleDateString()}
+                          {language === 'my' ? 'ရက်စွဲ:' : 'Date:'} {new Date(signature.createdAt).toLocaleDateString()}
                         </span>
                       </div>
                       {signature.verification_code && (
@@ -818,7 +821,7 @@ export default function ElectronicSignatureManagement() {
                   <label className="text-sm font-medium text-gray-600">
                     {language === 'my' ? 'ရက်စွဲ' : 'Date'}
                   </label>
-                  <p>{new Date(selectedSignature.created_at).toLocaleString()}</p>
+                  <p>{new Date(selectedSignature.createdAt).toLocaleString()}</p>
                 </div>
               </div>
               

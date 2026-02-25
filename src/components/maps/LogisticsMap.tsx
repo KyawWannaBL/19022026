@@ -7,10 +7,13 @@ import Map, {
   Layer,
   type MapRef,
   type ViewState,
-  type MapLayerMouseEvent,
 } from "react-map-gl";
+import { useLanguageContext } from "@/lib/LanguageContext";
+import { getBilingualStatus } from "@/lib/index";
+import { cn } from "@/lib/utils";
 
-export type VehicleStatus = "IDLE" | "PICKING_UP" | "IN_TRANSIT" | "DELIVERING" | "OFFLINE";
+// Standardized Types for 2026 Fleet Operations
+export type VehicleStatus = "IDLE" | "PICKING_UP" | "IN_TRANSIT" | "DELIVERING" | "OFFLINE" | "MAINTENANCE";
 
 export type VehiclePoint = {
   id: string;
@@ -18,7 +21,6 @@ export type VehiclePoint = {
   status: VehicleStatus;
   lng: number;
   lat: number;
-  headingDeg?: number;
   updatedAt?: string;
 };
 
@@ -29,200 +31,112 @@ export type HubPoint = {
   lat: number;
 };
 
-export type RouteLine = {
-  id: string;
-  name?: string;
-  coordinates: Array<[number, number]>; // [lng, lat]
-};
-
 type Props = {
   vehicles: VehiclePoint[];
   hubs?: HubPoint[];
-  selectedRoute?: RouteLine | null;
-  initialViewState?: Partial<ViewState>;
-  onVehicleClick?: (vehicle: VehiclePoint) => void;
   className?: string;
 };
 
 function envToken(): string {
   const token = import.meta.env.VITE_MAPBOX_TOKEN as string | undefined;
-  if (!token) throw new Error("Missing VITE_MAPBOX_TOKEN. Add it to .env and Vercel env vars.");
+  if (!token) throw new Error("Missing VITE_MAPBOX_TOKEN.");
   return token;
 }
 
-function boundsFromPoints(points: Array<{ lng: number; lat: number }>) {
-  let minLng = Infinity,
-    minLat = Infinity,
-    maxLng = -Infinity,
-    maxLat = -Infinity;
-
-  for (const p of points) {
-    if (!Number.isFinite(p.lng) || !Number.isFinite(p.lat)) continue;
-    minLng = Math.min(minLng, p.lng);
-    minLat = Math.min(minLat, p.lat);
-    maxLng = Math.max(maxLng, p.lng);
-    maxLat = Math.max(maxLat, p.lat);
-  }
-
-  if (!Number.isFinite(minLng)) return null;
-  return { minLng, minLat, maxLng, maxLat };
-}
-
-function statusClass(status: VehicleStatus): string {
-  switch (status) {
-    case "IN_TRANSIT":
-      return "bg-blue-600";
-    case "DELIVERING":
-      return "bg-green-600";
-    case "PICKING_UP":
-      return "bg-amber-500";
-    case "IDLE":
-      return "bg-slate-600";
-    case "OFFLINE":
-      return "bg-red-600";
-    default:
-      return "bg-slate-600";
-  }
-}
-
-export default function LogisticsMap({
-  vehicles,
-  hubs = [],
-  selectedRoute = null,
-  initialViewState,
-  onVehicleClick,
-  className,
-}: Props) {
+export default function LogisticsMap({ vehicles, hubs = [], className }: Props) {
   const mapRef = useRef<MapRef | null>(null);
-
+  const { t } = useLanguageContext();
   const [hovered, setHovered] = useState<VehiclePoint | null>(null);
 
-  const viewState = useMemo<Partial<ViewState>>(
-    () => ({
-      longitude: 96.158, // Yangon-ish default; override via props
-      latitude: 16.84,
-      zoom: 11,
-      ...initialViewState,
-    }),
-    [initialViewState]
-  );
-
-  const routeGeoJson = useMemo(() => {
-    if (!selectedRoute) return null;
-    return {
-      type: "FeatureCollection" as const,
-      features: [
-        {
-          type: "Feature" as const,
-          properties: { id: selectedRoute.id, name: selectedRoute.name ?? "" },
-          geometry: {
-            type: "LineString" as const,
-            coordinates: selectedRoute.coordinates,
-          },
-        },
-      ],
-    };
-  }, [selectedRoute]);
-
+  // Auto-fit map to show all active vehicles
   useEffect(() => {
-    const map = mapRef.current;
-    if (!map) return;
-
-    const b = boundsFromPoints(vehicles);
-    if (!b) return;
-
-    // Fit bounds when vehicle set changes (keeps ops view “always on target”)
-    map.fitBounds(
-      [
-        [b.minLng, b.minLat],
-        [b.maxLng, b.maxLat],
-      ],
-      { padding: 60, duration: 600 }
+    if (!mapRef.current || vehicles.length === 0) return;
+    
+    const lats = vehicles.map(v => v.lat);
+    const lngs = vehicles.map(v => v.lng);
+    
+    mapRef.current.fitBounds(
+      [[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]],
+      { padding: 80, duration: 1000 }
     );
   }, [vehicles]);
 
-  const onMapMouseMove = (e: MapLayerMouseEvent) => {
-    // noop: placeholder if you later add interactive layers
-    void e;
-  };
-
   return (
-    <div className={className ?? "w-full h-[calc(100vh-120px)] rounded-xl overflow-hidden border bg-white"}>
+    <div className={cn("w-full h-full rounded-3xl overflow-hidden border border-slate-200 shadow-inner bg-slate-50", className)}>
       <Map
-        ref={(r) => {
-          mapRef.current = r;
-        }}
+        ref={mapRef}
         mapboxAccessToken={envToken()}
-        initialViewState={viewState}
-        mapStyle="mapbox://styles/mapbox/streets-v12"
-        onMouseMove={onMapMouseMove}
-        attributionControl
+        initialViewState={{ longitude: 96.158, latitude: 16.84, zoom: 11 }}
+        mapStyle="mapbox://styles/mapbox/light-v11"
       >
         <NavigationControl position="top-right" />
 
-        {/* Hubs */}
+        {/* Logistic Hubs / ဂိုဒေါင်များ */}
         {hubs.map((hub) => (
           <Marker key={hub.id} longitude={hub.lng} latitude={hub.lat} anchor="bottom">
-            <div className="rounded-full bg-black text-white text-[10px] px-2 py-1 shadow">
-              {hub.name}
+            <div className="flex flex-col items-center group">
+              <div className="bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity mb-1 whitespace-nowrap">
+                {hub.name}
+              </div>
+              <div className="w-4 h-4 bg-primary border-2 border-white rounded-sm rotate-45 shadow-md" />
             </div>
           </Marker>
         ))}
 
-        {/* Vehicles */}
+        {/* Fleet Vehicles / ယာဉ်များ */}
         {vehicles.map((v) => (
           <Marker
             key={v.id}
             longitude={v.lng}
             latitude={v.lat}
-            anchor="center"
-            onClick={(ev) => {
-              ev.originalEvent.stopPropagation();
-              onVehicleClick?.(v);
+            onClick={(e) => {
+              e.originalEvent.stopPropagation();
               setHovered(v);
             }}
           >
             <div
-              className={[
-                "h-4 w-4 rounded-full shadow ring-2 ring-white cursor-pointer",
-                statusClass(v.status),
-              ].join(" ")}
-              title={v.label ?? v.id}
+              className={cn(
+                "h-5 w-5 rounded-full shadow-xl ring-2 ring-white cursor-pointer transition-all hover:scale-125",
+                v.status === "OFFLINE" ? "bg-rose-500" : 
+                v.status === "MAINTENANCE" ? "bg-amber-500" : "bg-emerald-500"
+              )}
             />
           </Marker>
         ))}
 
-        {/* Selected route line */}
-        {routeGeoJson && (
-          <Source id="selected-route" type="geojson" data={routeGeoJson}>
-            <Layer
-              id="selected-route-line"
-              type="line"
-              paint={{
-                "line-width": 4,
-                "line-opacity": 0.9,
-              }}
-              layout={{
-                "line-join": "round",
-                "line-cap": "round",
-              }}
-            />
-          </Source>
-        )}
-
-        {/* Vehicle popup */}
+        {/* Vehicle Telemetry Display / ယာဉ်အချက်အလက်ပြသခြင်း */}
         {hovered && (
           <Popup
             longitude={hovered.lng}
             latitude={hovered.lat}
             anchor="top"
-            closeOnClick={false}
             onClose={() => setHovered(null)}
+            closeButton={false}
+            className="z-50"
           >
-            <div className="text-sm">
-              <div className="font-semibold">{hovered.label ?? hovered.id}</div>
-              <div className="text-slate-600">Status: {hovered.status}</div>
-              {hovered.updatedAt && <div className="text-slate-500">Updated: {hovered.updatedAt}</div>}
+            <div className="p-2 min-w-[160px] bg-white rounded-lg shadow-xl border border-slate-100">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-[10px] font-black uppercase tracking-widest text-primary">
+                  {t('Vehicle Info', 'ယာဉ်အချက်အလက်ပြသခြင်း')}
+                </span>
+                <div className={cn("w-2 h-2 rounded-full animate-pulse", 
+                  hovered.status === "OFFLINE" ? "bg-rose-500" : "bg-emerald-500")} 
+                />
+              </div>
+              
+              <div className="space-y-1">
+                <p className="text-sm font-bold text-slate-800">{hovered.label || hovered.id}</p>
+                <p className="text-xs font-medium text-slate-500">
+                  {t('Status', 'အခြေအနေ')}: {t(hovered.status, hovered.status)}
+                </p>
+              </div>
+
+              {hovered.updatedAt && (
+                <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[9px] text-slate-400">
+                   <span>{t('Last Sync', 'နောက်ဆုံးအပ်ဒိတ်')}</span>
+                   <span className="font-mono font-bold">{new Date(hovered.updatedAt).toLocaleTimeString()}</span>
+                </div>
+              )}
             </div>
           </Popup>
         )}

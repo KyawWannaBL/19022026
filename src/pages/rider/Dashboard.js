@@ -71,7 +71,7 @@ function RiderDashboard() {
             else
                 remaining++;
         });
-        const active = activeId ? all.find((s) => String(s.id ?? s.trackingNumber) === activeId) : null;
+        const active = activeId ? all.find((s) => String(s.id ?? s.awb) === activeId) : null;
         return { remaining, delivered, failed, activeShipment: active };
     }, [activeId]);
     const successRatePct = useMemo(() => {
@@ -79,11 +79,11 @@ function RiderDashboard() {
         return totalDone === 0 ? 100 : (stats.delivered / totalDone) * 100;
     }, [stats.delivered, stats.failed]);
     const etdText = `${Math.min(45, Math.max(5, stats.remaining * 6))} min`;
-    return (_jsxs("div", { className: "h-[100dvh] w-full flex flex-col gap-3 p-3 bg-slate-50", children: [_jsx(LuxuryKpiStrip, { remaining: stats.remaining, etdText: etdText, successRatePct: successRatePct }), stats.activeShipment ? (_jsxs("div", { className: "flex-1 min-h-0 flex flex-col gap-3", children: [_jsx("div", { className: "flex-[7] min-h-0 rounded-xl overflow-hidden border shadow-sm", children: _jsx(OSMMap, { gps: gps }) }), _jsx(Card, { className: "flex-[3] min-h-0 border shadow-sm overflow-hidden", children: _jsxs(CardContent, { className: "p-4 space-y-4", children: [_jsxs("div", { className: "flex justify-between items-start", children: [_jsx("div", { className: "text-sm font-mono font-bold text-emerald-600", children: stats.activeShipment.trackingNumber }), _jsx(Badge, { variant: "outline", children: "Navigating" })] }), _jsxs("div", { children: [_jsx("div", { className: `${GOLD} text-xs font-semibold`, children: "Receiver" }), _jsx("div", { className: "font-bold text-lg leading-tight", children: stats.activeShipment.receiverName }), _jsx("div", { className: "text-xs text-muted-foreground", children: stats.activeShipment.receiverAddress })] }), _jsxs("div", { className: "flex gap-2", children: [_jsx(Button, { className: BRITIUM_BIG_PRIMARY, onClick: () => navigate('/delivery-flow'), children: "Start Delivery" }), _jsx(Button, { variant: "outline", className: "h-14 px-6", onClick: () => setActiveId(null), children: "Exit" })] })] }) })] })) : (_jsxs("div", { className: "flex-1 overflow-y-auto rounded-xl border bg-white p-4", children: [_jsxs("div", { className: "flex justify-between items-center mb-4", children: [_jsx("h2", { className: "text-xl font-bold", children: "Delivery Queue" }), _jsx(Button, { variant: "ghost", size: "sm", onClick: () => navigate('/shipments/new'), children: "+ New" })] }), _jsx("div", { className: "space-y-3", children: mockShipments.map((s) => {
+    return (_jsxs("div", { className: "h-[100dvh] w-full flex flex-col gap-3 p-3 bg-slate-50", children: [_jsx(LuxuryKpiStrip, { remaining: stats.remaining, etdText: etdText, successRatePct: successRatePct }), stats.activeShipment ? (_jsxs("div", { className: "flex-1 min-h-0 flex flex-col gap-3", children: [_jsx("div", { className: "flex-[7] min-h-0 rounded-xl overflow-hidden border shadow-sm", children: _jsx(OSMMap, { gps: gps }) }), _jsx(Card, { className: "flex-[3] min-h-0 border shadow-sm overflow-hidden", children: _jsxs(CardContent, { className: "p-4 space-y-4", children: [_jsxs("div", { className: "flex justify-between items-start", children: [_jsx("div", { className: "text-sm font-mono font-bold text-emerald-600", children: stats.activeShipment.awb }), _jsx(Badge, { variant: "outline", children: "Navigating" })] }), _jsxs("div", { children: [_jsx("div", { className: `${GOLD} text-xs font-semibold`, children: "Receiver" }), _jsx("div", { className: "font-bold text-lg leading-tight", children: stats.activeShipment.receiverName }), _jsx("div", { className: "text-xs text-muted-foreground", children: stats.activeShipment.receiverAddress })] }), _jsxs("div", { className: "flex gap-2", children: [_jsx(Button, { className: BRITIUM_BIG_PRIMARY, onClick: () => navigate('/delivery-flow'), children: "Start Delivery" }), _jsx(Button, { variant: "outline", className: "h-14 px-6", onClick: () => setActiveId(null), children: "Exit" })] })] }) })] })) : (_jsxs("div", { className: "flex-1 overflow-y-auto rounded-xl border bg-white p-4", children: [_jsxs("div", { className: "flex justify-between items-center mb-4", children: [_jsx("h2", { className: "text-xl font-bold", children: "Delivery Queue" }), _jsx(Button, { variant: "ghost", size: "sm", onClick: () => navigate('/shipments/new'), children: "+ New" })] }), _jsx("div", { className: "space-y-3", children: mockShipments.map((s) => {
                             {
                                 shipments.map((s) => {
-                                    const id = String(s.id ?? s.trackingNumber);
-                                    return (_jsx(Card, { className: "border-slate-100", children: _jsxs(CardContent, { className: "p-4 flex flex-col gap-3", children: [_jsxs("div", { className: "flex justify-between", children: [_jsx("span", { className: "text-xs font-mono font-bold", children: s.trackingNumber }), _jsx(Badge, { variant: "secondary", children: s.status })] }), _jsxs("div", { children: [_jsx("div", { className: `${GOLD} text-xs font-semibold`, children: "Customer" }), _jsx("div", { className: "font-medium", children: s.receiverName })] }), _jsx(Button, { className: "w-full", onClick: () => setActiveId(id), children: "Enter Navigation Mode" })] }) }, id));
+                                    const id = String(s.id ?? s.awb);
+                                    return (_jsx(Card, { className: "border-slate-100", children: _jsxs(CardContent, { className: "p-4 flex flex-col gap-3", children: [_jsxs("div", { className: "flex justify-between", children: [_jsx("span", { className: "text-xs font-mono font-bold", children: s.awb }), _jsx(Badge, { variant: "secondary", children: s.status })] }), _jsxs("div", { children: [_jsx("div", { className: `${GOLD} text-xs font-semibold`, children: "Customer" }), _jsx("div", { className: "font-medium", children: s.receiverName })] }), _jsx(Button, { className: "w-full", onClick: () => setActiveId(id), children: "Enter Navigation Mode" })] }) }, id));
                                 });
                             }
                         }) })] }))] }));
@@ -92,6 +92,9 @@ function RiderDashboard() {
  * Main Export with Role Protection
  */
 export default function Dashboard() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { user, legacyUser } = useAuth();
     const role = legacyUser?.role ?? user?.role ?? '';
     const isRider = String(role).toUpperCase().includes('RIDER');

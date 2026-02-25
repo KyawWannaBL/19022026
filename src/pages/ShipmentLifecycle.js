@@ -3,6 +3,9 @@ import { supabase } from "@/lib/supabase";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 export default function ShipmentLifecycle({ shipmentId, currentStatus }) {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const [loading, setLoading] = useState(false);
     const nextStepMap = {
         CREATED: "PICKED_UP",

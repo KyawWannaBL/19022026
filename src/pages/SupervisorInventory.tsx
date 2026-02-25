@@ -59,8 +59,8 @@ const SupervisorInventory: React.FC = () => {
   const [isAllocateDialogOpen, setIsAllocateDialogOpen] = useState(false);
   const [allocationData, setAllocationData] = useState({
     itemId: '',
-    recipientType: 'rider',
-    recipientId: '',
+    receiverNameType: 'rider',
+    receiverNameId: '',
     quantity: 0,
     notes: ''
   });
@@ -83,7 +83,7 @@ const SupervisorInventory: React.FC = () => {
   };
 
   const handleAllocate = async () => {
-    if (!allocationData.itemId || allocationData.quantity <= 0 || !allocationData.recipientId) {
+    if (!allocationData.itemId || allocationData.quantity <= 0 || !allocationData.receiverNameId) {
       toast.warning('Please fill in all required fields');
       return;
     }
@@ -97,7 +97,7 @@ const SupervisorInventory: React.FC = () => {
     try {
       // In a real scenario, we'd call a dedicated allocation endpoint
       // For now, we simulate success and update local state
-      toast.success(`Successfully allocated ${allocationData.quantity} tags to ${allocationData.recipientType}`);
+      toast.success(`Successfully allocated ${allocationData.quantity} tags to ${allocationData.receiverNameType}`);
       setIsAllocateDialogOpen(false);
       fetchInventory();
     } catch (error: any) {
@@ -179,7 +179,7 @@ const SupervisorInventory: React.FC = () => {
                     <Label>Recipient Type</Label>
                     <Select 
                       defaultValue="rider" 
-                      onValueChange={(val) => setAllocationData({ ...allocationData, recipientType: val })}
+                      onValueChange={(val) => setAllocationData({ ...allocationData, receiverNameType: val })}
                     >
                       <SelectTrigger className="bg-luxury-obsidian/50 border-white/10">
                         <SelectValue />
@@ -205,7 +205,7 @@ const SupervisorInventory: React.FC = () => {
                   <Input 
                     placeholder="Enter ID..."
                     className="bg-luxury-obsidian/50 border-white/10"
-                    onChange={(e) => setAllocationData({ ...allocationData, recipientId: e.target.value })}
+                    onChange={(e) => setAllocationData({ ...allocationData, receiverNameId: e.target.value })}
                   />
                 </div>
               </div>

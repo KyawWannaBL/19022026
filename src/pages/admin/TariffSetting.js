@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TariffRatesAPI } from "@/lib/admin-api";
 export default function TariffSetting() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useLanguageContext();
     const [rates, setRates] = useState([]);
     const [loading, setLoading] = useState(true);

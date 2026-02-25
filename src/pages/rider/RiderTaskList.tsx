@@ -115,7 +115,7 @@ const RiderTaskList: React.FC = () => {
         return new Date(a.sla_time).getTime() - new Date(b.sla_time).getTime();
       }
       
-      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+      return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
     });
     
     setFilteredTasks(filtered);

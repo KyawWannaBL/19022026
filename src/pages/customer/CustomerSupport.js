@@ -55,6 +55,9 @@ const FAQ_ITEMS = [
     }
 ];
 export default function CustomerSupport() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { user, legacyUser } = useAuth();
     const { toast } = useToast();
     const [searchQuery, setSearchQuery] = useState('');

@@ -128,6 +128,9 @@ const MOCK_MESSAGES: Message[] = [
 ];
 
 export default function LiveChatInterface() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { user, legacyUser } = useAuth();
   const [activeChat, setActiveChat] = useState<ChatSession | null>(MOCK_CHATS[0]);
   const [messages, setMessages] = useState<Message[]>(MOCK_MESSAGES);

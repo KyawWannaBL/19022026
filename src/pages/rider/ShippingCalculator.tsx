@@ -6,6 +6,9 @@ import { IMAGES } from '@/assets/images';
 const useLanguageContext = () => ({ language: 'en' as 'en' | 'my' });
 
 export default function ShippingCalculator() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { language } = useLanguageContext();
 
   const [formData, setFormData] = useState({

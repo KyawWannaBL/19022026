@@ -37,6 +37,9 @@ const mockOverdueData = [
     { id: '5', name: 'Ko Myint Swe', value: 4, percentage: 11.8, trend: 'down' }
 ];
 export default function ReportsPage() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useLanguageContext();
     const [activeTab, setActiveTab] = useState('ways_count');
     const [dateRange, setDateRange] = useState();

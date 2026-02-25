@@ -11,6 +11,9 @@ import {
 } from 'lucide-react';
 
 export default function Operations() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { user, role } = useAuth();
   const [activeTab, setActiveTab] = useState<'single' | 'bulk'>('single');
   const [idFile, setIdFile] = useState<File | null>(null);

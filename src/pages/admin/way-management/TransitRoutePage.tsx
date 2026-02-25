@@ -61,7 +61,7 @@ const TransitRoutePage: React.FC = () => {
       id: 'TR-2026-001',
       name: 'Yangon - Mandalay Express',
       origin: 'Yangon Main Hub',
-      destination: 'Mandalay Distribution Center',
+      destinationTownship: 'Mandalay Distribution Center',
       vehicle: 'HINO-500 (YGN-1A/4582)',
       driver: 'Kyaw Zeya',
       status: 'In Transit',
@@ -73,7 +73,7 @@ const TransitRoutePage: React.FC = () => {
       id: 'TR-2026-002',
       name: 'Naypyidaw Connector',
       origin: 'Yangon Main Hub',
-      destination: 'Naypyidaw Station',
+      destinationTownship: 'Naypyidaw Station',
       vehicle: 'ISUZU-FTR (YGN-2B/9912)',
       driver: 'Aung Myo',
       status: 'Scheduled',
@@ -85,7 +85,7 @@ const TransitRoutePage: React.FC = () => {
       id: 'TR-2026-003',
       name: 'Bago Region Distribution',
       origin: 'Yangon Main Hub',
-      destination: 'Bago Branch',
+      destinationTownship: 'Bago Branch',
       vehicle: 'TOYOTA-DYNA (YGN-3C/1123)',
       driver: 'Min Thant',
       status: 'Active',
@@ -97,7 +97,7 @@ const TransitRoutePage: React.FC = () => {
       id: 'TR-2026-004',
       name: 'Taunggyi Highlands',
       origin: 'Mandalay Hub',
-      destination: 'Taunggyi Station',
+      destinationTownship: 'Taunggyi Station',
       vehicle: 'HINO-700 (MDY-4D/7788)',
       driver: 'Zaw Win',
       status: 'Maintenance',
@@ -233,7 +233,7 @@ const TransitRoutePage: React.FC = () => {
                     <div className="flex items-center gap-2 text-sm">
                       <span className="font-semibold">{route.origin}</span>
                       <ArrowRight className="h-3 w-3 text-gold-600" />
-                      <span className="font-semibold">{route.destination}</span>
+                      <span className="font-semibold">{route.destinationTownship}</span>
                     </div>
                   </TableCell>
                   <TableCell>

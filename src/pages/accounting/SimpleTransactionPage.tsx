@@ -6,6 +6,9 @@ import { useLanguageContext } from '@/lib/LanguageContext';
 
 export default function SimpleTransactionPage() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
 
   return (
     <div className="space-y-6">

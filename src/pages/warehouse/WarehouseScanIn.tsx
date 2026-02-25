@@ -17,7 +17,7 @@ import { ROUTE_PATHS } from '@/lib/index';
 
 interface ScanInResult {
   id: string;
-  trackingNumber: string;
+  awb: string;
   success: boolean;
   message: string;
   parcel?: WarehouseParcel;
@@ -25,6 +25,9 @@ interface ScanInResult {
 }
 
 export default function WarehouseScanIn() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const [user, setUser] = useState<WarehouseUser | null>(null);
   const [trackingCode, setTrackingCode] = useState('');
@@ -53,7 +56,7 @@ export default function WarehouseScanIn() {
       const operations = await WarehouseAPI.getOperations(user.station_id, 100);
       const today = new Date().toDateString();
       const todayOps = operations.filter(op => 
-        new Date(op.created_at).toDateString() === today && op.operation_type === 'scan_in'
+        new Date(op.createdAt).toDateString() === today && op.operation_type === 'scan_in'
       );
       setTodayStats({
         scannedIn: todayOps.length,
@@ -82,10 +85,10 @@ export default function WarehouseScanIn() {
 
       const result: ScanInResult = {
         id: Date.now().toString(),
-        trackingNumber: parcel.tracking_number,
+        awb: parcel.awb,
         success: updateSuccess,
         message: updateSuccess 
-          ? `${t('Received successfully', 'အောင်မြင်စွာ လက်ခံရရှိသည်')} - ${parcel.tracking_number}` 
+          ? `${t('Received successfully', 'အောင်မြင်စွာ လက်ခံရရှိသည်')} - ${parcel.awb}` 
           : t('Reception failed', 'လက်ခံရန် မအောင်မြင်ပါ'),
         parcel: updateSuccess ? parcel : undefined,
         timestamp: new Date()
@@ -209,7 +212,7 @@ export default function WarehouseScanIn() {
                       <div key={res.id} className={`p-3 rounded-lg border flex items-center gap-3 ${res.success ? 'bg-green-50 border-green-100' : 'bg-red-50 border-red-100'}`}>
                         {res.success ? <CheckCircle className="text-green-600 shrink-0" size={18}/> : <XCircle className="text-red-600 shrink-0" size={18}/>}
                         <div className="min-w-0 flex-1">
-                          <p className="text-xs font-black text-slate-900">{res.trackingNumber}</p>
+                          <p className="text-xs font-black text-slate-900">{res.awb}</p>
                           <p className="text-[10px] text-slate-500 truncate italic">{res.message}</p>
                         </div>
                         <Badge variant="outline" className="text-[9px] h-5">{res.timestamp.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</Badge>

@@ -7,6 +7,9 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import LanguageToggle from "@/components/LanguageToggle";
 export default function KYC() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useTranslation();
     const [nrc, setNrc] = useState("");
     const [front, setFront] = useState(null);

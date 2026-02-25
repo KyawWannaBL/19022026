@@ -25,6 +25,9 @@ function Tile({ to, title, desc }: TileProps) {
 
 export default function ReportsHome() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
 
   return (
     <div className="space-y-6">

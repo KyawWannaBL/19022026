@@ -17,6 +17,9 @@ import { AdminDashboardAPI } from "@/lib/admin-api";
 
 export default function Dashboard() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [stats, setStats] = useState<any>({});
   const [loading, setLoading] = useState(true);
 

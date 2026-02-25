@@ -41,6 +41,9 @@ const registrationSchema = z.object({
     weight: z.number().min(0.1, 'Weight must be at least 0.1kg').optional(),
 });
 export default function ShipmentRegistration() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { ttId } = useParams();
     const navigate = useNavigate();
     const { user, legacyUser } = useAuth();

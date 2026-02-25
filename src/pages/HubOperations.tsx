@@ -6,15 +6,15 @@ import { Building2, Package, QrCode, Truck, ArrowRight, Clock } from 'lucide-rea
 
 export default function HubOperations() {
   const mockInboundPackages = [
-    { awb: 'HUB123456789', origin: 'Mumbai Hub', destination: 'Delhi Hub', status: 'arrived' },
-    { awb: 'HUB987654321', origin: 'Chennai Hub', destination: 'Bangalore Hub', status: 'sorting' },
-    { awb: 'HUB456789123', origin: 'Kolkata Hub', destination: 'Hyderabad Hub', status: 'pending' }
+    { awb: 'HUB123456789', origin: 'Mumbai Hub', destinationTownship: 'Delhi Hub', status: 'arrived' },
+    { awb: 'HUB987654321', origin: 'Chennai Hub', destinationTownship: 'Bangalore Hub', status: 'sorting' },
+    { awb: 'HUB456789123', origin: 'Kolkata Hub', destinationTownship: 'Hyderabad Hub', status: 'pending' }
   ];
 
   const mockOutboundBags = [
-    { bagId: 'BAG001', destination: 'Delhi Hub', packages: 25, status: 'sealed' },
-    { bagId: 'BAG002', destination: 'Mumbai Hub', packages: 18, status: 'packing' },
-    { bagId: 'BAG003', destination: 'Chennai Hub', packages: 32, status: 'ready' }
+    { bagId: 'BAG001', destinationTownship: 'Delhi Hub', packages: 25, status: 'sealed' },
+    { bagId: 'BAG002', destinationTownship: 'Mumbai Hub', packages: 18, status: 'packing' },
+    { bagId: 'BAG003', destinationTownship: 'Chennai Hub', packages: 32, status: 'ready' }
   ];
 
   return (
@@ -75,7 +75,7 @@ export default function HubOperations() {
                 <div>
                   <p className="font-mono font-medium">{pkg.awb}</p>
                   <p className="text-sm text-muted-foreground">
-                    {pkg.origin} <ArrowRight className="h-3 w-3 inline mx-1" /> {pkg.destination}
+                    {pkg.origin} <ArrowRight className="h-3 w-3 inline mx-1" /> {pkg.destinationTownship}
                   </p>
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function HubOperations() {
                 <div>
                   <p className="font-medium">{bag.bagId}</p>
                   <p className="text-sm text-muted-foreground">
-                    To: {bag.destination} • {bag.packages} packages
+                    To: {bag.destinationTownship} • {bag.packages} packages
                   </p>
                 </div>
               </div>

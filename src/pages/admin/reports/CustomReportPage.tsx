@@ -80,6 +80,9 @@ const PIE_DATA = [
 const COLORS = ['#D4AF37', '#1A237E', '#4CAF50', '#F44336', '#9C27B0'];
 
 export default function CustomReportPage() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { language } = useLanguageContext();
   const { t } = useTranslation(language);
 

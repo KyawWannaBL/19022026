@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
 
 interface CustomerShipment {
   id: string;
-  trackingNumber: string;
+  awb: string;
   status: 'pending' | 'in_transit' | 'delivered';
   to: string;
   date: string;
@@ -28,17 +28,20 @@ interface CustomerShipment {
 
 // Clean data declaration to avoid build errors
 const customerShipments: CustomerShipment[] = [
-  { id: '1', trackingNumber: 'BE-5001', status: 'in_transit', to: 'Mandalay', date: '2026-02-23' },
-  { id: '2', trackingNumber: 'BE-5002', status: 'delivered', to: 'Yangon', date: '2026-02-20' },
-  { id: '3', trackingNumber: 'BE-5003', status: 'pending', to: 'Nay Pyi Taw', date: '2026-02-24' },
+  { id: '1', awb: 'BE-5001', status: 'in_transit', to: 'Mandalay', date: '2026-02-23' },
+  { id: '2', awb: 'BE-5002', status: 'delivered', to: 'Yangon', date: '2026-02-20' },
+  { id: '3', awb: 'BE-5003', status: 'pending', to: 'Nay Pyi Taw', date: '2026-02-24' },
 ];
 
 export default function CustomerDashboardPage() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [search, setSearch] = useState('');
 
   const filtered = customerShipments.filter(s => 
-    s.trackingNumber.toLowerCase().includes(search.toLowerCase())
+    s.awb.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -88,7 +91,7 @@ export default function CustomerDashboardPage() {
               <tbody className="divide-y">
                 {filtered.map((s) => (
                   <tr key={s.id} className="hover:bg-slate-50/50 transition-colors">
-                    <td className="p-4 font-bold text-blue-700">{s.trackingNumber}</td>
+                    <td className="p-4 font-bold text-blue-700">{s.awb}</td>
                     <td className="p-4 font-medium text-slate-600">{s.to}</td>
                     <td className="p-4">
                       <Badge variant={s.status === 'delivered' ? 'outline' : 'default'} className="uppercase text-[9px] font-black">
@@ -97,7 +100,7 @@ export default function CustomerDashboardPage() {
                     </td>
                     <td className="p-4 text-right">
                       <Button variant="ghost" size="sm" asChild className="text-[#0d2c54] font-black text-[10px] uppercase">
-                        <Link to={`${ROUTE_PATHS.PUBLIC_TRACKING}?id=${s.trackingNumber}`}>
+                        <Link to={`${ROUTE_PATHS.PUBLIC_TRACKING}?id=${s.awb}`}>
                           Details <ArrowRight size={12} className="ml-1" />
                         </Link>
                       </Button>

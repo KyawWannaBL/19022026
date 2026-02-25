@@ -1,18 +1,3 @@
-export type UserRole = 
-  | 'SUPER_ADMIN' 
-  | 'OPERATIONS_ADMIN' 
-  | 'DISPATCHER' 
-  | 'RIDER' 
-  | 'WAREHOUSE_STAFF' 
-  | 'MERCHANT' 
-  | 'CUSTOMER';
-
-export const USER_ROLES: Record<string, UserRole> = {
-  SUPER_ADMIN: 'SUPER_ADMIN',
-  OPERATIONS_ADMIN: 'OPERATIONS_ADMIN',
-  DISPATCHER: 'DISPATCHER',
-  RIDER: 'RIDER',
-  WAREHOUSE_STAFF: 'WAREHOUSE_STAFF',
-  MERCHANT: 'MERCHANT',
-  CUSTOMER: 'CUSTOMER'
-};
+export type AppRole = 'admin' | 'merchant' | 'rider' | 'super_admin' | 'customer';
+export const isAppRole = (role: string): role is AppRole => 
+  ['admin', 'merchant', 'rider', 'super_admin', 'customer'].includes(role);

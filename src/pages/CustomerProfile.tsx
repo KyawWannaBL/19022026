@@ -23,6 +23,9 @@ import { useAuth } from '@/hooks/useAuth';
 
 
 export default function CustomerProfile() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { user } = useAuth();
   const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);

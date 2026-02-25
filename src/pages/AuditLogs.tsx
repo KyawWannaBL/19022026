@@ -16,7 +16,7 @@ import { format } from 'date-fns';
 
 interface AuditLog {
   id: string;
-  created_at: string;
+  createdAt: string;
   user_id: string;
   action: string; 
   table_name: string;
@@ -27,6 +27,9 @@ interface AuditLog {
 }
 
 export default function AuditLogViewer() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [logs, setLogs] = useState<AuditLog[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,7 +45,7 @@ export default function AuditLogViewer() {
       let query = supabase
         .from('audit_logs')
         .select('*')
-        .order('created_at', { ascending: false })
+        .order('createdAt', { ascending: false })
         .limit(100);
 
       if (filterUser) query = query.eq('user_id', filterUser);
@@ -52,7 +55,7 @@ export default function AuditLogViewer() {
       if (filterDate) {
         const start = new Date(filterDate).toISOString();
         const end = new Date(new Date(filterDate).setHours(23, 59, 59, 999)).toISOString();
-        query = query.gte('created_at', start).lte('created_at', end);
+        query = query.gte('createdAt', start).lte('createdAt', end);
       }
 
       const { data, error } = await query;
@@ -157,7 +160,7 @@ export default function AuditLogViewer() {
                 </div>
                 <div className="flex items-center gap-4 text-xs text-white/40">
                   <span className="flex items-center gap-1"><User className="h-3 w-3" /> {log.user_id?.slice(0, 8)}</span>
-                  <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {format(new Date(log.created_at), 'MMM dd, HH:mm')}</span>
+                  <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {format(new Date(log.createdAt), 'MMM dd, HH:mm')}</span>
                 </div>
               </div>
               <div className="pl-2 border-l-2 border-white/10 text-xs text-white/60 truncate">

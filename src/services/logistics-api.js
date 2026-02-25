@@ -144,7 +144,7 @@ export class LogisticsDataService {
         *,
         branch:branch_id(name, code)
       `)
-            .order('created_at', { ascending: false });
+            .order('createdAt', { ascending: false });
         if (filters?.role)
             query = query.eq('role', filters.role);
         if (filters?.branch_id)
@@ -163,7 +163,7 @@ export class LogisticsDataService {
         collected_by:collected_by(full_name),
         branch:branch_id(name, code)
       `)
-            .order('created_at', { ascending: false });
+            .order('createdAt', { ascending: false });
         if (filters?.transaction_type)
             query = query.eq('transaction_type', filters.transaction_type);
         if (filters?.status)
@@ -173,9 +173,9 @@ export class LogisticsDataService {
         if (filters?.customer_id)
             query = query.eq('customer_id', filters.customer_id);
         if (filters?.date_from)
-            query = query.gte('created_at', filters.date_from);
+            query = query.gte('createdAt', filters.date_from);
         if (filters?.date_to)
-            query = query.lte('created_at', filters.date_to);
+            query = query.lte('createdAt', filters.date_to);
         return await query;
     }
     async getInventory(branchId) {

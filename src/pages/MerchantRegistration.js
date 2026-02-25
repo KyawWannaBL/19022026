@@ -4,6 +4,9 @@ import { useLanguageContext } from "@/lib/LanguageContext";
 import { Building2, Phone, Mail, MapPin, CreditCard, CheckCircle, ArrowRight, Shield, Truck } from 'lucide-react';
 import { IMAGES } from '@/assets/images';
 export default function MerchantRegistration() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useLanguageContext();
     const [currentStep, setCurrentStep] = useState(1);
     const [formData, setFormData] = useState({

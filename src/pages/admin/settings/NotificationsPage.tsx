@@ -398,14 +398,14 @@ const NotificationsPage: React.FC = () => {
                     <Label className="text-gold-200">Message Body (Myanmar)</Label>
                     <Textarea 
                       rows={5} 
-                      defaultValue="မင်္ဂလာပါ {customer_name}၊ သင်၏ အော်ဒါအမှတ် {tracking_number} အား ပို့ဆောင်သူ {rider_name} ({rider_phone}) မှ ပို့ဆောင်ရန် ထွက်ခွာလာပါပြီ။"
+                      defaultValue="မင်္ဂလာပါ {customer_name}၊ သင်၏ အော်ဒါအမှတ် {awb} အား ပို့ဆောင်သူ {rider_name} ({rider_phone}) မှ ပို့ဆောင်ရန် ထွက်ခွာလာပါပြီ။"
                       className="bg-navy-950/50 border-gold-400/20 text-white font-myanmar"
                     />
                   </div>
                   <div className="p-4 bg-navy-900/50 rounded-lg">
                     <Label className="text-xs text-gold-400 mb-2 block uppercase">Available Placeholders</Label>
                     <div className="flex flex-wrap gap-2">
-                      {['{customer_name}', '{tracking_number}', '{rider_name}', '{rider_phone}', '{estimated_time}'].map((tag) => (
+                      {['{customer_name}', '{awb}', '{rider_name}', '{rider_phone}', '{estimated_time}'].map((tag) => (
                         <span key={tag} className="px-2 py-1 bg-navy-950 text-gold-300 text-[10px] rounded border border-gold-400/20 font-mono">
                           {tag}
                         </span>

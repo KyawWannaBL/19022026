@@ -8,6 +8,9 @@ import InternationalPolicyCheckbox from "@/components/InternationalPolicyCheckbo
 import LanguageToggle from "@/components/LanguageToggle";
 
 export default function PickupRequest() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t } = useTranslation();
 
   const [userId, setUserId] = useState<string | null>(null);
@@ -43,7 +46,7 @@ export default function PickupRequest() {
       type,
       condition,
       cod_amount: codAmount ? Number(codAmount) : null,
-      created_at: new Date().toISOString(),
+      createdAt: new Date().toISOString(),
     };
 
     // Example: store into a table pickup_requests if you create it.

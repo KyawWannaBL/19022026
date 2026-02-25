@@ -81,6 +81,9 @@ const mockOverdueData: ReportData[] = [
 
 export default function ReportsPage() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [activeTab, setActiveTab] = useState('ways_count');
   const [dateRange, setDateRange] = useState<DateRange | undefined>();
   const [selectedPeriod, setSelectedPeriod] = useState('this_month');

@@ -1,3 +1,4 @@
+import { Shipment, getBilingualStatus } from "@/lib/index";
 import { supabase } from '@/integrations/supabase/client';
 
 // Types for the enterprise logistics platform
@@ -18,7 +19,7 @@ export interface User {
   hire_date?: string;
   salary_info?: Record<string, any>;
   performance_metrics: Record<string, any>;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -39,7 +40,7 @@ export interface Branch {
   capacity_info?: Record<string, any>;
   facilities: string[];
   status: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -63,7 +64,7 @@ export interface Customer {
   kyc_status: string;
   kyc_documents: any[];
   status: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -91,50 +92,10 @@ export interface Merchant {
   special_rates: Record<string, any>;
   contract_details?: Record<string, any>;
   status: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
-export interface Shipment {
-  id: string;
-  awb_number: string;
-  reference_number?: string;
-  merchant_id?: string;
-  customer_id?: string;
-  sender_name: string;
-  sender_phone: string;
-  sender_address: string;
-  sender_city: string;
-  sender_state: string;
-  receiver_name: string;
-  receiver_phone: string;
-  receiver_address: string;
-  receiver_city: string;
-  receiver_state: string;
-  package_type: string;
-  weight: number;
-  dimensions?: Record<string, any>;
-  declared_value: number;
-  contents_description?: string;
-  special_instructions?: string;
-  service_type: string;
-  payment_method: string;
-  cod_amount: number;
-  shipping_cost: number;
-  insurance_cost: number;
-  total_cost: number;
-  status: string;
-  current_location?: string;
-  origin_branch_id?: string;
-  destination_branch_id?: string;
-  assigned_rider_id?: string;
-  assigned_vehicle_id?: string;
-  pickup_date?: string;
-  expected_delivery_date?: string;
-  actual_delivery_date?: string;
-  created_at: string;
-  updated_at: string;
-}
 
 export interface ShipmentTracking {
   id: string;
@@ -165,7 +126,7 @@ export interface Vehicle {
   odometer_reading: number;
   fuel_efficiency?: number;
   status: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -176,7 +137,7 @@ export interface MyanmarLocation {
   postal_code?: string;
   zone: string;
   is_remote: boolean;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface DashboardMetrics {
@@ -208,7 +169,7 @@ export interface RateCalculation {
 
 export interface Notification {
   id: string;
-  recipient_id: string;
+  receiverName_id: string;
   title: string;
   message: string;
   type: string;
@@ -219,7 +180,7 @@ export interface Notification {
   read_at?: string;
   expires_at?: string;
   metadata: Record<string, any>;
-  created_at: string;
+  createdAt: string;
 }
 
 // Data service class for API interactions
@@ -419,7 +380,7 @@ export class LogisticsDataService {
         *,
         branch:branch_id(name, code)
       `)
-      .order('created_at', { ascending: false });
+      .order('createdAt', { ascending: false });
 
     if (filters?.role) query = query.eq('role', filters.role);
     if (filters?.branch_id) query = query.eq('branch_id', filters.branch_id);
@@ -445,14 +406,14 @@ export class LogisticsDataService {
         collected_by:collected_by(full_name),
         branch:branch_id(name, code)
       `)
-      .order('created_at', { ascending: false });
+      .order('createdAt', { ascending: false });
 
     if (filters?.transaction_type) query = query.eq('transaction_type', filters.transaction_type);
     if (filters?.status) query = query.eq('status', filters.status);
     if (filters?.merchant_id) query = query.eq('merchant_id', filters.merchant_id);
     if (filters?.customer_id) query = query.eq('customer_id', filters.customer_id);
-    if (filters?.date_from) query = query.gte('created_at', filters.date_from);
-    if (filters?.date_to) query = query.lte('created_at', filters.date_to);
+    if (filters?.date_from) query = query.gte('createdAt', filters.date_from);
+    if (filters?.date_to) query = query.lte('createdAt', filters.date_to);
 
     return await query;
   }

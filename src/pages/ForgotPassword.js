@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 export default function ForgotPassword() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { requestPasswordReset } = useAuth();
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);

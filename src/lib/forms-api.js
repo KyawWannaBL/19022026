@@ -75,14 +75,14 @@ export class VouchersAPI {
         const { count } = await supabase
             .from('vouchers')
             .select('*', { count: 'exact', head: true })
-            .gte('created_at', new Date().toISOString().slice(0, 10));
+            .gte('createdAt', new Date().toISOString().slice(0, 10));
         const voucher_number = `VCH-${date}-${String((count || 0) + 1).padStart(3, '0')}`;
         const { data, error } = await supabase
             .from('vouchers')
             .insert({
             ...voucher,
             voucher_number,
-            created_at: new Date().toISOString(),
+            createdAt: new Date().toISOString(),
             updated_at: new Date().toISOString()
         })
             .select()
@@ -97,7 +97,7 @@ export class VouchersAPI {
         let query = supabase
             .from('vouchers')
             .select('*')
-            .order('created_at', { ascending: false });
+            .order('createdAt', { ascending: false });
         if (filters?.type) {
             query = query.eq('voucher_type', filters.type);
         }
@@ -204,7 +204,7 @@ export class CashAdvancesAPI {
         const { count } = await supabase
             .from('cash_advances')
             .select('*', { count: 'exact', head: true })
-            .gte('created_at', new Date().toISOString().slice(0, 10));
+            .gte('createdAt', new Date().toISOString().slice(0, 10));
         const advance_number = `ADV-${date}-${String((count || 0) + 1).padStart(3, '0')}`;
         const { data, error } = await supabase
             .from('cash_advances')
@@ -212,7 +212,7 @@ export class CashAdvancesAPI {
             ...advance,
             advance_number,
             repaid_amount: 0,
-            created_at: new Date().toISOString(),
+            createdAt: new Date().toISOString(),
             updated_at: new Date().toISOString()
         })
             .select()
@@ -227,7 +227,7 @@ export class CashAdvancesAPI {
         let query = supabase
             .from('cash_advances')
             .select('*')
-            .order('created_at', { ascending: false });
+            .order('createdAt', { ascending: false });
         if (filters?.deliveryman_id) {
             query = query.eq('deliveryman_id', filters.deliveryman_id);
         }

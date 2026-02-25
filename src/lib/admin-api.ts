@@ -11,7 +11,7 @@ export interface AdminUser {
   phone?: string;
   must_change_password: boolean;
   last_login?: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
   created_by?: string;
 }
@@ -44,7 +44,7 @@ export interface BulkUploadItem {
   validation_status: 'valid' | 'error' | 'pending';
   validation_errors?: string[];
   created_shipment_id?: string;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface TariffRate {
@@ -58,7 +58,7 @@ export interface TariffRate {
   price_usd?: number;
   effective_date: string;
   is_active: boolean;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
   updated_by?: string;
 }
@@ -84,7 +84,7 @@ export interface MarketerPerformance {
   campaigns_run: number;
   customer_acquisition_cost: number;
   conversion_rate: number;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface CustomerServiceInteraction {
@@ -101,7 +101,7 @@ export interface CustomerServiceInteraction {
   description?: string;
   resolution?: string;
   satisfaction_rating?: number;
-  created_at: string;
+  createdAt: string;
   resolved_at?: string;
   response_time_minutes?: number;
 }
@@ -112,7 +112,7 @@ export class AdminUsersAPI {
     const { data, error } = await supabase
       .from('admin_users_2026_02_04_16_00')
       .select('*')
-      .order('created_at', { ascending: false });
+      .order('createdAt', { ascending: false });
     
     if (error) throw error;
     return data || [];
@@ -457,7 +457,7 @@ export class CustomerServiceAPI {
           email
         )
       `)
-      .order('created_at', { ascending: false });
+      .order('createdAt', { ascending: false });
     
     if (error) throw error;
     return data || [];
@@ -468,7 +468,7 @@ export class CustomerServiceAPI {
       .from('customer_service_interactions_2026_02_04_16_00')
       .select('*')
       .eq('agent_id', agentId)
-      .order('created_at', { ascending: false });
+      .order('createdAt', { ascending: false });
     
     if (error) throw error;
     return data || [];

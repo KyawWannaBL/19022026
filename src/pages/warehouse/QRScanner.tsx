@@ -6,6 +6,9 @@ import { useLanguageContext } from '@/lib/LanguageContext';
 
 export default function QRScanner() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [cameraActive, setCameraActive] = useState(false);
 
   return (

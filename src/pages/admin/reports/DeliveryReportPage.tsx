@@ -81,11 +81,11 @@ const STATUS_DISTRIBUTION = [
 ];
 
 const RECENT_DELIVERIES = [
-  { id: 'BR-2026-9041', recipient: 'Kyaw Kyaw', status: 'delivered', date: '2026-02-04', time: '10:30 AM', rider: 'Aung Ko', branch: 'Yangon' },
-  { id: 'BR-2026-9042', recipient: 'Mya Mya', status: 'delivered', date: '2026-02-04', time: '11:15 AM', rider: 'Min Min', branch: 'Mandalay' },
-  { id: 'BR-2026-9043', recipient: 'Hla Hla', status: 'failed', date: '2026-02-04', time: '01:45 PM', rider: 'Zaw Zaw', branch: 'Yangon' },
-  { id: 'BR-2026-9044', recipient: 'Than Than', status: 'in_transit', date: '2026-02-04', time: '02:20 PM', rider: 'Aung Ko', branch: 'Yangon' },
-  { id: 'BR-2026-9045', recipient: 'Win Win', status: 'delivered', date: '2026-02-04', time: '03:10 PM', rider: 'Min Min', branch: 'Naypyidaw' },
+  { id: 'BR-2026-9041', receiverName: 'Kyaw Kyaw', status: 'delivered', date: '2026-02-04', time: '10:30 AM', rider: 'Aung Ko', branch: 'Yangon' },
+  { id: 'BR-2026-9042', receiverName: 'Mya Mya', status: 'delivered', date: '2026-02-04', time: '11:15 AM', rider: 'Min Min', branch: 'Mandalay' },
+  { id: 'BR-2026-9043', receiverName: 'Hla Hla', status: 'failed', date: '2026-02-04', time: '01:45 PM', rider: 'Zaw Zaw', branch: 'Yangon' },
+  { id: 'BR-2026-9044', receiverName: 'Than Than', status: 'in_transit', date: '2026-02-04', time: '02:20 PM', rider: 'Aung Ko', branch: 'Yangon' },
+  { id: 'BR-2026-9045', receiverName: 'Win Win', status: 'delivered', date: '2026-02-04', time: '03:10 PM', rider: 'Min Min', branch: 'Naypyidaw' },
 ];
 
 const DeliveryReportPage: React.FC = () => {
@@ -97,7 +97,7 @@ const DeliveryReportPage: React.FC = () => {
   const filteredDeliveries = useMemo(() => {
     return RECENT_DELIVERIES.filter(delivery =>
       delivery.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      delivery.recipient.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      delivery.receiverName.toLowerCase().includes(searchTerm.toLowerCase()) ||
       delivery.rider.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [searchTerm]);
@@ -309,7 +309,7 @@ const DeliveryReportPage: React.FC = () => {
                   <TableCell className="font-mono font-medium text-navy-900">
                     {delivery.id}
                   </TableCell>
-                  <TableCell>{delivery.recipient}</TableCell>
+                  <TableCell>{delivery.receiverName}</TableCell>
                   <TableCell>
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-600 font-bold text-xs">

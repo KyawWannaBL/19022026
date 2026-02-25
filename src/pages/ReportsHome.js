@@ -5,6 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart3, FileText, Users, MapPin, Shield, Truck, TrendingUp, DollarSign, Package, AlertTriangle } from "lucide-react";
 import { ROUTE_PATHS } from "@/lib/index";
 export default function ReportsHome() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useLanguageContext();
     const navigate = useNavigate();
     const reportCategories = [

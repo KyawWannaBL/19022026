@@ -183,7 +183,7 @@ const TrackingMap: React.FC = () => {
                       className="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/30 cursor-pointer transition-all"
                     >
                       <div className="flex justify-between items-center mb-1">
-                        <span className="text-xs font-mono text-primary font-bold">{shipment.awb_number}</span>
+                        <span className="text-xs font-mono text-primary font-bold">{shipment.awb}</span>
                         <Badge variant="outline" className="text-[10px]">{shipment.status}</Badge>
                       </div>
                       <p className="text-sm font-medium truncate">To: {shipment.receiver_name}</p>

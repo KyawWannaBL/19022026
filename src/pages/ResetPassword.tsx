@@ -6,6 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function ResetPassword() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const nav = useNavigate();
   const { resetPassword } = useAuth();
 

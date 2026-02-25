@@ -40,6 +40,9 @@ interface Label {
 }
 
 export default function RiderLabel() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t, language } = useLanguageContext();
   const [labelBatches, setLabelBatches] = useState<LabelBatch[]>([]);
   const [selectedBatch, setSelectedBatch] = useState<LabelBatch | null>(null);

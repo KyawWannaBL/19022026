@@ -2,6 +2,9 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 export default function ControlRoom() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const [sessions, setSessions] = useState([]);
     const fetchSessions = async () => {
         const { data } = await supabase

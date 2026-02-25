@@ -38,6 +38,9 @@ interface Tag {
 }
 
 export default function RiderTags() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t, language } = useLanguageContext();
   const [tagBatches, setTagBatches] = useState<TagBatch[]>([]);
   const [selectedBatch, setSelectedBatch] = useState<TagBatch | null>(null);

@@ -46,7 +46,7 @@ import {
   formatDate, 
   getStatusVariant,
   UserRole
-} from '@/lib/index.ts';
+} from '@/lib/index';
 
 interface Team {
   driver: string;
@@ -145,7 +145,7 @@ export function RoutePlanningDashboard({
       ];
       setRoutes(optimizedRoutes);
       setIsOptimizing(false);
-      toast.success('Wayplan generated automatically based on destination clusters and resource availability.');
+      toast.success('Wayplan generated automatically based on destinationTownship clusters and resource availability.');
     }, 2000);
   };
 

@@ -57,7 +57,7 @@ export class RiderAPI {
                 .from('rider_tasks_2026_02_04_14_23')
                 .select('*')
                 .eq('rider_id', riderId)
-                .order('created_at', { ascending: false });
+                .order('createdAt', { ascending: false });
             if (status) {
                 query = query.eq('status', status);
             }
@@ -126,7 +126,7 @@ export class RiderAPI {
                 .from('rider_transactions_2026_02_04_14_23')
                 .select('*')
                 .eq('rider_id', riderId)
-                .order('created_at', { ascending: false })
+                .order('createdAt', { ascending: false })
                 .limit(limit);
             if (error)
                 throw error;
@@ -174,7 +174,7 @@ export class RiderAPI {
                 .from('rider_notifications_2026_02_04_14_23')
                 .select('*')
                 .eq('rider_id', riderId)
-                .order('created_at', { ascending: false });
+                .order('createdAt', { ascending: false });
             if (unreadOnly) {
                 query = query.eq('is_read', false);
             }
@@ -218,8 +218,8 @@ export class RiderAPI {
                 .from('rider_transactions_2026_02_04_14_23')
                 .select('amount, transaction_type')
                 .eq('rider_id', riderId)
-                .gte('created_at', today + 'T00:00:00.000Z')
-                .lt('created_at', today + 'T23:59:59.999Z');
+                .gte('createdAt', today + 'T00:00:00.000Z')
+                .lt('createdAt', today + 'T23:59:59.999Z');
             const stats = {
                 pending: tasks?.filter(t => ['pending', 'assigned', 'in_progress'].includes(t.status)).length || 0,
                 completed: tasks?.filter(t => t.status === 'completed').length || 0,

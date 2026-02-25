@@ -10,6 +10,9 @@ interface Session {
 }
 
 export default function ControlRoom() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [sessions, setSessions] = useState<Session[]>([])
 
   const fetchSessions = async () => {

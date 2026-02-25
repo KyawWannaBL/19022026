@@ -7,6 +7,9 @@ import { toast } from 'sonner'; // Assuming you have a toast library, or use con
 // Define system roles (Modify as needed for your app)
 const SYSTEM_ROLES = ['APP_OWNER', 'MANAGER', 'DRIVER', 'USER'];
 export default function PermissionAssignment() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const [permissions, setPermissions] = useState([]);
     const [selectedRole, setSelectedRole] = useState('MANAGER');
     const [assignedPermissionIds, setAssignedPermissionIds] = useState(new Set());

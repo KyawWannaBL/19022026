@@ -35,6 +35,9 @@ import {
 
 export default function ReportsCenter() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [activeTab, setActiveTab] = useState('overview');
   const [loading, setLoading] = useState(false);
   const [filters, setFilters] = useState<ReportFilter>({

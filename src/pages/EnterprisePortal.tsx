@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function EnterprisePortal() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const navigate = useNavigate();
   const { user } = useAuth();
   const [mounted, setMounted] = useState(false);

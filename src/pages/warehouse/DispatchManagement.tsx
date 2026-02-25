@@ -12,7 +12,7 @@ const DispatchManagement: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useLanguageContext();
   const [step, setStep] = useState<'INITIAL' | 'LOCATION' | 'MANIFEST' | 'SCANNING'>('INITIAL');
-  const [destination, setDestination] = useState<string>('');
+  const [destinationTownship, setDestination] = useState<string>('');
 
   return (
     <div className="min-h-screen bg-slate-50 p-4 md:p-8">

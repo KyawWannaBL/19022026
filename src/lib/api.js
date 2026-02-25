@@ -128,7 +128,7 @@ export class BroadcastMessagesAPI extends BaseAPI {
     async send(id, totalRecipients) {
         return this.callEdgeFunction('be_notifications_2026_02_04_05_03', 'send-broadcast', {
             method: 'POST',
-            body: { messageId: id, total_recipients: totalRecipients }
+            body: { messageId: id, total_receiverNames: totalRecipients }
         });
     }
     async delete(id) {

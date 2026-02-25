@@ -9,7 +9,7 @@ export default function ShippingCalculator() {
   
   const [formData, setFormData] = useState({
     origin: 'Yangon',
-    destinationRegion: '',
+    destinationTownshipRegion: '',
     township: '',
     weight: '',
     length: '',
@@ -46,7 +46,7 @@ export default function ShippingCalculator() {
     let timeEstimate = '';
     let note = '';
 
-    if (formData.destinationRegion === 'yangon') {
+    if (formData.destinationTownshipRegion === 'yangon') {
       if (yangonTownships.central.includes(formData.township)) {
         baseRate = 2000;
         timeEstimate = 'Same Day';
@@ -60,11 +60,11 @@ export default function ShippingCalculator() {
         timeEstimate = 'Next Day';
         note = 'Suburban Areas';
       }
-    } else if (formData.destinationRegion === 'mandalay') {
+    } else if (formData.destinationTownshipRegion === 'mandalay') {
       baseRate = 4500;
       timeEstimate = 'Next Day';
       note = 'Mandalay Region Express';
-    } else if (formData.destinationRegion === 'naypyitaw') {
+    } else if (formData.destinationTownshipRegion === 'naypyitaw') {
       baseRate = 4000;
       timeEstimate = 'Next Day';
       note = 'Capital Express Service';
@@ -88,7 +88,7 @@ export default function ShippingCalculator() {
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-    if (field === 'destinationRegion' && value !== 'yangon') {
+    if (field === 'destinationTownshipRegion' && value !== 'yangon') {
       setFormData(prev => ({ ...prev, township: '' }));
     }
   };
@@ -189,8 +189,8 @@ export default function ShippingCalculator() {
                       Destination Region / ဦးတည်ရာ ဒေသ
                     </label>
                     <select
-                      value={formData.destinationRegion}
-                      onChange={(e) => handleInputChange('destinationRegion', e.target.value)}
+                      value={formData.destinationTownshipRegion}
+                      onChange={(e) => handleInputChange('destinationTownshipRegion', e.target.value)}
                       className="form-elegant w-full"
                     >
                       <option value="">Select Region / ဒေသ ရွေးချယ်ရန်</option>
@@ -202,7 +202,7 @@ export default function ShippingCalculator() {
                   </div>
 
                   {/* Township Selection */}
-                  {formData.destinationRegion === 'yangon' && (
+                  {formData.destinationTownshipRegion === 'yangon' && (
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
                         Select Township / မြို့နယ် ရွေးချယ်ရန်
@@ -333,7 +333,7 @@ export default function ShippingCalculator() {
                   <div className="text-center py-12">
                     <Calculator className="w-16 h-16 text-gray-500 mx-auto mb-4" />
                     <p className="text-gray-400 mb-2">
-                      Select a destination and enter weight to see pricing
+                      Select a destinationTownship and enter weight to see pricing
                     </p>
                     <p className="text-gray-500 text-sm">
                       ဦးတည်ရာနေရာနှင့် အလေးချိန်ကို ရွေးချယ်ပြီး ဈေးနှုန်းကို ကြည့်ရှုပါ

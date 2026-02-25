@@ -330,7 +330,7 @@ export const translations = {
     'broadcast.title': 'Broadcast Messages',
     'broadcast.sendMessage': 'Send Message',
     'broadcast.messageHistory': 'Message History',
-    'broadcast.recipients': 'Recipients',
+    'broadcast.receiverNames': 'Recipients',
     'broadcast.allUsers': 'All Users',
     'broadcast.merchants': 'Merchants',
     'broadcast.deliverymen': 'Deliverymen',
@@ -351,7 +351,7 @@ export const translations = {
     
     // Tracking
     'tracking.title': 'Tracking',
-    'tracking.trackingNumber': 'Tracking Number',
+    'tracking.awb': 'Tracking Number',
     'tracking.status': 'Status',
     'tracking.location': 'Location',
     'tracking.estimatedDelivery': 'Estimated Delivery',
@@ -618,8 +618,8 @@ export const translations = {
     // Shipment Management
     'shipment.records': 'Shipment Records',
     'shipment.trackingId': 'Tracking ID',
-    'shipment.recipient': 'Recipient',
-    'shipment.destination': 'Destination',
+    'shipment.receiverName': 'Recipient',
+    'shipment.destinationTownship': 'Destination',
     'shipment.export': 'Export',
     'shipment.details': 'Shipment Details',
     'shipment.loading': 'Loading...',
@@ -1121,8 +1121,8 @@ export const translations = {
     // Shipment Management - Myanmar
     'shipment.records': 'ပို့ဆောင်မှု မှတ်တမ်းများ',
     'shipment.trackingId': 'အိုင်ဒီ',
-    'shipment.recipient': 'လက်ခံပါး',
-    'shipment.destination': 'လိပ်စာ',
+    'shipment.receiverName': 'လက်ခံပါး',
+    'shipment.destinationTownship': 'လိပ်စာ',
     'shipment.export': 'အစွက်ပို့ရန်',
     'shipment.details': 'ပို့ဆောင်မှု အမှတ်အစား',
     'shipment.loading': 'အမှတ်အစား လုဒ်နေး...',
@@ -1213,7 +1213,7 @@ export const translations = {
     'broadcast.title': 'ထုတ်လွှင့်မှု မက်ဆေ့ချ်များ',
     'broadcast.sendMessage': 'မက်ဆေ့ချ် ပို့ရန်',
     'broadcast.messageHistory': 'မက်ဆေ့ချ် မှတ်တမ်း',
-    'broadcast.recipients': 'လက်ခံသူများ',
+    'broadcast.receiverNames': 'လက်ခံသူများ',
     'broadcast.allUsers': 'အသုံးပြုသူ အားလုံး',
     'broadcast.merchants': 'ကုန်သည်များ',
     'broadcast.deliverymen': 'ပို့ဆောင်သူများ',
@@ -1234,7 +1234,7 @@ export const translations = {
     
     // Tracking
     'tracking.title': 'ခြေရာခံမှု',
-    'tracking.trackingNumber': 'ခြေရာခံမှု နံပါတ်',
+    'tracking.awb': 'ခြေရာခံမှု နံပါတ်',
     'tracking.status': 'အခြေအနေ',
     'tracking.location': 'တည်နေရာ',
     'tracking.estimatedDelivery': 'ခန့်မှန်းထားသော ပို့ဆောင်မှု',

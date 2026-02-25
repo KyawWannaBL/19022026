@@ -1,43 +1,66 @@
-import React from 'react';
-import { useShipments } from '@/hooks/useShipments';
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { getStatusLabel, formatCurrency, getStatusVariant } from '@/lib/index';
-import { Badge } from '@/components/ui/badge';
+import { useMemo } from "react";
+import type { Shipment } from "@/lib/index";
+import { useEnterpriseShipments } from "@/hooks/useEnterpriseShipments";
+import { useLanguageContext } from "@/lib/LanguageContext";
 
-export default function ShipmentsPage() {
-  const { shipments, loading, error } = useShipments();
+export type UseShipmentsResult = {
+  data: Shipment[];
+  isLoading: boolean;
+  error?: string | null;
+  refetch?: () => void;
+};
+
+/**
+ * Britium Express - Production Shipment Hook
+ * Standardizes data mapping between Supabase (DB) and the Hybrid Interface (UI).
+ */
+export function useShipments(): UseShipmentsResult {
   const { t } = useLanguageContext();
+  const res = useEnterpriseShipments();
 
-  if (loading) return <div className="p-10 text-center animate-pulse">{t('Loading...', 'ခေတ္တစောင့်ဆိုင်းပါ...')}</div>;
+  // 1. Production Data Mapper (Resolves Line 32 Property Drift)
+  const mappedData = useMemo(() => {
+    const raw = res?.data;
+    if (!Array.isArray(raw)) return [];
 
-  return (
-    <div className="p-6 space-y-4">
-      <h2 className="text-2xl font-black text-[#0d2c54] uppercase italic">
-        {t('Live Shipments', 'လက်ရှိပို့ဆောင်မှုများ')}
-      </h2>
+    return raw.map((item: any): Shipment => ({
+      // Preserve ID and core status
+      id: item.id,
+      status: item.status || 'pending',
       
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {shipments.map((s) => (
-          <div key={s.id} className="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm hover:border-[#ff6b00] transition-colors">
-            <div className="flex justify-between items-start mb-3">
-              <span className="font-mono font-bold text-xs text-slate-400">{s.awb || s.id}</span>
-              <Badge variant={getStatusVariant(s.status) as any}>
-                {getStatusLabel(s.status, t)}
-              </Badge>
-            </div>
-            <div className="space-y-1">
-              <p className="font-bold text-[#0d2c54]">{s.receiverName}</p>
-              <p className="text-xs text-slate-500">{s.destinationTownship}</p>
-            </div>
-            <div className="mt-4 pt-4 border-t border-slate-50 flex justify-between items-center">
-              <span className="text-lg font-black text-[#ff6b00]">{formatCurrency(s.cod?.amount || 0)}</span>
-              <button className="text-[10px] font-black uppercase bg-[#0d2c54] text-white px-3 py-1.5 rounded-lg">
-                {t('Details', 'အသေးစိတ်')}
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+      // Property Mapping: Database (snake_case) -> UI (camelCase)
+      senderName: item.sender_name || item.senderName || t('Unknown Sender', 'အမည်မသိ ပေးပို့သူ'),
+      receiverName: item.receiver_name || item.receiverName || item.recipient || t('Unknown Receiver', 'အမည်မသိ လက်ခံသူ'),
+      destinationTownship: item.destination_township || item.destinationTownship || item.destination || 'N/A',
+      weight: Number(item.weight) || 0,
+      createdAt: item.created_at || item.createdAt || new Date().toISOString(),
+
+      // Permissive Hybrid Aliases (Optional Fallbacks)
+      awb: item.awb || item.tracking_number || item.awb_number,
+      pieces: item.pieces || 1,
+      tamperTagId: item.tamper_tag_id || item.tamperTagId,
+      cod_amount: Number(item.cod_amount || item.amount || 0),
+      
+      // Metadata Pass-through
+      metadata: item.metadata || {},
+    }));
+  }, [res?.data, t]);
+
+  // 2. Bilingual Error Handling
+  const errorMessage = useMemo(() => {
+    if (!res?.error) return null;
+    return t(
+      'Failed to sync shipment data. Check connection.', 
+      'ဒေတာရယူရန် အဆင်မပြေပါ။ အင်တာနက်လိုင်း စစ်ဆေးပေးပါ။'
+    );
+  }, [res?.error, t]);
+
+  return {
+    data: mappedData,
+    isLoading: !!res?.isLoading,
+    error: errorMessage,
+    refetch: res?.refetch,
+  };
 }
+
+export default useShipments;

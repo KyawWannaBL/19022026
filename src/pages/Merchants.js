@@ -61,6 +61,9 @@ const mockMerchants = [
     }
 ];
 export default function Merchants() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t, language } = useLanguageContext();
     const [searchTerm, setSearchTerm] = useState('');
     const [activeTab, setActiveTab] = useState('list');

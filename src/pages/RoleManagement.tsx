@@ -10,6 +10,9 @@ const PERMISSION_CATEGORIES = {
 };
 
 export default function RoleManagement() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [selectedRole, setSelectedRole] = useState('OPERATIONS_ADMIN');
   const [activePermissions, setActivePermissions] = useState<string[]>(['shipment.create', 'shipment.edit']);
   const [isSaving, setIsSaving] = useState(false);

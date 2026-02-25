@@ -5,6 +5,9 @@ import { Package, CheckCircle2, TrendingUp, Globe, Users, FileText } from "lucid
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { AdminDashboardAPI } from "@/lib/admin-api";
 export default function Dashboard() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t } = useLanguageContext();
     const [stats, setStats] = useState({});
     const [loading, setLoading] = useState(true);

@@ -6,6 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 export default function PublicTracking() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const [trackingId, setTrackingId] = useState('');
     const [trackingResult, setTrackingResult] = useState(null);
     const [isLoading, setIsLoading] = useState(false);

@@ -14,7 +14,7 @@ import { format } from 'date-fns';
 
 interface UserProfile {
   id: string;
-  full_name: string;
+  name: string;
   role: string;
   branch_id: string | null;
   is_active: boolean;
@@ -25,6 +25,9 @@ interface UserProfile {
 }
 
 export default function UserManagement() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [users, setUsers] = useState<UserProfile[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -61,7 +64,7 @@ export default function UserManagement() {
 
   // 2. Filter Logic
   const filteredUsers = users.filter(user => 
-    user.full_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    user.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
     user.role?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -78,7 +81,7 @@ export default function UserManagement() {
         <div className="flex items-center gap-3">
            <Button 
              className="bg-emerald-600 hover:bg-emerald-500 text-white"
-             requiredPermission="users.create"
+             
            >
              <Plus className="mr-2 h-4 w-4" />
              Add User
@@ -132,10 +135,10 @@ export default function UserManagement() {
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         <div className="h-9 w-9 rounded-full bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center text-white font-medium border border-white/10">
-                          {user.full_name?.charAt(0) || 'U'}
+                          {user.name?.charAt(0) || 'U'}
                         </div>
                         <div>
-                          <p className="font-medium text-white">{user.full_name}</p>
+                          <p className="font-medium text-white">{user.name}</p>
                           <p className="text-xs text-white/40">ID: {user.id.slice(0, 8)}...</p>
                         </div>
                       </div>
@@ -190,7 +193,7 @@ export default function UserManagement() {
                         variant="ghost" 
                         size="icon" 
                         className="opacity-0 group-hover:opacity-100 transition-opacity"
-                        requiredPermission="users.manage"
+                        
                       >
                         <MoreHorizontal className="h-4 w-4 text-white/60" />
                       </Button>

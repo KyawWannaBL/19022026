@@ -51,6 +51,9 @@ import { toast } from 'sonner';
 import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 export default function WarehouseDispatch() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { user } = useAuth();
   const { t } = useLanguageContext();
   const [loading, setLoading] = useState(true);
@@ -267,7 +270,7 @@ export default function WarehouseDispatch() {
                             {selectedShipments.includes(shipment.id) && <CheckCircle2 className="w-4 h-4 text-black" />}
                           </div>
                         </TableCell>
-                        <TableCell className="font-mono font-medium">{shipment.awb_number}</TableCell>
+                        <TableCell className="font-mono font-medium">{shipment.awb}</TableCell>
                         <TableCell>
                           <div className="flex flex-col">
                             <span className="font-semibold">{shipment.receiver_city}</span>

@@ -9,7 +9,7 @@ async function fetchShipments() {
     const { data, error } = await supabase
         .from(TABLES.SHIPMENTS)
         .select("*")
-        .order("created_at", { ascending: false })
+        .order("createdAt", { ascending: false })
         .limit(500);
     if (error)
         throw error;
@@ -35,16 +35,16 @@ export function useEnterpriseShipments() {
     }, [qc]);
     return q;
 }
-export async function fetchShipmentByTracking(trackingNumber) {
+export async function fetchShipmentByTracking(awb) {
     if (!supabase)
         return null;
-    const tn = trackingNumber.trim();
+    const tn = awb.trim();
     if (!tn)
         return null;
     // Try common columns. Ignore failures and fall back.
     const tries = [
         { col: "awb_number", val: tn },
-        { col: "tracking_number", val: tn },
+        { col: "awb", val: tn },
         { col: "reference_number", val: tn },
     ];
     for (const t of tries) {

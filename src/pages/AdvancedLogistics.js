@@ -13,6 +13,9 @@ import { Button } from '@/components/ui/button';
 import { IMAGES } from '@/assets/images';
 import { springPresets, fadeInUp, staggerContainer } from '@/lib/motion';
 export default function AdvancedLogistics() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const [activeTab, setActiveTab] = useState('overview');
     const [lastEvent, setLastEvent] = useState('System Ready - All units operational');
     const handleSignatureComplete = (data) => {

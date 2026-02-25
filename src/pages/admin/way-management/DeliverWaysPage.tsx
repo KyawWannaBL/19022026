@@ -48,8 +48,8 @@ const MOCK_DELIVERY_WAYS = [
     id: "WAY-2026-001",
     trackingId: "BR-9921882",
     merchant: "Global Electronics",
-    recipient: "U Kyaw Zay Yar",
-    destination: "Yangon, Hlaing Tsp",
+    receiverName: "U Kyaw Zay Yar",
+    destinationTownship: "Yangon, Hlaing Tsp",
     status: "in_transit",
     driver: "Ko Aung Gyi",
     scheduledDate: "2026-02-04",
@@ -60,8 +60,8 @@ const MOCK_DELIVERY_WAYS = [
     id: "WAY-2026-002",
     trackingId: "BR-9921883",
     merchant: "Lotus Fashion",
-    recipient: "Daw Hla Hla",
-    destination: "Mandalay, Chan Aye Thar San",
+    receiverName: "Daw Hla Hla",
+    destinationTownship: "Mandalay, Chan Aye Thar San",
     status: "pending",
     driver: "Ko Min Min",
     scheduledDate: "2026-02-04",
@@ -72,8 +72,8 @@ const MOCK_DELIVERY_WAYS = [
     id: "WAY-2026-003",
     trackingId: "BR-9921884",
     merchant: "K-Mart Mart",
-    recipient: "Mg Zaw Win",
-    destination: "Naypyidaw, Zabuthiri",
+    receiverName: "Mg Zaw Win",
+    destinationTownship: "Naypyidaw, Zabuthiri",
     status: "out_for_delivery",
     driver: "Ko Tun Tun",
     scheduledDate: "2026-02-04",
@@ -84,8 +84,8 @@ const MOCK_DELIVERY_WAYS = [
     id: "WAY-2026-004",
     trackingId: "BR-9921885",
     merchant: "Tech City",
-    recipient: "Ma Phyu Phyu",
-    destination: "Taunggyi, Southern Shan",
+    receiverName: "Ma Phyu Phyu",
+    destinationTownship: "Taunggyi, Southern Shan",
     status: "delivered",
     driver: "Ko Soe Lin",
     scheduledDate: "2026-02-03",
@@ -96,8 +96,8 @@ const MOCK_DELIVERY_WAYS = [
     id: "WAY-2026-005",
     trackingId: "BR-9921886",
     merchant: "Beauty Secret",
-    recipient: "Daw Khin Swe",
-    destination: "Bago, Town Center",
+    receiverName: "Daw Khin Swe",
+    destinationTownship: "Bago, Town Center",
     status: "failed",
     driver: "Ko Kyaw",
     scheduledDate: "2026-02-04",
@@ -138,7 +138,7 @@ const DeliverWaysPage: React.FC = () => {
 
   // Filter delivery ways based on search query
   const filteredDeliveryWays = deliveryWays.filter(way =>
-    way.tracking_number.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    way.awb.toLowerCase().includes(searchQuery.toLowerCase()) ||
     way.pickup_address.toLowerCase().includes(searchQuery.toLowerCase()) ||
     way.delivery_address.toLowerCase().includes(searchQuery.toLowerCase()) ||
     (way.rider_name && way.rider_name.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -316,7 +316,7 @@ const DeliverWaysPage: React.FC = () => {
               <Table>
                 <TableHeader className="bg-navy-50/50">
                   <TableRow>
-                    <TableHead className="w-[150px]">{t('tracking.trackingNumber')}</TableHead>
+                    <TableHead className="w-[150px]">{t('tracking.awb')}</TableHead>
                     <TableHead>{t('merchant.title')}</TableHead>
                     <TableHead>{t('order.customer')}</TableHead>
                     <TableHead>{t('tracking.location')}</TableHead>
@@ -353,7 +353,7 @@ const DeliverWaysPage: React.FC = () => {
                     filteredDeliveryWays.map((way) => (
                       <TableRow key={way.id} className="hover:bg-navy-50/30 transition-colors">
                         <TableCell className="font-mono font-medium text-navy-900">
-                          {way.tracking_number}
+                          {way.awb}
                         </TableCell>
                         <TableCell className="font-medium">
                           {way.pickup_address.split(',')[0] || 'N/A'}

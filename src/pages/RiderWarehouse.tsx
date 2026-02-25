@@ -57,6 +57,9 @@ interface WarehousePackage {
 }
 
 export default function RiderWarehouse() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { t, language } = useLanguageContext();
   const [currentStep, setCurrentStep] = useState<WarehouseDropStep>('LIST');
   const [warehouseBatches, setWarehouseBatches] = useState<WarehouseDropBatch[]>([]);

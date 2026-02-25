@@ -64,43 +64,46 @@ import { motion, AnimatePresence } from 'framer-motion';
 const MOCK_WAREHOUSE_ITEMS: Shipment[] = [
   {
     id: '1',
-    trackingNumber: 'BRT-2026-882190',
+    awb: 'BRT-2026-882190',
     senderName: 'Yangon Electronics',
     receiverName: 'U Kyaw Zwa',
-    destination: 'Mandalay',
+    destinationTownship: 'Mandalay',
     status: 'AT_HUB',
     weight: 2.5,
-    created_at: '2026-02-18T10:00:00Z',
+    createdAt: '2026-02-18T10:00:00Z',
     updated_at: '2026-02-19T08:30:00Z',
     cod_amount: 45000,
   },
   {
     id: '2',
-    trackingNumber: 'BRT-2026-112093',
+    awb: 'BRT-2026-112093',
     senderName: 'Beauty Bloom Co.',
     receiverName: 'Daw Aye Aye',
-    destination: 'Naypyidaw',
+    destinationTownship: 'Naypyidaw',
     status: 'AT_HUB',
     weight: 0.8,
-    created_at: '2026-02-17T14:20:00Z',
+    createdAt: '2026-02-17T14:20:00Z',
     updated_at: '2026-02-19T09:15:00Z',
     cod_amount: 12000,
   },
   {
     id: '3',
-    trackingNumber: 'BRT-2026-554122',
+    awb: 'BRT-2026-554122',
     senderName: 'Global Fashion',
     receiverName: 'Ma Nan Khin',
-    destination: 'Taunggyi',
+    destinationTownship: 'Taunggyi',
     status: 'PICKED_UP',
     weight: 1.2,
-    created_at: '2026-02-19T11:00:00Z',
+    createdAt: '2026-02-19T11:00:00Z',
     updated_at: '2026-02-19T11:00:00Z',
     cod_amount: 35000,
   }
 ];
 
 export default function WarehouseOperations() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const { language } = useLanguageContext();
   const [activeTab, setActiveTab] = useState('inventory');
   const [searchQuery, setSearchQuery] = useState('');
@@ -154,7 +157,7 @@ export default function WarehouseOperations() {
 
   const filteredInventory = useMemo(() => {
     return inventory.filter(item => 
-      item.trackingNumber?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.awb?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.receiverName?.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }, [inventory, searchQuery]);
@@ -282,19 +285,19 @@ export default function WarehouseOperations() {
               <TableBody>
                 {filteredInventory.map((item) => (
                   <TableRow key={item.id} className="border-b border-border/50 hover:bg-primary/5 transition-colors">
-                    <TableCell className="font-mono font-medium text-primary">{item.trackingNumber}</TableCell>
+                    <TableCell className="font-mono font-medium text-primary">{item.awb}</TableCell>
                     <TableCell>
                       <div className="flex flex-col">
                         <span className="font-semibold">{item.receiverName}</span>
                         <span className="text-[10px] text-muted-foreground uppercase">From: {item.senderName}</span>
                       </div>
                     </TableCell>
-                    <TableCell>{item.destination}</TableCell>
+                    <TableCell>{item.destinationTownship}</TableCell>
                     <TableCell>
                       <StatusBadge status={item.status} type="shipment" size="sm" />
                     </TableCell>
                     <TableCell className="text-xs text-muted-foreground">
-                      {formatDate(item.created_at || '')}
+                      {formatDate(item.createdAt || '')}
                     </TableCell>
                     <TableCell className="text-right font-semibold">
                       {formatCurrency(item.cod_amount || 0)}
@@ -364,7 +367,7 @@ export default function WarehouseOperations() {
                             <CheckCircle2 className="text-green-500 w-4 h-4" />
                           </div>
                           <div>
-                            <p className="text-sm font-mono font-medium">{item.trackingNumber}</p>
+                            <p className="text-sm font-mono font-medium">{item.awb}</p>
                             <p className="text-[10px] text-muted-foreground uppercase">{formatDate(item.updated_at || '')}</p>
                           </div>
                         </div>
@@ -430,8 +433,8 @@ export default function WarehouseOperations() {
               <TableBody>
                 {inventory.filter(i => i.status === 'AT_HUB').map((item) => (
                   <TableRow key={item.id} className="border-b border-border/30">
-                    <TableCell className="font-mono">{item.trackingNumber}</TableCell>
-                    <TableCell>{item.destination}</TableCell>
+                    <TableCell className="font-mono">{item.awb}</TableCell>
+                    <TableCell>{item.destinationTownship}</TableCell>
                     <TableCell>{item.weight} kg</TableCell>
                     <TableCell className="text-right">
                       <Button 

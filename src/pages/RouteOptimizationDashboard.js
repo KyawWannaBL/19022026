@@ -8,6 +8,9 @@ import { Navigation, MapPin, Route, Zap, Clock, Fuel, CheckCircle, Play, Square,
 import { useLanguage } from '@/contexts/LanguageContext';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
 export default function RouteOptimizationDashboard() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t, language } = useLanguage();
     const [activeTab, setActiveTab] = useState('ROUTES');
     const [routes, setRoutes] = useState([]);

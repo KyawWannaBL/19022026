@@ -7,6 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { strongPassword } from "@/lib/password";
 import { useAuth } from "@/hooks/useAuth";
 export default function ForcePasswordReset() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const nav = useNavigate();
     const { changePassword } = useAuth();
     const [pw, setPw] = useState("");

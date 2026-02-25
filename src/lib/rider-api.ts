@@ -25,7 +25,7 @@ export interface Rider {
   wallet_balance: number;
   today_earnings: number;
   profile_image_url?: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -54,7 +54,7 @@ export interface RiderTask {
   assigned_at?: string;
   started_at?: string;
   completed_at?: string;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
 }
 
@@ -67,7 +67,7 @@ export interface RiderTransaction {
   description: string;
   reference_number?: string;
   status: 'pending' | 'completed' | 'cancelled';
-  created_at: string;
+  createdAt: string;
 }
 
 export interface RiderLocation {
@@ -80,7 +80,7 @@ export interface RiderLocation {
   heading?: number;
   battery_level?: number;
   is_online: boolean;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface RiderNotification {
@@ -91,7 +91,7 @@ export interface RiderNotification {
   type: 'info' | 'warning' | 'success' | 'error' | 'task_assigned' | 'payment';
   is_read: boolean;
   action_url?: string;
-  created_at: string;
+  createdAt: string;
 }
 
 // Rider API Class
@@ -152,7 +152,7 @@ export class RiderAPI {
         .from('rider_tasks_2026_02_04_14_23')
         .select('*')
         .eq('rider_id', riderId)
-        .order('created_at', { ascending: false });
+        .order('createdAt', { ascending: false });
 
       if (status) {
         query = query.eq('status', status);
@@ -229,7 +229,7 @@ export class RiderAPI {
         .from('rider_transactions_2026_02_04_14_23')
         .select('*')
         .eq('rider_id', riderId)
-        .order('created_at', { ascending: false })
+        .order('createdAt', { ascending: false })
         .limit(limit);
 
       if (error) throw error;
@@ -241,7 +241,7 @@ export class RiderAPI {
   }
 
   // Add transaction
-  static async addTransaction(transaction: Omit<RiderTransaction, 'id' | 'created_at'>): Promise<boolean> {
+  static async addTransaction(transaction: Omit<RiderTransaction, 'id' | 'createdAt'>): Promise<boolean> {
     try {
       const { error } = await supabase
         .from('rider_transactions_2026_02_04_14_23')
@@ -256,7 +256,7 @@ export class RiderAPI {
   }
 
   // Update rider location
-  static async updateLocation(riderId: string, location: Omit<RiderLocation, 'id' | 'rider_id' | 'created_at'>): Promise<boolean> {
+  static async updateLocation(riderId: string, location: Omit<RiderLocation, 'id' | 'rider_id' | 'createdAt'>): Promise<boolean> {
     try {
       const { error } = await supabase
         .from('rider_locations_2026_02_04_14_23')
@@ -277,7 +277,7 @@ export class RiderAPI {
         .from('rider_notifications_2026_02_04_14_23')
         .select('*')
         .eq('rider_id', riderId)
-        .order('created_at', { ascending: false });
+        .order('createdAt', { ascending: false });
 
       if (unreadOnly) {
         query = query.eq('is_read', false);
@@ -330,8 +330,8 @@ export class RiderAPI {
         .from('rider_transactions_2026_02_04_14_23')
         .select('amount, transaction_type')
         .eq('rider_id', riderId)
-        .gte('created_at', today + 'T00:00:00.000Z')
-        .lt('created_at', today + 'T23:59:59.999Z');
+        .gte('createdAt', today + 'T00:00:00.000Z')
+        .lt('createdAt', today + 'T23:59:59.999Z');
 
       const stats = {
         pending: tasks?.filter(t => ['pending', 'assigned', 'in_progress'].includes(t.status)).length || 0,

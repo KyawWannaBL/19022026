@@ -54,7 +54,7 @@ const MOCK_HISTORY = [
   {
     id: 'MSG-001',
     subject: 'New Service Zone: Mandalay North',
-    recipients: 'All Riders',
+    receiverNames: 'All Riders',
     targetCount: 1250,
     deliveredCount: 1248,
     failedCount: 2,
@@ -65,7 +65,7 @@ const MOCK_HISTORY = [
   {
     id: 'MSG-002',
     subject: 'System Maintenance Schedule',
-    recipients: 'All Users',
+    receiverNames: 'All Users',
     targetCount: 15400,
     deliveredCount: 15390,
     failedCount: 10,
@@ -76,7 +76,7 @@ const MOCK_HISTORY = [
   {
     id: 'MSG-003',
     subject: 'Special Chinese New Year Promotion',
-    recipients: 'Merchants',
+    receiverNames: 'Merchants',
     targetCount: 840,
     deliveredCount: 0,
     failedCount: 0,
@@ -87,7 +87,7 @@ const MOCK_HISTORY = [
   {
     id: 'MSG-004',
     subject: 'Urgent: Policy Update for COD',
-    recipients: 'Sub-station Managers',
+    receiverNames: 'Sub-station Managers',
     targetCount: 45,
     deliveredCount: 45,
     failedCount: 0,
@@ -98,7 +98,7 @@ const MOCK_HISTORY = [
   {
     id: 'MSG-005',
     subject: 'Delivery Performance Report Jan 2026',
-    recipients: 'Deliverymen',
+    receiverNames: 'Deliverymen',
     targetCount: 3100,
     deliveredCount: 3050,
     failedCount: 50,
@@ -280,7 +280,7 @@ const MessageHistoryPage: React.FC = () => {
                   <TableRow>
                     <TableHead className="w-[120px] font-semibold text-navy-900 pl-6">ID</TableHead>
                     <TableHead className="font-semibold text-navy-900">{t('broadcast.messageContent')}</TableHead>
-                    <TableHead className="font-semibold text-navy-900">{t('broadcast.recipients')}</TableHead>
+                    <TableHead className="font-semibold text-navy-900">{t('broadcast.receiverNames')}</TableHead>
                     <TableHead className="font-semibold text-navy-900">{t('common.date')}</TableHead>
                     <TableHead className="font-semibold text-navy-900">{t('common.status')}</TableHead>
                     <TableHead className="text-right pr-6 font-semibold text-navy-900">{t('warehouse.action')}</TableHead>
@@ -304,7 +304,7 @@ const MessageHistoryPage: React.FC = () => {
                       <TableCell>
                         <div className="flex items-center gap-2">
                           <Badge variant="secondary" className="bg-navy-50 text-navy-700">
-                            {message.recipients}
+                            {message.receiverNames}
                           </Badge>
                           <span className="text-xs text-muted-foreground">
                             ({message.targetCount.toLocaleString()})

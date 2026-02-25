@@ -7,7 +7,7 @@ type OptimizeRequest = {
   // coords must be length 2..12 total per Mapbox Optimization API. :contentReference[oaicite:8]{index=8}
   coords: Coord[];
   // If true: roundtrip=true (returns to start)
-  // If false: requires source=first & destination=last (fixed start & fixed end). :contentReference[oaicite:9]{index=9}
+  // If false: requires source=first & destinationTownship=last (fixed start & fixed end). :contentReference[oaicite:9]{index=9}
   roundtrip: boolean;
   steps?: boolean;
 };
@@ -51,12 +51,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (roundtrip) {
     params.set("roundtrip", "true");
     params.set("source", "first");
-    // destination can be any/last; leave default "any" for flexibility.
+    // destinationTownship can be any/last; leave default "any" for flexibility.
   } else {
     // Only supported non-roundtrip combo (fixed start & fixed end). :contentReference[oaicite:10]{index=10}
     params.set("roundtrip", "false");
     params.set("source", "first");
-    params.set("destination", "last");
+    params.set("destinationTownship", "last");
   }
 
   const url = `https://api.mapbox.com/optimized-trips/v1/${profile}/${coordStr}?${params.toString()}`;

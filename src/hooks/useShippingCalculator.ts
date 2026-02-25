@@ -95,20 +95,20 @@ export function useShippingCalculator() {
     length: number,
     width: number,
     height: number,
-    destinationId: string
+    destinationTownshipId: string
   ) => {
-    const destination = INTERNATIONAL_DESTINATIONS.find((d) => d.id === destinationId);
-    if (!destination) return null;
+    const destinationTownship = INTERNATIONAL_DESTINATIONS.find((d) => d.id === destinationTownshipId);
+    if (!destinationTownship) return null;
 
-    const volWeight = calculateVolumeWeight(length, width, height, destination.volumeFactor);
+    const volWeight = calculateVolumeWeight(length, width, height, destinationTownship.volumeFactor);
     const chargeableWeight = Math.max(actualWeight, volWeight);
-    const totalCost = chargeableWeight * destination.ratePerKg;
+    const totalCost = chargeableWeight * destinationTownship.ratePerKg;
 
     return {
       chargeableWeight,
       volWeight,
       totalCost,
-      ratePerKg: destination.ratePerKg
+      ratePerKg: destinationTownship.ratePerKg
     };
   };
 
@@ -128,7 +128,7 @@ export function useShippingCalculator() {
     actualWeight: t('Actual Weight', 'အမှန်တကယ် အလေးချိန်'),
     volumeWeight: t('Volume Weight', 'ထုထည် အလေးချိန်'),
     chargeableWeight: t('Chargeable Weight', 'တွက်ချက်မည့် အလေးချိန်'),
-    destination: t('Destination Country', 'သွားမည့် နိုင်ငံ'),
+    destinationTownship: t('Destination Country', 'သွားမည့် နိုင်ငံ'),
     currency: t('USD', 'ဒေါ်လာ'),
     localCurrency: t('MMK', 'ကျပ်'),
     selectState: t('Select State/Division', 'ပြည်နယ်/တိုင်း ရွေးချယ်ပါ'),

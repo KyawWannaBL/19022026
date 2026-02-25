@@ -48,7 +48,7 @@ const SendMessagePage: React.FC = () => {
   const [formData, setFormData] = useState({
     title: '',
     content: '',
-    recipientGroup: 'all',
+    receiverNameGroup: 'all',
     deliveryMethods: {
       push: true,
       sms: false,
@@ -196,15 +196,15 @@ const SendMessagePage: React.FC = () => {
             <CardHeader className="border-b border-border/40 bg-navy-50/50">
               <CardTitle className="text-lg flex items-center gap-2">
                 <Users className="w-5 h-5 text-gold-600" />
-                {t('broadcast.recipients')}
+                {t('broadcast.receiverNames')}
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-6 space-y-4">
               <div className="space-y-2">
                 <Label>{t('common.select')} Group</Label>
                 <Select 
-                  value={formData.recipientGroup} 
-                  onValueChange={(val) => setFormData({ ...formData, recipientGroup: val })}
+                  value={formData.receiverNameGroup} 
+                  onValueChange={(val) => setFormData({ ...formData, receiverNameGroup: val })}
                 >
                   <SelectTrigger className="input-modern">
                     <SelectValue placeholder="Select a group" />
@@ -289,7 +289,7 @@ const SendMessagePage: React.FC = () => {
             <CardContent className="space-y-2 text-xs text-gold-800">
               <p className="flex items-center gap-2">
                 <CheckCircle2 className="w-3 h-3 text-success" />
-                Targeting {formData.recipientGroup === 'all' ? 'All Active Users' : formData.recipientGroup}
+                Targeting {formData.receiverNameGroup === 'all' ? 'All Active Users' : formData.receiverNameGroup}
               </p>
               <p className="flex items-center gap-2">
                 <CheckCircle2 className="w-3 h-3 text-success" />

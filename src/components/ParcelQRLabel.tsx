@@ -61,7 +61,7 @@ export function ParcelQRLabel({ parcel, onPrint, onDownload }: ParcelQRLabelProp
   const sender = parcel.pickup_address || {};
   const receiver = parcel.delivery_address || {};
   const details = parcel.package_details || {};
-  const awb = parcel.awb_number || parcel.trackingNumber || 'PENDING';
+  const awb = parcel.awb_number || parcel.awb || 'PENDING';
   const date = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
 
   return (

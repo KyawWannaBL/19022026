@@ -8,6 +8,9 @@ import { DollarSign, Plus, Save } from "lucide-react";
 
 export default function SimpleTransactionPage() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [transaction, setTransaction] = useState({
     date: new Date().toISOString().split('T')[0],
     description: '',

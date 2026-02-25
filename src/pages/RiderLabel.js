@@ -10,6 +10,9 @@ import { QRCodeScanner } from '@/components/QRCodeScanner';
 import { QRCodeLabel } from '@/components/QRCodeLabel';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
 export default function RiderLabel() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t, language } = useLanguage();
     const [labelBatches, setLabelBatches] = useState([]);
     const [selectedBatch, setSelectedBatch] = useState(null);

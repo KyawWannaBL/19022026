@@ -3,6 +3,9 @@ import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 
 export default function ApprovalQueue() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [items, setItems] = useState<any[]>([])
 
   const load = async () => {
@@ -12,7 +15,7 @@ export default function ApprovalQueue() {
         id,
         entity_id,
         status,
-        shipments ( tracking_number, status )
+        shipments ( awb, status )
       `)
       .eq("status","PENDING")
 
@@ -59,7 +62,7 @@ export default function ApprovalQueue() {
       {items.map(item => (
         <div key={item.id} className="luxury-card p-4 flex justify-between">
           <div>
-            Shipment: {item.shipments?.tracking_number}
+            Shipment: {item.shipments?.awb}
           </div>
 
           <div className="space-x-2">

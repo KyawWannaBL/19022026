@@ -19,6 +19,9 @@ import { useLanguageContext } from '@/lib/LanguageContext';
 
 export default function CustomerShipments() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
 
@@ -27,7 +30,7 @@ export default function CustomerShipments() {
       id: 'BE-89744',
       date: 'Oct 24, 2026',
       receiver: 'Daw Hla',
-      destination: 'Mandalay',
+      destinationTownship: 'Mandalay',
       codAmount: '35,000 MMK',
       status: 'In Transit',
       statusColor: 'bg-blue-100 text-blue-800',
@@ -36,7 +39,7 @@ export default function CustomerShipments() {
       id: 'BE-11223',
       date: 'Oct 20, 2026',
       receiver: 'U Ba Maung',
-      destination: 'Nay Pyi Taw',
+      destinationTownship: 'Nay Pyi Taw',
       codAmount: '12,500 MMK',
       status: 'Delivered',
       statusColor: 'bg-green-100 text-green-800',
@@ -45,7 +48,7 @@ export default function CustomerShipments() {
       id: 'BE-88901',
       date: 'Oct 18, 2026',
       receiver: 'Ma Mya',
-      destination: 'Yangon (North Dagon)',
+      destinationTownship: 'Yangon (North Dagon)',
       codAmount: '--',
       status: 'Delivered',
       statusColor: 'bg-green-100 text-green-800',
@@ -54,7 +57,7 @@ export default function CustomerShipments() {
       id: 'BE-77120',
       date: 'Oct 15, 2026',
       receiver: 'Ko Ko',
-      destination: 'Mawlamyine',
+      destinationTownship: 'Mawlamyine',
       codAmount: '5,500 MMK',
       status: 'Cancelled',
       statusColor: 'bg-red-100 text-red-800',
@@ -147,7 +150,7 @@ export default function CustomerShipments() {
                     </td>
                     <td className="py-4 px-4 text-sm text-gray-600">{shipment.date}</td>
                     <td className="py-4 px-4 font-medium">{shipment.receiver}</td>
-                    <td className="py-4 px-4">{shipment.destination}</td>
+                    <td className="py-4 px-4">{shipment.destinationTownship}</td>
                     <td className="py-4 px-4">{shipment.codAmount}</td>
                     <td className="py-4 px-4">
                       <Badge className={shipment.statusColor}>

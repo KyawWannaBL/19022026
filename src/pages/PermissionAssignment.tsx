@@ -15,6 +15,9 @@ interface Permission {
 }
 
 export default function PermissionAssignment() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [permissions, setPermissions] = useState<Permission[]>([]);
   const [selectedRole, setSelectedRole] = useState<string>('MANAGER');
   const [assignedPermissionIds, setAssignedPermissionIds] = useState<Set<string>>(new Set());

@@ -117,11 +117,11 @@ const TrackingMapPage: React.FC = () => {
   // Live-ish state (simulated)
   const [fleet, setFleet] = useState<RiderLocation[]>(initialFleet);
 
-  // Route corridors (stable per rider): from initial point → destination point
+  // Route corridors (stable per rider): from initial point → destinationTownship point
   const plannedRoutes = useMemo(() => {
     const map = new Map<string, { ax: number; ay: number; bx: number; by: number }>();
     for (const r of initialFleet) {
-      // simple deterministic-ish destinations
+      // simple deterministic-ish destinationTownships
       const bx = clamp((r.lat * 0.35 + (r.id.charCodeAt(2) % 40) + 20), 5, 95);
       const by = clamp((r.lng * 0.4 + (r.id.charCodeAt(3) % 35) + 15), 5, 95);
       map.set(r.id, { ax: r.lat, ay: r.lng, bx, by });

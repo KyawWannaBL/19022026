@@ -27,7 +27,7 @@ interface PricingData {
   id: string;
   service_type: string;
   region: string;
-  destination: string;
+  destinationTownship: string;
   weight_min: number;
   weight_max: number;
   price_per_kg: number;
@@ -36,9 +36,12 @@ interface PricingData {
 
 export default function GetQuotePage() {
   const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [serviceType, setServiceType] = useState<'domestic' | 'international'>('domestic');
   const [region, setRegion] = useState('');
-  const [destination, setDestination] = useState('');
+  const [destinationTownship, setDestination] = useState('');
   const [weight, setWeight] = useState('1');
   const [dimensions, setDimensions] = useState({ length: '', width: '', height: '' });
   const [pricing, setPricing] = useState<PricingData[]>([]);
@@ -65,10 +68,10 @@ export default function GetQuotePage() {
   }, [serviceType, region, pricing]);
 
   useEffect(() => {
-    if (destination && weight) {
+    if (destinationTownship && weight) {
       calculateQuote();
     }
-  }, [destination, weight, pricing]);
+  }, [destinationTownship, weight, pricing]);
 
   const fetchPricingData = async () => {
     try {
@@ -76,7 +79,7 @@ export default function GetQuotePage() {
         .from('pricing_2026_02_03_21_00')
         .select('*')
         .eq('is_active', true)
-        .order('region, destination, weight_min');
+        .order('region, destinationTownship, weight_min');
 
       if (error) throw error;
       setPricing(data || []);
@@ -86,19 +89,19 @@ export default function GetQuotePage() {
   };
 
   const updateAvailableDestinations = () => {
-    const destinations = pricing
+    const destinationTownships = pricing
       .filter(p => p.service_type === serviceType && p.region === region)
-      .map(p => p.destination)
+      .map(p => p.destinationTownship)
       .filter((dest, index, arr) => arr.indexOf(dest) === index)
       .sort();
     
-    setAvailableDestinations(destinations);
-    setDestination(''); // Reset destination when region changes
+    setAvailableDestinations(destinationTownships);
+    setDestination(''); // Reset destinationTownship when region changes
     setQuote(null);
   };
 
   const calculateQuote = () => {
-    if (!destination || !weight) return;
+    if (!destinationTownship || !weight) return;
 
     const weightNum = parseFloat(weight);
     if (isNaN(weightNum) || weightNum <= 0) return;
@@ -123,7 +126,7 @@ export default function GetQuotePage() {
     const applicablePricing = pricing.find(p => 
       p.service_type === serviceType &&
       p.region === region &&
-      p.destination === destination &&
+      p.destinationTownship === destinationTownship &&
       chargeableWeight >= p.weight_min &&
       (p.weight_max === null || chargeableWeight <= p.weight_max)
     );
@@ -145,7 +148,7 @@ export default function GetQuotePage() {
       totalPrice = applicablePricing.price_per_kg * chargeableWeight;
     }
 
-    const deliveryTime = getDeliveryTime(serviceType, region, destination);
+    const deliveryTime = getDeliveryTime(serviceType, region, destinationTownship);
 
     setQuote({
       basePrice: applicablePricing.price_per_kg,
@@ -158,7 +161,7 @@ export default function GetQuotePage() {
     });
   };
 
-  const getDeliveryTime = (serviceType: string, region: string, destination: string) => {
+  const getDeliveryTime = (serviceType: string, region: string, destinationTownship: string) => {
     if (serviceType === 'domestic') {
       if (region === 'yangon') return '1-2 Days';
       return '2-3 Days';
@@ -318,9 +321,9 @@ export default function GetQuotePage() {
                         <Label className="text-lg font-semibold">
                           {serviceType === 'domestic' ? 'Township/City' : 'Country'}
                         </Label>
-                        <Select value={destination} onValueChange={setDestination} disabled={!region}>
+                        <Select value={destinationTownship} onValueChange={setDestination} disabled={!region}>
                           <SelectTrigger className="h-12">
-                            <SelectValue placeholder="Select destination" />
+                            <SelectValue placeholder="Select destinationTownship" />
                           </SelectTrigger>
                           <SelectContent>
                             {availableDestinations.map((dest) => (
@@ -409,7 +412,7 @@ export default function GetQuotePage() {
                         </div>
                         <div className="flex justify-between">
                           <span className="text-gray-600">Route:</span>
-                          <span className="font-medium">Yangon → {destination}</span>
+                          <span className="font-medium">Yangon → {destinationTownship}</span>
                         </div>
                         
                         {serviceType === 'international' ? (
@@ -473,7 +476,7 @@ export default function GetQuotePage() {
                     <div className="text-center py-8">
                       <Package className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                       <p className="text-gray-500">
-                        Select service type, destination, and weight to get your quote
+                        Select service type, destinationTownship, and weight to get your quote
                       </p>
                     </div>
                   )}

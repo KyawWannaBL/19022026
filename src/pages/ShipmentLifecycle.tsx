@@ -8,6 +8,9 @@ interface Props {
 }
 
 export default function ShipmentLifecycle({ shipmentId, currentStatus }: Props) {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   const [loading, setLoading] = useState(false)
 
   const nextStepMap: Record<string, string> = {

@@ -36,7 +36,7 @@ interface ScannedParcel {
   trackingId: string;
   sender: string;
   receiver: string;
-  destination: string;
+  destinationTownship: string;
   weight: string;
   scannedAt: string;
   status: 'pending' | 'received' | 'error';
@@ -53,7 +53,7 @@ const ParcelInPage: React.FC = () => {
       trackingId: 'BRT-99281-2026',
       sender: 'Kyaw Kyaw Shop',
       receiver: 'Daw Hla',
-      destination: 'Mandalay',
+      destinationTownship: 'Mandalay',
       weight: '1.5kg',
       scannedAt: '2026-02-04 09:15',
       status: 'received'
@@ -63,7 +63,7 @@ const ParcelInPage: React.FC = () => {
       trackingId: 'BRT-10293-2026',
       sender: 'Global Trading',
       receiver: 'U Ba',
-      destination: 'Yangon',
+      destinationTownship: 'Yangon',
       weight: '0.8kg',
       scannedAt: '2026-02-04 09:12',
       status: 'received'
@@ -79,7 +79,7 @@ const ParcelInPage: React.FC = () => {
       trackingId: scanInput.toUpperCase(),
       sender: 'Pending Look-up...',
       receiver: 'Pending Look-up...',
-      destination: 'TBD',
+      destinationTownship: 'TBD',
       weight: '---',
       scannedAt: new Date().toLocaleString(),
       status: 'pending'
@@ -92,7 +92,7 @@ const ParcelInPage: React.FC = () => {
     setTimeout(() => {
       setScannedParcels(prev => 
         prev.map(p => p.id === newParcel.id 
-          ? { ...p, status: 'received', sender: 'Auto-Merchant', receiver: 'John Doe', destination: 'Taunggyi', weight: '2.0kg' } 
+          ? { ...p, status: 'received', sender: 'Auto-Merchant', receiver: 'John Doe', destinationTownship: 'Taunggyi', weight: '2.0kg' } 
           : p
         )
       );
@@ -205,7 +205,7 @@ const ParcelInPage: React.FC = () => {
               <form onSubmit={handleScan} className="space-y-4">
                 <div className="relative">
                   <Input
-                    placeholder={t('tracking.trackingNumber')}
+                    placeholder={t('tracking.awb')}
                     value={scanInput}
                     onChange={(e) => setScanInput(e.target.value)}
                     className="pl-10 h-12 text-lg font-mono border-navy-200 focus:border-gold-500 focus:ring-gold-500/20"
@@ -272,7 +272,7 @@ const ParcelInPage: React.FC = () => {
                 <Table>
                   <TableHeader className="sticky top-0 bg-white z-10">
                     <TableRow className="bg-navy-50/50 hover:bg-navy-50/50">
-                      <TableHead className="w-[180px]">{t('tracking.trackingNumber')}</TableHead>
+                      <TableHead className="w-[180px]">{t('tracking.awb')}</TableHead>
                       <TableHead>{t('order.merchant')}</TableHead>
                       <TableHead>{language === 'en' ? 'Destination' : 'ဦးတည်ရာ'}</TableHead>
                       <TableHead>{t('warehouse.status')}</TableHead>
@@ -298,7 +298,7 @@ const ParcelInPage: React.FC = () => {
                           </TableCell>
                           <TableCell>
                             <div className="flex items-center gap-1">
-                              <span className="text-sm">{parcel.destination}</span>
+                              <span className="text-sm">{parcel.destinationTownship}</span>
                             </div>
                           </TableCell>
                           <TableCell>

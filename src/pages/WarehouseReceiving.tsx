@@ -282,7 +282,7 @@ const WarehouseReceiving: React.FC = () => {
                             layout
                             className="group hover:bg-luxury-gold/5 transition-colors border-border/40"
                           >
-                            <TableCell className="font-mono font-medium text-luxury-gold">{shipment.awb_number}</TableCell>
+                            <TableCell className="font-mono font-medium text-luxury-gold">{shipment.awb}</TableCell>
                             <TableCell className="text-sm">{shipment.sender_name || 'N/A'}</TableCell>
                             <TableCell>
                               <Badge variant="secondary" className="bg-luxury-gold/10 text-luxury-gold border-none text-[10px]">

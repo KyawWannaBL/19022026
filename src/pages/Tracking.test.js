@@ -19,7 +19,7 @@ describe("Tracking page", () => {
         expect(screen.getByText(/enter a tracking id/i)).toBeInTheDocument();
     });
     it("finds shipment case-insensitively and trims input", async () => {
-        const shipments = [{ tracking_number: "AbC123" }];
+        const shipments = [{ awb: "AbC123" }];
         mockUseEnterpriseShipments.mockReturnValue({ data: shipments, isLoading: false });
         const user = userEvent.setup();
         render(_jsx(Tracking, {}));
@@ -29,7 +29,7 @@ describe("Tracking page", () => {
         expect(screen.getByText(/tracking:\s*AbC123/i)).toBeInTheDocument();
     });
     it("shows not found when shipment does not exist", async () => {
-        const shipments = [{ tracking_number: "ZX9" }];
+        const shipments = [{ awb: "ZX9" }];
         mockUseEnterpriseShipments.mockReturnValue({ data: shipments, isLoading: false });
         const user = userEvent.setup();
         render(_jsx(Tracking, {}));

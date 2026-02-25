@@ -2,6 +2,9 @@ import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 
 export default function SubmitForApproval({ shipmentId }: { shipmentId: string }) {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
 
   const submit = async () => {
     // 1. Update shipment status

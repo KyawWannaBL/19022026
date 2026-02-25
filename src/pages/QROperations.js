@@ -7,6 +7,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { QrCode, Copy, ShieldCheck } from 'lucide-react';
 export default function QROperations() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const [groupShipmentId, setGroupShipmentId] = useState('');
     const [dateISO, setDateISO] = useState(() => new Date().toISOString().slice(0, 10));
     const payload = useMemo(() => {

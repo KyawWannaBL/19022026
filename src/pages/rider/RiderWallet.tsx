@@ -119,19 +119,19 @@ const RiderWallet: React.FC = () => {
 
   const getTodayTransactions = () => {
     const today = new Date().toISOString().split('T')[0];
-    return transactions.filter(t => t.created_at.startsWith(today));
+    return transactions.filter(t => t.createdAt.startsWith(today));
   };
 
   const getThisWeekTransactions = () => {
     const weekAgo = new Date();
     weekAgo.setDate(weekAgo.getDate() - 7);
-    return transactions.filter(t => new Date(t.created_at) >= weekAgo);
+    return transactions.filter(t => new Date(t.createdAt) >= weekAgo);
   };
 
   const getThisMonthTransactions = () => {
     const monthAgo = new Date();
     monthAgo.setMonth(monthAgo.getMonth() - 1);
-    return transactions.filter(t => new Date(t.created_at) >= monthAgo);
+    return transactions.filter(t => new Date(t.createdAt) >= monthAgo);
   };
 
   const calculateEarnings = (transactionList: RiderTransaction[]) => {
@@ -353,7 +353,7 @@ const RiderWallet: React.FC = () => {
                                 {transaction.description}
                               </p>
                               <p className="text-xs text-muted-foreground">
-                                {new Date(transaction.created_at).toLocaleString(language === 'my' ? 'my-MM' : 'en-MM')}
+                                {new Date(transaction.createdAt).toLocaleString(language === 'my' ? 'my-MM' : 'en-MM')}
                               </p>
                             </div>
                           </div>

@@ -1,7 +1,11 @@
 import * as React from "react"
-
 import { cn } from "@/lib/utils"
+import { useLanguageContext } from "@/lib/LanguageContext"
 
+/**
+ * Standard Luxury Card Component
+ * Refactored for Bilingual Support (EN/MY)
+ */
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -9,7 +13,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      "rounded-xl border bg-card text-card-foreground shadow-sm transition-all duration-200 hover:shadow-md",
       className
     )}
     {...props}
@@ -29,31 +33,51 @@ const CardHeader = React.forwardRef<
 ))
 CardHeader.displayName = "CardHeader"
 
+interface BilingualProps {
+  en?: string;
+  my?: string;
+}
+
+/**
+ * CardTitle with automatic translation support
+ */
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className
-    )}
-    {...props}
-  />
-))
+  React.HTMLAttributes<HTMLHeadingElement> & { bilingual?: BilingualProps }
+>(({ className, children, bilingual, ...props }, ref) => {
+  const { t } = useLanguageContext();
+  
+  return (
+    <h3
+      ref={ref}
+      className={cn(
+        "text-2xl font-bold leading-none tracking-tight font-heading text-primary",
+        className
+      )}
+      {...props}
+    >
+      {bilingual ? t(bilingual.en || "", bilingual.my || "") : children}
+    </h3>
+  );
+})
 CardTitle.displayName = "CardTitle"
 
 const CardDescription = React.forwardRef<
   HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
-  <p
-    ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
-    {...props}
-  />
-))
+  React.HTMLAttributes<HTMLParagraphElement> & { bilingual?: BilingualProps }
+>(({ className, children, bilingual, ...props }, ref) => {
+  const { t } = useLanguageContext();
+
+  return (
+    <p
+      ref={ref}
+      className={cn("text-sm text-muted-foreground font-light", className)}
+      {...props}
+    >
+      {bilingual ? t(bilingual.en || "", bilingual.my || "") : children}
+    </p>
+  );
+})
 CardDescription.displayName = "CardDescription"
 
 const CardContent = React.forwardRef<
@@ -70,7 +94,7 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    className={cn("flex items-center p-6 pt-0 border-t border-border/40 mt-4", className)}
     {...props}
   />
 ))

@@ -18,6 +18,9 @@ const data = [
 ];
 
 export default function RevenueForecast() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
   return (
     <div className="bg-navy-800/60 border border-gold-500/20 rounded-2xl p-6 h-full">
       <h3 className="font-bold mb-4">Weekly Revenue Forecast</h3>

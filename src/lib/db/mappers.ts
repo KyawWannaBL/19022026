@@ -12,7 +12,7 @@ export function mapTrackingRowToEvent(row: any): TrackingEvent {
     id: String(row?.id ?? `${row?.shipment_id ?? "trk"}-${row?.timestamp ?? Date.now()}`),
     status: normalizeStatus(row?.status),
     location: String(row?.location ?? row?.current_location ?? row?.branch_id ?? "Unknown"),
-    timestamp: String(row?.timestamp ?? row?.created_at ?? new Date().toISOString()),
+    timestamp: String(row?.timestamp ?? row?.createdAt ?? new Date().toISOString()),
     description: String(row?.notes ?? row?.description ?? row?.status ?? "Update"),
     updatedBy: String(row?.updated_by ?? row?.created_by ?? "system"),
   };
@@ -21,13 +21,13 @@ export function mapTrackingRowToEvent(row: any): TrackingEvent {
 export function mapShipmentRowToShipment(row: any, trackingRows: any[] = []): Shipment {
   const trackingHistory = (trackingRows || []).map(mapTrackingRowToEvent);
 
-  const createdAt = String(row?.created_at ?? row?.createdAt ?? new Date().toISOString());
+  const createdAt = String(row?.createdAt ?? row?.createdAt ?? new Date().toISOString());
   const updatedAt = String(row?.updated_at ?? row?.updatedAt ?? createdAt);
 
-  const trackingNumber =
+  const awb =
     row?.awb_number ||
-    row?.tracking_number ||
-    row?.trackingNumber ||
+    row?.awb ||
+    row?.awb ||
     row?.reference_number ||
     row?.referenceNumber ||
     row?.id;
@@ -36,8 +36,8 @@ export function mapShipmentRowToShipment(row: any, trackingRows: any[] = []): Sh
     Number(row?.total_cost ?? row?.shipping_cost ?? row?.shippingCost ?? row?.price ?? 0) || 0;
 
   return {
-    id: String(row?.id ?? trackingNumber),
-    trackingNumber: String(trackingNumber ?? "UNKNOWN"),
+    id: String(row?.id ?? awb),
+    awb: String(awb ?? "UNKNOWN"),
     senderName: String(row?.sender_name ?? row?.senderName ?? "Unknown Sender"),
     senderPhone: String(row?.sender_phone ?? row?.senderPhone ?? ""),
     senderAddress: String(row?.sender_address ?? row?.senderAddress ?? ""),

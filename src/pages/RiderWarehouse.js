@@ -11,6 +11,9 @@ import { GPSTracker } from '@/components/GPSTracker';
 import { ElectronicSignature } from '@/components/ElectronicSignature';
 import { advancedFeaturesAPI } from '@/services/advanced-features-api';
 export default function RiderWarehouse() {
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
+  const { t } = useLanguageContext();
     const { t, language } = useLanguage();
     const [currentStep, setCurrentStep] = useState('LIST');
     const [warehouseBatches, setWarehouseBatches] = useState([]);
