@@ -1,18 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  FileText,
-  Settings,
-  BarChart2,
-  PieChart as PieChartIcon,
-  LineChart as LineChartIcon,
-  Download,
-  Save,
-  Filter,
-  Calendar as CalendarIcon,
-  ChevronRight,
-  RefreshCcw,
-  Table as TableIcon,
-  Plus,
   Trash2,
   CheckCircle2
 } from 'lucide-react';

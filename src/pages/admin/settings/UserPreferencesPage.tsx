@@ -1,33 +1,3 @@
-import { motion } from 'framer-motion';
-import { 
-  User, 
-  Monitor, 
-  Globe, 
-  Clock, 
-  Layout, 
-  Save, 
-  RefreshCw, 
-  Eye,
-  Languages
-} from 'lucide-react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
-} from '@/components/ui/select';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { useTranslation } from '@/lib/translations';
-import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
-
-const UserPreferencesPage: React.FC = () => {
   const { language, setLanguage } = useLanguageContext();
   const { t } = useTranslation(language);
 

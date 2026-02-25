@@ -1,18 +1,3 @@
-  Tooltip,
-  ResponsiveContainer,
-  AreaChart,
-  Area,
-  PieChart,
-  Pie,
-  Cell,
-  Legend
-} from 'recharts';
-import { motion } from 'framer-motion';
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { useTranslation } from '@/lib/translations';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import {
   Select,
   SelectContent,
