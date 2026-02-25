@@ -11,15 +11,10 @@ src/components/RealTimeTrackingDashboard.tsx(20,3): error TS2724: '"@/lib/index"
 src/components/RoutePlanningDashboard.tsx(47,3): error TS2305: Module '"@/lib/index.ts"' has no exported member 'getStatusVariant'.
 src/components/RoutePlanningDashboard.tsx(48,3): error TS2305: Module '"@/lib/index.ts"' has no exported member 'UserRole'.
 src/components/RoutePlanningDashboard.tsx(49,8): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
-src/components/ShipmentQRModal.tsx(27,31): error TS2339: Property 'awb_number' does not exist on type 'Shipment'.
-src/components/ShipmentQRModal.tsx(27,54): error TS2339: Property 'trackingNumber' does not exist on type 'Shipment'.
+src/components/ShipmentQRModal.tsx(27,47): error TS2339: Property 'trackingNumber' does not exist on type 'Shipment'.
 src/components/ShipmentQRModal.tsx(113,36): error TS2339: Property 'origin' does not exist on type 'Shipment'.
 src/components/ShipmentQRModal.tsx(113,73): error TS2339: Property 'destination' does not exist on type 'Shipment'.
-src/components/ShipmentQRModal.tsx(117,36): error TS2551: Property 'created_at' does not exist on type 'Shipment'. Did you mean 'createdAt'?
-src/components/ShipmentQRModal.tsx(117,69): error TS2551: Property 'created_at' does not exist on type 'Shipment'. Did you mean 'createdAt'?
 src/components/ShipmentQRModal.tsx(187,68): error TS2339: Property 'destination' does not exist on type 'Shipment'.
-src/components/ShipmentQRModal.tsx(195,35): error TS2551: Property 'created_at' does not exist on type 'Shipment'. Did you mean 'createdAt'?
-src/components/ShipmentQRModal.tsx(195,68): error TS2551: Property 'created_at' does not exist on type 'Shipment'. Did you mean 'createdAt'?
 src/components/Shipments.tsx(26,55): error TS2339: Property 'pieces' does not exist on type 'Partial<Shipment>'.
 src/components/SimpleLayout.tsx(25,43): error TS2339: Property 'SHIPMENTS' does not exist on type '{ readonly HOME: "/"; readonly LOGIN: "/login"; readonly DASHBOARD: "/admin/dashboard"; readonly WAREHOUSE: "/warehouse"; readonly OPERATIONS: "/operations"; readonly ACCOUNTING: "/accounting"; readonly REPORTS: "/reports"; readonly TRACKING: "/tracking"; readonly WAY_MANAGEMENT: "/admin/way-management"; readonly CREATE_SHIPMENT: "/shipments/create"; readonly SETTINGS: "/settings"; }'.
 src/components/SimpleLayout.tsx(26,39): error TS2339: Property 'FLEET' does not exist on type '{ readonly HOME: "/"; readonly LOGIN: "/login"; readonly DASHBOARD: "/admin/dashboard"; readonly WAREHOUSE: "/warehouse"; readonly OPERATIONS: "/operations"; readonly ACCOUNTING: "/accounting"; readonly REPORTS: "/reports"; readonly TRACKING: "/tracking"; readonly WAY_MANAGEMENT: "/admin/way-management"; readonly CREATE_SHIPMENT: "/shipments/create"; readonly SETTINGS: "/settings"; }'.

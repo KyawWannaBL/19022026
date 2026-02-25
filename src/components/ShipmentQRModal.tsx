@@ -24,7 +24,7 @@ interface ShipmentQRModalProps {
 
 export function ShipmentQRModal({ shipment, isOpen, onClose }: ShipmentQRModalProps) {
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
-  const trackingId = shipment.awb_number || shipment.trackingNumber || "N/A";
+  const trackingId = shipment.awb || shipment.trackingNumber || "N/A";
 
   const handleDownload = () => {
     if (!qrDataUrl) return;
