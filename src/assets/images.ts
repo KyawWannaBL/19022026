@@ -1,5 +1,3 @@
-// Do not edit manually
-
 export const IMAGES = {
   ANALYTICS_DASH_1: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBjaGFydHN8ZW58MHwwfHx8MTc3MDE4NjM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
   ANALYTICS_DASH_10: "https://images.unsplash.com/photo-1666537072206-6a7a01ecb7d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzc5NTV8MHwxfHNlYXJjaHw2fHxkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBjaGFydHN8ZW58MHwwfHx8MTc3MDE4NjM2MXww&ixlib=rb-4.1.0&q=80&w=1080",

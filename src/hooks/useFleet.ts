@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase'; // Adjust based on your supabase client path
 import { FleetVehicle } from '@/lib/index';
 
 export function useFleet() {

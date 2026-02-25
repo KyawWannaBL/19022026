@@ -1,5 +1,3 @@
-import { useAuth } from '@/hooks/useAuth';
-
 interface Props {
   permission: string;
   children: React.ReactNode;

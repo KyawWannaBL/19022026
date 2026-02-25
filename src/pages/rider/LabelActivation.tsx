@@ -1,5 +1,3 @@
-import React from 'react';
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { SHIPMENT_STATUS } from '@/lib/index'; // Critical import
 
 const LabelActivation = () => {

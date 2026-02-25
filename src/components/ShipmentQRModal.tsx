@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-// file: src/components/ShipmentQRModal.tsx
 
 import React from "react";
 import type { Shipment } from "@/lib/index";

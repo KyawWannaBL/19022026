@@ -1,5 +1,3 @@
-export default function PickupFlow() {
-  return (
     <div className="min-h-screen bg-[#FAF9F6] p-8 md:p-24">
       <div className="max-w-xl mx-auto">
         <div className="flex items-center gap-6 mb-16">

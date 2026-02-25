@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Truck, Fuel, Wrench, Navigation2, Search, Filter, Activity, Users,

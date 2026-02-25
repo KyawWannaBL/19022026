@@ -1,5 +1,3 @@
-import { supabase } from '@/integrations/supabase/client';
-
 // Advanced Features API Service
 class AdvancedFeaturesService {
   private baseUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/advanced_features_api_2026_02_19_15_00`;

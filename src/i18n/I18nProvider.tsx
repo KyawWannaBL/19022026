@@ -1,5 +1,3 @@
-import React, { createContext, useContext, useMemo, useState, type ReactNode } from "react";
-import type { Lang } from "./translations";
 
 type I18nCtx = {
   lang: Lang;

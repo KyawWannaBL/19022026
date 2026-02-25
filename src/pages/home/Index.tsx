@@ -1,5 +1,3 @@
-import { Demo } from "./components/Demo";
-const Index = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="text-center">

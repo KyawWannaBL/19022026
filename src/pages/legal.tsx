@@ -1,5 +1,3 @@
-import React from 'react';
-import { ShieldAlert, Scale, FileText, Lock } from 'lucide-react';
 
 export default function LegalPage() {
   return (

@@ -1,5 +1,3 @@
-import React from 'react';
-import { 
   AreaChart, Area, XAxis, YAxis, CartesianGrid, 
   Tooltip, ResponsiveContainer, LineChart, Line 
 } from 'recharts';

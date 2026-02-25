@@ -1,5 +1,3 @@
-// src/components/ErrorBoundary.tsx
-import React from "react";
 
 type Props = { children: React.ReactNode; fallback?: React.ReactNode };
 type State = { hasError: boolean };

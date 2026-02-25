@@ -1,5 +1,3 @@
-import React from 'react';
-
 const GOLD = 'text-[rgba(212,175,55,0.95)]';
 
 export function LuxuryKpiStrip(props: {

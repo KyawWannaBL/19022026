@@ -1,5 +1,3 @@
-/**
- * src/lib/locks.ts
  *
  * Supabase Auth uses a "lock" function to prevent concurrent token/session writes.
  * In some setups (especially React StrictMode), the default Navigator LockManager-based

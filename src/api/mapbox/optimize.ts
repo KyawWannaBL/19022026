@@ -1,5 +1,3 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-
 type Coord = { id: string; lng: number; lat: number; label?: string };
 
 type OptimizeRequest = {

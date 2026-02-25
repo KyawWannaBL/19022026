@@ -1,5 +1,3 @@
-import React from "react";
-
 type Props = {
   /** Optional: show current host origin to help debugging env injection. */
   origin?: string;

@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 import { supabase } from '@/integrations/supabase/client';
 
 // TypeScript interfaces for admin system

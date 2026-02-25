@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { Calculator, MapPin, Package, Clock, Truck, Phone, Mail } from 'lucide-react';
 import { IMAGES } from '@/assets/images';
 
 // Language context - using simple state for now

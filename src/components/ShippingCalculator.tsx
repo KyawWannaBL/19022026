@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import React, { useState } from 'react';
 // Language context - using simple state for now
 const useLanguageContext = () => ({ language: 'en' });
 import { Calculator, MapPin, Package, Clock, Truck, Phone, Mail } from 'lucide-react';

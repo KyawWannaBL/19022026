@@ -1,5 +1,3 @@
-import MapView from "@/components/MapView";
-
 export default function MapPage() {
   return (
     <div style={{ padding: 16 }}>

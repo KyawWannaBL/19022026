@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import {
   Navigation, MapPin, PenTool, Database, Activity, Shield, Clock,
   LayoutDashboard, Settings

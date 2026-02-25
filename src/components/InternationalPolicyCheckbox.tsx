@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { supabase } from "@/lib/supabase";
 
 const POLICY_KEY = "INTL_DELIVERY_STANDARD";

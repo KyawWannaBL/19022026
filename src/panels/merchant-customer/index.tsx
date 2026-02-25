@@ -1,5 +1,3 @@
-import React from "react";
-import CustomerPortal from "@/pages/CustomerPortal";
 import MerchantPortal from "@/pages/MerchantPortal";
 
 export const merchantCustomerRoutes = [

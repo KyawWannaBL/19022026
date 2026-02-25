@@ -1,5 +1,3 @@
-import React, { useRef } from 'react';
-import SignatureCanvas from 'react-signature-canvas';
 import { Button } from '@/components/ui/button';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { Trash2, CheckCircle2 } from 'lucide-react';

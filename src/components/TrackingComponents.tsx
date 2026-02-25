@@ -1,5 +1,3 @@
-import React from 'react';
-import { Package, MapPin, CheckCircle2, Clock } from 'lucide-react';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { SHIPMENT_STATUS } from '@/lib/index';
 import StatusBadge from './StatusBadge';

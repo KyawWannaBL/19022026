@@ -1,5 +1,3 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
-
 export const LuxuryChart = ({ data }) => (
   <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
     <h3 className="text-xl font-display font-bold text-slate-900 mb-8 tracking-tight">Efficiency Protocol Analysis</h3>

@@ -1,5 +1,3 @@
-import React from 'react';
-import { Card } from '@/components/ui/SharedComponents';
 import PageHeader from '@/components/admin/PageHeader';
 import EmptyState from '@/components/admin/EmptyState';
 import { useLanguageContext } from '@/lib/LanguageContext';

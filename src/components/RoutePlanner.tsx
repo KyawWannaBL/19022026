@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { supabase } from '@/lib/supabase';
 import { createAuditLog } from '@/lib/audit';
 import { Button } from '@/components/ui/button';
 import { Loader2, MapPin, Send } from 'lucide-react';

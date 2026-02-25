@@ -1,5 +1,3 @@
-import React from "react";
-
 export type GPSPoint = {
   lat: number;
   lng: number;

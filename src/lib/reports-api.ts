@@ -1,5 +1,3 @@
-import { supabase } from '@/integrations/supabase/client';
-
 // Report Types
 export interface ReportFilter {
   startDate?: string;

@@ -1,5 +1,3 @@
-/**
- * Enterprise table names (single source of truth).
  * Update here if you migrate to a new schema version.
  */
 export const TABLES = {

@@ -1,5 +1,3 @@
-import React from 'react';
-import { Zap, MapPin, Navigation, PenTool } from 'lucide-react';
 
 export default function AdvancedLogistics() {
   return (

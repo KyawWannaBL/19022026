@@ -1,5 +1,3 @@
-import { useAuth } from "@/hooks/useAuth"
-
 export const usePermission = () => {
   const { permissions } = useAuth()
 

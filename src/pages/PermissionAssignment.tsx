@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { supabase } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { Shield, Lock, Check, AlertCircle, Save } from 'lucide-react';
 import { cn } from '@/lib/utils';

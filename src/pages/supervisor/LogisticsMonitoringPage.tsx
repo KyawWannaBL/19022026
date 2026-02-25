@@ -1,5 +1,3 @@
-import React, { useMemo, useState } from "react";
-import LogisticsMap, { type VehiclePoint, type RouteLine } from "@/components/maps/LogisticsMap";
 
 export default function LogisticsMonitoringPage() {
   const [selectedVehicleId, setSelectedVehicleId] = useState<string | null>(null);

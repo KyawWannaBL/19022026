@@ -1,5 +1,3 @@
-import React from "react";
-import { useAuth } from "@/hooks/useAuth";
 import { useLanguageContext } from "@/lib/LanguageContext";
 
 type Props = { children: React.ReactNode };

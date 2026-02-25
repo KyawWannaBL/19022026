@@ -1,5 +1,3 @@
-import React from 'react';
-import { HelpCircle, MessageCircle, Phone, FileQuestion } from 'lucide-react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 export default function SupportPage() {

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { Package, Calculator as CalcIcon } from 'lucide-react';
 
 type Result = {
   price: string;

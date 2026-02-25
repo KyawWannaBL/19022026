@@ -1,5 +1,3 @@
-import React, { useRef, useEffect } from 'react';
-import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Printer, Download } from 'lucide-react';
 import { useLanguageContext } from '@/lib/LanguageContext';

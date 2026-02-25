@@ -1,5 +1,3 @@
-import { useState, useMemo } from 'react';
-
 export interface Location {
   id: string;
   nameEn: string;

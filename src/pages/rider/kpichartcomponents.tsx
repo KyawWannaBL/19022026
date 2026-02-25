@@ -1,5 +1,3 @@
-import React from "react";
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 
 export type KpiStatusDatum = { status: string; count: number };
 

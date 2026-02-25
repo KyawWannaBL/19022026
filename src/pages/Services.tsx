@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { Truck, CircleDollarSign, Plane, Calculator, ShieldCheck, Headphones } from 'lucide-react';
 import { IMAGES } from '@/assets/images';
 
 export default function ServicesPage() {

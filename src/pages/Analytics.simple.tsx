@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import React from 'react';
 import { BarChart3, TrendingUp, DollarSign, Package } from 'lucide-react';
 
 export default function Analytics() {

@@ -1,5 +1,3 @@
-import type { Lang } from "./translations";
-import { dictLookup } from "./translations";
 
 const nodeOriginalText = new WeakMap<Node, string>();
 const elemOriginalAttrs = new WeakMap<Element, Map<string, string>>();

@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SHIPMENT_STATUS, formatCurrency } from '@/lib/index';

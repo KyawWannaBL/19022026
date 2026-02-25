@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import React, { useState, useMemo, useEffect } from 'react';
 import Map, { NavigationControl, Marker } from "react-map-gl";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";

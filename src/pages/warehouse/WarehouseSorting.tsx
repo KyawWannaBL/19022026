@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { 
   Card, 
   CardHeader, 

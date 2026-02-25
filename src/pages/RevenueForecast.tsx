@@ -1,5 +1,3 @@
-import {
-  AreaChart,
   Area,
   XAxis,
   YAxis,

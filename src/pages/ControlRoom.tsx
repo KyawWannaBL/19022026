@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react"
-import { supabase } from "@/lib/supabase"
 
 interface Session {
   user_id: string

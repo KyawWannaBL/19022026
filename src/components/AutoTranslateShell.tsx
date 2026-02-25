@@ -1,5 +1,3 @@
-import React, { useEffect, useRef } from "react";
-import { useI18n } from "@/i18n/I18nProvider";
 import { observeAutoTranslate } from "@/i18n/autoTranslate";
 
 export default function AutoTranslateShell({ children }: { children: React.ReactNode }) {

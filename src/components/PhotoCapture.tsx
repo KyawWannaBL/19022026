@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-// ===============================
 // file: src/components/PhotoCapture.tsx
 // ===============================
 import React, { useCallback, useMemo, useRef, useState } from "react";

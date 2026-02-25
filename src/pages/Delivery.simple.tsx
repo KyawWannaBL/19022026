@@ -1,5 +1,3 @@
-import React from 'react';
-import { MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function Delivery() {
   return (

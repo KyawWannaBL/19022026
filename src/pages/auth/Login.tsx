@@ -1,5 +1,3 @@
-import { useLanguageContext } from "@/lib/LanguageContext";
-import { useState } from "react";
 import { supabase } from "../../lib/supabase";
 import { useNavigate } from "react-router-dom";
 

@@ -1,5 +1,3 @@
-import React from 'react';
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
 
 interface EmptyStateProps {

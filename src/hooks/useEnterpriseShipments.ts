@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 import { supabase } from '@/lib/supabase'; // Ensure this path is correct
 import { TABLES } from '@/lib/constants'; // Ensure this path is correct
 

@@ -17,3 +17,5 @@ demoaccounts.txt
 *.zip
 pnpm-cache/
 pnpm-state/
+.vercel
+.env*.local

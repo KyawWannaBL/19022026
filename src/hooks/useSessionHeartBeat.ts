@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/hooks/useAuth';
 
 export default function useSessionHeartbeat() {

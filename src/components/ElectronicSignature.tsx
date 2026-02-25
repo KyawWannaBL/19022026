@@ -1,5 +1,3 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { Check, Trash2, PenLine } from 'lucide-react';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { clsx, type ClassValue } from 'clsx';

@@ -1,5 +1,3 @@
-import React from 'react';
-import { useLanguageContext } from '@/lib/LanguageContext';
 import ReceivingBay from './warehouse/ReceivingBay'; // Ensure this matches your file path
 
 const Warehouse = () => {

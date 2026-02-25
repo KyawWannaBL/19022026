@@ -1,5 +1,3 @@
-import React from 'react';
-import { MapPin, Navigation, Package } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function DriverDashboard() {

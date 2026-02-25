@@ -1,5 +1,3 @@
-/**
- * Direct Supabase Forms Management API Service
  * Handles all form operations with real-time data synchronization
  */
 

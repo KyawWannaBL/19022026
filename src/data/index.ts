@@ -1,5 +1,3 @@
-import { User, Shipment } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 // Example mapping for mock users and shipments
 export const MOCK_USERS: User[] = [

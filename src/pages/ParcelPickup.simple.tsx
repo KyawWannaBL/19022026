@@ -1,5 +1,3 @@
-import React from 'react';
-import { QrCode, Package, MapPin, Clock } from 'lucide-react';
 
 export default function ParcelPickup() {
   return (

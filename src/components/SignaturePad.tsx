@@ -1,5 +1,3 @@
-import React, { useRef, useState } from 'react';
-import { Pencil, RotateCcw, Check, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguageContext } from '@/lib/LanguageContext';
 

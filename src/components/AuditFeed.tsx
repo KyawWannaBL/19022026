@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabase';
 import { Activity, Package, Truck, CheckCircle, AlertCircle } from 'lucide-react';
 import { format } from 'date-fns';
 

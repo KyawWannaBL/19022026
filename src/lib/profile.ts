@@ -1,5 +1,3 @@
-import { supabase } from "@/lib/supabase";
-
 export async function getMyProfile() {
   const { data: session } = await supabase.auth.getSession();
   const userId = session.session?.user?.id;

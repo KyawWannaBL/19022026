@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 import type { Shipment, ShipmentStatus, TrackingEvent } from "@/lib/index";
 import { SHIPMENT_STATUSES } from "@/lib/index";
 

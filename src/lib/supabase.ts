@@ -1,5 +1,3 @@
-import { createClient, SupabaseClient } from '@supabase/supabase-js'
-
 // This version checks both possible naming conventions for your URL and Key
 const supabaseUrl = (import.meta.env.VITE_SUPABASE_PROJECT_URL as string | undefined) || 
                     (import.meta.env.VITE_SUPABASE_URL as string | undefined);

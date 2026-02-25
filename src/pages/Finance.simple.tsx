@@ -1,5 +1,3 @@
-import React from 'react';
-import { CreditCard, TrendingUp, DollarSign, Receipt } from 'lucide-react';
 
 export default function Finance() {
   return (

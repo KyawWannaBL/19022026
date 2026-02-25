@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Truck, ShieldCheck, Globe, ArrowRight, PackageSearch } from 'lucide-react';
 import { Button } from '@/components/ui/button';

@@ -1,5 +1,3 @@
-import React from 'react';
-import { Warehouse as WarehouseIcon, Package, TrendingUp, AlertTriangle } from 'lucide-react';
 
 export default function Warehouse() {
   return (

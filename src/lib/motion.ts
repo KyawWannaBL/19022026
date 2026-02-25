@@ -1,5 +1,3 @@
-/**
- * Apple-style Spring Animation Presets and Variants
  * 
  * Core Philosophy: Apple Motion = Spring Physics + Damped Settling + Physical Inertia
  * - Natural onset (not sudden start)

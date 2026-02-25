@@ -1,5 +1,3 @@
-import React from 'react';
-import { Badge } from '@/components/ui/badge';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { getBilingualStatus, getStatusVariant } from '@/lib/index';
 

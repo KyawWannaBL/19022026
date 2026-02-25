@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Camera, QrCode, X, Zap, RefreshCw, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguageContext } from '@/lib/LanguageContext';

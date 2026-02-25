@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import React from 'react';
 import { Package, MapPin, Clock, Truck } from 'lucide-react';
 
 export default function Shipments() {

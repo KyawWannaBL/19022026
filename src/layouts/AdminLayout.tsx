@@ -1,5 +1,3 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Link, Outlet } from "react-router-dom";
 
 const AdminLayout = () => {
   return (

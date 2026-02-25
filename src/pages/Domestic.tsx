@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
 
 export default function Domestic() {

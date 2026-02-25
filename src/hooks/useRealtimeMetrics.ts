@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
 
 export function useRealtimeMetrics() {
   const [metrics, setMetrics] = useState({ pending: 0, transitTime: '1.4 Days' });
