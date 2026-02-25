@@ -1,3 +1,4 @@
+import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 # Basic Usage
 
 Always prioritize using a supported framework over using the generated SDK

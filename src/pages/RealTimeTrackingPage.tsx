@@ -1,3 +1,5 @@
+import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
+import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 // 1. Change the import to refer to the value, not the type
 import { 
   SHIPMENT_STATUS, 

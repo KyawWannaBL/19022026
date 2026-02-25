@@ -1,3 +1,5 @@
+import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
+import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 import React, { useState, useEffect, useRef } from 'react';
 import { QrCode, Camera, CameraOff, RefreshCw, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';

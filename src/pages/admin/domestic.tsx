@@ -1,3 +1,4 @@
+import { useLanguageContext } from "@/lib/LanguageContext";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaPhoneAlt, FaEnvelope, FaClock, FaBolt, FaArrowRight, FaDoorOpen, FaBoxOpen, FaMobileAlt } from "react-icons/fa";

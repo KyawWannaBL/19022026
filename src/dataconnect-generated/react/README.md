@@ -1,3 +1,4 @@
+import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 # Generated React README
 This README will guide you through the process of using the generated React SDK package for the connector `example`. It will also provide examples on how to use your generated SDK to call your Data Connect queries and mutations.
 

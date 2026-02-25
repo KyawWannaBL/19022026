@@ -1,3 +1,4 @@
+import { useLanguageContext } from "@/lib/LanguageContext";
 import React, { useState } from "react";
 
 const Services: React.FC = () => {

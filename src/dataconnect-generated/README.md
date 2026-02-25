@@ -1,3 +1,4 @@
+import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 # Generated TypeScript README
 This README will guide you through the process of using the generated JavaScript SDK package for the connector `example`. It will also provide examples on how to use your generated SDK to call your Data Connect queries and mutations.
 

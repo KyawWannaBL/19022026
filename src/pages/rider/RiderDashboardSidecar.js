@@ -1,8 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-const GOLD = 'text-[rgba(212,175,55,0.95)]';
-export function LuxuryKpiStrip(props) {
-    return (_jsx("div", { className: "w-full rounded-xl border bg-black/60 backdrop-blur px-4 py-3", children: _jsxs("div", { className: "flex items-center justify-between gap-3", children: [_jsxs("div", { className: "text-sm", children: [_jsx("div", { className: `${GOLD} font-semibold`, children: "Remaining Parcels" }), _jsx("div", { className: "text-lg font-bold", children: props.remainingParcels })] }), _jsxs("div", { className: "text-sm", children: [_jsx("div", { className: `${GOLD} font-semibold`, children: "ETD to Next Stop" }), _jsx("div", { className: "text-lg font-bold", children: props.etdToNextStopText })] }), _jsxs("div", { className: "text-sm text-right", children: [_jsx("div", { className: `${GOLD} font-semibold`, children: "Shift Success Rate" }), _jsxs("div", { className: "text-lg font-bold", children: [Math.round(props.shiftSuccessRatePct), "%"] })] })] }) }));
-}
-export function RiderDashboardSidecar(props) {
-    return (_jsxs("div", { className: "h-[100dvh] w-full flex flex-col gap-3 p-3", children: [_jsx(LuxuryKpiStrip, { ...props.kpi }), props.taskActive ? (_jsxs("div", { className: "flex-1 min-h-0 flex flex-col gap-3", children: [_jsx("div", { className: "flex-[7] min-h-0 rounded-xl overflow-hidden border", children: props.map }), _jsx("div", { className: "flex-[3] min-h-0 rounded-xl overflow-hidden border", children: props.nextTaskCard })] })) : (_jsx("div", { className: "flex-1 min-h-0", children: props.managementView }))] }));
-}
