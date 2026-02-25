@@ -11,7 +11,6 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import WarehouseAPI, { WarehouseParcel, WarehouseUser } from '@/lib/warehouse-api';
 import { ROUTE_PATHS } from '@/lib/index';
@@ -101,7 +100,6 @@ export default function WarehouseScanIn() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Header */}
       <div className="bg-white shadow-sm border-b px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link to={ROUTE_PATHS.WAREHOUSE}>
@@ -109,17 +107,14 @@ export default function WarehouseScanIn() {
               <ArrowLeft className="h-4 w-4 mr-2" /> {t('Back', 'နောက်သို့')}
             </Button>
           </Link>
-          <div>
-            <h1 className="text-xl font-black text-[#0d2c54] uppercase italic flex items-center">
-              <ArrowDown className="h-5 w-5 mr-2 text-green-600" />
-              {t('Warehouse Scan-In', 'ဂိုဒေါင်အဝင် စာရင်းသွင်းခြင်း')}
-            </h1>
-          </div>
+          <h1 className="text-xl font-black text-[#0d2c54] uppercase italic flex items-center">
+            <ArrowDown className="h-5 w-5 mr-2 text-green-600" />
+            {t('Warehouse Scan-In', 'ဂိုဒေါင်အဝင် စာရင်းသွင်းခြင်း')}
+          </h1>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto p-6 space-y-6">
-        {/* Statistics Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Card className="bg-blue-50 border-blue-100">
             <CardContent className="p-4 flex items-center justify-between">
@@ -151,13 +146,14 @@ export default function WarehouseScanIn() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-6">
-          {/* Main Scanning Form */}
           <Card className="shadow-md border-t-4 border-t-[#ff6b00]">
             <CardHeader>
               <CardTitle className="flex items-center text-[#0d2c54]">
                 <Scan className="h-5 w-5 mr-2" /> {t('Parcel Entry', 'ပါဆယ်လ်မှတ်တမ်းတင်ရန်')}
               </CardTitle>
-              <CardDescription>{t('Scan QR code or enter tracking number', 'QR code ဖတ်ပါ သို့မဟုတ် tracking နံပါတ်ရိုက်ထည့်ပါ')}</Description>
+              <CardDescription>
+                {t('Scan QR code or enter tracking number', 'QR code ဖတ်ပါ သို့မဟုတ် tracking နံပါတ်ရိုက်ထည့်ပါ')}
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <form onSubmit={handleScanIn} className="space-y-4">
@@ -197,7 +193,6 @@ export default function WarehouseScanIn() {
             </CardContent>
           </Card>
 
-          {/* Results Sidebar */}
           <Card className="h-full border-slate-200">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-black uppercase tracking-wider flex items-center text-slate-500">
@@ -226,8 +221,6 @@ export default function WarehouseScanIn() {
             </CardContent>
           </Card>
         </div>
-        
-        {/* Process Guide */}
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
             <div className="p-4 bg-white border rounded-lg text-center shadow-sm">
