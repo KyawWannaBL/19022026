@@ -1,6 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Users, BarChart3 } from "lucide-react";
-
 export default function PerformanceReportPage() {
   const { t } = useTranslation();
 

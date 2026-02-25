@@ -1,6 +1,3 @@
-  TestTube, 
-  CheckCircle2, 
-  XCircle, 
   AlertTriangle, 
   Play, 
   RefreshCw, 

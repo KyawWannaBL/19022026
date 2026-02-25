@@ -1,6 +1,3 @@
-
-function CustomerLayout({ children }: Props) {
-  const { user } = useAuth();
   const { t } = useLanguageContext();
 
   const name =

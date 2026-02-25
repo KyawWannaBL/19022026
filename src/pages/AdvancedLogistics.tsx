@@ -1,6 +1,3 @@
-} from 'lucide-react';
-import { GPSTracker } from '@/components/GPSTracker';
-import { ElectronicSignaturePad } from '@/components/ElectronicSignaturePad';
 import { DataEntryAutomation } from '@/components/DataEntryAutomation';
 import { RealTimeTrackingDashboard } from '@/components/RealTimeTrackingDashboard';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';

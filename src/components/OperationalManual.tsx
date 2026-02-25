@@ -1,6 +1,3 @@
-import { QrCode, Smartphone, Camera, MapPin, Clock, AlertTriangle, CheckCircle, Package, Truck, Users } from 'lucide-react';
-
-export function OperationalManual() {
   return (
     <div className="max-w-4xl mx-auto space-y-6 p-6">
       <div className="text-center space-y-2">

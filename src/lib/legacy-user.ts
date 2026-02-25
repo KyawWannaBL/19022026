@@ -1,6 +1,3 @@
-
-// Legacy User interface for backward compatibility
-
 // Utility functions for backward compatibility with existing code (Supabase-only).
 import type { User as SupabaseUser } from '@supabase/supabase-js';
 

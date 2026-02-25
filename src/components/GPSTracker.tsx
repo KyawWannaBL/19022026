@@ -1,6 +1,3 @@
-  speedKmh?: number | null;
-  batteryLevel?: number | null;
-  updatedAt?: string | Date | null;
 };
 
 export type GPSTrackerProps = {

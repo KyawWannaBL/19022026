@@ -1,6 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Languages, Moon, UserCircle } from "lucide-react";
-
 export default function UserPreferencesPage() {
   const { t } = useTranslation();
 

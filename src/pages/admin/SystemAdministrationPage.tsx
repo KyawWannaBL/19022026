@@ -1,6 +1,3 @@
-  Shield, 
-  Server, 
-  Database, 
   Users, 
   Settings, 
   Lock, 

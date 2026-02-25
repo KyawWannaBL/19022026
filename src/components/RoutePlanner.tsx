@@ -1,6 +1,3 @@
-import { toast } from 'sonner';
-
-const RoutePlanner = () => {
   const [loading, setLoading] = useState(false);
 
   const optimizeRoutes = async (city: string) => {

@@ -1,6 +1,3 @@
-  id: string;
-  name: string;
-  code?: string | null;
   city?: string | null;
   address?: string | null;
   status?: string | null;

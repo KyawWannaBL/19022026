@@ -1,6 +1,3 @@
-  Send,
-  Paperclip,
-  Monitor,
   User,
   Package,
   Clock,

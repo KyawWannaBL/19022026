@@ -1,6 +1,3 @@
-import { IMAGES } from '@/assets/images';
-
-interface QRCodeLabelProps {
   shipmentData: {
     awb_number: string;
     sender_name: string;

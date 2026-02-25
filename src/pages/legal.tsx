@@ -1,6 +1,3 @@
-    <div className="bg-slate-50 min-h-screen pb-20">
-      <div className="bg-[#0d2c54] py-20 text-center text-white">
-        <h1 className="text-4xl font-black mb-2 uppercase tracking-tighter">Legal & Privacy</h1>
         <p className="opacity-70 text-sm italic">Compliance and Terms of Service.</p>
       </div>
 

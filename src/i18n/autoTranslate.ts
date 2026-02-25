@@ -1,6 +1,3 @@
-
-function isCodeLike(text: string): boolean {
-  const t = text.trim();
   if (!t) return true;
   // IDs, codes, emails, URLs
   if (/[\w.-]+@[\w.-]+\.[A-Za-z]{2,}/.test(t)) return true;

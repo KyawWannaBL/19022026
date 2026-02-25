@@ -1,6 +1,3 @@
-  Send,
-  History,
-  Bell,
   Users,
   CheckCircle,
   Clock,

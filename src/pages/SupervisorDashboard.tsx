@@ -1,6 +1,3 @@
-  Search, Filter, LayoutDashboard, BarChart3, Package,
-  ArrowUpRight, Clock
-} from 'lucide-react';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { 
   Shipment, 

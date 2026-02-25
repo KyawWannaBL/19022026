@@ -1,6 +1,3 @@
-  Source,
-  Layer,
-  type MapRef,
   type ViewState,
 } from "react-map-gl";
 import { useLanguageContext } from "@/lib/LanguageContext";

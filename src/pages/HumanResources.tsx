@@ -1,6 +1,3 @@
-  const { t } = useLanguageContext();
-  const { t } = useLanguageContext();
-  const { t } = useLanguageContext();
   const [searchTerm, setSearchTerm] = useState('');
 
   const staff = [

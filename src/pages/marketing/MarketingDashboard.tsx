@@ -1,6 +1,3 @@
-  Users,
-  Target,
-  Megaphone,
   BarChart3,
   Plus,
   Filter,

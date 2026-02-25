@@ -1,6 +1,3 @@
-import { Button } from '@/components/ui/button';
-import { IMAGES } from '@/assets/images';
-import { ROUTE_PATHS } from "@/lib/routes";
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
 

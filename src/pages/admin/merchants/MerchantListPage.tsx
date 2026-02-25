@@ -1,6 +1,3 @@
-  Search,
-  Plus,
-  Filter,
   MoreHorizontal,
   Eye,
   Edit,

@@ -1,6 +1,3 @@
-};
-
-export default function MissingSupabaseConfig({ origin }: Props) {
   const where = origin ?? (typeof window !== "undefined" ? window.location.origin : "");
 
   return (

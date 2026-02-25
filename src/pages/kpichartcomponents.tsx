@@ -1,6 +1,3 @@
-    <div className="h-[350px] w-full">
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
           <defs>
             <linearGradient id="barGradient" x1="0" y2="1">
               <stop offset="0%" stopColor="#D4AF37" stopOpacity={1} />

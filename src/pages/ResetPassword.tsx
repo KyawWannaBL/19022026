@@ -1,6 +1,3 @@
-import { useAuth } from "@/hooks/useAuth";
-
-export default function ResetPassword() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

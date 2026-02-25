@@ -1,6 +1,3 @@
-export default function Finance() {
-  const stats = [
-    { label: 'Total Revenue', value: '$125,000', icon: DollarSign, trend: '+12%' },
     { label: 'COD Collected', value: '$45,000', icon: Wallet, trend: '+8%' },
     { label: 'Outstanding AR', value: '$23,000', icon: CreditCard, trend: '-5%' },
     { label: 'Monthly Growth', value: '15.2%', icon: TrendingUp, trend: '+3%' }

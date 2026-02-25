@@ -1,6 +1,3 @@
-import { Shipment, User, ROUTE_PATHS } from "@/lib/index";
-  CardContent, 
-  CardHeader, 
   CardTitle, 
   CardDescription 
 } from '@/components/ui/card';

@@ -1,6 +1,3 @@
-  Activity,
-  FileSearch,
-  AlertCircle,
   CheckCircle2,
   Filter,
   Download,

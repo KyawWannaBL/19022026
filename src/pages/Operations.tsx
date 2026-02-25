@@ -1,6 +1,3 @@
-  Upload, 
-  ShieldCheck, 
-  Truck, 
   Download, 
   AlertCircle,
   Plus

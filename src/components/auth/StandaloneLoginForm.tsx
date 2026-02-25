@@ -1,6 +1,3 @@
-import { useAuth } from "@/hooks/useAuth";
-import { postLoginPath } from "@/config/postLogin";
-
 /**
  * Standalone login form used by src/pages/LoginPage.tsx.
  * Fixes runtime error: "TypeError: S is not a function" caused by missing/undefined onSubmit handler.

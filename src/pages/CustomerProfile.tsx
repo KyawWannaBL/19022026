@@ -1,6 +1,3 @@
-  Camera, 
-  Lock, 
-  MapPin, 
   Save,
   ArrowLeft
 } from 'lucide-react';

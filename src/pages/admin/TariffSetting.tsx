@@ -1,6 +1,3 @@
-import { Input } from "@/components/ui/input";
-import { TariffRatesAPI, TariffRate } from "@/lib/admin-api";
-
 export default function TariffSetting() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

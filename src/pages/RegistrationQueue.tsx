@@ -1,6 +1,3 @@
-import { useAuth } from '@/hooks/useAuth';
-import { useLanguageContext } from '@/lib/LanguageContext';
-// Using centralized Hybrid Interface and bilingual helpers
 import { Shipment, getBilingualStatus, getStatusVariant } from '@/lib/index';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';

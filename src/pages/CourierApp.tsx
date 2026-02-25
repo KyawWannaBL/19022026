@@ -1,6 +1,3 @@
-
-export default function CourierApp() {
-  return (
     <div className="min-h-screen bg-[#0B0C10] text-zinc-100 p-6 font-sans">
       <header className="mb-10 flex justify-between items-center">
         <div>

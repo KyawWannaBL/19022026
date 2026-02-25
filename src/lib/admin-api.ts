@@ -1,6 +1,3 @@
-export interface AdminUser {
-  id: string;
-  email: string;
   full_name: string;
   role: 'super_admin' | 'admin' | 'manager' | 'supervisor' | 'warehouse_staff' | 'rider' | 'accountant' | 'marketer' | 'customer_service' | 'merchant' | 'sub_station_manager' | 'vendor';
   status: 'active' | 'suspended' | 'pending';

@@ -1,6 +1,3 @@
-import { toast } from 'sonner'; // Assuming you have a toast library, or use console.log
-
-// Define system roles (Modify as needed for your app)
 const SYSTEM_ROLES = ['APP_OWNER', 'MANAGER', 'DRIVER', 'USER'];
 
 interface Permission {

@@ -1,6 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { BellRing, ShieldCheck, smartphone } from "lucide-react";
-
 export default function NotificationsPage() {
   const { t } = useTranslation();
 

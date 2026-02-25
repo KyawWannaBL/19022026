@@ -1,6 +1,3 @@
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-
 export default function Tracking() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

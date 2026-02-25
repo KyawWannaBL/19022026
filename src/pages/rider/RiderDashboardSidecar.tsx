@@ -1,6 +1,3 @@
-  remainingParcels: number;
-  etdToNextStopText: string;
-  shiftSuccessRatePct: number; // 0-100
 }) {
   return (
     <div className="w-full rounded-xl border bg-black/60 backdrop-blur px-4 py-3">

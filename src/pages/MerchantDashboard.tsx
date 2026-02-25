@@ -1,6 +1,3 @@
-} from 'lucide-react';
-import { Link } from 'react-router-dom';
-
 // Centralized Imports - Deduplicated
 import { 
   Shipment, 

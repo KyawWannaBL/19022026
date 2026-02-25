@@ -1,6 +1,3 @@
-  XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
   LineChart,

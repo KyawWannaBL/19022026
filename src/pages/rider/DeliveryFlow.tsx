@@ -1,6 +1,3 @@
-  AlertTriangle, Camera, CheckCircle2, ChevronLeft, MapPin, Package,
-  PenTool, Phone, Send, ShieldCheck, Smartphone, User, XCircle,
-} from 'lucide-react';
 
 import {
   NDR_REASONS,

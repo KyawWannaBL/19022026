@@ -1,6 +1,3 @@
-
-/**
- * Signature Pad Component
  * Resolves 28 syntax errors and adds Myanmar support.
  */
 interface SignaturePadProps {

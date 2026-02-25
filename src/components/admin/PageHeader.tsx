@@ -1,6 +1,3 @@
-  titleKey?: string;
-  title?: string;
-  subtitle?: string;
   action?: React.ReactNode;
   className?: string;
 }

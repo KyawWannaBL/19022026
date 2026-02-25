@@ -1,6 +1,3 @@
-
-export const createAuditLog = async (
-  action: AuditAction, 
   details: string, 
   metadata: any = {}
 ) => {

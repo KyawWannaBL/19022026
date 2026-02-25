@@ -1,6 +1,3 @@
-// 1. Removed Firebase imports
-
-// 1. Removed legacy backend imports
 
 
 import { Button } from '@/components/ui/button';

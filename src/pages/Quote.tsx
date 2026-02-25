@@ -1,6 +1,3 @@
-export default function Quote() {
-  const { t } = useLanguageContext();
-  const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const [form, setForm] = useState({ townshipRate: 0, weight: 1 });
 

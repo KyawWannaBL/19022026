@@ -1,6 +1,3 @@
-import { 
-  Package, 
-  QrCode, 
   Search, 
   Printer,
   CheckCircle,

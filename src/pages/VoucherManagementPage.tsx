@@ -1,6 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { Shipment, formatCurrency, getStatusVariant } from "@/lib/index";
-import { 
   Printer, Search, Filter, Download, 
   FileText, CheckCircle2, MoreVertical, Package
 } from 'lucide-react';

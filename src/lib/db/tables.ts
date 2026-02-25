@@ -1,6 +1,3 @@
-  PROFILES: "profiles_2026_02_19_13_00",
-  BRANCHES: "branches_2026_02_19_13_00",
-  SHIPMENTS: "shipments_2026_02_19_13_00",
   SHIPMENT_TRACKING: "shipment_tracking_2026_02_19_13_00",
   CUSTOMERS: "customers_2026_02_19_13_00",
   MERCHANTS: "merchants_2026_02_19_13_00",

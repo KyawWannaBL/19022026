@@ -1,4 +1,7 @@
-  // Core
+ * © 2026 Production Final
+ */
+
+export const MYANMAR_DICTIONARY: Record<string, string> = {
   "Secure Terminal": "လုံခြုံရေး တာမီနယ်",
   "Invalid API key": "မမှန်ကန်သော API Key",
   "Identity (Email)": "အကောင့်အမည် (အီးမေးလ်)",
@@ -30,57 +33,31 @@
   "Signed in as": "ဝင်ရောက်ထားသူ",
   "Loading session…": "ဆက်ရှင်ကို တင်နေသည်…",
   "Quick links": "အမြန်လင့်များ",
-  "(based on your role)": "(သင့်အခန်းကဏ္ဍအပေါ် မူတည်သည်)",
   "Open module": "မော်ဂျူး ဖွင့်ရန်",
-  // Common actions
   "Save": "သိမ်းဆည်းရန်",
   "Cancel": "ပယ်ဖျက်ရန်",
   "Submit": "တင်သွင်းရန်",
   "Search": "ရှာဖွေရန်",
-  "Create": "ဖန်တီးရန်",
-  "Edit": "ပြင်ရန်",
-  "Delete": "ဖျက်ရန်",
-  "Yes": "ဟုတ်ကဲ့",
-  "No": "မဟုတ်ပါ",
-
   "Create Account": "အကောင့် ဖန်တီးရန်",
-  "Create account": "အကောင့် ဖန်တီးရန်",
   "Sign up": "စာရင်းသွင်းရန်",
-  "Creating...": "ဖန်တီးနေသည်…",
-  "Forgot password?": "စကားဝှက် မေ့နေပါသလား?",
   "Forgot Password": "စကားဝှက် မေ့နေခြင်း",
-  "Send reset link": "ပြန်လည်သတ်မှတ် လင့်ခ် ပို့ရန်",
-  "Sending...": "ပို့နေသည်…",
-  "Reset link sent. Please check your email.": "ပြန်လည်သတ်မှတ်ရန် လင့်ခ် ပို့ပြီးပါပြီ။ သင့်အီးမေးလ်ကို စစ်ဆေးပါ။",
-  "Back to login": "ဝင်ရန်သို့ ပြန်သွားရန်",
   "New Password": "စကားဝှက်အသစ်",
   "Confirm Password": "စကားဝှက် အတည်ပြုရန်",
-  "Enter new password": "စကားဝှက်အသစ် ရိုက်ထည့်ပါ",
-  "Confirm new password": "စကားဝှက်အသစ် အတည်ပြုပါ",
-  "Updating...": "ပြောင်းလဲနေသည်…",
   "Registration Queue": "မှတ်ပုံတင် တန်းစီစာရင်း",
-  "Data Entry Desk": "ဒေတာ ဖြည့်သွင်းဌာန",
   "Rider Dashboard": "မောင်းသူ ဒက်ရှ်ဘုတ်",
   "Pickup Flow": "ယူဆောင်မှု လုပ်ငန်းစဉ်",
   "Delivery Flow": "ပို့ဆောင်မှု လုပ်ငန်းစဉ်",
   "Warehouse Drop": "ဂိုဒေါင် အပ်နှံခြင်း",
   "Receiving Bay": "လက်ခံစခန်း",
   "Dispatch Management": "ထုတ်လွှတ် စီမံခန့်ခွဲမှု",
-  "Supervisor Audit": "ကြီးကြပ်ရေး စစ်ဆေးမှု",
-  "Tag Inventory": "တက်ဂ် စာရင်း",
   "Tracking Map": "ခြေရာခံ မြေပုံ",
-  "Substation Receiving": "ခွဲစခန်း လက်ခံမှု",
   "Customer Portal": "ဖောက်သည် ပေါ်တယ်",
   "Merchant Portal": "ကုန်သည် ပေါ်တယ်",
-  "Merchant Analytics": "ကုန်သည် ခွဲခြမ်းစိတ်ဖြာ",
-  "Tag Batch Management": "တက်ဂ် အစု စီမံခန့်ခွဲမှု",
-  "Label Activation": "လေဘယ် အတည်ပြုခြင်း",
-  "Shipping Calculator": "ပို့ခ တွက်ချက်ရန်",
-
+  "Shipping Calculator": "ပို့ခ တွက်ချက်ရန်"
 };
 
 export function dictLookup(text: string): string | null {
-  const t = text.trim();
+  const t = text?.trim();
   if (!t) return null;
-  return MYANMAR_DICTIONARY[t] ?? null;
+  return MYANMAR_DICTIONARY[t] || null;
 }

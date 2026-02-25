@@ -1,6 +1,3 @@
-import { useLanguageContext } from "@/lib/LanguageContext";
-
-export type UseShipmentsResult = {
   data: Shipment[];
   isLoading: boolean;
   error?: string | null;

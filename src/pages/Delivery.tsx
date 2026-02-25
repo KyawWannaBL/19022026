@@ -1,6 +1,3 @@
-import { 
-  geocodeAddress, 
-  optimizeTrip, 
   type OptimizeCoord, 
   type LngLat 
 } from "@/lib/mapboxWayPlan";

@@ -1,6 +1,3 @@
-  MapPin,
-  CheckCircle2,
-  Package,
   ArrowRight,
   AlertCircle,
   QrCode,

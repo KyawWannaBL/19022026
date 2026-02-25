@@ -1,6 +1,3 @@
-
-export const TrackingTimeline = ({ steps }: { steps: any[] }) => {
-  const { t } = useLanguageContext();
   return (
     <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:w-0.5 before:bg-slate-200">
       {steps.map((step, idx) => (

@@ -1,6 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, Mail, Phone, MapPin } from "lucide-react";
-
 export default function GeneralSettingsPage() {
   const { t } = useTranslation();
 

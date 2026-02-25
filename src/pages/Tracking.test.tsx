@@ -1,6 +1,3 @@
-import userEvent from "@testing-library/user-event";
-import Tracking from "./Tracking";
-
 const mockUseEnterpriseShipments = vi.fn();
 
 vi.mock("@/hooks/useEnterpriseShipments", () => ({

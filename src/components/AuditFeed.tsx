@@ -1,6 +1,3 @@
-interface AuditEntry {
-  id: string;
-  action: string;
   table_name: string;
   changes: any;
   createdAt: string;

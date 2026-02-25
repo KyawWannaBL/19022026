@@ -1,6 +1,3 @@
-import mm from "./locales/mm.json";
-
-i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({

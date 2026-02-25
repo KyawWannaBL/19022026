@@ -1,6 +1,3 @@
-const UsersPage = () => {
-  const { t } = useLanguageContext();
-  return (
     <div className="p-6">
       <div className="flex items-center gap-2 mb-6">
         <UserIcon className="text-[#0d2c54]" />

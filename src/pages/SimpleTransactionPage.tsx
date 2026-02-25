@@ -1,6 +1,3 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { DollarSign, Plus, Save } from "lucide-react";
-
 export default function SimpleTransactionPage() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

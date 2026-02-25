@@ -1,6 +1,3 @@
-  AlertCircle,
-  RotateCcw,
-  PackageMinus,
   Search,
   Filter,
   Eye,

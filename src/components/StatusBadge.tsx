@@ -1,6 +1,3 @@
-interface StatusBadgeProps {
-  status: string;
-  className?: string;
   size?: 'sm' | 'md' | 'lg';
 }
 

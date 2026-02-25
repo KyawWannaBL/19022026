@@ -1,6 +1,3 @@
-import { ROUTE_PATHS, UserRole } from '@/lib/index';
-
-export interface User {
   id: string;
   email: string;
   name: string;

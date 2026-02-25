@@ -1,6 +1,3 @@
-export const useEnterpriseShipments = () => {
-  const fetchShipments = async (filters?: any) => {
-    // We use 'as any' on the supabase call to prevent the TS2589 infinite recursion error
     const query = (supabase as any).from('shipments').select('*');
 
     if (filters?.status) {

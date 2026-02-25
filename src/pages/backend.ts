@@ -1,6 +1,3 @@
-}
-
-export function signPayload(payload: object, secret: string) {
   const body = b64url(Buffer.from(JSON.stringify(payload)));
   const sig = b64url(crypto.createHmac("sha256", secret).update(body).digest());
   return `v1.${body}.${sig}`;

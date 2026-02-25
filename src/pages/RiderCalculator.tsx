@@ -1,6 +1,3 @@
-import { Shipment, User, ROUTE_PATHS } from "@/lib/index";
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import {
   Select,

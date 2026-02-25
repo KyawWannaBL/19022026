@@ -1,6 +1,3 @@
-  // English translations
-  en: {
-    // Navigation & Layout
     'nav.home': 'Home',
     'nav.services': 'Services',
     'nav.tracking': 'Tracking',

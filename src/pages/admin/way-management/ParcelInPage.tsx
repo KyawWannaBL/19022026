@@ -1,6 +1,3 @@
-  Package,
-  Scan,
-  Search,
   CheckCircle2,
   AlertCircle,
   ArrowRight,

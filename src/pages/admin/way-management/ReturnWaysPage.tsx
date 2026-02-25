@@ -1,6 +1,3 @@
-  Search,
-  Filter,
-  Download,
   RotateCcw,
   CheckCircle2,
   Clock,

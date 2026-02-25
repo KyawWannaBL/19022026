@@ -1,6 +1,3 @@
-  Plus,
-  Search,
-  Filter,
   Download,
   MoreHorizontal,
   CreditCard,

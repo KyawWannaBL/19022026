@@ -1,6 +1,3 @@
-  Package, 
-  Settings as SettingsIcon, 
-  LogOut, 
   Menu, 
   X, 
   User,

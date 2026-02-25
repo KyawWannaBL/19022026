@@ -1,6 +1,3 @@
-  HelpCircle,
-  Ticket,
-  Phone,
   Mail,
   Plus,
   Search,

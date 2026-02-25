@@ -1,6 +1,3 @@
-  UserPlus, 
-  Bike, 
-  MapPin, 
   ShieldCheck, 
   ArrowLeft, 
   Save, 

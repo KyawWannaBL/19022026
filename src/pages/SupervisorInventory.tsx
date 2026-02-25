@@ -1,6 +1,3 @@
-  Plus,
-  Search,
-  ArrowUpRight,
   History,
   AlertTriangle,
   Filter,

@@ -1,6 +1,3 @@
- * lock can time out and spam: `Acquiring an exclusive Navigator LockManager lock ... timed out`.
- *
- * This implementation is process-local (single tab / single JS context) and avoids navigator.locks.
  * Trade-off: it does NOT coordinate across multiple tabs.
  */
 

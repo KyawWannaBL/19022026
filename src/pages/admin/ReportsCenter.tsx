@@ -1,6 +1,3 @@
-  BarChart3,
-  Download,
-  FileText,
   TrendingUp,
   Calendar,
   Filter,

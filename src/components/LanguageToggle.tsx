@@ -1,6 +1,3 @@
-  return (
-    <div className="flex items-center gap-2 text-sm text-white/70">
-      <span className="text-white/40">{t("common.language")}:</span>
       <button
         onClick={() => i18n.changeLanguage("en")}
         className={`hover:underline ${i18n.language === "en" ? "text-white" : ""}`}

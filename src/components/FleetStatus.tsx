@@ -1,7 +1,4 @@
 
-export default function FleetStatus() {
-  const [riders, setRiders] = useState<any[]>([]);
-
   useEffect(() => {
     const fetchFleet = async () => {
       const { data } = await supabase

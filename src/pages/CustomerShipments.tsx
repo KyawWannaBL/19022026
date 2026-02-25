@@ -1,6 +1,3 @@
-  Search, 
-  Filter, 
-  Eye, 
   Download,
   PlusCircle,
   Calendar

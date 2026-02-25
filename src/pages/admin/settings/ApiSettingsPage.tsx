@@ -1,6 +1,3 @@
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { useLanguageContext } from '@/lib/LanguageContext';
-
 export default function ApiSettingsPage() {
   const { t } = useLanguageContext();
 

@@ -1,6 +1,3 @@
-import {
-  Mail,
-  MessageSquare,
   Bell,
   Split,
   Plus,

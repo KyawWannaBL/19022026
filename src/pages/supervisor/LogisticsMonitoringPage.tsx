@@ -1,6 +1,3 @@
-
-  // Replace this with your realtime feed (Supabase realtime, websockets, polling, etc.)
-  const vehicles = useMemo<VehiclePoint[]>(
     () => [
       { id: "veh_01", label: "Rider 01", status: "IN_TRANSIT", lng: 96.173, lat: 16.83 },
       { id: "veh_02", label: "Rider 02", status: "DELIVERING", lng: 96.145, lat: 16.85 },

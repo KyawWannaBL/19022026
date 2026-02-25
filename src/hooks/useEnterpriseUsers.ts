@@ -1,6 +1,3 @@
-import type { User } from "@/lib/index";
-import { USER_ROLES } from "@/lib/index";
-
 function normalizeRole(role: any): User["role"] {
   const r = String(role ?? USER_ROLES.CUSTOMER).toLowerCase();
   const allowed = new Set(Object.values(USER_ROLES));

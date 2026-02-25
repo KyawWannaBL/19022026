@@ -1,6 +1,3 @@
-  profile?: "mapbox/driving" | "mapbox/driving-traffic" | "mapbox/cycling" | "mapbox/walking";
-  // coords must be length 2..12 total per Mapbox Optimization API. :contentReference[oaicite:8]{index=8}
-  coords: Coord[];
   // If true: roundtrip=true (returns to start)
   // If false: requires source=first & destinationTownship=last (fixed start & fixed end). :contentReference[oaicite:9]{index=9}
   roundtrip: boolean;

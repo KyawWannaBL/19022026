@@ -1,6 +1,3 @@
-  Activity,
-  AlertCircle,
-  Battery,
   ChevronRight,
   Filter,
   History,

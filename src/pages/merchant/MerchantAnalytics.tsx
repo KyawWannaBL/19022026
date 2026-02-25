@@ -1,6 +1,3 @@
-  BarChart,
-  Bar,
-  XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,

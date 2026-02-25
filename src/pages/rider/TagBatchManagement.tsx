@@ -1,6 +1,3 @@
-  ShieldAlert, 
-  CheckCircle2, 
-  XCircle, 
   RefreshCw, 
   Camera, 
   AlertTriangle, 

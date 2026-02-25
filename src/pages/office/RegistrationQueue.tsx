@@ -1,6 +1,3 @@
-// ... other imports (Card, Badge, etc)
-
-export default function RegistrationQueue() {
   const { t } = useLanguageContext();
   const { data: allShipments, isLoading } = useShipments();
 

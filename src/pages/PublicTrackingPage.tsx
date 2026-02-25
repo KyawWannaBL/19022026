@@ -1,6 +1,3 @@
-  MapPin, 
-  Clock, 
-  CheckCircle, 
   Truck, 
   AlertCircle,
   Loader2,

@@ -1,6 +1,3 @@
-  MapPin, 
-  Phone, 
-  Mail, 
   ArrowRight,
   Star,
   Package,

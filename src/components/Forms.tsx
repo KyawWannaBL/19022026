@@ -1,6 +1,3 @@
-import { 
-  Loader2, 
-  Package, 
   User, 
   MapPin, 
   Phone, 

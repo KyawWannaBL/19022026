@@ -1,6 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Database, DownloadCloud, History } from "lucide-react";
-
 export default function BackupPage() {
   const { t } = useTranslation();
 

@@ -1,6 +1,3 @@
-  Search,
-  Filter,
-  Plus,
   Download,
   ArrowUpRight,
   ArrowDownLeft,

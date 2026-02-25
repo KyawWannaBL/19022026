@@ -1,6 +1,3 @@
-import { 
-  Phone, 
-  MessageCircle, 
   Navigation, 
   ChevronLeft, 
   Package, 

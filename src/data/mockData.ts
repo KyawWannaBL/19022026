@@ -1,6 +1,3 @@
-  {
-    id: '1',
-    awb: 'BRT-1001-YGN',
     status: 'In Transit',
     receiverName: 'Aung Ko Ko',
     receiverAddress: 'No. 45, Pyay Road',

@@ -1,6 +1,3 @@
-// Minimal interface for tracking data to remain self-contained
-interface TrackingData {
-  id: string;
   awb_number?: string;
   awb?: string;
   [key: string]: unknown;

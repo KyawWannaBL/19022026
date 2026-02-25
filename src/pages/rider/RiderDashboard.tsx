@@ -1,6 +1,3 @@
-  Map, 
-  Package, 
-  Truck, 
   Wifi, 
   WifiOff, 
   DollarSign,

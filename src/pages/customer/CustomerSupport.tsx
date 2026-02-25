@@ -1,6 +1,3 @@
-  Search, MessageSquare, Ticket, Package as ShipmentIcon, AlertCircle,
-  CheckCircle2, Clock, ChevronRight, Send, Plus, Star, ThumbsUp, Phone, Mail, HelpCircle
-} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle

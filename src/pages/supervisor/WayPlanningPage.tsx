@@ -1,6 +1,3 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { 
-  geocodeAddress, 
   optimizeTrip, 
   type OptimizeCoord, 
   type LngLat 

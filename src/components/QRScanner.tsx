@@ -1,6 +1,3 @@
-import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
-
 interface QRScannerProps {
   onScan: (code: string) => void;
   expectedType?: 'TT' | 'AWB' | 'LOCATION' | 'MANIFEST';

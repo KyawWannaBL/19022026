@@ -1,6 +1,3 @@
-  Truck,
-  MapPin,
-  Calendar,
   Clock,
   Search,
   Plus,

@@ -1,6 +1,3 @@
-  center?: [number, number];
-  zoom?: number;
-  styleUrl?: string;
   className?: string;
 };
 

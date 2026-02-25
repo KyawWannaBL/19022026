@@ -1,6 +1,3 @@
-  TrendingUp,
-  Users,
-  DollarSign,
   Target,
   BarChart3,
   Calendar,

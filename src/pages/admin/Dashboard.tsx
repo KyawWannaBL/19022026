@@ -1,6 +1,3 @@
-  LayoutDashboard,
-  Package,
-  Truck,
   CheckCircle2,
   AlertTriangle,
   TrendingUp,

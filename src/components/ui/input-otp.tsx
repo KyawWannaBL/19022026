@@ -1,6 +1,3 @@
-
-const InputOTP = React.forwardRef<
-  React.ElementRef<typeof OTPInput>,
   React.ComponentPropsWithoutRef<typeof OTPInput>
 >(({ className, containerClassName, ...props }, ref) => (
   <OTPInput

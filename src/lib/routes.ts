@@ -1,6 +1,3 @@
-
-  // Panel roots
-  SUPER_ADMIN: "/admin",
   OPERATIONS: "/operations",
   FINANCE: "/finance",
   RIDER: "/rider",

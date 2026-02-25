@@ -1,6 +1,3 @@
-  QrCode, 
-  ArrowLeft, 
-  CheckCircle2, 
   Printer, 
   Truck, 
   MapPin, 

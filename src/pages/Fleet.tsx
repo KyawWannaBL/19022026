@@ -1,6 +1,3 @@
-  Map as MapIcon, List, Calendar, AlertTriangle, Zap, ChevronRight, Plus
-} from 'lucide-react';
-import { ROUTE_PATHS, getStatusVariant } from '@/lib/index';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { FleetStatus } from '@/components/FleetStatus';
 import { StatusBadge } from '@/components/StatusBadge';

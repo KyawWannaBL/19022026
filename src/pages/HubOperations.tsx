@@ -1,6 +1,3 @@
-
-export default function HubOperations() {
-  const mockInboundPackages = [
     { awb: 'HUB123456789', origin: 'Mumbai Hub', destinationTownship: 'Delhi Hub', status: 'arrived' },
     { awb: 'HUB987654321', origin: 'Chennai Hub', destinationTownship: 'Bangalore Hub', status: 'sorting' },
     { awb: 'HUB456789123', origin: 'Kolkata Hub', destinationTownship: 'Hyderabad Hub', status: 'pending' }

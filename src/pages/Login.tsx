@@ -1,6 +1,3 @@
-import LanguageSelect from "@/components/LanguageSelect";
-
-export default function Login() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

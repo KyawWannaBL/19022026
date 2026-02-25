@@ -1,6 +1,3 @@
-  Package, 
-  Search, 
-  Truck, 
   Plus, 
   FileText, 
   Printer, 

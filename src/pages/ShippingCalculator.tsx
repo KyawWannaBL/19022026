@@ -1,6 +1,3 @@
-
-export default function ShippingCalculator() {
-  const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

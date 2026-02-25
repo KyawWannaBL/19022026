@@ -1,6 +1,3 @@
-// Fixed: Point to the consolidated production index to clear TS2305 errors
-import { ROUTE_PATHS } from "@/lib/index"; 
-import { PANELS } from "@/lib/rbac";
 import RequireRole from "@/components/auth/RequireRole";
 
 import LoginPage from "@/pages/LoginPage";

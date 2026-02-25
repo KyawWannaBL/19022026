@@ -1,6 +1,3 @@
-  Building2,
-  Search,
-  Plus,
   Filter,
   TrendingUp,
   Wallet,

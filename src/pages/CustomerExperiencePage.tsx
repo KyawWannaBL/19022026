@@ -1,6 +1,3 @@
-  MapPin,
-  Clock,
-  Star,
   Heart,
   Share2,
   Filter,

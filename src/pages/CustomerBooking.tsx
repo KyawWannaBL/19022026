@@ -1,6 +1,3 @@
-  MapPin, 
-  Package, 
-  Calculator,
   CheckCircle,
   ArrowLeft
 } from 'lucide-react';

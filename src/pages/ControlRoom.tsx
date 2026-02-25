@@ -1,6 +1,3 @@
-  role: string
-  branch_id: string
-  last_seen: string
   is_active: boolean
 }
 

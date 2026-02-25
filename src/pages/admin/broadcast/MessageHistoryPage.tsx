@@ -1,6 +1,3 @@
-  Search,
-  Filter,
-  Calendar,
   Mail,
   Users,
   CheckCircle2,

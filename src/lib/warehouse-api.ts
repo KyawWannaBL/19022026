@@ -1,6 +1,3 @@
-export interface WarehouseStation {
-  id: string;
-  station_code: string;
   station_name: string;
   station_name_my?: string;
   address?: string;

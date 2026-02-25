@@ -1,6 +1,3 @@
-const ResizablePanelGroup = ({
-  className,
-  ...props
 }: React.ComponentProps<typeof ResizablePrimitive.PanelGroup>) => (
   <ResizablePrimitive.PanelGroup
     className={cn(

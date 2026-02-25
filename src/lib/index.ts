@@ -1,6 +1,3 @@
- */
-
-// 1. Core Route Dictionary
 export const ROUTE_PATHS = {
   HOME: '/',
   LOGIN: '/login',

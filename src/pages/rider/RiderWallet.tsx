@@ -1,6 +1,3 @@
-  TrendingUp, 
-  TrendingDown, 
-  Wallet, 
   CreditCard,
   ArrowUpRight,
   ArrowDownLeft,

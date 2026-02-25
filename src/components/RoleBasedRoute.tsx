@@ -1,6 +1,3 @@
-  allowedRoles?: string[];
-  children: React.ReactNode;
-};
 
 export default function RoleBasedRoute({ allowedRoles = [], children }: Props) {
   const { user, role, loading, mustChangePassword } = useAuth();

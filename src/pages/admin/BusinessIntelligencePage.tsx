@@ -1,6 +1,3 @@
-  BarChart3, 
-  PieChart, 
-  TrendingUp, 
   TrendingDown, 
   Target, 
   DollarSign, 

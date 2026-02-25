@@ -1,6 +1,3 @@
-  TrendingUp,
-  DollarSign,
-  Clock,
   CheckCircle2,
   ArrowUpRight,
   ArrowDownRight,

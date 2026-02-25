@@ -1,6 +1,3 @@
-import { Shipment, formatDate, formatCurrency } from '@/lib/index';
-import StatusBadge from './StatusBadge';
-
 export const ShipmentCard = ({ shipment }: { shipment: Shipment }) => {
   const { t } = useLanguageContext();
   return (

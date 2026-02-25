@@ -1,6 +1,3 @@
- * © 2026 Britium Express Logistics System
- */
-
 import { supabase } from '@/integrations/supabase/client';
 
 // Types for API responses

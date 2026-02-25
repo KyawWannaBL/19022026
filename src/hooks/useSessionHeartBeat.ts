@@ -1,6 +1,3 @@
-  const { user } = useAuth();
-
-  useEffect(() => {
     if (!user) return;
 
     const interval = setInterval(async () => {

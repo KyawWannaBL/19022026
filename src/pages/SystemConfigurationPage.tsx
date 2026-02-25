@@ -1,6 +1,3 @@
-import { Shipment, User, ROUTE_PATHS } from "@/lib/index";
-import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguageContext } from '@/lib/LanguageContext';

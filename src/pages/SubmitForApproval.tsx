@@ -1,6 +1,3 @@
-  const { t } = useLanguageContext();
-  const { t } = useLanguageContext();
-
   const submit = async () => {
     // 1. Update shipment status
     await supabase

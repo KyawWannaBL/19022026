@@ -1,6 +1,3 @@
-  time: string;
-  note: string;
-};
 
 export default function Calculator() {
   const { t } = useLanguageContext();

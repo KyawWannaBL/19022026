@@ -1,6 +1,3 @@
-  Filter, 
-  MoreVertical, 
-  Edit, 
   Trash2, 
   Truck, 
   CheckCircle,

@@ -1,6 +1,3 @@
-  Package, 
-  Truck, 
-  Plane,
   Clock,
   Phone,
   Mail,

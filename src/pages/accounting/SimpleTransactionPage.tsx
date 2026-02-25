@@ -1,6 +1,3 @@
-
-export default function SimpleTransactionPage() {
-  const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

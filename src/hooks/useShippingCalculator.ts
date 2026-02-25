@@ -1,6 +1,3 @@
-  nameMm: string;
-}
-
 export interface StateDivision extends Location {
   townships: Location[];
 }

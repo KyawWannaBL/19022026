@@ -1,6 +1,3 @@
-  Package,
-  Truck,
-  Warehouse as WarehouseIcon,
   MapPin,
   BarChart3,
   Settings,

@@ -1,6 +1,3 @@
-  Plus, 
-  Search, 
-  MoreHorizontal, 
   Shield, 
   Building2, 
   CheckCircle2, 

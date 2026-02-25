@@ -1,6 +1,3 @@
-import { supabase } from '@/integrations/supabase/client';
-
-// Types
 export interface SystemConfig {
   id?: string;
   setting_key: string;

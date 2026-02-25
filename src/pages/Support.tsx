@@ -1,6 +1,3 @@
-  return (
-    <div className="min-h-screen bg-white">
-      <div className="bg-[#0d2c54] py-24 text-center text-white">
         <h1 className="text-5xl font-black mb-4 uppercase tracking-tighter italic">Support Center</h1>
         <p className="opacity-80 max-w-xl mx-auto">Need help with your delivery or account?</p>
       </div>

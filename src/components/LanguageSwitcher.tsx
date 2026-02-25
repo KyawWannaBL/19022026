@@ -1,6 +1,3 @@
-
-/**
- * LanguageSwitcher Component
  * Synchronized with the Footer and Dashboard Headers.
  * Resolves remaining syntax errors and "Multiple Export" conflicts.
  */

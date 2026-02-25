@@ -1,6 +1,3 @@
-  Calendar as CalendarIcon, 
-  Clock, 
-  MapPin, 
   User, 
   Phone, 
   Package, 

@@ -1,6 +1,3 @@
-// Types for the enterprise logistics platform
-export interface User {
-  id: string;
   email: string;
   full_name: string;
   phone?: string;

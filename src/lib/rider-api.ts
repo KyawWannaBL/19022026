@@ -1,6 +1,3 @@
-export interface Rider {
-  id: string;
-  user_id?: string;
   rider_code: string;
   full_name: string;
   phone: string;

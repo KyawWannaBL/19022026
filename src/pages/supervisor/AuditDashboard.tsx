@@ -1,6 +1,3 @@
-  FileWarning, 
-  Printer, 
-  ScanFace, 
   TrendingUp, 
   AlertTriangle, 
   CheckCircle2, 

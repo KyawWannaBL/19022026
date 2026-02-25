@@ -1,6 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext'; // Import context hook
-
-export default function AdminDashboard() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

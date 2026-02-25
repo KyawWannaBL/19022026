@@ -1,6 +1,3 @@
-  MessageSquare,
-  Clock,
-  CheckCircle,
   AlertCircle,
   Star,
   TrendingUp,

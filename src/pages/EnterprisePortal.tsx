@@ -1,6 +1,3 @@
-export default function EnterprisePortal() {
-  const { t } = useLanguageContext();
-  const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const navigate = useNavigate();
   const { user } = useAuth();

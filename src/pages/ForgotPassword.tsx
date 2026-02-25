@@ -1,6 +1,3 @@
-export default function ForgotPassword() {
-  const { t } = useLanguageContext();
-  const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { requestPasswordReset } = useAuth();
   const [email, setEmail] = useState("");

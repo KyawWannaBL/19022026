@@ -1,6 +1,3 @@
-import { Textarea } from '@/components/ui/textarea';
-import { 
-  Navigation, 
   MapPin, 
   Route, 
   Zap, 

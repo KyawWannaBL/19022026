@@ -1,6 +1,3 @@
-  Search,
-  QrCode,
-  CheckCircle2,
   ArrowRightLeft,
   Truck,
   AlertCircle,

@@ -1,6 +1,3 @@
-/**
- * Page Loader Component
- * Used during Suspense and data fetching
  */
 export const PageLoader = () => (
   <div className="flex flex-col items-center justify-center min-h-[400px] w-full gap-4">

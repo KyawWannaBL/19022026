@@ -1,6 +1,3 @@
-import { Link, useNavigate } from 'react-router-dom';
-
-export const Layout = ({ children }: { children: React.ReactNode }) => {
   const { user, logout } = useAuth();
   const { t } = useLanguageContext();
   const navigate = useNavigate();

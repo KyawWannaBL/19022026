@@ -1,6 +1,3 @@
-import PermissionGate from "@/components/PermissionGate";
-
-type ProfileRow = {
   id: string;
   email?: string | null;
   role?: string | null;

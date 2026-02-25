@@ -1,6 +1,3 @@
-import PageHeader from '@/components/admin/PageHeader';
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { ROUTE_PATHS } from '@/lib/index';
 
 interface TileProps {
   to: string;

@@ -1,6 +1,3 @@
-  Clock, 
-  AlertCircle, 
-  ArrowUpCircle, 
   ArrowDownCircle,
   Package,
   DollarSign,

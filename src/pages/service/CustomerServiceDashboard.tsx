@@ -1,6 +1,3 @@
-  LifeBuoy,
-  TrendingUp,
-  AlertCircle,
   Clock,
   CheckCircle2,
   User,

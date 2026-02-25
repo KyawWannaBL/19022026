@@ -1,6 +1,3 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { BulkUploadAPI, BulkUploadItem } from "@/lib/admin-api";
 
 const BulkUpload = () => {
   const { t } = useLanguageContext();

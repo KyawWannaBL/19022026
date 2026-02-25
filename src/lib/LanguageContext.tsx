@@ -1,6 +1,3 @@
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  // This supports BOTH dictionary keys and inline bilingual pairs
   t: (keyOrEn: string, fallbackMy?: string) => string;
 }
 

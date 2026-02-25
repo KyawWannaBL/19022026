@@ -1,6 +1,3 @@
-  RotateCcw,
-  CheckCircle2,
-  ArrowRight,
   Truck,
   Timer,
   Route,

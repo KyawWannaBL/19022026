@@ -1,6 +1,3 @@
-import { Badge } from '@/components/ui/badge';
-import { Smartphone, ShieldCheck, Truck, QrCode } from 'lucide-react';
-
 export default function LandingPage() {
   const navigate = useNavigate();
 

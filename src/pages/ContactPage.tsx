@@ -1,6 +1,3 @@
-
-export default function ContactPage() {
-  return (
     <div className="bg-slate-50 min-h-screen">
       <div className="bg-[#0d2c54] py-20 text-center text-white">
         <h1 className="text-4xl font-black mb-2 uppercase italic tracking-tighter">Get in Touch</h1>

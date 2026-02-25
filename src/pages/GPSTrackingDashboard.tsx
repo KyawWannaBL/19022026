@@ -1,6 +1,3 @@
-import { Input } from '@/components/ui/input';
-import { 
-  MapPin, Navigation, Truck, User, Battery, Signal, AlertTriangle,
   CheckCircle, RefreshCw, Eye, Map, Activity, Shield, Zap
 } from 'lucide-react';
 import { useLanguageContext } from '@/lib/LanguageContext';

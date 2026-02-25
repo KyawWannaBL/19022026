@@ -1,6 +1,3 @@
-  Users, 
-  UserPlus, 
-  Briefcase, 
   DollarSign, 
   TrendingUp, 
   GraduationCap,

@@ -1,6 +1,3 @@
-import { IMAGES } from '@/assets/images';
-
-export default function ShippingCalculator() {
   const { language } = useLanguageContext();
   
   const [formData, setFormData] = useState({

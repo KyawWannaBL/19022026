@@ -1,6 +1,3 @@
- * @file admin-system.ts
- * @description Core system configuration for advanced multi-tenant and multi-role logistics ecosystem.
- * Reflects 2026 state-of-the-art administrative controls and business hierarchies.
  */
 
 export const ADMIN_ROLES = {

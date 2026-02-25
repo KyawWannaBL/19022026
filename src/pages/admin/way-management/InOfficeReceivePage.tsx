@@ -1,6 +1,3 @@
-  ArrowLeft,
-  Printer,
-  Save,
   Package,
   User,
   MapPin,

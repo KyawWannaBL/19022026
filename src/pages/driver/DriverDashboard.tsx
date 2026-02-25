@@ -1,6 +1,3 @@
-  return (
-    <div className="space-y-6">
-      <div className="bg-emerald-600 p-6 rounded-2xl text-white shadow-lg shadow-emerald-900/20">
         <h2 className="text-lg opacity-90 font-medium">Welcome back, Rider</h2>
         <h1 className="text-3xl font-bold">You have 8 pending tasks</h1>
         <Button className="mt-4 bg-white text-emerald-700 hover:bg-emerald-50">View Route Map</Button>

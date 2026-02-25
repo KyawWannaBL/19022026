@@ -1,25 +1,16 @@
-// scripts/repair-ts-sources.mjs
+// scripts/repair-ts-sources.v2.mjs
 // Usage:
-//   node scripts/repair-ts-sources.mjs --check <paths...>
-//   node scripts/repair-ts-sources.mjs --write --backup <paths...>
+//   node scripts/repair-ts-sources.v2.mjs --check src
+//   node scripts/repair-ts-sources.v2.mjs --write --backup src
 //
-// Examples (your failing set):
-//   node scripts/repair-ts-sources.mjs --write --backup \
-//     src/pages/service/CustomerServiceDashboard.tsx \
-//     src/pages/service/LiveChatInterface.tsx \
-//     src/pages/staff/OrderManagement.tsx \
-//     src/pages/staff/StaffDashboard.tsx \
-//     src/pages/substation/SubstationReceiving.tsx \
-//     src/pages/supervisor/AuditDashboard.tsx \
-//     src/pages/supervisor/LogisticsMonitoringPage.tsx \
-//     src/pages/supervisor/TagInventoryManagement.tsx \
-//     src/pages/supervisor/TrackingMapPage.tsx \
-//     src/pages/warehouse/WarehouseScanIn.tsx \
-//     src/panels/finance/index.tsx \
-//     src/panels/merchant-customer/index.tsx
-//
-// Or whole repo:
-//   node scripts/repair-ts-sources.mjs --write --backup src
+// Fixes:
+// - UTF-16LE/BE + NUL bytes => rewrites to UTF-8
+// - Removes BOM/zero-width/NBSP + Unicode line separators
+// - Removes literal "ï»¿" (BOM bytes that got saved as text)
+// - Normalizes smart quotes
+// - Removes markdown fences/headings/hrules
+// - Strips markdown list/blockquote/bullets when followed by TS starters OR JSX "<"
+// - Removes stray backticks that appear as fence remnants inside a line (common copy/paste artifact)
 
 import { promises as fs } from "node:fs";
 import path from "node:path";
@@ -31,12 +22,10 @@ const check = args.includes("--check") || !write;
 const backup = args.includes("--backup");
 const verbose = args.includes("--verbose");
 
-const inputs = args.filter((a) => !a.startsWith("--"));
-const roots = inputs.length ? inputs : ["src"];
+const roots = args.filter((a) => !a.startsWith("--"));
+if (!roots.length) roots.push("src");
 
 const EXTENSIONS = new Set([".ts", ".tsx"]);
-
-// Statement starters + JSX. We only strip markdown list markers when one of these follows.
 const STARTERS =
   "(export|import|const|let|var|function|class|interface|type|enum|return|if|for|while|switch|try|catch|finally|throw|break|continue|describe|it|test|expect|beforeAll|afterAll|beforeEach|afterEach|async|await|new)";
 
@@ -81,7 +70,6 @@ function detectEncoding(buf) {
   const nulRatio = buf.length ? countNulBytes(buf) / buf.length : 0;
   if (nulRatio < 0.1) return "utf8";
 
-  // Heuristic endianness: UTF-16LE tends to have NULs in odd positions for ASCII-heavy text.
   let nulEven = 0;
   let nulOdd = 0;
   for (let i = 0; i < buf.length; i++) {
@@ -96,7 +84,6 @@ function decode(buf, enc) {
   if (enc === "utf16le") return new TextDecoder("utf-16le", { fatal: false }).decode(buf);
 
   if (enc === "utf16be") {
-    // Swap bytes -> decode as LE.
     const swapped = Buffer.allocUnsafe(buf.length);
     for (let i = 0; i + 1 < buf.length; i += 2) {
       swapped[i] = buf[i + 1];
@@ -119,33 +106,37 @@ function sanitize(text) {
   const original = text;
   let s = text;
 
-  // Kill bytes/chars that break TS parsing
+  // NUL + BOM variants
   s = s
-    .replace(/\u0000/g, "") // NUL
-    .replace(/^\uFEFF/, "") // BOM as char at start
-    .replace(/[\uFEFF\u200B\u200C\u200D]/g, "") // BOM + zero-width
-    .replace(/\u00A0/g, " ") // NBSP
-    .replace(/[\u2028\u2029]/g, "\n"); // Unicode line separators -> newline
+    .replace(/\u0000/g, "")
+    .replace(/^\uFEFF/, "")
+    .replace(/[\uFEFF\u200B\u200C\u200D]/g, "")
+    .replace(/\u00A0/g, " ")
+    .replace(/[\u2028\u2029]/g, "\n");
+
+  // BOM bytes that got saved as visible text: ï»¿
+  s = s.replace(/^\u00EF\u00BB\u00BF/, "");
+  s = s.replace(/^ï»¿/, "");
 
   s = normalizeQuotes(s);
 
-  // Markdown fences/headings/hrules
+  // Remove markdown fences even if preceded by whitespace
   s = s.replace(/^\s*```[\w-]*\s*$/gm, "");
   s = s.replace(/^\s*(?:-{3,}|\*{3,}|_{3,})\s*$/gm, "");
   s = s.replace(/^\s*#{1,6}\s+.*$/gm, "");
 
-  // Strip markdown list markers ONLY when a real TS/JS starter or JSX "<" follows.
-  // Unordered: "- foo", "* foo", "+ foo"
+  // Strip list/bullets/blockquote when followed by TS starters or JSX "<"
   s = s.replace(new RegExp(`^(\\s*)[-*+]\\s+(?=(?:${STARTERS})\\b|<)`, "gm"), "$1");
-  // Ordered: "1. foo", "2) foo"
   s = s.replace(new RegExp(`^(\\s*)\\d+[.)]\\s+(?=(?:${STARTERS})\\b|<)`, "gm"), "$1");
-  // Bullets/dashes: "• foo", "– foo", "— foo"
   s = s.replace(new RegExp(`^(\\s*)[•●◦▪▫–—]\\s+(?=(?:${STARTERS})\\b|<)`, "gm"), "$1");
-  // Blockquote: "> foo"
   s = s.replace(new RegExp(`^(\\s*)>\\s+(?=(?:${STARTERS})\\b|<)`, "gm"), "$1");
 
-  // Common doc paste headers
+  // Remove doc-paste headers
   s = s.replace(/^\s*(File|Path)\s*:\s*src\/.+\.(ts|tsx)\s*$/gim, "");
+
+  // Extra: remove stray fence remnants embedded in a line (common copy-paste)
+  // Only remove when the line is otherwise mostly fence-like.
+  s = s.replace(/^\s*`{3,}.*$/gm, "");
 
   return { changed: s !== original, text: s };
 }
@@ -156,6 +147,7 @@ async function collectTargets() {
     const abs = path.resolve(process.cwd(), r);
     const st = await statSafe(abs);
     if (!st) continue;
+
     if (st.isDirectory()) {
       const files = await walkDir(abs);
       for (const f of files) if (isEligibleFile(f)) targets.push(f);
@@ -179,7 +171,7 @@ async function main() {
     const encodingNeedsFix = enc !== "utf8";
 
     if (changed || encodingNeedsFix) {
-      touched.push({ filePath, enc, changed });
+      touched.push({ filePath, enc, sanitized: changed });
       if (write) {
         if (backup) await fs.writeFile(`${filePath}.bak`, buf);
         await fs.writeFile(filePath, text, "utf8");
@@ -187,24 +179,22 @@ async function main() {
     }
   }
 
+  const rel = (p) => path.relative(process.cwd(), p);
+
   if (check) {
     console.log(touched.length ? `Would fix ${touched.length} file(s):` : "OK: no fixes needed.");
     for (const t of touched) {
-      const rel = path.relative(process.cwd(), t.filePath);
       const flags = [
         t.enc !== "utf8" ? `enc=${t.enc}` : null,
-        t.changed ? "sanitized" : null,
+        t.sanitized ? "sanitized" : null,
       ].filter(Boolean);
-      console.log(` - ${rel}${flags.length ? ` (${flags.join(", ")})` : ""}`);
+      console.log(` - ${rel(t.filePath)}${flags.length ? ` (${flags.join(", ")})` : ""}`);
     }
     if (touched.length) console.log("\nRun with --write (and optionally --backup) to apply.");
   } else {
     console.log(`Fixed ${touched.length} file(s).`);
     if (verbose) {
-      for (const t of touched) {
-        const rel = path.relative(process.cwd(), t.filePath);
-        console.log(` - ${rel} (enc=${t.enc}, sanitized=${t.changed})`);
-      }
+      for (const t of touched) console.log(` - ${rel(t.filePath)} (enc=${t.enc}, sanitized=${t.sanitized})`);
     }
   }
 }

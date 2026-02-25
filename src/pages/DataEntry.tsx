@@ -1,6 +1,3 @@
-export default function DataEntry() {
-  const tiles = [
-    { title: "Shipment Registration", href: "/operations", icon: Truck, desc: "Create a new shipment / waybill" },
     { title: "Shipments", href: "/shipments", icon: Package, desc: "Search and manage shipment records" },
     { title: "Bulk CSV Upload", href: "/operations", icon: Upload, desc: "Upload manifest in bulk (CSV)" },
   ];

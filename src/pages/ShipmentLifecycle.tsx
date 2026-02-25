@@ -1,6 +1,3 @@
-interface Props {
-  shipmentId: string
-  currentStatus: string
 }
 
 export default function ShipmentLifecycle({ shipmentId, currentStatus }: Props) {

@@ -1,6 +1,3 @@
-  | { ok: false; error: string };
-
-export async function geocodeAddress(q: string, opts?: { country?: string; proximity?: LngLat }) {
   const r = await fetch("/api/mapbox/geocode", {
     method: "POST",
     headers: { "content-type": "application/json" },

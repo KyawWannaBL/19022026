@@ -1,6 +1,3 @@
-/**
- * Britium Express - Supabase Client Configuration
- * © 2026 Britium Express Logistics System - Production Final
  */
 
 // 1. Environment Variable Mapping

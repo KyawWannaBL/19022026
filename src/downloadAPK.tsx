@@ -1,2 +1,0 @@
-};
-\nexport src/downloadAPK.tsx;

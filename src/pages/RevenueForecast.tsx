@@ -1,6 +1,3 @@
-  Tooltip,
-  ResponsiveContainer,
-} from 'recharts';
 
 const data = [
   { day: 'Mon', revenue: 4200 },

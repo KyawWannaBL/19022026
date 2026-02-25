@@ -1,6 +1,3 @@
-const DomesticExpress: React.FC = () => {
-  return (
-    <>
       {/* Top Bar */}
       <div className="bg-dark text-white py-2 small">
         <div className="container d-flex flex-column flex-md-row justify-content-between">

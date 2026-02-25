@@ -1,6 +1,3 @@
-  Scan,
-  Database,
-  CheckCircle2,
   AlertCircle,
   MapPin,
   ArrowDownToLine,

@@ -1,6 +1,3 @@
-  return twMerge(clsx(inputs));
-}
-
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg';
   className?: string;

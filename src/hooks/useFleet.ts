@@ -1,6 +1,3 @@
-  const [vehicles, setVehicles] = useState<FleetVehicle[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   // 1. Initial Data Fetch
   const fetchFleet = async () => {

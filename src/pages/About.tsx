@@ -1,6 +1,3 @@
-export default function AboutPage() {
-  return (
-    <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="bg-[#0d2c54] py-24 text-center text-white px-4">
         <h1 className="text-4xl md:text-6xl font-black mb-4 uppercase italic tracking-tighter">

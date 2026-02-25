@@ -1,6 +1,3 @@
-import { Badge } from "@/components/ui/badge";
-import {
-  Table,
   TableBody,
   TableCell,
   TableHead,

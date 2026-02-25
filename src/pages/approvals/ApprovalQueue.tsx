@@ -1,6 +1,3 @@
-
-export default function ApprovalQueue() {
-  const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const [items, setItems] = useState<any[]>([])

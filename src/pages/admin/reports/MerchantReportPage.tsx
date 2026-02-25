@@ -1,6 +1,3 @@
-} from 'recharts';
-import {
-  Download,
   FileText,
   Filter,
   Search,

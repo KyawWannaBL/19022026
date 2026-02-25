@@ -1,6 +1,3 @@
-  TrendingDown,
-  Package,
-  Truck,
   Users,
   MapPin,
   Clock,

@@ -1,6 +1,3 @@
-  Radio, 
-  MapPin, 
-  Truck, 
   Clock, 
   AlertTriangle, 
   Play, 

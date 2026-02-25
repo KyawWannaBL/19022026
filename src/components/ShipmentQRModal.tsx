@@ -1,6 +1,3 @@
-import { useLanguageContext } from "@/lib/LanguageContext";
-import { getStatusLabel, formatDate } from "@/lib/index";
-
 export type ShipmentQRModalProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;

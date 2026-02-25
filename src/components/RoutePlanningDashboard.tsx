@@ -1,6 +1,3 @@
-  Users,
-  Calendar,
-  RefreshCw,
   CheckCircle2,
   AlertCircle,
   ChevronRight,

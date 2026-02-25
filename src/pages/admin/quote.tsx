@@ -1,6 +1,3 @@
-const Quote: React.FC = () => {
-  const [region, setRegion] = useState('yangon');
-  const [townshipRate, setTownshipRate] = useState<number | null>(null);
   const [weight, setWeight] = useState(1);
   const [totalPrice, setTotalPrice] = useState('--');
   const [deliveryTime, setDeliveryTime] = useState('Select a Township');

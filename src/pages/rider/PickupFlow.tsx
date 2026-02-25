@@ -1,6 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { Shipment, ROUTE_PATHS, formatCurrency } from "@/lib/index";
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { QrCode, Printer, PackageCheck, Camera, Loader2 } from 'lucide-react';
 

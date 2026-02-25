@@ -1,6 +1,3 @@
-import { ROUTE_PATHS } from '@/lib/index';
-import { IMAGES } from '@/assets/images';
-
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">

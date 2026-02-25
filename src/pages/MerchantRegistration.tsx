@@ -1,6 +1,3 @@
-  User, 
-  Phone, 
-  Mail, 
   MapPin, 
   FileText, 
   CreditCard,

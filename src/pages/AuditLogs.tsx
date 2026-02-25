@@ -1,6 +1,3 @@
-  FileText, 
-  Search, 
-  Filter, 
   Calendar, 
   User, 
   Database, 

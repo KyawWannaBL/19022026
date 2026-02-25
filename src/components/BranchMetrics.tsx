@@ -1,6 +1,3 @@
-
-  useEffect(() => {
-    const fetchMetrics = async () => {
       const { data, error } = await supabase
         .from('branch_shipment_metrics')
         .select('*');

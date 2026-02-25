@@ -1,6 +1,3 @@
-export default function SignUp() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-6">
       <div className="w-full max-w-xl space-y-4">
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-bold">Create account</h1>

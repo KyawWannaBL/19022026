@@ -1,6 +1,3 @@
-import {
-  Search,
-  Plus,
   Filter,
   MoreVertical,
   Phone,

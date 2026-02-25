@@ -1,6 +1,3 @@
-import { Shipment, User, ROUTE_PATHS } from "@/lib/index";
-import { IMAGES } from '@/assets/images';
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
 
 interface FAQ {

@@ -1,6 +1,3 @@
-import { ROUTE_PATHS } from '@/lib/index';
-
-export const ServicesPage = () => {
   const categories = [
     { 
       title: "Logistics", 

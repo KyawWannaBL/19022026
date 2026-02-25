@@ -1,6 +1,3 @@
-
-  useEffect(() => {
-    const fetchStats = async () => {
       // Calls a Postgres function to get aggregated counts
       const { data } = await supabase.rpc('get_dashboard_stats');
       if (data) setMetrics(data);

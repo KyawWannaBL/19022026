@@ -1,6 +1,3 @@
-  Users,
-  UserPlus,
-  ShieldCheck,
   UserCog,
   Search,
   Filter,

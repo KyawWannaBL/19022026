@@ -1,6 +1,3 @@
-  DollarSign, 
-  TrendingUp, 
-  TrendingDown, 
   PieChart, 
   BarChart3, 
   FileText, 

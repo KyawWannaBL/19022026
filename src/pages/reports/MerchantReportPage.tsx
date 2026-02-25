@@ -1,6 +1,3 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Store, TrendingUp, AlertTriangle } from "lucide-react";
-
 export default function MerchantReportPage() {
   const { t } = useTranslation();
 

@@ -1,6 +1,3 @@
-interface SignaturePadProps {
-  onSave: (signature: string) => void;
-  onCancel?: () => void;
 }
 
 export default function SignaturePad({ onSave, onCancel }: SignaturePadProps) {

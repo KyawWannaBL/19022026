@@ -1,6 +1,3 @@
- * Standard Luxury Card Component
- * Refactored for Bilingual Support (EN/MY)
- */
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>

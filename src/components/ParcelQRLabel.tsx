@@ -1,6 +1,3 @@
-import { IMAGES } from '@/assets/images';
-import { QRCodeGenerator } from '@/components/QRCodeGenerator';
-import { cn } from '@/lib/utils';
 
 interface ParcelQRLabelProps {
   parcel: any;

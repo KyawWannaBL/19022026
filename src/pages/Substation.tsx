@@ -1,6 +1,3 @@
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <div>
           <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">
             Substation Operations
           </h1>

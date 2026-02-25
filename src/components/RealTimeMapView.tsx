@@ -1,6 +1,3 @@
-
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN || '';
-
 export default function RealTimeMapView({ city }: { city: string }) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);

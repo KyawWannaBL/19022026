@@ -1,6 +1,3 @@
-  Filter,
-  ScanLine,
-  MapPin,
   Navigation,
   Phone,
   MessageCircle,

@@ -1,6 +1,3 @@
-import { Package, Scan, CheckCircle2 } from 'lucide-react';
-import { toast } from 'sonner';
-
 const RiderDashboard = () => {
   const { t } = useLanguageContext();
   const [tasks] = useState([]);

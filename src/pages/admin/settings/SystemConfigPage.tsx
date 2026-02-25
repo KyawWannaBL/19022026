@@ -1,6 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Cpu, Lock } from "lucide-react";
-
 export default function SystemConfigPage() {
   const { t } = useTranslation();
 

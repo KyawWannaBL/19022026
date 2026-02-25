@@ -1,6 +1,3 @@
-import { Shipment, getStatusLabel, getStatusVariant } from '@/lib/index';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 export default function WarehouseOperationsPage() {

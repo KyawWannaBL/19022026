@@ -1,6 +1,3 @@
-import { Cpu, CheckCircle2, Loader2, Zap } from 'lucide-react';
-import { toast } from 'sonner';
-
 /**
  * Data Entry Automation Component
  * Resolves 3 syntax errors and adds Myanmar support.

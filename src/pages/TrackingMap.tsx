@@ -1,6 +1,3 @@
-  Navigation,
-  Truck,
-  Search,
   Filter,
   Layers,
   Activity,

@@ -1,6 +1,3 @@
-interface StatsCardProps {
-  title: string;
-  value: string | number;
   change?: string;
   icon: React.ReactNode;
   className?: string;

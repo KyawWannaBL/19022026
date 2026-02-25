@@ -1,6 +1,3 @@
-
-// Re-export everything so other imports keep working
-// @ts-expect-error - This is resolved at runtime by Vite alias
 export * from "react-router-dom-original";
 
 /** --------------------- Outbound: route list (once) --------------------- */

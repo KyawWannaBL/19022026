@@ -1,6 +1,3 @@
-  const posts = [
-    { title: "Expanding our Mandalay Hub", date: "2026-02-20", excerpt: "New facilities to serve Upper Myanmar faster." },
-    { title: "International Shipping Rates Update", date: "2026-02-15", excerpt: "New competitive rates for USA and UK air cargo." }
   ];
 
   return (

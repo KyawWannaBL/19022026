@@ -1,6 +1,3 @@
-import AuditFeed from '@/components/AuditFeed';
-import FleetStatus from '@/components/FleetStatus';
-
 export default function AdminDashboard() {
   const { user } = useAuth();
 

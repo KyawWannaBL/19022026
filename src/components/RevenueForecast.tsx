@@ -1,6 +1,3 @@
-import { TrendingUp, DollarSign } from 'lucide-react';
-
-const data = [
   { name: 'Mon', revenue: 4200, projection: 4000 },
   { name: 'Tue', revenue: 5100, projection: 4800 },
   { name: 'Wed', revenue: 4800, projection: 5200 },

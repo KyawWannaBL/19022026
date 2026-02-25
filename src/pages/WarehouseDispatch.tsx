@@ -1,6 +1,3 @@
-  Package,
-  MapPin,
-  ChevronRight,
   Search,
   Filter,
   CheckCircle2,

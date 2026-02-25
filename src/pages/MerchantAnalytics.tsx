@@ -1,6 +1,3 @@
-  Package,
-  Truck,
-  DollarSign,
   Calendar,
   Filter,
   Download,

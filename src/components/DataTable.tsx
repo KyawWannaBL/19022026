@@ -1,6 +1,3 @@
-  ChevronsRight,
-  Search,
-  ArrowUpDown,
   ArrowUp,
   ArrowDown,
   Filter,

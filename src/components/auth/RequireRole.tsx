@@ -1,6 +1,3 @@
-import { PanelSlug, normalizeRole, canAccessPanel } from "@/lib/rbac";
-
-/**
  * Prop Definitions for RBAC Protection
  */
 type Props = {

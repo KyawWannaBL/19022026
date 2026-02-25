@@ -1,6 +1,3 @@
-  Send,
-  Users,
-  Bell,
   Clock,
   Info,
   MessageSquare,

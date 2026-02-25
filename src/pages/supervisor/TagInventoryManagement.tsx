@@ -1,6 +1,3 @@
-  Plus, 
-  Search, 
-  ShieldAlert, 
   History, 
   CheckCircle2, 
   XCircle, 

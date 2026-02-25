@@ -1,6 +1,3 @@
-  endDate?: string;
-  status?: string;
-  region?: string;
   merchant?: string;
   rider?: string;
   branch?: string;

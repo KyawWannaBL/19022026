@@ -1,6 +1,3 @@
- * © 2026 Britium Express Logistics System
- */
-
 export const APP_ROLES = {
   SUPER_ADMIN: "SUPER_ADMIN",
   OPERATIONS: "OPERATIONS",

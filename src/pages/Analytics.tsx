@@ -1,6 +1,3 @@
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, 
-  PieChart, Pie, Cell 
-} from 'recharts';
 import { Loader2, TrendingUp, Package, AlertCircle, DollarSign } from 'lucide-react';
 
 export default function Analytics() {

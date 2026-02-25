@@ -1,6 +1,3 @@
-  setLang: (l: Lang) => void;
-  toggleLang: () => void;
-};
 
 const Ctx = createContext<I18nCtx | null>(null);
 

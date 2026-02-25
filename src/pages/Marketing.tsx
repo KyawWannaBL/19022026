@@ -1,6 +1,3 @@
-  MousePointerClick, 
-  Percent, 
-  Plus, 
   BarChart3, 
   Calendar,
   Share2

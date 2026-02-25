@@ -1,6 +1,3 @@
-const ROLES = ['SUPER_ADMIN', 'OPERATIONS_ADMIN', 'FINANCE_ADMIN', 'RIDER', 'SUBSTATION_MANAGER'];
-const PERMISSION_CATEGORIES = {
-  Operations: ['shipment.create', 'shipment.edit', 'wayplan.generate', 'pickup.verify'],
   Finance: ['cod.reconcile', 'payout.approve', 'finance.export'],
   UserMgmt: ['user.create', 'user.suspend', 'role.assign']
 };

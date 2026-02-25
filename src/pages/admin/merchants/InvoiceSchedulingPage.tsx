@@ -1,6 +1,3 @@
-  Calendar,
-  Clock,
-  Search,
   Plus,
   Settings2,
   ChevronRight,

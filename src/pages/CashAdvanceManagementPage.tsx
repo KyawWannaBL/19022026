@@ -1,6 +1,3 @@
-  Search, 
-  Filter, 
-  Download, 
   Edit, 
   Trash2, 
   DollarSign,

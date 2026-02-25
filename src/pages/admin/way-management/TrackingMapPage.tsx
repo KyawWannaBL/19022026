@@ -1,6 +1,3 @@
-  MapPin,
-  Navigation,
-  Search,
   Filter,
   Layers,
   Maximize2,

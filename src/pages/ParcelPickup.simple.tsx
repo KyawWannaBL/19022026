@@ -1,6 +1,3 @@
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-foreground">Parcel Pickup System</h1>
         <p className="text-muted-foreground mt-2">
           Register parcels and generate QR codes for tracking
         </p>

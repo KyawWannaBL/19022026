@@ -1,6 +1,3 @@
-    { title: "Book Pickup", desc: "Via App or Website" },
-    { title: "We Deliver", desc: "Direct to customer" },
-    { title: "Collect Cash", desc: "Item value + shipping" },
     { title: "Remittance", desc: "Funds to your bank" }
   ];
 

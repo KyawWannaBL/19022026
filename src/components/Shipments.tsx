@@ -1,6 +1,3 @@
-import * as z from 'zod';
-import {
-  ArrowLeft, Save, AlertCircle, User, MapPin, DollarSign, Image as ImageIcon
 } from 'lucide-react';
 import { 
   ROUTE_PATHS, MOCK_TOWNSHIPS, Shipment, SHIPMENT_STATUS 

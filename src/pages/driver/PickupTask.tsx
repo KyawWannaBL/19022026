@@ -1,6 +1,3 @@
-
-export default function PickupTask() {
-  const tasks = [
     { id: 'T-001', address: '123 Pyay Road, Kamayut', time: '10:30 AM', items: 2 },
     { id: 'T-002', address: '45 Insein Road, Hlaing', time: '11:45 AM', items: 1 },
   ];

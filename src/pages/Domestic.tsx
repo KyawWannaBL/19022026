@@ -1,6 +1,3 @@
-  return (
-    <div className="min-h-screen bg-white">
-      <div className="bg-slate-900 text-white py-2 text-sm text-center">
         <FaPhoneAlt className="inline mr-2" /> +95 9 897 4477 44
         <FaEnvelope className="inline ml-4 mr-2" /> info@britiumexpress.com
       </div>

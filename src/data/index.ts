@@ -1,6 +1,3 @@
-  {
-    id: 'u1',
-    name: 'Alexander Wright', // Changed from fullName
     role: 'admin',           // Lowercase to match UserRole type
     email: 'alex@fleet.com'
   }

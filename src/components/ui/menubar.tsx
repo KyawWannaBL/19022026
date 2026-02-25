@@ -1,6 +1,3 @@
-
-const MenubarMenu = MenubarPrimitive.Menu
-
 const MenubarGroup = MenubarPrimitive.Group
 
 const MenubarPortal = MenubarPrimitive.Portal

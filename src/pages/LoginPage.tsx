@@ -1,6 +1,3 @@
-import { AuthProvider, useAuth } from '@/hooks/useAuth';
-import { ROUTE_PATHS } from '@/lib/index';
-
 // Layouts
 import { PublicLayout } from '@/components/PublicLayout';
 

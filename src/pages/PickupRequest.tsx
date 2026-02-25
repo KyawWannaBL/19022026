@@ -1,6 +1,3 @@
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
-import InternationalPolicyCheckbox from "@/components/InternationalPolicyCheckbox";
 import LanguageToggle from "@/components/LanguageToggle";
 
 export default function PickupRequest() {

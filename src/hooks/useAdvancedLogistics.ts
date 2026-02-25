@@ -1,6 +1,3 @@
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
     const fetchData = async () => {
       const { data: shipments } = await supabase.from('shipments').select('*');
       setData(shipments || []);

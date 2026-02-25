@@ -1,6 +1,10 @@
-import App from './App';
 import './index.css';
-import { AuthProvider } from './hooks/useAuth';
+import { LanguageProvider } from './lib/LanguageContext';
 
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
   </React.StrictMode>
 );

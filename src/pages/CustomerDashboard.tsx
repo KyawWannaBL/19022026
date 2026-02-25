@@ -1,6 +1,3 @@
-  Search, 
-  History, 
-  User, 
   ArrowRight,
   Clock,
   CheckCircle2

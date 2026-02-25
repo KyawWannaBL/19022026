@@ -1,6 +1,3 @@
-import { Input } from '@/components/ui/input';
-import { 
-  Package, 
   QrCode, 
   Search, 
   Filter,

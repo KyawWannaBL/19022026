@@ -1,6 +1,3 @@
-  Package, 
-  QrCode, 
-  CheckCircle2, 
   AlertTriangle, 
   Search, 
   ArrowRight, 

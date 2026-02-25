@@ -1,6 +1,3 @@
-  Truck, 
-  MapPin, 
-  Clock, 
   Shield, 
   Star,
   ArrowRight,

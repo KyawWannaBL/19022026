@@ -1,7 +1,4 @@
 
-export default class ErrorBoundary extends React.Component<Props, State> {
-  state: State = { hasError: false };
-
   static getDerivedStateFromError() {
     return { hasError: true };
   }
