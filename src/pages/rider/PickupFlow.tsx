@@ -1,18 +1,3 @@
-      <div className="max-w-xl mx-auto">
-        <div className="flex items-center gap-6 mb-16">
-          <div className="h-[1px] w-16 bg-zinc-900" />
-          <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-zinc-400">Step 01 / Registry</span>
-        </div>
-
-        <h2 className="text-5xl font-serif text-zinc-900 mb-12 leading-tight">Secure the <br/>Consignment.</h2>
-
-        <div className="space-y-12">
-          <div className="group relative">
-            <label className="text-[10px] uppercase tracking-widest text-zinc-400 font-bold mb-4 block">Tamper Tag Identifier</label>
-            <input 
-              className="w-full bg-transparent border-b border-zinc-200 py-4 text-2xl font-light placeholder:text-zinc-200 focus:border-zinc-900 outline-none transition-all" 
-              placeholder="Awaiting Scan..."
-            />
             <QrCode className="absolute right-0 bottom-4 h-6 w-6 text-zinc-300 group-focus-within:text-[#D4AF37] transition-colors" />
           </div>
 

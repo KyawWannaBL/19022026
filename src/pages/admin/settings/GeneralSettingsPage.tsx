@@ -1,18 +1,3 @@
-  Mail,
-  Phone,
-  MapPin,
-  Upload,
-  Globe2,
-  Clock,
-  Coins
-} from 'lucide-react';
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { useTranslation } from '@/lib/translations';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Select,

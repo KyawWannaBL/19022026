@@ -1,18 +1,3 @@
-  MoreVertical, 
-  CheckCircle2, 
-  Clock, 
-  AlertCircle, 
-  ArrowUpRight,
-  Printer
-} from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { useTranslation } from '@/lib/translations';
-import { 
-  Button 
-} from '@/components/ui/button';
-import { 
-  Card, 
   CardContent, 
   CardHeader, 
   CardTitle, 

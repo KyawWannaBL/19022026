@@ -1,18 +1,3 @@
-  Filter,
-  PieChart as PieChartIcon,
-  BarChart3,
-  ArrowUpRight,
-  ArrowDownRight,
-  ChevronRight,
-  Search,
-  Building2
-} from 'lucide-react';
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
   AreaChart,

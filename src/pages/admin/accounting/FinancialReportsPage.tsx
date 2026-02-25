@@ -1,18 +1,3 @@
-  FileText,
-  TrendingUp,
-  PieChart,
-  ArrowDownToLine,
-  Calendar,
-  Filter,
-  Download,
-  Printer,
-  ChevronRight,
-  Wallet,
-  Briefcase,
-  ArrowUpRight,
-  ArrowDownRight
-} from 'lucide-react';
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { 
   Card, 

@@ -1,18 +1,3 @@
-  Trash2,
-  RefreshCw,
-  Facebook,
-  Link2,
-  ExternalLink,
-  CheckCircle2,
-  AlertCircle,
-  Shield,
-  Globe,
-  Code,
-  Lock
-} from 'lucide-react';
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { useTranslation } from '@/lib/translations';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';

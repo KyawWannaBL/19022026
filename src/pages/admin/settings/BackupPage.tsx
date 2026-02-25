@@ -1,18 +1,3 @@
-  RefreshCw,
-  History,
-  ShieldCheck,
-  Server,
-  Cloud,
-  HardDrive,
-  AlertCircle,
-  CheckCircle2
-} from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { 
-  Card, 
-  CardHeader, 
-  CardTitle, 
   CardDescription, 
   CardContent, 
   CardFooter 
