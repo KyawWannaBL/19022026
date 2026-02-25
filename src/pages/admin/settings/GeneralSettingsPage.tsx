@@ -1,8 +1,3 @@
-  Save,
-  Building2,
-  Globe,
-  Settings2,
-  ShieldCheck,
   Mail,
   Phone,
   MapPin,

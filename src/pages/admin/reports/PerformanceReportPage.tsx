@@ -1,8 +1,3 @@
-  Activity,
-  Clock,
-  Truck,
-  Target,
-  Download,
   Calendar as CalendarIcon,
   ChevronDown,
   Filter,

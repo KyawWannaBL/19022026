@@ -1,8 +1,3 @@
-  TrendingDown,
-  DollarSign,
-  FileText,
-  Download,
-  Calendar,
   Filter,
   PieChart as PieChartIcon,
   BarChart3,

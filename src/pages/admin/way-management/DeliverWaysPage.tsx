@@ -1,8 +1,3 @@
-  Search, 
-  Filter, 
-  MapPin, 
-  Truck, 
-  Calendar, 
   Clock, 
   MoreVertical, 
   Eye, 

@@ -1,8 +1,3 @@
-  Webhook,
-  Activity,
-  ShieldCheck,
-  Plus,
-  Copy,
   Trash2,
   RefreshCw,
   Facebook,

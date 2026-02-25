@@ -1,8 +1,3 @@
-  Download, 
-  Eye, 
-  Search, 
-  Filter, 
-  Plus, 
   MoreVertical, 
   CheckCircle2, 
   Clock, 

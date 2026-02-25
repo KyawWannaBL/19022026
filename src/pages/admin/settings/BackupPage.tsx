@@ -1,8 +1,3 @@
-  Download,
-  Upload,
-  Clock,
-  Save,
-  Trash2,
   RefreshCw,
   History,
   ShieldCheck,

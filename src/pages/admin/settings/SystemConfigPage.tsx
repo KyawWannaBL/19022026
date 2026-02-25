@@ -1,8 +1,3 @@
-  Settings,
-  Database,
-  Globe,
-  ShieldCheck,
-  Webhook,
   MessageSquare,
   MapPin,
   Save,

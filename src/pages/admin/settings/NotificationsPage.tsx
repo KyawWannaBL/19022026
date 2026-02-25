@@ -1,8 +1,3 @@
-  Mail,
-  MessageSquare,
-  Bell,
-  FileCode,
-  Save,
   AlertCircle,
   ShieldCheck,
   Settings2,
