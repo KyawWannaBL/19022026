@@ -17,7 +17,7 @@ import {
   Download,
   History
 } from 'lucide-react';
-import { SHIPMENT_STATUSES, ROUTE_PATHS } from '@/lib/index';
+import { SHIPMENT_STATUS, ROUTE_PATHS } from '@/lib/index';
 import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Button } from '@/components/ui/button';
@@ -77,7 +77,7 @@ const MOCK_FAILED_WAYS = [
     failedAttempts: 2,
     lastAttempt: '2026-02-04 09:30 AM',
     codAmount: 45000,
-    status: SHIPMENT_STATUSES.FAILED,
+    status: SHIPMENT_STATUS.FAILED,
   },
   {
     id: 'FW-10294',
@@ -90,7 +90,7 @@ const MOCK_FAILED_WAYS = [
     failedAttempts: 1,
     lastAttempt: '2026-02-04 10:15 AM',
     codAmount: 28000,
-    status: SHIPMENT_STATUSES.FAILED,
+    status: SHIPMENT_STATUS.FAILED,
   },
   {
     id: 'FW-10295',
@@ -103,7 +103,7 @@ const MOCK_FAILED_WAYS = [
     failedAttempts: 1,
     lastAttempt: '2026-02-03 04:45 PM',
     codAmount: 15500,
-    status: SHIPMENT_STATUSES.FAILED,
+    status: SHIPMENT_STATUS.FAILED,
   },
   {
     id: 'FW-10296',
@@ -116,7 +116,7 @@ const MOCK_FAILED_WAYS = [
     failedAttempts: 3,
     lastAttempt: '2026-02-04 11:00 AM',
     codAmount: 125000,
-    status: SHIPMENT_STATUSES.FAILED,
+    status: SHIPMENT_STATUS.FAILED,
   },
 ];
 

@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 import { ROUTE_PATHS } from '@/lib/index.ts';
 
-import { ROUTE_PATHS, generateTrackingNumber, SHIPMENT_STATUSES } from '@/lib/index.ts';
+import { ROUTE_PATHS, generateTrackingNumber, SHIPMENT_STATUS } from '@/lib/index.ts';
 import { supabase } from '@/lib/supabase';
 import { TABLES } from '@/lib/db/tables';
 
@@ -66,7 +66,7 @@ export default function CreateShipment() {
     weight: data.weight,
     cod_amount: data.codAmount ?? 0,
     total_cost: data.price ?? 0,
-    status: SHIPMENT_STATUSES.PENDING,
+    status: SHIPMENT_STATUS.PENDING,
     origin_branch_id: data.branchId,
     special_instructions: data.notes ?? null,
     service_type: data.serviceType ?? 'standard',
@@ -85,7 +85,7 @@ export default function CreateShipment() {
     // Insert initial tracking record (best-effort)
     await supabase.from(TABLES.SHIPMENT_TRACKING).insert({
       shipment_id: inserted.id,
-      status: SHIPMENT_STATUSES.PENDING,
+      status: SHIPMENT_STATUS.PENDING,
       location: inserted.sender_city ?? 'Origin',
       notes: 'Shipment created',
       timestamp: new Date().toISOString(),

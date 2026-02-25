@@ -53,7 +53,7 @@ import {
 } from '@/components/ui/table';
 import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
-import { SHIPMENT_STATUSES } from '@/lib/index';
+import { SHIPMENT_STATUS } from '@/lib/index';
 import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 // Mock Data for 2026 Analytics

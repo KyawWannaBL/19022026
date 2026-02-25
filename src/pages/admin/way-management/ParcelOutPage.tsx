@@ -39,7 +39,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
-import { SHIPMENT_STATUSES, ROUTE_PATHS } from '@/lib/index';
+import { SHIPMENT_STATUS, ROUTE_PATHS } from '@/lib/index';
 import { useNavigate } from 'react-router-dom';
 
 interface ParcelItem {

@@ -14,7 +14,7 @@ import {
   QrCode,
   X
 } from 'lucide-react';
-import { ROUTE_PATHS, SHIPMENT_STATUSES } from '@/lib/index';
+import { ROUTE_PATHS, SHIPMENT_STATUS } from '@/lib/index';
 import { useTranslation } from '@/lib/translations';
 import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';

@@ -1,56 +1,33 @@
-/**
- * Britium Express - Core Constants and Types
- * © 2026 Britium Express Logistics System
- */
-
-export const ROUTE_PATHS = {
-  // Public Pages
-  HOME: '/',
-  SERVICES: '/services',
-  GET_QUOTE: '/get-quote',
-  SHIPPING_CALCULATOR: '/quote',
-  ABOUT: '/about',
-  NEWS: '/news',
-  CONTACT: '/contact',
-  PUBLIC_TRACKING: '/track',
-  SUPPORT: '/support',
-  LEGAL: '/legal',
-  
-  // Authentication
-  LOGIN: '/login',
-  REGISTER: '/register',
-  
-  // Role-Based Dashboards
-  DASHBOARD: '/admin/dashboard',
-  CUSTOMER_DASHBOARD: '/customer/dashboard',
-  MERCHANT_DASHBOARD: '/merchant/dashboard',
-  RIDER_DASHBOARD: '/rider/dashboard',
-  MARKETER_DASHBOARD: '/marketer/dashboard',
-  CS_DASHBOARD: '/customer-service/dashboard',
-
-  // Merchant Portal Sub-pages
-  MERCHANT_ORDERS: '/merchant/orders',
-  MERCHANT_TRACKING: '/merchant/tracking',
-  MERCHANT_PROFILE: '/merchant/profile',
-} as const;
-
-export const USER_ROLES = {
-  SUPER_ADMIN: 'super_admin',
-  ADMIN: 'admin',
-  MANAGER: 'manager',
-  RIDER: 'rider',
-  MERCHANT: 'merchant',
-  CUSTOMER: 'customer',
-} as const;
-
-export const SHIPMENT_STATUSES = {
+export const SHIPMENT_STATUS = {
   PENDING: 'pending',
+  PICKED_UP: 'picked_up',
   IN_TRANSIT: 'in_transit',
+  ARRIVED_AT_WAREHOUSE: 'arrived_at_warehouse',
+  OUT_FOR_DELIVERY: 'out_for_delivery',
   DELIVERED: 'delivered',
   FAILED: 'failed',
   RETURNED: 'returned',
+  CANCELLED: 'cancelled'
 } as const;
 
-// ... (Exporting types as defined in your file)
-export type UserRole = typeof USER_ROLES[keyof typeof USER_ROLES];
-export type ShipmentStatus = typeof SHIPMENT_STATUSES[keyof typeof SHIPMENT_STATUSES];
+export type ShipmentStatus = typeof SHIPMENT_STATUS[keyof typeof SHIPMENT_STATUS];
+
+export interface Shipment {
+  id: string;
+  awb?: string;
+  status: ShipmentStatus;
+  senderName: string;
+  receiverName: string;
+  destinationTownship: string;
+  weight: number;
+  pieces: number;
+  createdAt: string;
+}
+
+export const formatCurrency = (amount: number) => {
+  return new Intl.NumberFormat('my-MM', { style: 'currency', currency: 'MMK' }).format(amount);
+};
+
+export const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString('en-GB');
+};

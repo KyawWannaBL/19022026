@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { useLanguageContextContext } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
-import { SHIPMENT_STATUSES } from '@/lib/index';
+import { SHIPMENT_STATUS } from '@/lib/index';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';

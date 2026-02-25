@@ -18,7 +18,7 @@ import { twMerge } from 'tailwind-merge';
 import { 
   Shipment, 
   ShipmentStatus, 
-  SHIPMENT_STATUSES 
+  SHIPMENT_STATUS 
 } from '@/lib/index';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -29,45 +29,45 @@ function cn(...inputs: ClassValue[]) {
 
 export function StatusBadge({ status }: { status: ShipmentStatus }) {
   const config: Record<ShipmentStatus, { label: string; className: string }> = {
-    [SHIPMENT_STATUSES.PENDING]: { 
+    [SHIPMENT_STATUS.PENDING]: { 
       label: 'Pending', 
       className: 'bg-secondary text-secondary-foreground' 
     },
-    [SHIPMENT_STATUSES.PICKED_UP]: { 
+    [SHIPMENT_STATUS.PICKED_UP]: { 
       label: 'Picked Up', 
       className: 'bg-primary/20 text-primary border-primary/30' 
     },
-    [SHIPMENT_STATUSES.IN_TRANSIT]: { 
+    [SHIPMENT_STATUS.IN_TRANSIT]: { 
       label: 'In Transit', 
       className: 'bg-accent/20 text-accent-foreground border-accent/30' 
     },
-    [SHIPMENT_STATUSES.ARRIVED_AT_WAREHOUSE]: { 
+    [SHIPMENT_STATUS.ARRIVED_AT_WAREHOUSE]: { 
       label: 'At Warehouse', 
       className: 'bg-primary/10 text-primary border-primary/20' 
     },
-    [SHIPMENT_STATUSES.OUT_FOR_DELIVERY]: { 
+    [SHIPMENT_STATUS.OUT_FOR_DELIVERY]: { 
       label: 'Out for Delivery', 
       className: 'bg-accent text-accent-foreground' 
     },
-    [SHIPMENT_STATUSES.DELIVERED]: { 
+    [SHIPMENT_STATUS.DELIVERED]: { 
       label: 'Delivered', 
       className: 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border-emerald-500/30' 
     },
-    [SHIPMENT_STATUSES.FAILED]: { 
+    [SHIPMENT_STATUS.FAILED]: { 
       label: 'Failed', 
       className: 'bg-destructive/20 text-destructive border-destructive/30' 
     },
-    [SHIPMENT_STATUSES.CANCELLED]: { 
+    [SHIPMENT_STATUS.CANCELLED]: { 
       label: 'Cancelled', 
       className: 'bg-muted text-muted-foreground' 
     },
-    [SHIPMENT_STATUSES.RETURNED]: { 
+    [SHIPMENT_STATUS.RETURNED]: { 
       label: 'Returned', 
       className: 'bg-amber-500/20 text-amber-600 border-amber-500/30' 
     },
   };
 
-  const { label, className } = config[status] || config[SHIPMENT_STATUSES.PENDING];
+  const { label, className } = config[status] || config[SHIPMENT_STATUS.PENDING];
 
   return (
     <Badge variant="outline" className={cn("px-2.5 py-0.5 font-medium uppercase tracking-wider text-[10px]", className)}>
@@ -83,15 +83,15 @@ export function TrackingTimeline({ shipment }: { shipment: Shipment }) {
 
   const getStatusIcon = (status: ShipmentStatus) => {
     switch (status) {
-      case SHIPMENT_STATUSES.PENDING: return FileText;
-      case SHIPMENT_STATUSES.PICKED_UP: return Package;
-      case SHIPMENT_STATUSES.IN_TRANSIT: return Truck;
-      case SHIPMENT_STATUSES.ARRIVED_AT_WAREHOUSE: return Warehouse;
-      case SHIPMENT_STATUSES.OUT_FOR_DELIVERY: return MapPin;
-      case SHIPMENT_STATUSES.DELIVERED: return CheckCircle2;
-      case SHIPMENT_STATUSES.FAILED: return AlertCircle;
-      case SHIPMENT_STATUSES.CANCELLED: return XCircle;
-      case SHIPMENT_STATUSES.RETURNED: return RotateCcw;
+      case SHIPMENT_STATUS.PENDING: return FileText;
+      case SHIPMENT_STATUS.PICKED_UP: return Package;
+      case SHIPMENT_STATUS.IN_TRANSIT: return Truck;
+      case SHIPMENT_STATUS.ARRIVED_AT_WAREHOUSE: return Warehouse;
+      case SHIPMENT_STATUS.OUT_FOR_DELIVERY: return MapPin;
+      case SHIPMENT_STATUS.DELIVERED: return CheckCircle2;
+      case SHIPMENT_STATUS.FAILED: return AlertCircle;
+      case SHIPMENT_STATUS.CANCELLED: return XCircle;
+      case SHIPMENT_STATUS.RETURNED: return RotateCcw;
       default: return Circle;
     }
   };
