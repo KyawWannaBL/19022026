@@ -41,19 +41,14 @@
     "submit": "Submit KYC",
     "submitted": "KYC submitted successfully. Verification pending."
   },
-  "password": {
-    "forceTitle": "Password Change Required",
-    "forceDesc": "For security, you must change your default password before accessing operational pages.",
-    "newPassword": "New Password",
-    "confirmNewPassword": "Confirm New Password",
-    "update": "Update Password",
-    "updated": "Password updated successfully."
-  },
-  "policy": {
-    "intlTitle": "International Delivery Standards",
-    "accept": "I agree to the International Delivery Standards & Customs Compliance Policy.",
-    "statement": "I confirm that this shipment complies with Myanmar export/import regulations and international delivery standards.",
-    "required": "You must accept the international delivery policy before submitting."
+  "status": {
+    "pending": "Pending",
+    "picked_up": "Picked Up",
+    "in_transit": "In Transit",
+    "delivered": "Delivered",
+    "failed": "Failed",
+    "arrived_at_warehouse": "Arrived at Warehouse",
+    "out_for_delivery": "Out for Delivery"
   },
   "pickup": {
     "title": "Pickup Request",

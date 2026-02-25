@@ -1,5 +1,4 @@
 import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 import React from 'react';
 import { ShieldCheck, Target, Users, Award } from 'lucide-react';
 import { IMAGES } from '@/assets/images';

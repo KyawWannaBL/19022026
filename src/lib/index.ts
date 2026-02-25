@@ -1,9 +1,8 @@
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 /**
  * Britium Express - Core Constants and Types
  * © 2026 Britium Express Logistics System
- * Version: 2.6 (Production Final - Zero-Error Compatibility)
+ * Version: 2.7 (Production Final - Zero-Error Compatibility)
+ * No Sample Data | Bilingual Ready | Module Guarded
  */
 
 // 1. Core Route Dictionary
@@ -70,14 +69,6 @@ export const USER_ROLES = {
 } as const;
 
 export type UserRole = typeof USER_ROLES[keyof typeof USER_ROLES];
-
-export const NDR_REASONS = [
-  "Recipient Not Home",
-  "Address Not Found",
-  "Refused by Recipient",
-  "Office Closed",
-  "Phone Unreachable"
-];
 
 // 3. Ultimate Permissive Hybrid Interface
 // Resolves TS2339 by providing aliases for all database variations
@@ -163,14 +154,12 @@ export const getStatusVariant = (status: string) => {
   return 'default';
 };
 
+// Fixed Bilingual logic to remove hardcoded Myanmar strings
 export const getBilingualStatus = (status: string, t: any) => {
-  const translations: Record<string, { en: string, my: string }> = {
-    pending: { en: "Pending", my: "စောင့်ဆိုင်းဆဲ" },
-    picked_up: { en: "Picked Up", my: "လက်ခံရရှိပြီး" },
-    in_transit: { en: "In Transit", my: "ပို့ဆောင်ဆဲ" },
-    delivered: { en: "Delivered", my: "ရောက်ရှိပြီး" },
-    failed: { en: "Failed", my: "မအောင်မြင်ပါ" }
-  };
-  const match = translations[status?.toLowerCase()] || { en: status, my: status };
-  return t(match.en, match.my);
+  const s = status?.toLowerCase() || 'pending';
+  // Uses translation keys to fetch values from local JSON files
+  return t(`status.${s}`) || s;
 };
+
+// Guard against global scope pollution
+export {};

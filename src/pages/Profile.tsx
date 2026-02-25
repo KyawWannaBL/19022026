@@ -1,5 +1,4 @@
 import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 import React from 'react';
 import { User, Mail, Shield, MapPin, Calendar, Camera, Key } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';

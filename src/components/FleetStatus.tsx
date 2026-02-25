@@ -1,5 +1,4 @@
 import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 // src/components/FleetStatus.tsx
 import React, { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';

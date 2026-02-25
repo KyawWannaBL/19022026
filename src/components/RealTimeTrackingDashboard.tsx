@@ -1,5 +1,4 @@
 import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 import React, { useState, useMemo } from 'react';
 import { Truck, MapPin, RefreshCw, Navigation, Shield, Search } from 'lucide-react';
 import { Shipment, getBilingualStatus, formatDate } from '@/lib/index';

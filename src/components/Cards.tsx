@@ -1,5 +1,4 @@
 import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
-import { Shipment, User, ROUTE_PATHS, USER_ROLES } from "@/lib/index";
 import React from 'react';
 import { User, MapPin, Weight, Calendar } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
