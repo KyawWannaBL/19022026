@@ -17,7 +17,7 @@ import {
   SHIPMENT_STATUS,
   formatDate,
   getStatusVariant,
-  ShipmentStatus
+  string
 } from '@/lib/index';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -38,7 +38,7 @@ interface LocationData {
 interface RouteStop {
   id: string;
   address: string;
-  status: ShipmentStatus;
+  status: string;
   eta: string;
   customerName: string;
   orderId: string;
