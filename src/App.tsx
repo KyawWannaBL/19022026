@@ -1,3 +1,16 @@
+export default function App() {
+  return (
+    <LanguageProvider> {/* <--- Wraps everything */}
+      <BrowserRouter>
+        <Layout>
+           <Routes>
+              {/* All your routes here */}
+           </Routes>
+        </Layout>
+      </BrowserRouter>
+    </LanguageProvider>
+  );
+}
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from '@/lib/LanguageContext';

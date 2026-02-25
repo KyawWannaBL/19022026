@@ -5,22 +5,46 @@ type Language = 'en' | 'my';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
+  // This supports BOTH dictionary keys and inline bilingual pairs
   t: (keyOrEn: string, fallbackMy?: string) => string;
 }
 
 const translations: Record<Language, Record<string, string>> = {
-  en: { "nav.login": "Login", "public.track": "Track" },
-  my: { "nav.login": "အကောင့်ဝင်ရန်", "public.track": "လမ်းကြောင်းရှာ" }
+  en: {
+    "nav.login": "Login",
+    "public.track": "Track & Trace",
+    "merchant.portal": "Merchant Portal",
+    "common.save": "Save",
+    "common.cancel": "Cancel"
+  },
+  my: {
+    "nav.login": "အကောင့်ဝင်ရန်",
+    "public.track": "လမ်းကြောင်းရှာရန်",
+    "merchant.portal": "ကုန်သည်ဝင်ပေါက်",
+    "common.save": "သိမ်းဆည်းမည်",
+    "common.cancel": "ပယ်ဖျက်မည်"
+  }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguageState] = useState<Language>('my');
-  const setLanguage = (lang: Language) => { setLanguageState(lang); };
+  const [language, setLanguageState] = useState<Language>(() => {
+    return (localStorage.getItem('app_lang') as Language) || 'my';
+  });
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem('app_lang', lang);
+  };
 
   const t = (keyOrEn: string, fallbackMy?: string): string => {
-    if (fallbackMy) return language === 'en' ? keyOrEn : fallbackMy;
+    // Mode 1: Inline Bilingual Pair -> t("Hello", "မင်္ဂလာပါ")
+    if (fallbackMy !== undefined) {
+      return language === 'en' ? keyOrEn : fallbackMy;
+    }
+
+    // Mode 2: Dictionary Lookup -> t("nav.login")
     return translations[language][keyOrEn] || keyOrEn;
   };
 
@@ -37,5 +61,5 @@ export const useLanguageContext = () => {
   return context;
 };
 
-// ALIAS for older components to stop the TS2305 errors immediately
+// Alias for older components
 export const useLanguage = useLanguageContext;
