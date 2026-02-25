@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
 import { Loader2, AlertCircle } from 'lucide-react';
 
@@ -21,7 +21,7 @@ export const PageLoader = () => (
  * Bi-lingual support for Myanmar/English
  */
 export const ErrorState = ({ message }: { message?: string }) => {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   return (
     <div className="flex flex-col items-center justify-center p-12 border-2 border-dashed border-red-100 rounded-2xl bg-red-50/30 text-center">
       <AlertCircle className="h-12 w-12 text-red-500 mb-4" />

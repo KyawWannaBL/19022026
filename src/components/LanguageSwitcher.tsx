@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
  * Resolves remaining syntax errors and "Multiple Export" conflicts.
  */
 export const LanguageSwitcher = ({ className }: { className?: string }) => {
-  const { language, setLanguage } = useLanguageContextContext();
+  const { language, setLanguage } = useLanguageContext();
 
   const toggleLanguage = () => {
     const newLang = language === 'en' ? 'my' : 'en';

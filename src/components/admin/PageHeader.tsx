@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
 
 interface PageHeaderProps {
@@ -11,7 +11,7 @@ interface PageHeaderProps {
 }
 
 export default function PageHeader({ titleKey, title, subtitle, action, className }: PageHeaderProps) {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   
   const displayTitle = titleKey ? t(titleKey) : (title || 'Page Title');
   

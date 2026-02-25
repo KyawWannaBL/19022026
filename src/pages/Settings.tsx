@@ -96,4 +96,4 @@ export function Settings() {
       </div>
     </motion.div>
   );
-}
+}export default Settings;

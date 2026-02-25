@@ -40,14 +40,14 @@ import { Shipment } from '@/lib/index';
 import { useAuth } from '@/hooks/useAuth';
 import { PhotoCapture } from '@/components/PhotoCapture';
 import { SignaturePad } from '@/components/SignaturePad';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 
 /**
  * 1. LOGIN FORM (Bi-lingual)
  */
 export function LoginForm() {
   const { login, loading } = useAuth();
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   const [error, setError] = useState<string>('');
   
   const loginSchema = z.object({
@@ -112,7 +112,7 @@ export function LoginForm() {
  * 2. EXCEPTION FORM (Bi-lingual)
  */
 export function ExceptionForm({ shipmentId, onSubmit, isLoading }: { shipmentId: string, onSubmit: (data: any) => void, isLoading: boolean }) {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   const form = useForm({
     defaultValues: { reason: '', description: '', photo: '' },
   });

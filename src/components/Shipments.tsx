@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Shipment } from '@/lib/index';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,7 +12,7 @@ export const ShipmentDetailsForm = ({
   shipment: Partial<Shipment>, 
   onSave: (data: any) => void 
 }) => {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
 
   return (
     <div className="space-y-4">

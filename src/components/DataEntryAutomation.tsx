@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -17,7 +17,7 @@ interface AutomationResult {
 }
 
 export const DataEntryAutomation = () => {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   const [status, setStatus] = useState<AutomationResult['status']>('idle');
 
   const handleAutoFill = async () => {

@@ -4,13 +4,13 @@ import { Menu, X, Phone, Mail, Clock, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { IMAGES } from '@/assets/images';
 import { ROUTE_PATHS } from '@/lib/index';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
 
 export const PublicNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const { t, language, setLanguage } = useLanguageContextContext();
+  const { t, language, setLanguage } = useLanguageContext();
 
   const NAV_LINKS = [
     { label: t('public.track'), path: ROUTE_PATHS.PUBLIC_TRACKING },
