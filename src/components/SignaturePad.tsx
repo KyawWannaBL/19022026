@@ -1,4 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
 
 interface SignaturePadProps {
   onSave: (signature: string) => void;

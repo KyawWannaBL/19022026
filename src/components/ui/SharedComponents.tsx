@@ -1,4 +1,3 @@
-import { Loader2, AlertCircle } from 'lucide-react';
 
 /**
  * Page Loader Component

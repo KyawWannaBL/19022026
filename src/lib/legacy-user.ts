@@ -1,4 +1,3 @@
-// Utility functions for backward compatibility with existing code
 import { User as FirebaseUser } from 'firebase/auth';
 
 // Legacy User interface for backward compatibility

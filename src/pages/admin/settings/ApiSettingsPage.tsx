@@ -1,3 +1,22 @@
+import { Key, ShieldCheck } from 'lucide-react';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { useLanguageContext } from '@/lib/LanguageContext';
+
+export default function ApiSettingsPage() {
+  const { t } = useLanguageContext();
+
+  return (
+    <div className="p-8 space-y-6 bg-white min-h-screen">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="h-12 w-12 bg-zinc-900 rounded-2xl flex items-center justify-center text-white">
+          <ShieldCheck className="h-6 w-6" />
+        </div>
+        <div>
+          <h1 className="text-2xl font-bold text-zinc-900">{t('System Security', 'စနစ်လုံခြုံရေး')}</h1>
+          <p className="text-zinc-500 text-sm">{t('Manage production environment credentials', 'ထုတ်လုပ်မှုဆိုင်ရာ ကုဒ်များကို စီမံခန့်ခွဲရန်')}</p>
+        </div>
+      </div>
+
       <Card className="border-zinc-100 shadow-xl rounded-[2rem]">
         <CardHeader className="border-b border-zinc-50">
           <CardTitle className="text-sm uppercase tracking-widest text-zinc-400 flex items-center gap-2">

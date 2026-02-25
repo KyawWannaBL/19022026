@@ -1,4 +1,3 @@
- * Version: 2.7 (Production Final - Zero-Error Compatibility)
  * No Sample Data | Bilingual Ready | Module Guarded
  */
 

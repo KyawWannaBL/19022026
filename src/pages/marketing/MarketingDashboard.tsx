@@ -1,4 +1,3 @@
-import {
   TrendingUp,
   Users,
   Target,

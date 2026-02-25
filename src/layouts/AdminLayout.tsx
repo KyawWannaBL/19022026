@@ -1,4 +1,3 @@
-const AdminLayout = () => {
   return (
     <div className="d-flex">
       <div className="bg-dark text-white p-3" style={{ width: 250 }}>

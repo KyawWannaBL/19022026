@@ -1,4 +1,3 @@
-
 export function useFleet() {
   const [vehicles, setVehicles] = useState<FleetVehicle[]>([]);
   const [loading, setLoading] = useState(true);

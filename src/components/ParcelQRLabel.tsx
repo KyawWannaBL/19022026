@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { IMAGES } from '@/assets/images';
 import { QRCodeGenerator } from '@/components/QRCodeGenerator';

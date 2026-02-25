@@ -1,4 +1,3 @@
-
 export default function Shipments() {
   return (
     <div className="space-y-6">

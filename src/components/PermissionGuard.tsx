@@ -1,4 +1,3 @@
-  permission: string;
   children: React.ReactNode;
 }
 

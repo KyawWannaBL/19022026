@@ -1,4 +1,3 @@
-  /** Optional: show current host origin to help debugging env injection. */
   origin?: string;
 };
 

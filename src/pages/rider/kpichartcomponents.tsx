@@ -1,4 +1,3 @@
-export type KpiStatusDatum = { status: string; count: number };
 
 export default function KpiChartComponents(props: { data: KpiStatusDatum[] }) {
   const data = props.data ?? [];

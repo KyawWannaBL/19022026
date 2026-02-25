@@ -1,4 +1,3 @@
-import { ClipboardEdit, Package, Truck, Upload } from "lucide-react";
 
 export default function DataEntry() {
   const tiles = [

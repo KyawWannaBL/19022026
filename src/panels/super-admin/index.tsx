@@ -1,1 +1,0 @@
-export const superAdminRoutes = [{ path: "", element: <AdminDashboard /> }] as const;

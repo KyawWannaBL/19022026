@@ -1,4 +1,3 @@
-  BarChart,
   Bar,
   XAxis,
   YAxis,

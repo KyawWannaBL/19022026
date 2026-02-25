@@ -1,4 +1,3 @@
- * Supabase Auth uses a "lock" function to prevent concurrent token/session writes.
  * In some setups (especially React StrictMode), the default Navigator LockManager-based
  * lock can time out and spam: `Acquiring an exclusive Navigator LockManager lock ... timed out`.
  *

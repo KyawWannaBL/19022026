@@ -1,4 +1,3 @@
-  Package, Truck, CheckCircle2, DollarSign, Plus, 
   Search, Filter, MoreHorizontal, Eye, Download 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';

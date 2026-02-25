@@ -1,4 +1,3 @@
- * Core Philosophy: Apple Motion = Spring Physics + Damped Settling + Physical Inertia
  * - Natural onset (not sudden start)
  * - Elegant settling (not abrupt stop)
  * - Physical weight (like real objects moving)

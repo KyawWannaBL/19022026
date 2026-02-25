@@ -1,4 +1,3 @@
-  Shield, 
   Clock, 
   MapPin, 
   Phone, 

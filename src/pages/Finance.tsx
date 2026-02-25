@@ -1,4 +1,3 @@
-import { DollarSign, TrendingUp, CreditCard, Wallet } from 'lucide-react';
 
 export default function Finance() {
   const stats = [

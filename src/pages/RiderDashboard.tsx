@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SHIPMENT_STATUS, formatCurrency } from '@/lib/index';
 import { Package, Scan, CheckCircle2 } from 'lucide-react';
 import { toast } from 'sonner';

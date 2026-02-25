@@ -1,4 +1,3 @@
-const Services: React.FC = () => {
   const [rate, setRate] = useState<number>(0);
   const [weight, setWeight] = useState<number>(0);
   const [l, setL] = useState<number>(0);

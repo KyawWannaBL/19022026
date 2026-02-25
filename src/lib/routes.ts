@@ -1,4 +1,3 @@
-  HOME: "/",
   LOGIN: "/login",
 
   // Panel roots

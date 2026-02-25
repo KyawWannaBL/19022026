@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 
 const Quote: React.FC = () => {
   const [region, setRegion] = useState('yangon');

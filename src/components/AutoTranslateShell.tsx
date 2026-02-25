@@ -1,4 +1,3 @@
-
 export default function AutoTranslateShell({ children }: { children: React.ReactNode }) {
   const { lang } = useI18n();
   const ref = useRef<HTMLDivElement | null>(null);

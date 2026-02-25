@@ -1,4 +1,3 @@
-import { useAuth } from "@/hooks/useAuth";
 
 export default function ForgotPassword() {
   const { t } = useLanguageContext();

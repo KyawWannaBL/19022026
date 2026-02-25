@@ -1,112 +1,138 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { formatCurrency, getStatusVariant } from "@/lib/index";
-import { ShieldAlert, ArrowUpRight, ArrowDownRight, FileText, Activity } from "lucide-react";
+import { useShipments } from '@/hooks/useShipments';
+import { useLanguageContext } from '@/lib/LanguageContext';
+import { Shipment, formatCurrency, getStatusVariant } from "@/lib/index";
+import { 
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+  LineChart, Line, AreaChart, Area 
+} from 'recharts';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { DollarSign, TrendingUp, Wallet, ArrowDownRight, Printer } from 'lucide-react';
 
 export default function FinancialReportPage() {
-  const { t } = useTranslation();
-  const [reportType, setReportType] = useState<'LEDGER' | 'PL' | 'CASHFLOW'>('LEDGER');
+  const { t } = useLanguageContext();
+  const { data: shipments = [], isLoading } = useShipments();
+
+  const financialSummary = useMemo(() => {
+    // Aggregate real values from database
+    const totalCOD = shipments.reduce((acc, s) => acc + (Number(s.cod_amount) || 0), 0);
+    const deliveredRevenue = shipments
+      .filter(s => s.status === 'delivered')
+      .reduce((acc, s) => acc + (Number(s.amount) || 0), 0);
+    const pendingCOD = shipments
+      .filter(s => s.status !== 'delivered' && s.status !== 'failed')
+      .reduce((acc, s) => acc + (Number(s.cod_amount) || 0), 0);
+
+    return { totalCOD, deliveredRevenue, pendingCOD };
+  }, [shipments]);
 
   return (
-    <div className="p-8 max-w-7xl mx-auto space-y-8 font-sans">
-      <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <div className="p-8 space-y-8 bg-slate-50 min-h-screen pb-20">
+      <header className="flex justify-between items-end">
         <div>
-          <h1 className="text-4xl font-extralight tracking-tight text-zinc-900">
-            Financial <span className="font-semibold text-[#D4AF37]">Intelligence</span>
+          <h1 className="text-3xl font-black text-[#0d2c54] tracking-tight">
+            {t('Financial Intelligence', 'ဘဏ္ဍာရေးဆိုင်ရာ အစီရင်ခံစာ')}
           </h1>
-          <p className="text-zinc-500 text-sm">Centralized Ledger & Anti-Fraud Monitoring</p>
+          <p className="text-slate-500">{t('Real-time revenue and COD reconciliation', 'ဝင်ငွေနှင့် COD စာရင်းစစ်ဆေးမှု')}</p>
         </div>
-        
-        <div className="flex bg-zinc-100 p-1 rounded-xl border border-zinc-200">
-          {(['LEDGER', 'PL', 'CASHFLOW'] as const).map((type) => (
-            <button
-              key={type}
-              onClick={() => setReportType(type)}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-                reportType === type ? 'bg-white shadow-sm text-zinc-900' : 'text-zinc-400 hover:text-zinc-600'
-              }`}
-            >
-              {type}
-            </button>
-          ))}
-        </div>
+        <button className="flex items-center gap-2 bg-white border px-4 py-2 rounded-xl shadow-sm hover:bg-slate-50 transition-all">
+          <Printer className="h-4 w-4" /> {t('Export PDF', 'PDF ထုတ်ရန်')}
+        </button>
       </header>
 
-      {/* Fraud Alert & KPI Section */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card className="border-none shadow-2xl bg-zinc-900 text-white md:col-span-2">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-2 text-[#D4AF37] mb-2">
-              <ShieldAlert className="h-4 w-4" />
-              <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Audit Enforcement Active</span>
-            </div>
-            <p className="text-zinc-400 text-xs">Total Reconciled Cash (MMK)</p>
-            <h2 className="text-4xl font-medium mt-1">245,670,000</h2>
-            <div className="mt-4 flex gap-4 text-[10px] font-mono opacity-60">
-              <span>INCOME: +12.5%</span>
-              <span>EXPENDITURE: -2.1%</span>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="border-zinc-100 shadow-sm">
-          <CardContent className="pt-6">
-            <div className="flex justify-between items-start">
-              <p className="text-zinc-400 text-[10px] uppercase font-bold tracking-wider">Unsettled COD</p>
-              <Activity className="h-4 w-4 text-orange-500" />
-            </div>
-            <h2 className="text-2xl font-semibold mt-1 text-zinc-800">{formatCurrency(15400000)}</h2>
-          </CardContent>
-        </Card>
-
-        <Card className="border-zinc-100 shadow-sm">
-          <CardContent className="pt-6 text-green-600">
-            <div className="flex justify-between items-start">
-              <p className="text-zinc-400 text-[10px] uppercase font-bold tracking-wider">Net Profit (P&L)</p>
-              <ArrowUpRight className="h-4 w-4" />
-            </div>
-            <h2 className="text-2xl font-semibold mt-1">82,450,000</h2>
-          </CardContent>
-        </Card>
+      {/* 1. Key Performance Indicators */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StatCard 
+          label={t('Net Revenue', 'အသားတင်ဝင်ငွေ')} 
+          value={formatCurrency(financialSummary.deliveredRevenue)} 
+          icon={<DollarSign className="text-green-600" />} 
+        />
+        <StatCard 
+          label={t('Total COD Collected', 'ကောက်ခံရရှိသော COD')} 
+          value={formatCurrency(financialSummary.totalCOD)} 
+          icon={<Wallet className="text-blue-600" />} 
+        />
+        <StatCard 
+          label={t('Pending Reconciliation', 'စစ်ဆေးဆဲ ငွေစာရင်း')} 
+          value={formatCurrency(financialSummary.pendingCOD)} 
+          icon={<ArrowDownRight className="text-amber-600" />} 
+        />
       </div>
 
-      {/* Dynamic Report View */}
-      <Card className="border-zinc-100 shadow-xl rounded-[2rem] overflow-hidden">
-        <CardHeader className="bg-zinc-50/50 border-b border-zinc-100 flex flex-row items-center justify-between">
-          <CardTitle className="text-sm uppercase tracking-widest text-zinc-500 flex items-center gap-2">
-            <FileText className="h-4 w-4" />
-            {reportType === 'LEDGER' ? 'General Ledger Transaction Flow' : 'Financial Statement Analysis'}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="p-0">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* 2. Revenue Trend Chart */}
+        <Card className="rounded-[2rem] border-none shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-sm uppercase tracking-widest text-slate-400">
+              {t('Revenue Growth', 'ဝင်ငွေတိုးတက်မှုနှုန်း')}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="h-80">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={shipments.slice(0, 10)}>
+                <defs>
+                  <linearGradient id="colorRev" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#0d2c54" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#0d2c54" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                <XAxis dataKey="createdAt" hide />
+                <YAxis hide />
+                <Tooltip />
+                <Area type="monotone" dataKey="amount" stroke="#0d2c54" fillOpacity={1} fill="url(#colorRev)" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </CardContent>
+        </Card>
+
+        {/* 3. Transaction Logs */}
+        <Card className="rounded-[2rem] border-none shadow-xl overflow-hidden">
+          <CardHeader className="bg-white">
+            <CardTitle className="text-sm uppercase tracking-widest text-slate-400">
+              {t('Recent Transactions', 'လတ်တလော ငွေလွှဲမှုများ')}
+            </CardTitle>
+          </CardHeader>
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm border-collapse">
-              <thead className="bg-zinc-50 text-zinc-400 text-[10px] uppercase font-bold tracking-tighter">
-                <tr>
-                  <th className="px-6 py-4">Ref ID</th>
-                  <th className="px-6 py-4">Entity/Account</th>
-                  <th className="px-6 py-4">Flow Type</th>
-                  <th className="px-6 py-4">Amount</th>
-                  <th className="px-6 py-4">Auth Hash</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-zinc-50">
-                <tr className="hover:bg-zinc-50/50 transition-colors">
-                  <td className="px-6 py-4 font-mono text-xs">TRX-9921</td>
-                  <td className="px-6 py-4">
-                    <p className="font-semibold text-zinc-800">Income: Delivery Fee</p>
-                    <p className="text-[10px] text-zinc-400">Station A -> General Account</p>
-                  </td>
-                  <td className="px-6 py-4"><span className="text-green-600 text-xs font-bold">+ CASH IN</span></td>
-                  <td className="px-6 py-4 font-bold">{formatCurrency(4500)}</td>
-                  <td className="px-6 py-4 text-[8px] text-zinc-300">SH256:882x...</td>
-                </tr>
-              </tbody>
-            </table>
+            <Table>
+              <TableHeader className="bg-slate-50">
+                <TableRow>
+                  <TableHead>{t('AWB', 'နံပါတ်')}</TableHead>
+                  <TableHead>{t('Amount', 'ပမာဏ')}</TableHead>
+                  <TableHead>{t('Status', 'အခြေအနေ')}</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {shipments.slice(0, 5).map((s) => (
+                  <TableRow key={s.id}>
+                    <TableCell className="font-mono text-xs">{s.awb || s.tracking_number}</TableCell>
+                    <TableCell className="font-bold">{formatCurrency(Number(s.cod_amount) || 0)}</TableCell>
+                    <TableCell>
+                      <span className={`px-2 py-1 rounded-full text-[10px] uppercase font-bold bg-slate-100`}>
+                        {s.status}
+                      </span>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
-        </CardContent>
-      </Card>
+        </Card>
+      </div>
     </div>
+  );
+}
+
+function StatCard({ label, value, icon }: { label: string; value: string; icon: React.ReactNode }) {
+  return (
+    <Card className="border-none shadow-lg rounded-[2rem]">
+      <CardContent className="p-6 flex items-center justify-between">
+        <div>
+          <p className="text-xs font-bold text-slate-400 uppercase mb-1">{label}</p>
+          <h3 className="text-2xl font-black text-[#0d2c54]">{value}</h3>
+        </div>
+        <div className="h-12 w-12 bg-slate-50 rounded-2xl flex items-center justify-center">{icon}</div>
+      </CardContent>
+    </Card>
   );
 }

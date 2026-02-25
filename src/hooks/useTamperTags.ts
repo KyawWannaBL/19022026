@@ -1,4 +1,3 @@
-import {
   TamperTag,
   TAG_STATUS,
   TagStatus,

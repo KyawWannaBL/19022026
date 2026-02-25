@@ -1,4 +1,3 @@
-import { Badge } from '@/components/ui/badge';
 import { Building2, Package, QrCode, Truck, ArrowRight, Clock } from 'lucide-react';
 
 export default function HubOperations() {

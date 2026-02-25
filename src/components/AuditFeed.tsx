@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 
 interface AuditEntry {
   id: string;

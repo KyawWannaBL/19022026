@@ -1,4 +1,3 @@
-export default function SubmitForApproval({ shipmentId }: { shipmentId: string }) {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

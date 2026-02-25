@@ -1,4 +1,3 @@
-
 export default function NewsPage() {
   const posts = [
     { title: "Expanding our Mandalay Hub", date: "2026-02-20", excerpt: "New facilities to serve Upper Myanmar faster." },

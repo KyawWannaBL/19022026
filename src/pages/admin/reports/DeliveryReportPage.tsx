@@ -1,4 +1,3 @@
-  Area
 } from 'recharts';
 import {
   FileText,

@@ -1,4 +1,3 @@
-
 /**
  * Standard Luxury Card Component
  * Refactored for Bilingual Support (EN/MY)

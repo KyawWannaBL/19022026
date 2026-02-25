@@ -1,4 +1,3 @@
-export default function ParcelPickup() {
   return (
     <div className="space-y-6">
       <div>

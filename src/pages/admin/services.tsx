@@ -1,4 +1,3 @@
-const Services: React.FC = () => {
   const steps = [
     { title: "Book Pickup", desc: "Via App or Website" },
     { title: "We Deliver", desc: "Direct to customer" },

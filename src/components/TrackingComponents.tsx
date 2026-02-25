@@ -1,4 +1,3 @@
-import { SHIPMENT_STATUS } from '@/lib/index';
 import StatusBadge from './StatusBadge';
 
 export const TrackingTimeline = ({ steps }: { steps: any[] }) => {

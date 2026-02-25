@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 
 /**
  * Global Mocks for Vitest/Jest Environment

@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion';
 import {
   Search, MessageSquare, Ticket, Package as ShipmentIcon, AlertCircle,
   CheckCircle2, Clock, ChevronRight, Send, Plus, Star, ThumbsUp, Phone, Mail, HelpCircle

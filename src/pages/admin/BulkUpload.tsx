@@ -1,4 +1,3 @@
-import { UploadCloud, FileText, AlertTriangle, Check, X, Download } from 'lucide-react';
 import { useLanguageContext } from "@/lib/LanguageContext";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";

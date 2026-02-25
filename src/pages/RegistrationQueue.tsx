@@ -1,4 +1,3 @@
-  Search, CheckCircle2, XCircle, Package 
 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useLanguageContext } from '@/lib/LanguageContext';

@@ -1,4 +1,3 @@
-/**
  * Britium Express - RBAC Configuration
  * © 2026 Britium Express Logistics System
  */

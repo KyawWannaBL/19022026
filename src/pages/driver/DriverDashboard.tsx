@@ -1,4 +1,3 @@
-
 export default function DriverDashboard() {
   return (
     <div className="space-y-6">

@@ -1,4 +1,3 @@
-import {
   Truck,
   Package,
   MapPin,

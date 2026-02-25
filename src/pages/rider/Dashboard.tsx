@@ -1,4 +1,3 @@
-import { SHIPMENT_STATUS } from '@/lib/index';
 
 export const RiderDashboard = () => {
   const { t } = useLanguageContext();

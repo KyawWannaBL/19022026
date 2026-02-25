@@ -1,4 +1,3 @@
-  id: string;
   nameEn: string;
   nameMm: string;
 }

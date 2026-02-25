@@ -1,4 +1,3 @@
-
 const LabelActivation = () => {
   const { t } = useLanguageContext();
   // Ensure your scan logic uses SHIPMENT_STATUS.LABEL_APPLIED_VERIFIED

@@ -1,4 +1,3 @@
-  Megaphone, 
   Users, 
   MousePointerClick, 
   Percent, 

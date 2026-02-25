@@ -1,4 +1,3 @@
-  XAxis,
   YAxis,
   Tooltip,
   ResponsiveContainer,

@@ -1,4 +1,3 @@
-export interface ReportFilter {
   startDate?: string;
   endDate?: string;
   status?: string;

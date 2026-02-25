@@ -1,4 +1,3 @@
-import { supabase } from "@/lib/supabase";
 import { getMyProfile } from "@/lib/profile";
 
 export default function ProtectedRoute({

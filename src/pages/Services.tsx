@@ -1,4 +1,3 @@
-
 export default function ServicesPage() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

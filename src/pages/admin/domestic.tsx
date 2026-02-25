@@ -1,4 +1,3 @@
-import { FaPhoneAlt, FaEnvelope, FaClock, FaBolt, FaArrowRight, FaDoorOpen, FaBoxOpen, FaMobileAlt } from "react-icons/fa";
 
 const DomesticExpress: React.FC = () => {
   return (

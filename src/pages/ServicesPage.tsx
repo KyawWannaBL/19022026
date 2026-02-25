@@ -1,4 +1,3 @@
-import { Truck, Package, Phone, ArrowRight, Shield, Globe, Zap, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ROUTE_PATHS } from '@/lib/index';
 

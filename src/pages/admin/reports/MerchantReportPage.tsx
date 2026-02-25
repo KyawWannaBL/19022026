@@ -1,4 +1,3 @@
-  Pie,
   Legend
 } from 'recharts';
 import {

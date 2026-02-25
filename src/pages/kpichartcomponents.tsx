@@ -1,4 +1,3 @@
-  <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
     <h3 className="text-xl font-display font-bold text-slate-900 mb-8 tracking-tight">Efficiency Protocol Analysis</h3>
     <div className="h-[350px] w-full">
       <ResponsiveContainer width="100%" height="100%">

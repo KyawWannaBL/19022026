@@ -1,4 +1,3 @@
-import Dashboard from "@/pages/Dashboard";
 import Shipments from "@/pages/Shipments";
 
 export const operationsRoutes = [

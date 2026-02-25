@@ -1,4 +1,3 @@
-  lat: number;
   lng: number;
   speedKmh?: number | null;
   batteryLevel?: number | null;

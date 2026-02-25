@@ -1,18 +1,5 @@
-  Package, 
-  Ban, 
-  FileText, 
-  Phone, 
-  Mail,
-  CheckCircle,
-  AlertTriangle,
-  Calculator,
-  Loader2
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useLanguageContext } from "@/lib/LanguageContext";
+import { Shipment, User, ROUTE_PATHS } from "@/lib/index";
 import { IMAGES } from '@/assets/images';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';

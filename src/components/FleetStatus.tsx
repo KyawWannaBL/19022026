@@ -1,4 +1,3 @@
-import { supabase } from '@/lib/supabase';
 import { Truck, Circle, UserCheck } from 'lucide-react';
 
 export default function FleetStatus() {

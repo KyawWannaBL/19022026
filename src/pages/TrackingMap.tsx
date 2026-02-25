@@ -1,4 +1,3 @@
-import {
   Map as MapIcon,
   Navigation,
   Truck,

@@ -1,18 +1,5 @@
-  Calculator,
-  Package,
-  Truck,
-  Globe,
-  Info,
-  RefreshCw,
-  ChevronRight,
-  Scale,
-  Maximize2,
-  DollarSign
-} from 'lucide-react';
-import { useAuth } from '@/hooks/useAuth';
-import { useLanguageContext } from '@/lib/LanguageContext';
-import { logisticsAPI, MyanmarLocation, RateCalculation } from '@/services/logistics-api';
-import { Button } from '@/components/ui/button';
+import { useLanguageContext } from "@/lib/LanguageContext";
+import { Shipment, User, ROUTE_PATHS } from "@/lib/index";
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';

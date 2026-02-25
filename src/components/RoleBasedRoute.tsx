@@ -1,4 +1,3 @@
-
 type Props = {
   allowedRoles?: string[];
   children: React.ReactNode;

@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import {
   AlertTriangle, Camera, CheckCircle2, ChevronLeft, MapPin, Package,
   PenTool, Phone, Send, ShieldCheck, Smartphone, User, XCircle,

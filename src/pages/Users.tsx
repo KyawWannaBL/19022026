@@ -1,4 +1,3 @@
-import { UserIcon, ShieldCheck } from 'lucide-react';
 
 const UsersPage = () => {
   const { t } = useLanguageContext();

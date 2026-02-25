@@ -1,4 +1,3 @@
-  q: string;
   country?: string; // e.g. "MM"
   proximity?: { lng: number; lat: number }; // bias results
   limit?: number; // default 1

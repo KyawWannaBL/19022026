@@ -1,4 +1,3 @@
-
 export function LuxuryKpiStrip(props: {
   remainingParcels: number;
   etdToNextStopText: string;

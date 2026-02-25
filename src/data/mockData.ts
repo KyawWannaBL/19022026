@@ -1,4 +1,3 @@
-
 export const mockShipments: Shipment[] = [
   {
     id: '1',

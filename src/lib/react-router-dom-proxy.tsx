@@ -1,4 +1,3 @@
-// @ts-expect-error - This is resolved at runtime by Vite alias
 import * as RRD from "react-router-dom-original";
 
 // Re-export everything so other imports keep working

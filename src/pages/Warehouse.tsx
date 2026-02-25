@@ -1,4 +1,3 @@
-
 const Warehouse = () => {
   const { t } = useLanguageContext();
   

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/SharedComponents';
 import PageHeader from '@/components/admin/PageHeader';
 import { useLanguageContext } from '@/lib/LanguageContext';

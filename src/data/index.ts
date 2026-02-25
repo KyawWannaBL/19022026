@@ -1,4 +1,3 @@
-// Example mapping for mock users and shipments
 export const MOCK_USERS: User[] = [
   {
     id: 'u1',

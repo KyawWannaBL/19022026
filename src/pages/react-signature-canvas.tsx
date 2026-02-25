@@ -1,4 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { Trash2, CheckCircle2 } from 'lucide-react';
 
 /**

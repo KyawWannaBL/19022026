@@ -1,4 +1,3 @@
-import { Toaster } from '@/components/ui/toaster';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { AuthProvider, useAuth } from '@/hooks/useAuth';
 import { ROUTE_PATHS } from '@/lib/index';

@@ -1,4 +1,3 @@
-export default function LegalPage() {
   return (
     <div className="bg-slate-50 min-h-screen pb-20">
       <div className="bg-[#0d2c54] py-20 text-center text-white">

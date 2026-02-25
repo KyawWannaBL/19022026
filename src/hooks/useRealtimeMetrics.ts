@@ -1,4 +1,3 @@
-export function useRealtimeMetrics() {
   const [metrics, setMetrics] = useState({ pending: 0, transitTime: '1.4 Days' });
 
   useEffect(() => {

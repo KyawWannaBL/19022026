@@ -1,4 +1,3 @@
-import { Badge } from '@/components/ui/badge';
 import { MapPin, Navigation, QrCode, Phone, ChevronRight, Package } from 'lucide-react';
 
 export default function CourierApp() {

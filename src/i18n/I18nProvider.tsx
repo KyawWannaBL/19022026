@@ -1,4 +1,3 @@
-type I18nCtx = {
   lang: Lang;
   setLang: (l: Lang) => void;
   toggleLang: () => void;

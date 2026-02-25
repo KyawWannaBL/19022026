@@ -1,4 +1,3 @@
-import { TABLES } from '@/lib/constants'; // Ensure this path is correct
 
 export const useEnterpriseShipments = () => {
   const fetchShipments = async (filters?: any) => {

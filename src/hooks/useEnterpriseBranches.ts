@@ -1,4 +1,3 @@
-
 export type EnterpriseBranch = {
   id: string;
   name: string;

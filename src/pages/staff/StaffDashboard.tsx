@@ -1,4 +1,3 @@
-
 export default function StaffDashboard() {
   return (
     <div className="space-y-6">

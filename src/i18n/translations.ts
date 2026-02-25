@@ -1,4 +1,3 @@
-
 export const MYANMAR_DICTIONARY: Record<string, string> = {
   // Core
   "Secure Terminal": "လုံခြုံရေး တာမီနယ်",

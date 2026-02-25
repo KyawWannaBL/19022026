@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { 
   ArrowDown, Package, Scan, CheckCircle, XCircle, 
   ArrowLeft, RefreshCw, QrCode, Clock, User, MapPin 

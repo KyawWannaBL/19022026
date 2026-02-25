@@ -1,4 +1,3 @@
-  MapPin,
   Truck,
   Users,
   Calendar,

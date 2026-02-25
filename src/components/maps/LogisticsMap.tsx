@@ -1,4 +1,3 @@
-  NavigationControl,
   Popup,
   Source,
   Layer,

@@ -1,4 +1,3 @@
-import { getBilingualStatus, getStatusVariant } from '@/lib/index';
 
 interface StatusBadgeProps {
   status: string;

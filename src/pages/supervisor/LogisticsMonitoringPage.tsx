@@ -1,4 +1,3 @@
-export default function LogisticsMonitoringPage() {
   const [selectedVehicleId, setSelectedVehicleId] = useState<string | null>(null);
 
   // Replace this with your realtime feed (Supabase realtime, websockets, polling, etc.)

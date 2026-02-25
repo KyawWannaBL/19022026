@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 
 export default function ApprovalQueue() {
   const { t } = useLanguageContext();

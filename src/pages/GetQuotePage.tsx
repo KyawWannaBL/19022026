@@ -1,4 +1,3 @@
-  Calculator, 
   MapPin, 
   Package, 
   Truck, 

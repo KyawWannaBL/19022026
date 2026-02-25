@@ -1,4 +1,3 @@
-import EmptyState from '@/components/admin/EmptyState';
 import { useLanguageContext } from '@/lib/LanguageContext';
 
 export default function SimpleTransactionPage() {

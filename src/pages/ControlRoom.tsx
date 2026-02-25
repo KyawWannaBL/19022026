@@ -1,4 +1,3 @@
-interface Session {
   user_id: string
   role: string
   branch_id: string

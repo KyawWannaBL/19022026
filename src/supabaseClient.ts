@@ -1,4 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
 
 /**
  * Britium Express - Production Supabase Client

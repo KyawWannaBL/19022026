@@ -1,4 +1,3 @@
-
 export default function useSessionHeartbeat() {
   const { user } = useAuth();
 

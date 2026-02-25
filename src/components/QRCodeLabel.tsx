@@ -1,4 +1,3 @@
-import { Printer, Download } from 'lucide-react';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { IMAGES } from '@/assets/images';
 

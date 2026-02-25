@@ -1,4 +1,3 @@
-  Navigation, MapPin, PenTool, Database, Activity, Shield, Clock,
   LayoutDashboard, Settings
 } from 'lucide-react';
 import { GPSTracker } from '@/components/GPSTracker';

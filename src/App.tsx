@@ -1,4 +1,3 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 // Fixed: Point to the consolidated production index to clear TS2305 errors
 import { ROUTE_PATHS } from "@/lib/index"; 

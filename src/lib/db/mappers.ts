@@ -1,4 +1,3 @@
-import { SHIPMENT_STATUSES } from "@/lib/index";
 
 function normalizeStatus(status: any): ShipmentStatus {
   const s = String(status ?? SHIPMENT_STATUSES.PENDING).toLowerCase();

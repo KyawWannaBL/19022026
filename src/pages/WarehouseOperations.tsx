@@ -1,18 +1,5 @@
-  Box, 
-  Truck, 
-  QrCode, 
-  PackagePlus, 
-  ClipboardList, 
-  Search, 
-  Filter, 
-  Download, 
-  CheckCircle2,
-  ArrowUpRight,
-  ArrowDownLeft,
-  Layers
-} from 'lucide-react';
-import { 
-  Card, 
+import { useLanguageContext } from "@/lib/LanguageContext";
+import { Shipment, User, ROUTE_PATHS } from "@/lib/index";
   CardContent, 
   CardHeader, 
   CardTitle, 

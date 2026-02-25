@@ -1,4 +1,3 @@
-  const { data: session } = await supabase.auth.getSession();
   const userId = session.session?.user?.id;
   if (!userId) return { userId: null, profile: null };
 

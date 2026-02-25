@@ -1,4 +1,3 @@
-  ChevronRight,
   ChevronsLeft,
   ChevronsRight,
   Search,

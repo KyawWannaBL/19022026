@@ -1,4 +1,3 @@
-
 export default function HumanResources() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

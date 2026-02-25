@@ -1,18 +1,5 @@
-  Search, 
-  Filter, 
-  MoreHorizontal, 
-  FileText, 
-  TrendingUp, 
-  TrendingDown, 
-  Wallet,
-  Download,
-  ArrowUpDown,
-  Edit,
-  Eye,
-  Trash2
-} from 'lucide-react';
-import { 
-  Card, 
+import { useLanguageContext } from "@/lib/LanguageContext";
+import { Shipment, User, ROUTE_PATHS } from "@/lib/index";
   CardContent, 
   CardHeader, 
   CardTitle, 

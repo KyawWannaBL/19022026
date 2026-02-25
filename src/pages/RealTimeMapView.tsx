@@ -1,4 +1,3 @@
-import { supabase } from '@/lib/supabase';
 import L from 'leaflet';
 
 delete (L.Icon.Default.prototype as any)._getIconUrl;

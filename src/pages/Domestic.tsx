@@ -1,4 +1,3 @@
-
 export default function Domestic() {
   return (
     <div className="min-h-screen bg-white">

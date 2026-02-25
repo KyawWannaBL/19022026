@@ -1,19 +1,30 @@
-      <Card className="rounded-[2rem] border-zinc-100 shadow-xl overflow-hidden">
-        <CardContent className="p-10 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="p-3 bg-yellow-50 rounded-2xl">
+import { useTranslation } from 'react-i18next';
+import { Card, CardContent } from "@/components/ui/card";
+import { BellRing, ShieldCheck, smartphone } from "lucide-react";
+
+export default function NotificationsPage() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="p-8 max-w-4xl mx-auto space-y-6">
+      <h1 className="text-3xl font-bold">{t('Notifications', 'အသိပေးချက်များ')}</h1>
+      
+      <div className="grid gap-4">
+        <Card className="rounded-2xl border-zinc-100 shadow-sm">
+          <CardContent className="p-6 flex items-center justify-between">
+            <div className="flex items-center gap-4">
               <ShieldCheck className="h-6 w-6 text-yellow-600" />
+              <div>
+                <p className="font-bold">{t('Fraud Alerts', 'လိမ်လည်မှု သတိပေးချက်')}</p>
+                <p className="text-sm text-zinc-500">{t('Notify on ledger hash mismatches', 'စာရင်းဇယား ကွဲလွဲမှုများကို အသိပေးမည်')}</p>
+              </div>
             </div>
-            <div>
-              <p className="font-bold text-zinc-800">{t('Fraud Detection Alerts', 'လိမ်လည်မှု စစ်ဆေးရေး အချက်ပေးချက်')}</p>
-              <p className="text-xs text-zinc-400">{t('Automatic alerts on ledger hash mismatches', 'စာရင်းဇယား ကွဲလွဲမှုရှိပါက အလိုအလျောက် အသိပေးမည်')}</p>
+            <div className="h-6 w-11 bg-zinc-900 rounded-full relative p-1 cursor-pointer">
+              <div className="h-4 w-4 bg-white rounded-full ml-auto" />
             </div>
-          </div>
-          <div className="h-6 w-11 bg-yellow-600 rounded-full relative">
-            <div className="absolute right-1 top-1 h-4 w-4 bg-white rounded-full shadow-sm" />
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

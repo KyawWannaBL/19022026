@@ -1,4 +1,3 @@
-  ToastDescription,
   ToastProvider,
   ToastTitle,
   ToastViewport,
