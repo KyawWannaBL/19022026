@@ -1,9 +1,9 @@
 import React from 'react';
 import { ShipmentsList } from '@/components/Shipments';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 
 const ShipmentsPage = () => {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6">{t('public.track', 'ပို့ဆောင်မှုများ')}</h1>

@@ -31,13 +31,13 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/components/ui/use-toast";
 import { Badge } from "@/components/ui/badge";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { ROUTE_PATHS } from '@/lib/index';
 import { motion } from 'framer-motion';
 
 const SecurityPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);

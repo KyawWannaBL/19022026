@@ -23,13 +23,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { RiderAPI, type Rider, type RiderTask } from '@/lib/rider-api';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 const RiderDashboard: React.FC = () => {
   const navigate = useNavigate();
-  const { language, t } = useLanguageContextContext();
+  const { language, t } = useLanguageContext();
   const { toast } = useToast();
   
   // State management

@@ -31,7 +31,7 @@ import {
 } from 'recharts';
 
 import { ROUTE_PATHS, Branch } from '@/lib/index';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -130,7 +130,7 @@ const PERFORMANCE_DATA = [
 ];
 
 const BranchesPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const t = (key: string) => translations[language][key as keyof typeof translations['en']] || key;
   
   const [searchQuery, setSearchQuery] = useState('');

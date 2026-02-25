@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
@@ -64,7 +64,7 @@ const defaultSettings: SystemSettings = {
 };
 
 export default function SystemSettings() {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   const [settings, setSettings] = useState<SystemSettings>(defaultSettings);
   const [activeTab, setActiveTab] = useState('general');
 

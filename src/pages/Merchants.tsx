@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
@@ -120,7 +120,7 @@ const mockMerchants: Merchant[] = [
 ];
 
 export default function Merchants() {
-  const { t, language } = useLanguageContextContext();
+  const { t, language } = useLanguageContext();
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('list');
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);

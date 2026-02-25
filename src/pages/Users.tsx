@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { UserIcon, ShieldCheck } from 'lucide-react';
 
 const UsersPage = () => {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   return (
     <div className="p-6">
       <div className="flex items-center gap-2 mb-6">

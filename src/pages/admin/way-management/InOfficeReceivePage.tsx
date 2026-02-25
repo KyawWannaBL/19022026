@@ -18,7 +18,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { ROUTE_PATHS } from '@/lib/index';
 import { useTranslation } from '@/lib/translations';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -32,7 +32,7 @@ import { springPresets, fadeInUp } from '@/lib/motion';
 
 const InOfficeReceivePage: React.FC = () => {
   const navigate = useNavigate();
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showReceipt, setShowReceipt] = useState(false);

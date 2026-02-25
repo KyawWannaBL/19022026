@@ -16,7 +16,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { 
   Card, 
   CardHeader, 
@@ -49,7 +49,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 const BackupPage: React.FC = () => {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   const { toast } = useToast();
   const [isBackingUp, setIsBackingUp] = useState(false);
 

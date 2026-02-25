@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/SharedComponents';
 import PageHeader from '@/components/admin/PageHeader';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { ROUTE_PATHS } from '@/lib/index';
 
 interface TileProps {
@@ -24,7 +24,7 @@ function Tile({ to, title, desc }: TileProps) {
 }
 
 export default function ReportsHome() {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
 
   return (
     <div className="space-y-6">

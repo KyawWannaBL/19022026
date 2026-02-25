@@ -48,7 +48,7 @@ import {
   TableRow 
 } from "@/components/ui/table";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { CashAdvancesAPI, CashAdvance, FormUtils } from '@/lib/forms-api';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
@@ -62,7 +62,7 @@ interface CashAdvanceFormData {
 }
 
 const CashAdvanceManagementPage: React.FC = () => {
-  const { language, t } = useLanguageContextContext();
+  const { language, t } = useLanguageContext();
   const { toast } = useToast();
   
   const [advances, setAdvances] = useState<CashAdvance[]>([]);

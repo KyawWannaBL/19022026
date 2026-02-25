@@ -19,7 +19,7 @@ import * as z from 'zod';
 
 import { ROUTE_PATHS } from '@/lib/index';
 import { useTranslation } from '@/lib/translations';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -52,7 +52,7 @@ const pickupSchema = z.object({
 type PickupFormValues = z.infer<typeof pickupSchema>;
 
 const CreateDeliveryPickupPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const navigate = useNavigate();
   const [date, setDate] = useState<Date>();

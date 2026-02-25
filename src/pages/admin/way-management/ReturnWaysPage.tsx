@@ -15,7 +15,7 @@ import {
   Undo2,
   AlertCircle
 } from 'lucide-react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
 import { ROUTE_PATHS } from '@/lib/index';
 import {
@@ -69,7 +69,7 @@ import {
 import { Label } from '@/components/ui/label';
 
 const ReturnWaysPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const t = (key: string) => translations[language][key as keyof typeof translations['en']] || key;
 
   const [searchQuery, setSearchQuery] = useState('');

@@ -15,7 +15,7 @@ import {
   AlertTriangle
 } from 'lucide-react';
 import { useTranslation } from '@/lib/translations';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -35,7 +35,7 @@ interface ScanResult {
 }
 
 export default function QRScanner() {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   
   const [manualCode, setManualCode] = useState('');

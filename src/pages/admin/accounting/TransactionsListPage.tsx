@@ -22,7 +22,7 @@ import {
   FinancialRecord, 
   ROUTE_PATHS 
 } from '@/lib/index';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -125,7 +125,7 @@ const MOCK_TRANSACTIONS: FinancialRecord[] = [
 ];
 
 const TransactionsListPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<string>('all');

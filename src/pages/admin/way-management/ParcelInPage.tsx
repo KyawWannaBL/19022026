@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { ROUTE_PATHS, SHIPMENT_STATUS } from '@/lib/index';
 import { useTranslation } from '@/lib/translations';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -43,7 +43,7 @@ interface ScannedParcel {
 }
 
 const ParcelInPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   
   const [scanInput, setScanInput] = useState('');

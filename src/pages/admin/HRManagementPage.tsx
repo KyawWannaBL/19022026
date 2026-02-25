@@ -29,7 +29,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 interface Employee {
@@ -66,7 +66,7 @@ interface TrainingProgram {
 }
 
 const HRManagementPage: React.FC = () => {
-  const { language, t } = useLanguageContextContext();
+  const { language, t } = useLanguageContext();
   const { toast } = useToast();
   
   const [totalEmployees, setTotalEmployees] = useState(1247);

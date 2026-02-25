@@ -14,7 +14,7 @@ import {
   Clock,
   Coins
 } from 'lucide-react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -33,7 +33,7 @@ import { Separator } from '@/components/ui/separator';
 import { toast } from 'sonner';
 
 const GeneralSettingsPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [isSaving, setIsSaving] = useState(false);
 

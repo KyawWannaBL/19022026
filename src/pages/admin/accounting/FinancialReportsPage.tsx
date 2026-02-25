@@ -15,7 +15,7 @@ import {
   ArrowUpRight,
   ArrowDownRight
 } from 'lucide-react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { 
   Card, 
@@ -56,7 +56,7 @@ import {
 } from 'recharts';
 
 const FinancialReportsPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [activeTab, setActiveTab] = useState('profit-loss');
 

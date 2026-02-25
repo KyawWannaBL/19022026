@@ -18,7 +18,7 @@ import {
   Code,
   Lock
 } from 'lucide-react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -39,7 +39,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { SiViber } from 'react-icons/si';
 
 const ApiSettingsPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState('keys');

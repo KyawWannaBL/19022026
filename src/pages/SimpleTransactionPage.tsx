@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLanguageContextContext } from "@/lib/LanguageContext";
+import { useLanguageContext } from "@/lib/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { DollarSign, Plus, Save } from "lucide-react";
 
 export default function SimpleTransactionPage() {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   const [transaction, setTransaction] = useState({
     date: new Date().toISOString().split('T')[0],
     description: '',

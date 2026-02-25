@@ -31,7 +31,7 @@ import {
   Legend
 } from 'recharts';
 import { motion } from 'framer-motion';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -81,7 +81,7 @@ const RECENT_TRANSACTIONS = [
 ];
 
 const FinancialReportPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [dateRange, setDateRange] = useState('monthly');
   const [branch, setBranch] = useState('all');

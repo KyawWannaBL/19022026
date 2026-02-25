@@ -51,7 +51,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { SHIPMENT_STATUS } from '@/lib/index';
 import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
@@ -89,7 +89,7 @@ const RECENT_DELIVERIES = [
 ];
 
 const DeliveryReportPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [searchTerm, setSearchTerm] = useState('');
   const [dateRange, setDateRange] = useState('7d');

@@ -34,7 +34,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 interface SystemMetric {
@@ -73,7 +73,7 @@ interface SecurityEvent {
 }
 
 const SystemAdministrationPage: React.FC = () => {
-  const { language, t } = useLanguageContextContext();
+  const { language, t } = useLanguageContext();
   const { toast } = useToast();
   
   const [systemUptime, setSystemUptime] = useState('15 days, 7 hours');

@@ -38,7 +38,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 import { deliveryWaysAPI, type DeliveryWay } from '@/lib/api';
@@ -107,7 +107,7 @@ const MOCK_DELIVERY_WAYS = [
 ];
 
 const DeliverWaysPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [searchQuery, setSearchQuery] = useState('');
   const [deliveryWays, setDeliveryWays] = useState<DeliveryWay[]>([]);

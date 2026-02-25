@@ -50,7 +50,7 @@ import {
   ResponsiveContainer,
   Legend
 } from 'recharts';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 import { IMAGES } from '@/assets/images';
@@ -97,7 +97,7 @@ const ANALYTICS_DATA = {
 };
 
 const AdvancedDashboardPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [selectedTimeframe, setSelectedTimeframe] = useState('7d');
   const [isLive, setIsLive] = useState(true);

@@ -16,7 +16,7 @@ import {
   Truck,
   Briefcase
 } from 'lucide-react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { ROUTE_PATHS } from '@/lib/index';
 import { useTranslation } from '@/lib/translations';
 import { Button } from '@/components/ui/button';
@@ -44,7 +44,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { springPresets, fadeInUp, staggerContainer } from '@/lib/motion';
 
 const AddNewMerchantPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const { toast } = useToast();
   const navigate = useNavigate();

@@ -24,13 +24,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { RiderAPI, type Rider, type RiderTransaction } from '@/lib/rider-api';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 const RiderWallet: React.FC = () => {
   const navigate = useNavigate();
-  const { language, t } = useLanguageContextContext();
+  const { language, t } = useLanguageContext();
   const { toast } = useToast();
   
   const [rider, setRider] = useState<Rider | null>(null);

@@ -24,12 +24,12 @@ import {
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 const UserPreferencesPage: React.FC = () => {
-  const { language, setLanguage } = useLanguageContextContext();
+  const { language, setLanguage } = useLanguageContext();
   const { t } = useTranslation(language);
 
   return (

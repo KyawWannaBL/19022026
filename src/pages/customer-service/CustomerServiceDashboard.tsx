@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLanguageContextContext } from "@/lib/LanguageContext";
+import { useLanguageContext } from "@/lib/LanguageContext";
 import {
   MessageSquare,
   Clock,
@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { CustomerServiceAPI, CustomerServiceInteraction } from "@/lib/admin-api";
 
 export default function CustomerServiceDashboard() {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   const [interactions, setInteractions] = useState<CustomerServiceInteraction[]>([]);
   const [stats, setStats] = useState<any>({});
   const [loading, setLoading] = useState(true);

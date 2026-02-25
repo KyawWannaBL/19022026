@@ -35,7 +35,7 @@ import {
 
 import { ROUTE_PATHS } from '@/lib/index';
 import { useTranslation } from '@/lib/translations';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -80,7 +80,7 @@ const PIE_DATA = [
 const COLORS = ['#D4AF37', '#1A237E', '#4CAF50', '#F44336', '#9C27B0'];
 
 export default function CustomReportPage() {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
 
   const [reportType, setReportType] = useState('shipments');

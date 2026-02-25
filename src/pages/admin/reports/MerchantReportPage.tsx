@@ -32,7 +32,7 @@ import {
   MoreVertical,
   Calendar
 } from 'lucide-react';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { translations } from '@/lib/translations';
 import { ROUTE_PATHS } from '@/lib/index';
 
@@ -86,7 +86,7 @@ const REGION_DISTRIBUTION = [
 const COLORS = ['#D4AF37', '#0F172A', '#1E293B', '#334155'];
 
 const MerchantReportPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const t = (key: string) => translations[language][key as keyof typeof translations['en']] || key;
   const [searchTerm, setSearchTerm] = useState('');
   const [timeRange, setTimeRange] = useState('monthly');

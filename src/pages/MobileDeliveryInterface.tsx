@@ -52,7 +52,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 import { IMAGES } from '@/assets/images';
@@ -104,7 +104,7 @@ const MOBILE_DELIVERIES = [
 ];
 
 const MobileDeliveryInterface: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [deliveries, setDeliveries] = useState(MOBILE_DELIVERIES);
   const [selectedDelivery, setSelectedDelivery] = useState<any>(null);

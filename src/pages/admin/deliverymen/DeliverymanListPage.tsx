@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 import { ROUTE_PATHS } from '@/lib/index';
 import { useTranslation } from '@/lib/translations';
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -122,7 +122,7 @@ const MOCK_DELIVERYMEN = [
 
 const DeliverymanListPage: React.FC = () => {
   const navigate = useNavigate();
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   
   const [searchQuery, setSearchQuery] = useState('');

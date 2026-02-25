@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useLanguageContextContext } from "@/lib/LanguageContext";
+import { useLanguageContext } from "@/lib/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   Calculator, 
@@ -15,7 +15,7 @@ import {
 import { ROUTE_PATHS } from "@/lib/index";
 
 export default function AccountingHome() {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   const navigate = useNavigate();
 
   const accountingModules = [

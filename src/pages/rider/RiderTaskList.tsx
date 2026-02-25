@@ -23,7 +23,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { RiderAPI, type RiderTask, type Rider } from '@/lib/rider-api';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
@@ -32,7 +32,7 @@ type TaskType = 'pickup' | 'delivery' | 'return';
 const RiderTaskList: React.FC = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const { language, t } = useLanguageContextContext();
+  const { language, t } = useLanguageContext();
   const { toast } = useToast();
   
   const [activeTab, setActiveTab] = useState<TaskType>('delivery');

@@ -27,7 +27,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 interface Transaction {
@@ -64,7 +64,7 @@ interface BudgetCategory {
 }
 
 const FinancialManagementPage: React.FC = () => {
-  const { language, t } = useLanguageContextContext();
+  const { language, t } = useLanguageContext();
   const { toast } = useToast();
   
   const [totalRevenue, setTotalRevenue] = useState(45678900);

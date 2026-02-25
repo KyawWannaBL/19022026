@@ -31,7 +31,7 @@ import {
 } from 'recharts';
 import { motion } from 'framer-motion';
 
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -55,7 +55,7 @@ import { Separator } from '@/components/ui/separator';
 import { springPresets, fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 const PerformanceReportPage: React.FC = () => {
-  const { language } = useLanguageContextContext();
+  const { language } = useLanguageContext();
   const { t } = useTranslation(language);
   const [dateRange, setDateRange] = useState('last30');
 

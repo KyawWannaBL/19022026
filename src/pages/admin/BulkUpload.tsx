@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { UploadCloud, FileText, AlertTriangle, Check, X, Download } from 'lucide-react';
-import { useLanguageContextContext } from "@/lib/LanguageContext";
+import { useLanguageContext } from "@/lib/LanguageContext";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BulkUploadAPI, BulkUploadItem } from "@/lib/admin-api";
 
 const BulkUpload = () => {
-  const { t } = useLanguageContextContext();
+  const { t } = useLanguageContext();
   const [file, setFile] = useState<File | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [uploadId, setUploadId] = useState<string | null>(null);

@@ -25,7 +25,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/motion';
 
 interface FleetVehicle {
@@ -53,7 +53,7 @@ interface SystemAlert {
 }
 
 const DispatchControlPage: React.FC = () => {
-  const { language, t } = useLanguageContextContext();
+  const { language, t } = useLanguageContext();
   const { toast } = useToast();
   
   const [systemStatus, setSystemStatus] = useState('online');

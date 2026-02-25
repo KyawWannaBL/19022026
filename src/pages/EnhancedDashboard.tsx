@@ -5,7 +5,7 @@ import { useAuth } from '@/hooks/useAuth';
 
 import { useAuth } from '@/hooks/useAuth';
 
-import { useLanguageContextContext } from '@/lib/LanguageContext';
+import { useLanguageContext } from '@/lib/LanguageContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -52,7 +52,7 @@ interface RecentActivity {
 
 export default function EnhancedDashboard() {
   const { user } = useAuth();
-  const { t, language } = useLanguageContextContext();
+  const { t, language } = useLanguageContext();
   const [stats, setStats] = useState<DashboardStats>({
     totalShipments: 0,
     pendingShipments: 0,
