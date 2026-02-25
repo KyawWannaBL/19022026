@@ -23,7 +23,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           </Link>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-xs font-bold opacity-70 uppercase tracking-widest">{user?.full_name}</span>
+          <span className="text-xs font-bold opacity-70 uppercase tracking-widest">{user?.name}</span>
           <button onClick={handleLogout} className="text-[10px] font-black uppercase bg-red-600 px-3 py-1 rounded">
             {t('Logout', 'ထွက်မည်')}
           </button>
