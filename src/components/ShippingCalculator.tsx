@@ -1,4 +1,3 @@
-import { Calculator, MapPin, Package, Clock, Truck, Phone, Mail } from 'lucide-react';
 import { IMAGES } from '@/assets/images';
 
 export default function ShippingCalculator() {

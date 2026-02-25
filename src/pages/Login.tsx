@@ -1,4 +1,3 @@
-import { postLoginPath } from "@/config/postLogin";
 import LanguageSelect from "@/components/LanguageSelect";
 
 export default function Login() {

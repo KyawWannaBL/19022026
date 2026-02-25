@@ -1,4 +1,3 @@
-  formatDate, 
   getBilingualStatus // Use the bilingual helper we created
 } from '@/lib/index';
 

@@ -1,4 +1,3 @@
-import {
   ArrowLeft,
   Printer,
   Save,

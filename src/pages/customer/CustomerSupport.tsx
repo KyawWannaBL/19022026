@@ -1,4 +1,3 @@
-import {
   Search, MessageSquare, Ticket, Package as ShipmentIcon, AlertCircle,
   CheckCircle2, Clock, ChevronRight, Send, Plus, Star, ThumbsUp, Phone, Mail, HelpCircle
 } from 'lucide-react';

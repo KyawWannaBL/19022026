@@ -1,4 +1,3 @@
-export default function SupportPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="bg-[#0d2c54] py-24 text-center text-white">

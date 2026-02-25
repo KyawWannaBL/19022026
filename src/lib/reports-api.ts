@@ -1,4 +1,3 @@
-  startDate?: string;
   endDate?: string;
   status?: string;
   region?: string;

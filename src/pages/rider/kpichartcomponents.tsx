@@ -1,4 +1,3 @@
-
 export default function KpiChartComponents(props: { data: KpiStatusDatum[] }) {
   const data = props.data ?? [];
   return (

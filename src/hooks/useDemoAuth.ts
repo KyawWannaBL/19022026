@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { ROUTE_PATHS, UserRole } from '@/lib/index';
 
 export interface User {

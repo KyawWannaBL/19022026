@@ -1,4 +1,3 @@
-
 interface Props {
   shipmentId: string
   currentStatus: string

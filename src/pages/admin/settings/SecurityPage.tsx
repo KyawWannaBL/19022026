@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { ROUTE_PATHS } from '@/lib/index';

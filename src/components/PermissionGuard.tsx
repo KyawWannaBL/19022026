@@ -1,4 +1,3 @@
-  children: React.ReactNode;
 }
 
 export default function PermissionGuard({ permission, children }: Props) {

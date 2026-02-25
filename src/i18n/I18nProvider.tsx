@@ -1,4 +1,3 @@
-  lang: Lang;
   setLang: (l: Lang) => void;
   toggleLang: () => void;
 };

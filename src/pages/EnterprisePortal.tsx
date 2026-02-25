@@ -1,4 +1,3 @@
-
 export default function EnterprisePortal() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

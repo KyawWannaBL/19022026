@@ -1,4 +1,3 @@
-
 // Minimal interface for tracking data to remain self-contained
 interface TrackingData {
   id: string;

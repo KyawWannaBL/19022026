@@ -1,4 +1,3 @@
-import { useShipments } from '@/hooks/useShipments';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { Shipment, formatCurrency, getStatusVariant } from "@/lib/index";
 import { 

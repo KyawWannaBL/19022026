@@ -1,4 +1,3 @@
-  ShieldAlert, 
   FileWarning, 
   Printer, 
   ScanFace, 

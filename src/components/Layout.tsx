@@ -1,4 +1,3 @@
-import { ROUTE_PATHS } from '@/lib/index';
 import { Link, useNavigate } from 'react-router-dom';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {

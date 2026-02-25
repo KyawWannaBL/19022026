@@ -1,4 +1,3 @@
-  Select,
   SelectContent,
   SelectItem,
   SelectTrigger,

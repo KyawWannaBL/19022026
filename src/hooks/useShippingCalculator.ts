@@ -1,4 +1,3 @@
-  nameEn: string;
   nameMm: string;
 }
 

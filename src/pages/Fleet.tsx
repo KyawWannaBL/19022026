@@ -1,4 +1,3 @@
-  Truck, Fuel, Wrench, Navigation2, Search, Filter, Activity, Users,
   Map as MapIcon, List, Calendar, AlertTriangle, Zap, ChevronRight, Plus
 } from 'lucide-react';
 import { ROUTE_PATHS, getStatusVariant } from '@/lib/index';

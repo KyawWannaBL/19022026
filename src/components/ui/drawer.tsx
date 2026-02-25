@@ -1,4 +1,3 @@
-
 const Drawer = ({
   shouldScaleBackground = true,
   ...props

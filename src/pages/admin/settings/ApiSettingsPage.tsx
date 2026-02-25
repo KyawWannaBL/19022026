@@ -1,4 +1,3 @@
-import { Key, ShieldCheck } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { useLanguageContext } from '@/lib/LanguageContext';
 

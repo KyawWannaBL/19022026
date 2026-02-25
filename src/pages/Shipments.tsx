@@ -1,4 +1,3 @@
-
 const ShipmentsPage = () => {
   const { t } = useLanguageContext();
   return (

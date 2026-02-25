@@ -1,4 +1,3 @@
-  const userId = session.session?.user?.id;
   if (!userId) return { userId: null, profile: null };
 
   const { data: profile } = await supabase

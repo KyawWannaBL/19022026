@@ -1,4 +1,3 @@
-// TypeScript interfaces for admin system
 export interface AdminUser {
   id: string;
   email: string;

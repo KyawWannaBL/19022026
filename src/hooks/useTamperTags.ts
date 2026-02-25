@@ -1,4 +1,3 @@
-  TamperTag,
   TAG_STATUS,
   TagStatus,
   User

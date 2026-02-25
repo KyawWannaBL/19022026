@@ -1,4 +1,3 @@
-  permission: string;
   children: ReactNode;
   fallback?: ReactNode; // Optional: Render this if permission is missing (e.g., a lock icon or null)
 }

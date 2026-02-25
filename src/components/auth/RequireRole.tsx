@@ -1,4 +1,3 @@
-import { useAuth } from "@/hooks/useAuth";
 import { PanelSlug, normalizeRole, canAccessPanel } from "@/lib/rbac";
 
 /**

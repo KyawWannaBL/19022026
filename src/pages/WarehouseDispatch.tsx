@@ -1,4 +1,3 @@
-  Truck,
   Package,
   MapPin,
   ChevronRight,

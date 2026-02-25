@@ -1,4 +1,3 @@
-  LayoutDashboard,
   Package,
   Truck,
   Warehouse as WarehouseIcon,

@@ -1,4 +1,3 @@
-  Search,
   Filter,
   ScanLine,
   MapPin,

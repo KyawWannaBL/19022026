@@ -1,4 +1,3 @@
-import { TABLES } from "@/lib/db/tables";
 import type { User } from "@/lib/index";
 import { USER_ROLES } from "@/lib/index";
 

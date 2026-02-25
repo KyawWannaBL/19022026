@@ -1,0 +1,30 @@
+@media print {
+  /* Hide everything except the AWB label during print */
+  body * {
+    visibility: hidden;
+  }
+  .awb-container, .awb-container * {
+    visibility: visible;
+  }
+  .awb-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4in;
+    height: 6in;
+    border: 2px solid black !important; /* Force thick border for thermal heat */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Reset page margins for 4x6 thermal paper */
+  @page {
+    size: 4in 6in;
+    margin: 0;
+  }
+
+  /* Ensure QR code and text remain sharp */
+  canvas, svg {
+    image-rendering: pixelated;
+  }
+}

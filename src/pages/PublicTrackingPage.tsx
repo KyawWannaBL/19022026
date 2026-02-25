@@ -1,4 +1,3 @@
-  Package, 
   MapPin, 
   Clock, 
   CheckCircle, 

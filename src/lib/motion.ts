@@ -1,4 +1,3 @@
- * - Natural onset (not sudden start)
  * - Elegant settling (not abrupt stop)
  * - Physical weight (like real objects moving)
  */

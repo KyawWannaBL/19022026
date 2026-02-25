@@ -1,4 +1,3 @@
-  YAxis,
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';

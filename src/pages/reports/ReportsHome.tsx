@@ -1,4 +1,3 @@
-import { Card } from '@/components/ui/SharedComponents';
 import PageHeader from '@/components/admin/PageHeader';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { ROUTE_PATHS } from '@/lib/index';

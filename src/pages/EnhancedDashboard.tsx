@@ -1,4 +1,3 @@
-import { useAuth } from '@/hooks/useAuth';
 
 
 import { useLanguageContext } from '@/lib/LanguageContext';

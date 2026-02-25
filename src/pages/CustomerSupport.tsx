@@ -1,4 +1,3 @@
-  MessageSquare,
   HelpCircle,
   Ticket,
   Phone,

@@ -1,4 +1,3 @@
-import {
   MapPin,
   CheckCircle2,
   Package,

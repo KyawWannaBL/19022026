@@ -1,4 +1,3 @@
-interface PageHeaderProps {
   titleKey?: string;
   title?: string;
   subtitle?: string;

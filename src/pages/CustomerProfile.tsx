@@ -1,4 +1,3 @@
-  User, 
   Camera, 
   Lock, 
   MapPin, 

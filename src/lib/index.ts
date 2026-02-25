@@ -1,4 +1,3 @@
- * No Sample Data | Bilingual Ready | Module Guarded
  */
 
 // 1. Core Route Dictionary

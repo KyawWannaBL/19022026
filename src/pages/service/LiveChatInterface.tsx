@@ -1,4 +1,3 @@
-import {
   Send,
   Paperclip,
   Monitor,

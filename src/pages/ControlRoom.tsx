@@ -1,4 +1,3 @@
-  user_id: string
   role: string
   branch_id: string
   last_seen: string

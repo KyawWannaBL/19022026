@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Store, TrendingUp, AlertTriangle } from "lucide-react";
 

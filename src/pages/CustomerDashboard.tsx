@@ -1,4 +1,3 @@
-  Plus, 
   Search, 
   History, 
   User, 

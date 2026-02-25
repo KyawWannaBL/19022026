@@ -1,4 +1,3 @@
-
 // Types for the enterprise logistics platform
 export interface User {
   id: string;

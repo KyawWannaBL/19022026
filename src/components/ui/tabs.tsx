@@ -1,4 +1,3 @@
-
 const Tabs = TabsPrimitive.Root
 
 const TabsList = React.forwardRef<

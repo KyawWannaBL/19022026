@@ -1,4 +1,3 @@
-    <h3 className="text-xl font-display font-bold text-slate-900 mb-8 tracking-tight">Efficiency Protocol Analysis</h3>
     <div className="h-[350px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>

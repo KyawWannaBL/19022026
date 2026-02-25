@@ -1,4 +1,3 @@
-import { 
   Package, 
   QrCode, 
   CheckCircle2, 

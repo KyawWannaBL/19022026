@@ -1,4 +1,3 @@
-import { User as FirebaseUser } from 'firebase/auth';
 
 // Legacy User interface for backward compatibility
 

@@ -1,4 +1,3 @@
-import { useShipments } from '@/hooks/useShipments';
 // ... other imports (Card, Badge, etc)
 
 export default function RegistrationQueue() {

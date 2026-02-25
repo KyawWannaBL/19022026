@@ -1,4 +1,3 @@
-  Clock, 
   MapPin, 
   Phone, 
   Mail, 

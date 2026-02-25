@@ -1,4 +1,3 @@
-import { AlertTriangle, Loader2, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { postLoginPath } from "@/config/postLogin";
 

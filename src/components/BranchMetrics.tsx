@@ -1,4 +1,3 @@
-  const [metrics, setMetrics] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchMetrics = async () => {

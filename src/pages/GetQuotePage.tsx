@@ -1,4 +1,3 @@
-  MapPin, 
   Package, 
   Truck, 
   Plane,

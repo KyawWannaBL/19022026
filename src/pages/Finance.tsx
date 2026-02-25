@@ -1,4 +1,3 @@
-
 export default function Finance() {
   const stats = [
     { label: 'Total Revenue', value: '$125,000', icon: DollarSign, trend: '+12%' },

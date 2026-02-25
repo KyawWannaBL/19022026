@@ -1,4 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { IMAGES } from '@/assets/images';
 
 interface QRCodeLabelProps {

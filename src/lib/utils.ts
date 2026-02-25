@@ -1,2 +1,1 @@
-  return twMerge(clsx(inputs))
 }

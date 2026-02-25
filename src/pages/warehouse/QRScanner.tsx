@@ -1,4 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
 
 export default function QRScanner() {
   const { t } = useLanguageContext();

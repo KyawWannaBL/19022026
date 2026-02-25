@@ -1,4 +1,3 @@
-  DollarSign, 
   TrendingUp, 
   TrendingDown, 
   Wallet, 

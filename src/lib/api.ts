@@ -1,4 +1,3 @@
- * Comprehensive API integration for all BE app pages functionality
  * © 2026 Britium Express Logistics System
  */
 

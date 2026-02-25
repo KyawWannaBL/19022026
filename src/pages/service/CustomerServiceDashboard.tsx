@@ -1,4 +1,3 @@
-  MessageSquare,
   LifeBuoy,
   TrendingUp,
   AlertCircle,

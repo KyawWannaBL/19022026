@@ -1,4 +1,3 @@
-  ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div

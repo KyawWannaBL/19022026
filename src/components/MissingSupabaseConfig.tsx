@@ -1,4 +1,3 @@
-  origin?: string;
 };
 
 export default function MissingSupabaseConfig({ origin }: Props) {

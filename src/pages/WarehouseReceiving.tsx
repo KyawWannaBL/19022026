@@ -1,4 +1,3 @@
-  PackageSearch,
   Scan,
   Database,
   CheckCircle2,

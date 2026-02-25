@@ -1,4 +1,3 @@
-  Popup,
   Source,
   Layer,
   type MapRef,

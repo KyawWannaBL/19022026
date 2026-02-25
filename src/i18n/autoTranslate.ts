@@ -1,4 +1,3 @@
-const elemOriginalAttrs = new WeakMap<Element, Map<string, string>>();
 
 function isCodeLike(text: string): boolean {
   const t = text.trim();

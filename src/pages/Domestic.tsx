@@ -1,4 +1,3 @@
-export default function Domestic() {
   return (
     <div className="min-h-screen bg-white">
       <div className="bg-slate-900 text-white py-2 text-sm text-center">

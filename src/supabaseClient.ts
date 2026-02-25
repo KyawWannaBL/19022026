@@ -1,4 +1,3 @@
-
 /**
  * Britium Express - Production Supabase Client
  * Fixes TS1128 by providing a clean, valid declaration.

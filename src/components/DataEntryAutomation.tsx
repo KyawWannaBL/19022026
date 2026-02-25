@@ -1,4 +1,3 @@
-import { Badge } from '@/components/ui/badge';
 import { Cpu, CheckCircle2, Loader2, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 

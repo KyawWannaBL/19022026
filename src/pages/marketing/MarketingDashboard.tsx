@@ -1,4 +1,3 @@
-  TrendingUp,
   Users,
   Target,
   Megaphone,

@@ -1,4 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
 import { Shipment, formatDate, formatCurrency } from '@/lib/index';
 import StatusBadge from './StatusBadge';
 

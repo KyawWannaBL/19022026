@@ -1,4 +1,3 @@
-  ShieldCheck,
   Activity,
   FileSearch,
   AlertCircle,

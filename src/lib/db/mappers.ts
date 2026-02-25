@@ -1,4 +1,3 @@
-
 function normalizeStatus(status: any): ShipmentStatus {
   const s = String(status ?? SHIPMENT_STATUSES.PENDING).toLowerCase();
   const allowed = new Set(Object.values(SHIPMENT_STATUSES));

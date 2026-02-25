@@ -1,4 +1,3 @@
-  User, 
   MapPin, 
   Package, 
   Calculator,

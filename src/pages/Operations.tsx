@@ -1,4 +1,3 @@
-  FileText, 
   Upload, 
   ShieldCheck, 
   Truck, 

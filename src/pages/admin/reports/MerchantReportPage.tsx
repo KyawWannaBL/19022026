@@ -1,4 +1,3 @@
-  Legend
 } from 'recharts';
 import {
   Download,

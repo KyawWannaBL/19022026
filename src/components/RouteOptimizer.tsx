@@ -1,4 +1,3 @@
-  MapPin,
   RotateCcw,
   CheckCircle2,
   ArrowRight,

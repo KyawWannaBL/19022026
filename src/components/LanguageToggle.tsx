@@ -1,4 +1,3 @@
-
   return (
     <div className="flex items-center gap-2 text-sm text-white/70">
       <span className="text-white/40">{t("common.language")}:</span>

@@ -1,4 +1,3 @@
-import { Trash2, CheckCircle2 } from 'lucide-react';
 
 /**
  * Signature Pad Component

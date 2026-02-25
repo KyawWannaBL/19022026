@@ -1,4 +1,3 @@
-
 export default function Quote() {
   const { t } = useLanguageContext();
   const { t } = useLanguageContext();

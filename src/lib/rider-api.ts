@@ -1,4 +1,3 @@
-// Types for Rider System
 export interface Rider {
   id: string;
   user_id?: string;

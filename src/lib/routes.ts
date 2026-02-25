@@ -1,4 +1,3 @@
-  LOGIN: "/login",
 
   // Panel roots
   SUPER_ADMIN: "/admin",

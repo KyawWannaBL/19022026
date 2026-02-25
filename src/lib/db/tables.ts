@@ -1,4 +1,3 @@
-export const TABLES = {
   PROFILES: "profiles_2026_02_19_13_00",
   BRANCHES: "branches_2026_02_19_13_00",
   SHIPMENTS: "shipments_2026_02_19_13_00",

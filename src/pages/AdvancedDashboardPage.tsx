@@ -1,4 +1,3 @@
-  TrendingUp, 
   TrendingDown,
   Package,
   Truck,

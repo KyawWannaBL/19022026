@@ -1,4 +1,3 @@
-export const mockShipments: Shipment[] = [
   {
     id: '1',
     awb: 'BRT-1001-YGN',

@@ -1,4 +1,3 @@
-  Plus, 
   Search, 
   Filter, 
   Download, 

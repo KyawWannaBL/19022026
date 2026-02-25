@@ -1,4 +1,3 @@
-import { useAuth } from '../hooks/useAuth';
 import AuditFeed from '@/components/AuditFeed';
 import FleetStatus from '@/components/FleetStatus';
 

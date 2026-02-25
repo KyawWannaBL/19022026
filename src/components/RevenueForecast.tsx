@@ -1,4 +1,3 @@
-} from 'recharts';
 import { TrendingUp, DollarSign } from 'lucide-react';
 
 const data = [

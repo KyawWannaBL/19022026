@@ -1,4 +1,3 @@
-import {
   Activity,
   AlertCircle,
   Battery,

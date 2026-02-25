@@ -1,4 +1,3 @@
-  LayoutDashboard, 
   Package, 
   Settings as SettingsIcon, 
   LogOut, 

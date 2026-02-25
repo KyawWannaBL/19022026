@@ -1,4 +1,3 @@
-  Bar,
   XAxis,
   YAxis,
   CartesianGrid,

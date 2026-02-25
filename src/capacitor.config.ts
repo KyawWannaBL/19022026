@@ -1,4 +1,3 @@
-  appId: "com.example.app",
   appName: "Britium",
   webDir: "dist",
   // bundledWebRuntime: false, // remove (type mismatch)

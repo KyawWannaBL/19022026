@@ -1,4 +1,3 @@
-import {
   Truck,
   MapPin,
   Calendar,

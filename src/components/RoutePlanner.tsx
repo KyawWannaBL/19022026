@@ -1,4 +1,3 @@
-import { Loader2, MapPin, Send } from 'lucide-react';
 import { toast } from 'sonner';
 
 const RoutePlanner = () => {

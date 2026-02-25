@@ -1,4 +1,3 @@
-  LayoutDashboard, Settings
 } from 'lucide-react';
 import { GPSTracker } from '@/components/GPSTracker';
 import { ElectronicSignaturePad } from '@/components/ElectronicSignaturePad';

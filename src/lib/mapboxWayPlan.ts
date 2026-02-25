@@ -1,4 +1,3 @@
-  | { ok: true; found: false }
   | { ok: false; error: string };
 
 export async function geocodeAddress(q: string, opts?: { country?: string; proximity?: LngLat }) {

@@ -1,4 +1,3 @@
-type MapViewProps = {
   center?: [number, number];
   zoom?: number;
   styleUrl?: string;

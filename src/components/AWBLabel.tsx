@@ -1,4 +1,3 @@
-import { QRCodeSVG } from 'qrcode.react';
 import { Shipment, User, formatCurrency } from '@/lib/index';
 
 interface AWBProps {

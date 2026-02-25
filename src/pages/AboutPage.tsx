@@ -1,4 +1,3 @@
-  Package, 
   Truck, 
   MapPin, 
   Clock, 

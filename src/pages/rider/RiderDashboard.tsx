@@ -1,4 +1,3 @@
-  Bell, 
   Map, 
   Package, 
   Truck, 

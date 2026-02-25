@@ -1,4 +1,3 @@
-export const translations = {
   // English translations
   en: {
     // Navigation & Layout

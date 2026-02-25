@@ -1,4 +1,3 @@
-  const { lang, setLang } = useI18n();
 
   return (
     <div className={className} data-no-translate>

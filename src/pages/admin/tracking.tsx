@@ -1,4 +1,3 @@
-  const [rate, setRate] = useState<number>(0);
   const [weight, setWeight] = useState<number>(0);
   const [l, setL] = useState<number>(0);
   const [w, setW] = useState<number>(0);

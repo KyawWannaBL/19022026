@@ -1,4 +1,3 @@
-export const MYANMAR_DICTIONARY: Record<string, string> = {
   // Core
   "Secure Terminal": "လုံခြုံရေး တာမီနယ်",
   "Invalid API key": "မမှန်ကန်သော API Key",

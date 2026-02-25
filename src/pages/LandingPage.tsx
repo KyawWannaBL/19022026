@@ -1,4 +1,3 @@
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Smartphone, ShieldCheck, Truck, QrCode } from 'lucide-react';
 

@@ -1,4 +1,3 @@
-  Map as MapIcon,
   Navigation,
   Truck,
   Search,

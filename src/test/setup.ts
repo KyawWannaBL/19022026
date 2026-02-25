@@ -1,4 +1,3 @@
-
 /**
  * Global Mocks for Vitest/Jest Environment
  * Resolves build-time errors related to browser-only APIs.

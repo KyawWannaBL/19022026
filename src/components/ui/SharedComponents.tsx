@@ -1,4 +1,3 @@
-
 /**
  * Page Loader Component
  * Used during Suspense and data fetching

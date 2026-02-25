@@ -1,4 +1,3 @@
-const POLICY_KEY = "INTL_DELIVERY_STANDARD";
 const POLICY_VERSION = "v1.0";
 
 export default function InternationalPolicyCheckbox({

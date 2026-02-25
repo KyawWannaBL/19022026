@@ -1,4 +1,3 @@
-  Package,
   Search,
   QrCode,
   CheckCircle2,

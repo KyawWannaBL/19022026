@@ -1,4 +1,3 @@
-import {
   MapPin,
   Navigation,
   Search,

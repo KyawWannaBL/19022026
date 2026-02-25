@@ -1,4 +1,3 @@
-  Package,
   Plus,
   Search,
   ArrowUpRight,

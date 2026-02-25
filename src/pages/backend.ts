@@ -1,4 +1,3 @@
-  return buf.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
 }
 
 export function signPayload(payload: object, secret: string) {

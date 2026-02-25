@@ -1,4 +1,3 @@
-  Users, 
   MousePointerClick, 
   Percent, 
   Plus, 

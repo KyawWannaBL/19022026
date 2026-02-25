@@ -1,4 +1,3 @@
-import { Truck, Circle, UserCheck } from 'lucide-react';
 
 export default function FleetStatus() {
   const [riders, setRiders] = useState<any[]>([]);

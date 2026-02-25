@@ -1,4 +1,3 @@
-  lng: number;
   speedKmh?: number | null;
   batteryLevel?: number | null;
   updatedAt?: string | Date | null;

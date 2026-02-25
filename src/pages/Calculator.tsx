@@ -1,4 +1,3 @@
-  price: string;
   time: string;
   note: string;
 };

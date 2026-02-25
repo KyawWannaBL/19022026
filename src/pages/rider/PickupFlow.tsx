@@ -1,4 +1,3 @@
-import { Html5QrcodeScanner } from 'html5-qrcode';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { Shipment, ROUTE_PATHS, formatCurrency } from "@/lib/index";
 import { Button } from '@/components/ui/button';

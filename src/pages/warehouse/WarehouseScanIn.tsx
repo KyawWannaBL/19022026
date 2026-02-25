@@ -1,4 +1,3 @@
-import { 
   ArrowDown, Package, Scan, CheckCircle, XCircle, 
   ArrowLeft, RefreshCw, QrCode, Clock, User, MapPin 
 } from 'lucide-react';

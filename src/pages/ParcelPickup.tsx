@@ -1,4 +1,3 @@
-  Package, 
   QrCode, 
   ArrowLeft, 
   CheckCircle2, 

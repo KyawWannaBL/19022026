@@ -1,4 +1,3 @@
-import StatusBadge from './StatusBadge';
 
 export const TrackingTimeline = ({ steps }: { steps: any[] }) => {
   const { t } = useLanguageContext();

@@ -1,4 +1,3 @@
-} from 'recharts';
 import {
   FileText,
   Download,

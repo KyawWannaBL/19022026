@@ -1,4 +1,3 @@
-import { useLanguageContext } from '@/lib/LanguageContext';
 
 export default function SimpleTransactionPage() {
   const { t } = useLanguageContext();

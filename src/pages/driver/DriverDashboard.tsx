@@ -1,4 +1,3 @@
-export default function DriverDashboard() {
   return (
     <div className="space-y-6">
       <div className="bg-emerald-600 p-6 rounded-2xl text-white shadow-lg shadow-emerald-900/20">

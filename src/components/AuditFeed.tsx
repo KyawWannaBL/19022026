@@ -1,4 +1,3 @@
-
 interface AuditEntry {
   id: string;
   action: string;

@@ -1,4 +1,3 @@
-
 const ResizablePanelGroup = ({
   className,
   ...props

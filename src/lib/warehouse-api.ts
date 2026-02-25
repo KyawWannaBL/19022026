@@ -1,4 +1,3 @@
-// Types for Warehouse System
 export interface WarehouseStation {
   id: string;
   station_code: string;

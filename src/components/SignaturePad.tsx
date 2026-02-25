@@ -1,4 +1,3 @@
-
 interface SignaturePadProps {
   onSave: (signature: string) => void;
   onCancel?: () => void;

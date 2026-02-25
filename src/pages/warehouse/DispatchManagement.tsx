@@ -1,4 +1,3 @@
-import { Truck, Scan, Package, MapPin, ArrowRight, ShieldAlert } from 'lucide-react';
 import { ROUTE_PATHS, SHIPMENT_STATUS, MOCK_TOWNSHIPS, Shipment } from '@/lib/index';
 import { useLanguageContext } from '@/lib/LanguageContext';
 import { Button } from '@/components/ui/button';

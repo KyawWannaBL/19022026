@@ -1,4 +1,3 @@
-  Building2, 
   User, 
   Phone, 
   Mail, 

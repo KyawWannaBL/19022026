@@ -1,4 +1,3 @@
-import { getMyProfile } from "@/lib/profile";
 
 export default function ProtectedRoute({
   children,

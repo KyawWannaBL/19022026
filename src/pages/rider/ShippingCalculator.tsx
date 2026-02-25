@@ -1,4 +1,3 @@
-// Language context - using simple state for now
 const useLanguageContext = () => ({ language: 'en' as 'en' | 'my' });
 
 export default function ShippingCalculator() {

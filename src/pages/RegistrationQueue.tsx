@@ -1,4 +1,3 @@
-} from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useLanguageContext } from '@/lib/LanguageContext';
 // Using centralized Hybrid Interface and bilingual helpers

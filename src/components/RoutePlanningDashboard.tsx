@@ -1,4 +1,3 @@
-  Truck,
   Users,
   Calendar,
   RefreshCw,

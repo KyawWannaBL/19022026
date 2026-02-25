@@ -1,4 +1,3 @@
-export const connectorConfig: ConnectorConfig;
 
 export type TimestampString = string;
 export type UUIDString = string;

@@ -1,4 +1,3 @@
-import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import {
   ArrowLeft, Save, AlertCircle, User, MapPin, DollarSign, Image as ImageIcon

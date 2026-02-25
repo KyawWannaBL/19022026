@@ -1,4 +1,3 @@
-import { Separator } from '@/components/ui/separator';
 import { QrCode, Smartphone, Camera, MapPin, Clock, AlertTriangle, CheckCircle, Package, Truck, Users } from 'lucide-react';
 
 export function OperationalManual() {

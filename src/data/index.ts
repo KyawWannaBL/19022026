@@ -1,4 +1,3 @@
-export const MOCK_USERS: User[] = [
   {
     id: 'u1',
     name: 'Alexander Wright', // Changed from fullName
