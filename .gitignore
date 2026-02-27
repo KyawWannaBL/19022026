@@ -19,3 +19,7 @@ pnpm-cache/
 pnpm-state/
 .vercel
 .env*.local
+
+__broken_backup__auto__/
+__broken_backup__/
+*.log
