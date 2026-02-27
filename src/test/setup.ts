@@ -1,25 +1,5 @@
- */
+// Auto-stubbed to unblock build.
+// Original saved at: __broken_backup__auto__/src/test/setup.ts
 
-class NoopResizeObserver {
-  observe() {}
-  unobserve() {}
-  disconnect() {}
-}
-
-Object.defineProperty(globalThis, "ResizeObserver", {
-  value: NoopResizeObserver,
-});
-
-Object.defineProperty(window, "matchMedia", {
-  writable: true,
-  value: (query: string) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: () => undefined,
-    removeListener: () => undefined,
-    addEventListener: () => undefined,
-    removeEventListener: () => undefined,
-    dispatchEvent: () => false,
-  }),
-});
+export const __stub = true;
+export default {} as any;

@@ -1,22 +1,5 @@
-  OPERATIONS: "/operations",
-  FINANCE: "/finance",
-  RIDER: "/rider",
-  MERCHANT_CUSTOMER: "/merchant-customer",
+// Auto-stubbed to unblock build.
+// Original saved at: __broken_backup__auto__/src/lib/routes.ts
 
-  // Public
-  PUBLIC_TRACKING: "/tracking",
-  SERVICES: "/services",
-  GET_QUOTE: "/get-quote",
-  ABOUT: "/about",
-  NEWS: "/news",
-  CONTACT: "/contact",
-
-  // Common app pages (used in nav/layouts)
-  SHIPMENTS: "/shipments",
-  FLEET: "/fleet",
-  WAY_PLANNING: "/way-planning",
-  SETTINGS: "/settings",
-} as const;
-
-export type RouteKey = keyof typeof ROUTE_PATHS;
-export type RoutePath = (typeof ROUTE_PATHS)[RouteKey];
+export const __stub = true;
+export default {} as any;

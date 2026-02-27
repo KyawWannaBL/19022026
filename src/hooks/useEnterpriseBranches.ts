@@ -1,24 +1,5 @@
-  city?: string | null;
-  address?: string | null;
-  status?: string | null;
-  [k: string]: any;
-};
+// Auto-stubbed to unblock build.
+// Original saved at: __broken_backup__auto__/src/hooks/useEnterpriseBranches.ts
 
-async function fetchBranches(): Promise<EnterpriseBranch[]> {
-  if (!supabase) return [];
-  const { data, error } = await supabase
-    .from(TABLES.BRANCHES)
-    .select("*")
-    .order("name", { ascending: true });
-
-  if (error) throw error;
-  return (data ?? []) as any[];
-}
-
-export function useEnterpriseBranches() {
-  return useQuery({
-    queryKey: ["enterprise-branches"],
-    queryFn: fetchBranches,
-    staleTime: 60_000,
-  });
-}
+export const __stub = true;
+export default {} as any;

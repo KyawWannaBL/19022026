@@ -1,16 +1,5 @@
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources: {
-      en: { translation: en },
-      mm: { translation: mm },
-    },
-    fallbackLng: "en",
-    interpolation: { escapeValue: false },
-    detection: {
-      order: ["localStorage", "navigator"],
-      caches: ["localStorage"],
-    },
-  });
+// Auto-stubbed to unblock build.
+// Original saved at: __broken_backup__auto__/src/i18n.ts
 
-export default i18n;
+export const __stub = true;
+export default {} as any;

@@ -1,16 +1,29 @@
+import { Shipment } from "@/lib/index";
+
+export const mockShipments: Shipment[] = [
+  {
+    id: '1',
     status: 'In Transit',
+    senderName: 'Britium Central',
     receiverName: 'Aung Ko Ko',
-    receiverAddress: 'No. 45, Pyay Road',
-    receiverCity: 'Yangon',
-    senderName: 'Britium Central'
+    destinationTownship: 'Yangon',
+    weight: 1.5,
+    createdAt: new Date().toISOString(),
+    awb: 'BRT-2001-RGN'
   },
   {
     id: '2',
-    awb: 'BRT-2002-MDY',
     status: 'Pending',
+    senderName: 'Merchant Hub',
     receiverName: 'Ma Su',
-    receiverAddress: '73rd Street, Chan Aye Thar Zan',
-    receiverCity: 'Mandalay',
-    senderName: 'Merchant Hub'
+    destinationTownship: 'Mandalay',
+    weight: 0.5,
+    createdAt: new Date().toISOString(),
+    awb: 'BRT-2002-MDY'
   }
+];
+
+export const mockBranches = [
+  { id: 'B1', name: 'Yangon Main Hub', city: 'Yangon' },
+  { id: 'B2', name: 'Mandalay Station', city: 'Mandalay' }
 ];
