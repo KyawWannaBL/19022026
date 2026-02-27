@@ -76,7 +76,7 @@ importers:
         version: 2.98.0
       '@vercel/node':
         specifier: ^5.6.7
-        version: 5.6.7(rollup@4.59.0)
+        version: 5.6.9(rollup@4.59.0)
       axios:
         specifier: ^1.13.5
         version: 1.13.5
@@ -121,13 +121,13 @@ importers:
         version: 0.344.0(react@18.3.1)
       mapbox-gl:
         specifier: ^3.18.1
-        version: 3.18.1
+        version: 3.19.0
       react:
         specifier: ^18.2.0
         version: 18.3.1
       react-day-picker:
         specifier: ^9.13.2
-        version: 9.13.2(react@18.3.1)
+        version: 9.14.0(react@18.3.1)
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
@@ -142,7 +142,7 @@ importers:
         version: 5.0.0(leaflet@1.9.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-map-gl:
         specifier: ^8.1.0
-        version: 8.1.0(mapbox-gl@3.18.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 8.1.0(mapbox-gl@3.19.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-resizable-panels:
         specifier: ^4.6.5
         version: 4.6.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -182,7 +182,7 @@ importers:
         version: 4.2.1
       '@tailwindcss/vite':
         specifier: ^4.2.1
-        version: 4.2.1(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1))
+        version: 4.2.1(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1))
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -212,19 +212,19 @@ importers:
         version: 2.0.1(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react-is@19.2.4)(react@18.3.1)(redux@5.0.1)
       '@vitejs/plugin-react':
         specifier: ^4.2.1
-        version: 4.7.0(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1))
+        version: 4.7.0(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1))
       '@vitejs/plugin-react-swc':
         specifier: ^4.2.3
-        version: 4.2.3(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1))
+        version: 4.2.3(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1))
       autoprefixer:
         specifier: ^10.4.17
-        version: 10.4.24(postcss@8.5.6)
+        version: 10.4.27(postcss@8.5.6)
       jsdom:
         specifier: ^28.1.0
         version: 28.1.0
       lovable-tagger:
         specifier: ^1.1.13
-        version: 1.1.13(tsx@4.21.0)(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1))
+        version: 1.1.13(tsx@4.21.0)(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1))
       postcss:
         specifier: ^8.4.35
         version: 8.5.6
@@ -236,13 +236,13 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^5.1.4
-        version: 5.4.21(@types/node@25.3.0)(lightningcss@1.31.1)
+        version: 5.4.21(@types/node@25.3.2)(lightningcss@1.31.1)
       vite-tsconfig-paths:
         specifier: ^6.1.1
-        version: 6.1.1(typescript@5.9.3)(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1))
+        version: 6.1.1(typescript@5.9.3)(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1))
       vitest:
         specifier: ^4.0.18
-        version: 4.0.18(@edge-runtime/vm@3.2.0)(@types/node@25.3.0)(jiti@1.21.7)(jsdom@28.1.0)(lightningcss@1.31.1)(tsx@4.21.0)
+        version: 4.0.18(@edge-runtime/vm@3.2.0)(@types/node@25.3.2)(jiti@1.21.7)(jsdom@28.1.0)(lightningcss@1.31.1)(tsx@4.21.0)
 
 packages:
 
@@ -1361,10 +1361,6 @@ packages:
   '@mapbox/vector-tile@2.0.4':
     resolution: {integrity: sha512-AkOLcbgGTdXScosBWwmmD7cDlvOjkg/DetGva26pIRiZPdeJYjYKarIlb4uxVzi6bwHO6EWH82eZ5Nuv4T5DUg==}
 
-  '@mapbox/whoots-js@3.1.0':
-    resolution: {integrity: sha512-Es6WcD0nO5l+2BOQS4uLfNPYQaNDfbot3X1XUoloz+x0mPDS3eeORZJl06HXjwBG1fOGwCRnzK88LMdxKRrd6Q==}
-    engines: {node: '>=6.0.0'}
-
   '@maplibre/maplibre-gl-style-spec@19.3.3':
     resolution: {integrity: sha512-cOZZOVhDSulgK0meTsTkmNXb1ahVvmTmWmfx9gRBwc6hq98wS9JP35ESIoNq3xqEan+UN+gn8187Z6E4NKhLsw==}
     hasBin: true
@@ -2189,72 +2185,72 @@ packages:
     resolution: {integrity: sha512-Ohc97CtInLwZyiSASz7tT9/Abm/vqnIbO9REp+PivVUII8UZsuI3bngRQnYgJdFoOIwvaEII1fX1qy8x0CyNiw==}
     engines: {node: '>=20.0.0'}
 
-  '@swc/core-darwin-arm64@1.15.13':
-    resolution: {integrity: sha512-ztXusRuC5NV2w+a6pDhX13CGioMLq8CjX5P4XgVJ21ocqz9t19288Do0y8LklplDtwcEhYGTNdMbkmUT7+lDTg==}
+  '@swc/core-darwin-arm64@1.15.17':
+    resolution: {integrity: sha512-eB9qdyt4E60323IS0rgV/rd79DJ+YWSyIKi+sT1dlIgR3ns4xlBiunREM3lVH0FKcUbhttiBvdVubT4QoOuZ+w==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@swc/core-darwin-x64@1.15.13':
-    resolution: {integrity: sha512-cVifxQUKhaE7qcO/y9Mq6PEhoyvN9tSLzCnnFZ4EIabFHBuLtDDO6a+vLveOy98hAs5Qu1+bb5Nv0oa1Pihe3Q==}
+  '@swc/core-darwin-x64@1.15.17':
+    resolution: {integrity: sha512-k1TZARYs8947jJpSioqcPrusz+wEeABF4iiSdwcSyQh2rIUdIEk5FOyaqJASFPJ6dZfx7ZVOyjtDATVAegs2/Q==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [darwin]
 
-  '@swc/core-linux-arm-gnueabihf@1.15.13':
-    resolution: {integrity: sha512-t+xxEzZ48enl/wGGy7SRYd7kImWQ/+wvVFD7g5JZo234g6/QnIgZ+YdfIyjHB+ZJI3F7a2IQHS7RNjxF29UkWw==}
+  '@swc/core-linux-arm-gnueabihf@1.15.17':
+    resolution: {integrity: sha512-p6282NQZo5bzx0wphz1ETGjhcRB9CN+/XUAjQwApyoyX9iCloI5IT/RC3vjbflo42g8RPTxUTaItAO0hlLSesQ==}
     engines: {node: '>=10'}
     cpu: [arm]
     os: [linux]
 
-  '@swc/core-linux-arm64-gnu@1.15.13':
-    resolution: {integrity: sha512-VndeGvKmTXFn6AGwjy0Kg8i7HccOCE7Jt/vmZwRxGtOfNZM1RLYRQ7MfDLo6T0h1Bq6eYzps3L5Ma4zBmjOnOg==}
+  '@swc/core-linux-arm64-gnu@1.15.17':
+    resolution: {integrity: sha512-TGnDS4ejy8y9jqxXqZCyA+DvFc64nXUHS9rxdyeJ9B9uyIdtKVhBrA2xfghYRS/sSPSyHZ0yu89NxBICvONH+A==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@swc/core-linux-arm64-musl@1.15.13':
-    resolution: {integrity: sha512-SmZ9m+XqCB35NddHCctvHFLqPZDAs5j8IgD36GoutufDJmeq2VNfgk5rQoqNqKmAK3Y7iFdEmI76QoHIWiCLyw==}
+  '@swc/core-linux-arm64-musl@1.15.17':
+    resolution: {integrity: sha512-D0/6Hj4CkgSTTahtlGxv9IDsLTuvQz30mkZEMDp8TqwYhCL8AomznkibwlQU8HtY4q/dqd1OGRPH+FmNb4BBEA==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@swc/core-linux-x64-gnu@1.15.13':
-    resolution: {integrity: sha512-5rij+vB9a29aNkHq72EXI2ihDZPszJb4zlApJY4aCC/q6utgqFA6CkrfTfIb+O8hxtG3zP5KERETz8mfFK6A0A==}
+  '@swc/core-linux-x64-gnu@1.15.17':
+    resolution: {integrity: sha512-1s2OFsg6DeRkWU7c+PIfIHZsFCbiZ34akXFHrg7KjpF8zIvpHZNoUUZimoWEwcB6GquXSkAO+1b5KpG5nusTeQ==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@swc/core-linux-x64-musl@1.15.13':
-    resolution: {integrity: sha512-OlSlaOK9JplQ5qn07WiBLibkOw7iml2++ojEXhhR3rbWrNEKCD7sd8+6wSavsInyFdw4PhLA+Hy6YyDBIE23Yw==}
+  '@swc/core-linux-x64-musl@1.15.17':
+    resolution: {integrity: sha512-gtxGMGYtRWWmCcgx6xM2Yos43uiE/j8kZwkeL/LNGG9zM0tatd23NsfL9PnQJ45hY7QZ+dx2rM68e4ArgG4kJg==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@swc/core-win32-arm64-msvc@1.15.13':
-    resolution: {integrity: sha512-zwQii5YVdsfG8Ti9gIKgBKZg8qMkRZxl+OlYWUT5D93Jl4NuNBRausP20tfEkQdAPSRrMCSUZBM6FhW7izAZRg==}
+  '@swc/core-win32-arm64-msvc@1.15.17':
+    resolution: {integrity: sha512-gxi+/Miytez/O9vJ/QiheIivA3oWZjPp9nJu3VmAfLMWUzcZORMwgaI1ygtDTLjz7CzcwlGMJz/Ab66Y5DfNpg==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [win32]
 
-  '@swc/core-win32-ia32-msvc@1.15.13':
-    resolution: {integrity: sha512-hYXvyVVntqRlYoAIDwNzkS3tL2ijP3rxyWQMNKaxcCxxkCDto/w3meOK/OB6rbQSkNw0qTUcBfU9k+T0ptYdfQ==}
+  '@swc/core-win32-ia32-msvc@1.15.17':
+    resolution: {integrity: sha512-KUsRqNbTp7SpNK0T9m4+i8GlngzNjwb69a3ttKA6XJ5r6Pewm+NSYji93pNkawXIivbWY2jhvceGMAyd+4hWaQ==}
     engines: {node: '>=10'}
     cpu: [ia32]
     os: [win32]
 
-  '@swc/core-win32-x64-msvc@1.15.13':
-    resolution: {integrity: sha512-XTzKs7c/vYCcjmcwawnQvlHHNS1naJEAzcBckMI5OJlnrcgW8UtcX9NHFYvNjGtXuKv0/9KvqL4fuahdvlNGKw==}
+  '@swc/core-win32-x64-msvc@1.15.17':
+    resolution: {integrity: sha512-zqtEGE0/rTKvEC5sOtpANLHeWEPjsTD4/rwpUxo6ymztcLI/Z+L9Wi9xQvIGmLTUih1gvNZcAwROqdfRP3oAWQ==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [win32]
 
-  '@swc/core@1.15.13':
-    resolution: {integrity: sha512-0l1gl/72PErwUZuavcRpRAQN9uSst+Nk++niC5IX6lmMWpXoScYx3oq/narT64/sKv/eRiPTaAjBFGDEQiWJIw==}
+  '@swc/core@1.15.17':
+    resolution: {integrity: sha512-Mu3eOrYlkdQPl7yqotNckitTr6FZ0yd7mlWIBEzK+EGIyybgMENJHmbS2DeA7BMleJiBElP6ke+Nz93pkKmKJw==}
     engines: {node: '>=10'}
     peerDependencies:
       '@swc/helpers': '>=0.5.17'
@@ -2267,6 +2263,10 @@ packages:
 
   '@swc/types@0.1.25':
     resolution: {integrity: sha512-iAoY/qRhNH8a/hBvm3zKj9qQ4oc2+3w1unPJa2XvTK3XjeLXtzcCingVPw/9e5mn1+0yPqxcBGp9Jf0pkfMb1g==}
+
+  '@tabby_ai/hijri-converter@1.0.5':
+    resolution: {integrity: sha512-r5bClKrcIusDoo049dSL8CawnHR6mRdDwhlQuIgZRNty68q0x8k3Lf1BtPAMxRf/GgnHBnIO4ujd3+GQdLWzxQ==}
+    engines: {node: '>=16.0.0'}
 
   '@tailwindcss/node@4.2.1':
     resolution: {integrity: sha512-jlx6sLk4EOwO6hHe1oCGm1Q4AN/s0rSrTTPBGPM0/RQ6Uylwq17FuU8IeJJKEjtc6K6O07zsvP+gDO6MMWo7pg==}
@@ -2467,14 +2467,15 @@ packages:
     resolution: {integrity: sha512-3wVAUTC6q1UKatLP9YxFBnGJWi3neJUF9OKeyRdUf/BsYjZAP35xmZkL4zogVJbO3vdExuSVYCAkzUXjpjdhOg==}
     deprecated: This is a stub types definition. mapbox-gl provides its own type definitions, so you do not need this installed.
 
-  '@types/mapbox__point-geometry@0.1.4':
-    resolution: {integrity: sha512-mUWlSxAmYLfwnRBmgYV86tgYmMIICX4kza8YnE/eIlywGe2XoOxlpVnXWwir92xRLjwyarqwpu2EJKD2pk0IUA==}
+  '@types/mapbox__point-geometry@1.0.87':
+    resolution: {integrity: sha512-32whuSWD/aDBHpRrZmEMlRjxR0L3sSYUaRnVmw0XwyVMvuU5LsRqrFwYud7gXjqmUE0MSoJB91+IJMqCyYyxag==}
+    deprecated: This is a stub types definition. @mapbox/point-geometry provides its own type definitions, so you do not need this installed.
 
   '@types/node@20.11.0':
     resolution: {integrity: sha512-o9bjXmDNcF7GbM4CNQpmi+TutCgap/K3w1JyKgxAjqx41zp9qlIAVFi0IhCNsJcXolEqLWhbFbEeL0PvYm4pcQ==}
 
-  '@types/node@25.3.0':
-    resolution: {integrity: sha512-4K3bqJpXpqfg2XKGK9bpDTc6xO/xoUP/RBWS7AtRMug6zZFaRekiLzjVtAoZMquxoAbzBvy5nxQ7veS5eYzf8A==}
+  '@types/node@25.3.2':
+    resolution: {integrity: sha512-RpV6r/ij22zRRdyBPcxDeKAzH43phWVKEjL2iksqo1Vz3CuBUrgmPpPhALKiRfU7OMCmeeO9vECBMsV0hMTG8Q==}
 
   '@types/pbf@3.0.5':
     resolution: {integrity: sha512-j3pOPiEcWZ34R6a6mN07mUkM4o4Lwf6hPNt8eilOeZhTFbxFXmKhvXl9Y28jotFPaI1bpPDJsbCprUoNke6OrA==}
@@ -2515,8 +2516,8 @@ packages:
   '@types/ws@8.18.1':
     resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
 
-  '@vercel/build-utils@13.5.0':
-    resolution: {integrity: sha512-hDSJbpw7KFlX5d/L7e6x5pDfln7puE6EPiy4y+19zE0yBTNuO/d8tmpMPamt6uzzIKTT8tuAdef+QDVzGshaOw==}
+  '@vercel/build-utils@13.6.1':
+    resolution: {integrity: sha512-/qRDC8swTUDrdQLkKBnyY8TSk+DeI8RTOIhAba2BwCVCHaZoLF8+sdOCeHud1QJk/3a8R5rAmMQOvEI4P2FRZQ==}
 
   '@vercel/error-utils@2.0.3':
     resolution: {integrity: sha512-CqC01WZxbLUxoiVdh9B/poPbNpY9U+tO1N9oWHwTl5YAZxcqXmmWJ8KNMFItJCUUWdY3J3xv8LvAuQv2KZ5YdQ==}
@@ -2526,11 +2527,11 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  '@vercel/node@5.6.7':
-    resolution: {integrity: sha512-a6T/59XUX2uQ5e5Z9aw8svTmaqxR54omUS88Ixfi50N40artnU1Olk9uQExf/9c5STNf8ewriQih1ep0PXx74g==}
+  '@vercel/node@5.6.9':
+    resolution: {integrity: sha512-SiLToxNIGNSaELFhMorNAWIW1LkBCOEIw7+P3MxDxeaY9RAn5nqymT4uLg95L94JvI4dAFZbdfS7ntgmEfB64A==}
 
-  '@vercel/python-analysis@0.7.0':
-    resolution: {integrity: sha512-0l5ITyZd8V6etELQd4Xmblc2rou5Jlj6hzFHZ+Dgo7/i7HvcWvZ+thZ5IaPdiXQNYo2L8CvUAsGvybkstuFc8w==}
+  '@vercel/python-analysis@0.8.1':
+    resolution: {integrity: sha512-gW1pZDqJaTcjZYPvNhXXLOPgLu6vJW9PKweJoX2f8EKAoW+JIiYncl8AddcSlngNhQRG7SqUl2u3qosZM4kUBA==}
 
   '@vercel/static-config@3.1.2':
     resolution: {integrity: sha512-2d+TXr6K30w86a+WbMbGm2W91O0UzO5VeemZYBBUJbCjk/5FLLGIi8aV6RS2+WmaRvtcqNTn2pUA7nCOK3bGcQ==}
@@ -2691,8 +2692,8 @@ packages:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
 
-  autoprefixer@10.4.24:
-    resolution: {integrity: sha512-uHZg7N9ULTVbutaIsDRoUkoS8/h3bdsmVJYZ5l3wv8Cp/6UIIoRDm90hZ+BwxUj/hGBEzLxdHNSKuFpn8WOyZw==}
+  autoprefixer@10.4.27:
+    resolution: {integrity: sha512-NP9APE+tO+LuJGn7/9+cohklunJsXWiaWEfV3si4Gi/XHDwVNgkwr1J3RQYFIvPy76GmJ9/bW8vyoU1LcxwKHA==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -3549,8 +3550,8 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
-  mapbox-gl@3.18.1:
-    resolution: {integrity: sha512-Izc8dee2zkmb6Pn9hXFbVioPRLXJz1OFUcrvri69MhFACPU4bhLyVmhEsD9AyW1qOAP0Yvhzm60v63xdMIHPPw==}
+  mapbox-gl@3.19.0:
+    resolution: {integrity: sha512-SFObIgdxN0b6hZNsRxSUmQWdVW9q9GM2gw4McgFbycyhekew7BZIh8V57pEERDWlI9x/5SxxraTit5Cf0hm9OA==}
 
   martinez-polygon-clipping@0.8.1:
     resolution: {integrity: sha512-9PLLMzMPI6ihHox4Ns6LpVBLpRc7sbhULybZ/wyaY8sY3ECNe2+hxm1hA2/9bEEpRrdpjoeduBuZLg2aq1cSIQ==}
@@ -3586,12 +3587,12 @@ packages:
     resolution: {integrity: sha512-enIvLvRAFZYXJzkCYG5RKmPfrFArdLv+R+lbQ53BmIMLIry74bjKzX6iHAm8WYamJkhSSEabrWN5D97XnKObjQ==}
     engines: {node: 20 || >=22}
 
-  minimatch@10.2.2:
-    resolution: {integrity: sha512-+G4CpNBxa5MprY+04MbgOw1v7So6n5JY166pFi9KfYwT78fxScCeSNQSNzp6dpPSW2rONOps6Ocam1wFhCgoVw==}
+  minimatch@10.2.4:
+    resolution: {integrity: sha512-oRjTw/97aTBN0RHbYCdtF1MQfvusSIBQM0IZEgzl6426+8jSC0nF1a/GmnVLpfB9yyr6g6FTqWqiZVbxrtaCIg==}
     engines: {node: 18 || 20 || >=22}
 
-  minimatch@3.1.3:
-    resolution: {integrity: sha512-M2GCs7Vk83NxkUyQV1bkABc4yxgz9kILhHImZiBPAZ9ybuvCb0/H7lEl5XvIg3g+9d4eNotkZA5IWwYl0tibaA==}
+  minimatch@3.1.5:
+    resolution: {integrity: sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==}
 
   minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
@@ -3833,8 +3834,8 @@ packages:
   quickselect@3.0.0:
     resolution: {integrity: sha512-XdjUArbK4Bm5fLLvlm5KpTFOiOThgfWWI4axAZDWg4E/0mKdZyI9tNEfds27qCi1ze/vwTR16kvmmGhRra3c2g==}
 
-  react-day-picker@9.13.2:
-    resolution: {integrity: sha512-IMPiXfXVIAuR5Yk58DDPBC8QKClrhdXV+Tr/alBrwrHUw0qDDYB1m5zPNuTnnPIr/gmJ4ChMxmtqPdxm8+R4Eg==}
+  react-day-picker@9.14.0:
+    resolution: {integrity: sha512-tBaoDWjPwe0M5pGrum4H0SR6Lyk+BO9oHnp9JbKpGKW2mlraNPgP9BMfsg5pWpwrssARmeqk7YBl2oXutZTaHA==}
     engines: {node: '>=18'}
     peerDependencies:
       react: '>=16.8.0'
@@ -5434,7 +5435,7 @@ snapshots:
   '@grpc/grpc-js@1.9.15':
     dependencies:
       '@grpc/proto-loader': 0.7.15
-      '@types/node': 25.3.0
+      '@types/node': 25.3.2
 
   '@grpc/proto-loader@0.7.15':
     dependencies:
@@ -5581,8 +5582,6 @@ snapshots:
       '@mapbox/point-geometry': 1.1.0
       '@types/geojson': 7946.0.16
       pbf: 4.0.1
-
-  '@mapbox/whoots-js@3.1.0': {}
 
   '@maplibre/maplibre-gl-style-spec@19.3.3':
     dependencies:
@@ -6373,57 +6372,59 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@swc/core-darwin-arm64@1.15.13':
+  '@swc/core-darwin-arm64@1.15.17':
     optional: true
 
-  '@swc/core-darwin-x64@1.15.13':
+  '@swc/core-darwin-x64@1.15.17':
     optional: true
 
-  '@swc/core-linux-arm-gnueabihf@1.15.13':
+  '@swc/core-linux-arm-gnueabihf@1.15.17':
     optional: true
 
-  '@swc/core-linux-arm64-gnu@1.15.13':
+  '@swc/core-linux-arm64-gnu@1.15.17':
     optional: true
 
-  '@swc/core-linux-arm64-musl@1.15.13':
+  '@swc/core-linux-arm64-musl@1.15.17':
     optional: true
 
-  '@swc/core-linux-x64-gnu@1.15.13':
+  '@swc/core-linux-x64-gnu@1.15.17':
     optional: true
 
-  '@swc/core-linux-x64-musl@1.15.13':
+  '@swc/core-linux-x64-musl@1.15.17':
     optional: true
 
-  '@swc/core-win32-arm64-msvc@1.15.13':
+  '@swc/core-win32-arm64-msvc@1.15.17':
     optional: true
 
-  '@swc/core-win32-ia32-msvc@1.15.13':
+  '@swc/core-win32-ia32-msvc@1.15.17':
     optional: true
 
-  '@swc/core-win32-x64-msvc@1.15.13':
+  '@swc/core-win32-x64-msvc@1.15.17':
     optional: true
 
-  '@swc/core@1.15.13':
+  '@swc/core@1.15.17':
     dependencies:
       '@swc/counter': 0.1.3
       '@swc/types': 0.1.25
     optionalDependencies:
-      '@swc/core-darwin-arm64': 1.15.13
-      '@swc/core-darwin-x64': 1.15.13
-      '@swc/core-linux-arm-gnueabihf': 1.15.13
-      '@swc/core-linux-arm64-gnu': 1.15.13
-      '@swc/core-linux-arm64-musl': 1.15.13
-      '@swc/core-linux-x64-gnu': 1.15.13
-      '@swc/core-linux-x64-musl': 1.15.13
-      '@swc/core-win32-arm64-msvc': 1.15.13
-      '@swc/core-win32-ia32-msvc': 1.15.13
-      '@swc/core-win32-x64-msvc': 1.15.13
+      '@swc/core-darwin-arm64': 1.15.17
+      '@swc/core-darwin-x64': 1.15.17
+      '@swc/core-linux-arm-gnueabihf': 1.15.17
+      '@swc/core-linux-arm64-gnu': 1.15.17
+      '@swc/core-linux-arm64-musl': 1.15.17
+      '@swc/core-linux-x64-gnu': 1.15.17
+      '@swc/core-linux-x64-musl': 1.15.17
+      '@swc/core-win32-arm64-msvc': 1.15.17
+      '@swc/core-win32-ia32-msvc': 1.15.17
+      '@swc/core-win32-x64-msvc': 1.15.17
 
   '@swc/counter@0.1.3': {}
 
   '@swc/types@0.1.25':
     dependencies:
       '@swc/counter': 0.1.3
+
+  '@tabby_ai/hijri-converter@1.0.5': {}
 
   '@tailwindcss/node@4.2.1':
     dependencies:
@@ -6494,12 +6495,12 @@ snapshots:
       postcss: 8.5.6
       tailwindcss: 4.2.1
 
-  '@tailwindcss/vite@4.2.1(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1))':
+  '@tailwindcss/vite@4.2.1(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1))':
     dependencies:
       '@tailwindcss/node': 4.2.1
       '@tailwindcss/oxide': 4.2.1
       tailwindcss: 4.2.1
-      vite: 5.4.21(@types/node@25.3.0)(lightningcss@1.31.1)
+      vite: 5.4.21(@types/node@25.3.2)(lightningcss@1.31.1)
 
   '@testing-library/dom@10.4.1':
     dependencies:
@@ -6538,7 +6539,7 @@ snapshots:
   '@ts-morph/common@0.11.1':
     dependencies:
       fast-glob: 3.3.3
-      minimatch: 3.1.3
+      minimatch: 3.1.5
       mkdirp: 1.0.4
       path-browserify: 1.0.1
 
@@ -6600,7 +6601,7 @@ snapshots:
 
   '@types/fs-extra@8.1.5':
     dependencies:
-      '@types/node': 25.3.0
+      '@types/node': 25.3.2
 
   '@types/geojson-vt@3.2.5':
     dependencies:
@@ -6616,15 +6617,17 @@ snapshots:
 
   '@types/mapbox-gl@3.5.0':
     dependencies:
-      mapbox-gl: 3.18.1
+      mapbox-gl: 3.19.0
 
-  '@types/mapbox__point-geometry@0.1.4': {}
+  '@types/mapbox__point-geometry@1.0.87':
+    dependencies:
+      '@mapbox/point-geometry': 1.1.0
 
   '@types/node@20.11.0':
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@25.3.0':
+  '@types/node@25.3.2':
     dependencies:
       undici-types: 7.18.2
 
@@ -6670,11 +6673,11 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 25.3.0
+      '@types/node': 25.3.2
 
-  '@vercel/build-utils@13.5.0':
+  '@vercel/build-utils@13.6.1':
     dependencies:
-      '@vercel/python-analysis': 0.7.0
+      '@vercel/python-analysis': 0.8.1
 
   '@vercel/error-utils@2.0.3': {}
 
@@ -6697,13 +6700,13 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/node@5.6.7(rollup@4.59.0)':
+  '@vercel/node@5.6.9(rollup@4.59.0)':
     dependencies:
       '@edge-runtime/node-utils': 2.3.0
       '@edge-runtime/primitives': 4.1.0
       '@edge-runtime/vm': 3.2.0
       '@types/node': 20.11.0
-      '@vercel/build-utils': 13.5.0
+      '@vercel/build-utils': 13.6.1
       '@vercel/error-utils': 2.0.3
       '@vercel/nft': 1.1.1(rollup@4.59.0)
       '@vercel/static-config': 3.1.2
@@ -6726,7 +6729,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/python-analysis@0.7.0':
+  '@vercel/python-analysis@0.8.1':
     dependencies:
       '@bytecodealliance/preview2-shim': 0.17.6
       '@renovatebot/pep440': 4.2.1
@@ -6743,12 +6746,12 @@ snapshots:
       json-schema-to-ts: 1.6.4
       ts-morph: 12.0.0
 
-  '@vis.gl/react-mapbox@8.1.0(mapbox-gl@3.18.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@vis.gl/react-mapbox@8.1.0(mapbox-gl@3.19.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     optionalDependencies:
-      mapbox-gl: 3.18.1
+      mapbox-gl: 3.19.0
 
   '@vis.gl/react-maplibre@8.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -6756,15 +6759,15 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@vitejs/plugin-react-swc@4.2.3(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1))':
+  '@vitejs/plugin-react-swc@4.2.3(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.2
-      '@swc/core': 1.15.13
-      vite: 5.4.21(@types/node@25.3.0)(lightningcss@1.31.1)
+      '@swc/core': 1.15.17
+      vite: 5.4.21(@types/node@25.3.2)(lightningcss@1.31.1)
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitejs/plugin-react@4.7.0(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1))':
+  '@vitejs/plugin-react@4.7.0(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.29.0)
@@ -6772,7 +6775,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.27
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 5.4.21(@types/node@25.3.0)(lightningcss@1.31.1)
+      vite: 5.4.21(@types/node@25.3.2)(lightningcss@1.31.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -6785,13 +6788,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.18(vite@7.3.1(@types/node@25.3.0)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0))':
+  '@vitest/mocker@4.0.18(vite@7.3.1(@types/node@25.3.2)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0))':
     dependencies:
       '@vitest/spy': 4.0.18
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.1(@types/node@25.3.0)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0)
+      vite: 7.3.1(@types/node@25.3.2)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0)
 
   '@vitest/pretty-format@4.0.18':
     dependencies:
@@ -6881,7 +6884,7 @@ snapshots:
 
   at-least-node@1.0.0: {}
 
-  autoprefixer@10.4.24(postcss@8.5.6):
+  autoprefixer@10.4.27(postcss@8.5.6):
     dependencies:
       browserslist: 4.28.1
       caniuse-lite: 1.0.30001774
@@ -7496,7 +7499,7 @@ snapshots:
 
   glob@13.0.6:
     dependencies:
-      minimatch: 10.2.2
+      minimatch: 10.2.4
       minipass: 7.1.3
       path-scurry: 2.0.2
 
@@ -7745,11 +7748,11 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
-  lovable-tagger@1.1.13(tsx@4.21.0)(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1)):
+  lovable-tagger@1.1.13(tsx@4.21.0)(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1)):
     dependencies:
       esbuild: 0.25.12
       tailwindcss: 3.4.19(tsx@4.21.0)
-      vite: 5.4.21(@types/node@25.3.0)(lightningcss@1.31.1)
+      vite: 5.4.21(@types/node@25.3.2)(lightningcss@1.31.1)
     transitivePeerDependencies:
       - tsx
       - yaml
@@ -7770,7 +7773,7 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  mapbox-gl@3.18.1:
+  mapbox-gl@3.19.0:
     dependencies:
       '@mapbox/jsonlint-lines-primitives': 2.0.2
       '@mapbox/mapbox-gl-supported': 3.0.0
@@ -7778,10 +7781,9 @@ snapshots:
       '@mapbox/tiny-sdf': 2.0.7
       '@mapbox/unitbezier': 0.0.1
       '@mapbox/vector-tile': 2.0.4
-      '@mapbox/whoots-js': 3.1.0
       '@types/geojson': 7946.0.16
       '@types/geojson-vt': 3.2.5
-      '@types/mapbox__point-geometry': 0.1.4
+      '@types/mapbox__point-geometry': 1.0.87
       '@types/pbf': 3.0.5
       '@types/supercluster': 7.1.3
       cheap-ruler: 4.0.0
@@ -7828,11 +7830,11 @@ snapshots:
     dependencies:
       '@isaacs/brace-expansion': 5.0.1
 
-  minimatch@10.2.2:
+  minimatch@10.2.4:
     dependencies:
       brace-expansion: 5.0.3
 
-  minimatch@3.1.3:
+  minimatch@3.1.5:
     dependencies:
       brace-expansion: 1.1.12
 
@@ -8030,7 +8032,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 25.3.0
+      '@types/node': 25.3.2
       long: 5.3.2
 
   protocol-buffers-schema@3.6.0: {}
@@ -8043,9 +8045,10 @@ snapshots:
 
   quickselect@3.0.0: {}
 
-  react-day-picker@9.13.2(react@18.3.1):
+  react-day-picker@9.14.0(react@18.3.1):
     dependencies:
       '@date-fns/tz': 1.4.1
+      '@tabby_ai/hijri-converter': 1.0.5
       date-fns: 4.1.0
       date-fns-jalali: 4.1.0-0
       react: 18.3.1
@@ -8082,14 +8085,14 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  react-map-gl@8.1.0(mapbox-gl@3.18.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-map-gl@8.1.0(mapbox-gl@3.19.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@vis.gl/react-mapbox': 8.1.0(mapbox-gl@3.18.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@vis.gl/react-mapbox': 8.1.0(mapbox-gl@3.19.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@vis.gl/react-maplibre': 8.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     optionalDependencies:
-      mapbox-gl: 3.18.1
+      mapbox-gl: 3.19.0
 
   react-redux@9.2.0(@types/react@18.3.28)(react@18.3.1)(redux@5.0.1):
     dependencies:
@@ -8492,7 +8495,7 @@ snapshots:
 
   tsx@4.21.0:
     dependencies:
-      esbuild: 0.27.3
+      esbuild: 0.27.0
       get-tsconfig: 4.13.6
     optionalDependencies:
       fsevents: 2.3.3
@@ -8587,27 +8590,27 @@ snapshots:
       d3-time: 3.1.0
       d3-timer: 3.0.1
 
-  vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1)):
+  vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1)):
     dependencies:
       debug: 4.4.3
       globrex: 0.1.2
       tsconfck: 3.1.6(typescript@5.9.3)
-      vite: 5.4.21(@types/node@25.3.0)(lightningcss@1.31.1)
+      vite: 5.4.21(@types/node@25.3.2)(lightningcss@1.31.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@5.4.21(@types/node@25.3.0)(lightningcss@1.31.1):
+  vite@5.4.21(@types/node@25.3.2)(lightningcss@1.31.1):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.6
       rollup: 4.59.0
     optionalDependencies:
-      '@types/node': 25.3.0
+      '@types/node': 25.3.2
       fsevents: 2.3.3
       lightningcss: 1.31.1
 
-  vite@7.3.1(@types/node@25.3.0)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0):
+  vite@7.3.1(@types/node@25.3.2)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0):
     dependencies:
       esbuild: 0.27.3
       fdir: 6.5.0(picomatch@4.0.3)
@@ -8616,16 +8619,16 @@ snapshots:
       rollup: 4.59.0
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 25.3.0
+      '@types/node': 25.3.2
       fsevents: 2.3.3
       jiti: 1.21.7
       lightningcss: 1.31.1
       tsx: 4.21.0
 
-  vitest@4.0.18(@edge-runtime/vm@3.2.0)(@types/node@25.3.0)(jiti@1.21.7)(jsdom@28.1.0)(lightningcss@1.31.1)(tsx@4.21.0):
+  vitest@4.0.18(@edge-runtime/vm@3.2.0)(@types/node@25.3.2)(jiti@1.21.7)(jsdom@28.1.0)(lightningcss@1.31.1)(tsx@4.21.0):
     dependencies:
       '@vitest/expect': 4.0.18
-      '@vitest/mocker': 4.0.18(vite@7.3.1(@types/node@25.3.0)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0))
+      '@vitest/mocker': 4.0.18(vite@7.3.1(@types/node@25.3.2)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0))
       '@vitest/pretty-format': 4.0.18
       '@vitest/runner': 4.0.18
       '@vitest/snapshot': 4.0.18
@@ -8642,11 +8645,11 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.3.1(@types/node@25.3.0)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0)
+      vite: 7.3.1(@types/node@25.3.2)(jiti@1.21.7)(lightningcss@1.31.1)(tsx@4.21.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@edge-runtime/vm': 3.2.0
-      '@types/node': 25.3.0
+      '@types/node': 25.3.2
       jsdom: 28.1.0
     transitivePeerDependencies:
       - jiti
